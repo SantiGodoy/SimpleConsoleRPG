@@ -32,11 +32,6 @@ public abstract class Item {
      */
     protected String description;
 
-    /**
-     * 
-     */
-    protected int price;
-
 
 
 
@@ -45,9 +40,8 @@ public abstract class Item {
      * @param name 
      * @param rarity 
      * @param description 
-     * @param price
      */
-    public void Item(int id, String name, int rarity, String description, int price) {
+    public void Item(int id, String name, int rarity, String description) {
         // TODO implement here
     }
 
@@ -76,13 +70,6 @@ public abstract class Item {
      * @param description
      */
     public void setDescription(String description) {
-        // TODO implement here
-    }
-
-    /**
-     * @param price
-     */
-    public void setPrice(int price) {
         // TODO implement here
     }
 
@@ -116,14 +103,6 @@ public abstract class Item {
     public String getDescription() {
         // TODO implement here
         return "";
-    }
-
-    /**
-     * @return
-     */
-    public int getPrice() {
-        // TODO implement here
-        return 0;
     }
 
 }
