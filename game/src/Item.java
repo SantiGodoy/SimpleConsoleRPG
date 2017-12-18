@@ -2,107 +2,36 @@
 import java.util.*;
 
 /**
- * 
+ *  @author JoseCorrero
  */
 public abstract class Item {
-
-    /**
-     * Default constructor
-     */
-    public Item() {
-    }
-
-    /**
-     * 
-     */
     protected int id;
-
-    /**
-     * 
-     */
     protected String name;
-
-    /**
-     * 
-     */
-    protected int rarity;
-
-    /**
-     * 
-     */
+    protected Rarity rarity;
     protected String description;
 
+    public Item() {}
 
-
-
-    /**
-     * @param id 
-     * @param name 
-     * @param rarity 
-     * @param description 
-     */
-    public void Item(int id, String name, int rarity, String description) {
-        // TODO implement here
+    public void Item(int id, String name, Rarity rarity, String description) {
+       this.id = id;
+       this.name = name;
+       this.rarity = rarity;
+       this.description = description;
     }
 
-    /**
-     * @param id
-     */
-    public void setId(int id) {
-        // TODO implement here
-    }
-
-    /**
-     * @param name
-     */
-    public void setName(String name) {
-        // TODO implement here
-    }
-
-    /**
-     * @param rarity
-     */
-    public void setRarity(int rarity) {
-        // TODO implement here
-    }
-
-    /**
-     * @param description
-     */
-    public void setDescription(String description) {
-        // TODO implement here
-    }
-
-    /**
-     * @return
-     */
     public int getId() {
-        // TODO implement here
-        return 0;
+        return id;
     }
 
-    /**
-     * @return
-     */
     public String getName() {
-        // TODO implement here
-        return "";
+        return name;
     }
 
-    /**
-     * @return
-     */
-    public int getRarity() {
-        // TODO implement here
-        return 0;
+    public Rarity getRarity() {
+        return rarity;
     }
 
-    /**
-     * @return
-     */
     public String getDescription() {
-        // TODO implement here
-        return "";
+        return description;
     }
-
 }
