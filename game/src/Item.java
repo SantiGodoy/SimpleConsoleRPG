@@ -1,10 +1,12 @@
-
 import java.util.*;
 
 /**
- *  @author JoseCorrero
+ * @author JoseCorrero
+ * 
+ * Class Item.
  */
 public abstract class Item {
+
     protected int id;
     protected String name;
     protected Rarity rarity;
@@ -34,4 +36,5 @@ public abstract class Item {
     public String getDescription() {
         return description;
     }
+
 }

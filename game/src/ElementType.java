@@ -1,12 +1,11 @@
 
 /**
- * 
+ * Elemental types.
  */
 public enum ElementType {
-    FUEGO,
-    AIRE,
-    ELECTRICIDAD,
-    TIERRA,
-    AGUA,
-    BASIC
+    BASIC,
+    FIRE,
+    AIR,
+    ELECTRIC,
+    WATER
 }
