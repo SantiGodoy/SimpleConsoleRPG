@@ -6,80 +6,41 @@ import java.util.*;
  */
 public abstract class Enemy extends Character {
 
-    /**
-     * Default constructor
-     */
-    public Enemy() {
-    }
+   
 
-    /**
-     * 
-     */
     protected int experiencePointsDrop;
-
-    /**
-     * 
-     */
-    protected int moneyDrop;
-
-    /**
-     * 
-     */
+    protected Item itemDrop;
+    protected int probabilityDrop;
     protected String message;
-
-    /**
-     * 
-     */
     protected ElementType type;
 
 
-    /**
-     * @param id 
-     * @param name 
-     * @param level 
-     * @param health 
-     * @param strength 
-     * @param agility 
-     * @param defense 
-     * @param abilities 
-     * @param xpDrop 
-     * @param message 
-     * @param itemDrop
-     */
-    public void Enemy(int id, String name, int level, int health, int strength, int agility, int defense, Set<Ability> abilities, int xpDrop, String message, int itemDrop) {
-        // TODO implement here
+    public Enemy() {
+    }
+    
+    public Enemy(int id, String name, int level, int health, int strength, int agility, int defense, Set<Ability> abilities, int xpDrop, String message, Item itemDrop, int probabilityDrop, ElementType type) {
+        super(id, name, level, health, strength, agility, defense, abilities);   
+        this.experiencePointsDrop = xpDrop;
+        this.itemDrop = itemDrop;
+        this.probabilityDrop = probabilityDrop;
+        this.message = message;
+        this.type = type;
     }
 
-    /**
-     * @return
-     */
+
     public int getXPDrop() {
-        // TODO implement here
-        return 0;
+        return experiencePointsDrop;
     }
 
-    /**
-     * @return
-     */
+ 
     public String getMessage() {
-        // TODO implement here
-        return "";
+        return message;
     }
 
-    /**
-     * @return
-     */
-    public int getMoneyDrop() {
-        // TODO implement here
-        return 0;
-    }
-
-    /**
-     * @return
-     */
+ 
     public int getItemDrop() {
-        // TODO implement here
-        return 0;
+        return itemDrop;
     }
+
 
 }

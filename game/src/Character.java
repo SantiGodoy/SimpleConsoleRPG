@@ -6,147 +6,93 @@ import java.util.*;
  */
 public abstract class Character {
 
-    /**
-     * Default constructor
-     */
+ 
+    protected int id;
+    protected String name;
+    protected int level;
+    protected int maxHealth;
+    protected int currentHealth;
+    protected int strength;
+    protected int agility;
+    protected int defense;
+    protected Set<Ability> abilities;
+
     public Character() {
     }
 
-    /**
-     * 
-     */
-    protected int id;
-
-    /**
-     * 
-     */
-    protected String name;
-
-    /**
-     * 
-     */
-    protected int level;
-
-    /**
-     * 
-     */
-    protected int health;
-
-    /**
-     * 
-     */
-    protected int strength;
-
-    /**
-     * 
-     */
-    protected int agility;
-
-    /**
-     * 
-     */
-    protected int defense;
-
-    /**
-     * 
-     */
-    protected Set<Ability> abilities;
-
-
-
-
-
-    /**
-     * @param id 
-     * @param name 
-     * @param level 
-     * @param health 
-     * @param strength 
-     * @param agility 
-     * @param defense 
-     * @param abilities
-     */
-    public void Character(int id, String name, int level, int health, int strength, int agility, int defense, Set<Ability> abilities) {
-        // TODO implement here
+    public Character(int id, String name, int level, int health, int strength, int agility, int defense, Set<Ability> abilities) {
+        this.id = id;
+        this.name = name;
+        this.level = level;
+        this.maxHealth = health;
+        this.currentHealth = health;
+        this.strength = strength;
+        this.agility = agility;
+        this.defense = defense;
+        this.abilities = abilities;
     }
 
-    /**
-     * @param health
-     */
-    public void setHealth(int health) {
-        // TODO implement here
+  
+    public void setmaxHealth(int health) {
+        this.maxHealth = health;
     }
 
-    /**
-     * @return
-     */
+    public void setcurrentHealth(int health) {
+        if(health > maxHealth){
+            this.currentHealth = maxHealth;
+        } else {
+            if(health < 0){
+                this.currentHealth = 0;
+            } else {
+                this.currentHealth = health;
+            }
+        }
+    }
+
     public int getId() {
-        // TODO implement here
-        return 0;
+        return id;
     }
 
-    /**
-     * @return
-     */
     public String getName() {
-        // TODO implement here
-        return "";
+        return name;
     }
 
-    /**
-     * @return
-     */
+ 
     public int getLevel() {
-        // TODO implement here
-        return 0;
+        return level;
     }
 
-    /**
-     * @return
-     */
-    public int getHealth() {
-        // TODO implement here
-        return 0;
+  
+    public int getmaxHealth() {
+        return maxHealth;
     }
 
-    /**
-     * @return
-     */
+    public int getcurrentHealth() {
+        return currentHealth;
+    }
+    
     public int getStrength() {
-        // TODO implement here
-        return 0;
+        return strength;
     }
 
-    /**
-     * @return
-     */
+  
     public int getAgility() {
-        // TODO implement here
-        return 0;
+        return agility;
     }
 
-    /**
-     * @return
-     */
+  
     public int getDefense() {
-        // TODO implement here
-        return 0;
+        return defense;
     }
 
-    /**
-     * @return
-     */
+   
     public Set<Ability> getAbilities() {
-        // TODO implement here
-        return null;
+        return abilities;
     }
 
-    /**
-     * @return
-     */
+  
     public Boolean isAlive() {
-        // TODO implement here
-        return null;
+        return currentHealth != 0;
     }
 
 }

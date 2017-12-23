@@ -6,145 +6,98 @@ import java.util.*;
  */
 public class MainCharacter extends Character {
 
-    /**
-     * Default constructor
-     */
+    private int maxAbilityPoints;
+    private int currentAbilityPoints;
+    private Inventory inventory;
+    private Equipment equipment;
+    private int experiencePoints;
+    private int money;
+    private String gender;
+
     public MainCharacter() {
     }
 
-    /**
-     * 
-     */
-    private int abilityPoints;
-
-    /**
-     * 
-     */
-    private Inventory inventory;
-
-    /**
-     * 
-     */
-    private Equipment equipment;
-
-    /**
-     * 
-     */
-    private int experiencePoints;
-
-    /**
-     * 
-     */
-    private int money;
-
-    /**
-     * 
-     */
-    private String gender;
-
-
-
-
-
-    /**
-     * @param name 
-     * @param health 
-     * @param Strength 
-     * @param agility 
-     * @param defense 
-     * @param gender
-     */
-    public void MainCharacter(String name, int health, int Strength, int agility, int defense, String gender) {
-        // TODO implement here
+    public MainCharacter(int id, String name, int health, int abilityPoints, int strength, int agility, int defense,
+            Set<Ability> abilities, String gender) {
+        super(id, name, 1, health, strength, agility, defense, abilities);
+        this.maxAbilityPoints = abilityPoints;
+        this.currentAbilityPoints = abilityPoints;
+        this.experiencePoints = 0;
+        this.money = 0;
+        this.gender = gender;
     }
 
-    /**
-     * @param level
-     */
     public void setLevel(int level) {
-        // TODO implement here
+        this.level = level;
     }
 
-    /**
-     * @param strength
-     */
     public void setStrength(int strength) {
-        // TODO implement here
+        this.strength = strength;
     }
 
-    /**
-     * @param agility
-     */
     public void setAgility(int agility) {
-        // TODO implement here
+        this.agility = agility;
     }
 
-    /**
-     * @param defense
-     */
     public void setDefense(int defense) {
-        // TODO implement here
+        this.defense = defense;
     }
 
-    /**
-     * @param money
-     */
     public void setMoney(int money) {
-        // TODO implement here
+        this.money = money;
     }
 
-    /**
-     * @param xp
-     */
     public void setExperienceP(int xp) {
-        // TODO implement here
+        experiencePoints = experiencePoints + xp;
+
+        if (experiencePoints >= (100 * level)){
+          ++this.level;
+          this.experiencePoints %= (100 * level);
+        }      
     }
 
-    /**
-     * @param ability
-     */
+    public void setMaxAbilityP(int abilityPoints) {
+        this.maxAbilityPoints = abilityPoints;
+    }
+
+    public void setCurrentAbilityP(int abilityPoints) {
+        if(abilityPoints > maxAbilityPoints){
+            this.currentAbilityPoints = maxAbilityPoints;
+        } else {
+            if(abilityPoints < 0){
+                this.currentAbilityPoints = 0;
+            } else {
+                this.currentAbilityPoints = abilityPoints;
+            }
+        }
+    }
+
     public void addAbility(Ability ability) {
-        // TODO implement here
+        //Proximamente 
     }
 
-    /**
-     * @return
-     */
-    public int getAbilityP() {
-        // TODO implement here
-        return 0;
+    public int getMaxAbilityP() {
+        return maxAbilityPoints;
     }
 
-    /**
-     * @return
-     */
+    public int getCurrentAbilityP() {
+        return currentAbilityPoints;
+    }
+
     public Inventory getInventory() {
-        // TODO implement here
-        return null;
+        return inventory;
     }
 
-    /**
-     * @return
-     */
     public Equipment getEquipment() {
-        // TODO implement here
-        return null;
+        return equipment;
     }
 
-    /**
-     * @return
-     */
     public int getExperienceP() {
-        // TODO implement here
-        return 0;
+        return experiencePoints;
     }
 
-    /**
-     * @return
-     */
     public int getMoney() {
-        // TODO implement here
-        return 0;
+        return money;
     }
 
 }
