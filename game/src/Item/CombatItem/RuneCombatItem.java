@@ -4,13 +4,17 @@ import java.util.*;
 /**
  * @author JoseCorrero
  * 
- * Class RuneCombatItem represents any CombatItem that can be added to an EquipableCombatItem
- * to create a decorated EquipableCombatItem.
+ * Class RuneCombatItem represents any CombatItem that can be added to 
+ * an EquipableCombatItem to enhance it.
  */
-public class RuneCombatItem extends CombatItem {
+public abstract class RuneCombatItem extends CombatItem {
 
-    public RuneCombatItem(int id, String name, int rarity, String description) {
+    public RuneCombatItem() {}
+
+    public RuneCombatItem(int id, String name, Rarity rarity, String description) {
         super(id, name, rarity, description);
     }
+
+    public abstract int use();
 
 }

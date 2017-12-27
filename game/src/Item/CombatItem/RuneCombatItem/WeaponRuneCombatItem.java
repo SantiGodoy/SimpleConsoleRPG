@@ -1,15 +1,18 @@
-
+package Item.CombatItem.RuneCombatItem;
 import java.util.*;
 
 /**
+ * @author JoseCorrero
  * 
+ * Class WeaponRuneCombatItem represents any RuneCombatItem that can be added to 
+ * an WeaponEquipableCombatItem to enhance it.
  */
-public class WeaponRune extends Rune {
+public abstract class WeaponRuneCombatItem extends RuneCombatItem {
 
-    /**
-     * Default constructor
-     */
-    public WeaponRune() {
+    public WeaponRuneCombatItem() {}
+
+    public WeaponRuneCombatItem(int id, String name, Rarity rarity, String description) {
+        super(id, name, rarity, description);
     }
 
 }

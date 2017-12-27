@@ -1,15 +1,28 @@
-
+package Item.CombatItem.EquipableCombatItem.ArmorEquipableCombatItem;
 import java.util.*;
 
 /**
- * 
+ * @author JoseCorrero
+ *
+ * Class SimpleArmorEquipableCombatItem represents any ArmorEquipableCombatItem
+ * that has not been enhanced with any ArmorRuneCombatItem.
  */
-public class SimpleArmor extends Armor {
+public class SimpleArmorEquipableCombatItem extends ArmorEquipableCombatItem {
 
-    /**
-     * Default constructor
-     */
-    public SimpleArmor() {
+    public SimpleArmorEquipableCombatItem(int id, String name, Rarity rarity, String description, 
+                                          int baseDefense) {
+        super(id, name, rarity, description, baseDefense);
+    }
+
+    @override
+    public int use(Character player1, Character player2) {
+        int damagePlayer1  = player1.getStrength(),
+            defensePlayer2 = player2.getDefense() + baseDefense;
+
+        if(defensePlayer2 < damagePlayer1)
+            return damagePlayer1 - defensePlayer2;
+        else
+            return 0;
     }
 
 }

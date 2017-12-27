@@ -4,7 +4,8 @@ import java.util.*;
 /**
  * @author JoseCorrero
  * 
- * Class ManaConsumableItem represents any ConsumableItem that can be used to recover only mana from inventory.
+ * Class ManaConsumableItem represents any ConsumableItem 
+ * that can be used to recover only mana from inventory.
  */
 public class ManaConsumableItem extends ConsumableItem {
 

@@ -4,8 +4,8 @@ import java.util.*;
 /**
  * @author JoseCorrero
  * 
- * Class MultiConsumableItem represents any ConsumableItem that can be used to recover health and mana, 
- * at the same item, from inventory.
+ * Class MultiConsumableItem represents any ConsumableItem 
+ * that can be used to recover health and mana, at the same item, from inventory.
  */
 public class MultiConsumableItem extends ConsumableItem {
 

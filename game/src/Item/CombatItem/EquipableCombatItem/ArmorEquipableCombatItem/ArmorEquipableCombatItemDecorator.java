@@ -1,15 +1,36 @@
-
+package Item.CombatItem.EquipableCombatItem.ArmorEquipableCombatItem;
 import java.util.*;
 
 /**
- * 
+ * @author JoseCorrero
+ *
+ * Class ArmorEquipableCombatItemDecorator represents any ArmorEquipableCombatItem
+ * that has been enhanced with some ArmorRuneCombatItem.
  */
-public class ArmorDecorator extends Armor {
+public abstract class ArmorEquipableCombatItemDecorator extends ArmorEquipableCombatItem {
 
-    /**
-     * Default constructor
-     */
-    public ArmorDecorator() {
+    protected ArmorEquipableCombatItem armor;
+    protected ArmorRuneCombatItem rune;
+
+    public ArmorEquipableCombatItemDecorator(int id, 
+                                             ArmorEquipableCombatItem armor,
+                                             ArmorRuneCombatItem rune) {
+        super(id, 
+              armor.getName() + " (" + rune.getName() + ")", 
+              armor.getRarity(), 
+              armor.getDescription() + "\n" + rune.getDescription(), 
+              armor.getBaseDefense());
+
+        this.armor = armor;
+        this.rune = rune;
+
+        armor.merged = true;
+        rune.merged = true;
+    }
+
+    @override
+    public int use(Character player1, Character player2) {
+        return armor.use(player1, player2);
     }
 
 }

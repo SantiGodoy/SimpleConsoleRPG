@@ -6,7 +6,7 @@ import java.util.*;
  * 
  * Class CombatItem represents any Item that can be used in combat.
  */
-public class CombatItem extends Item {
+public abstract class CombatItem extends Item {
 
     protected boolean merged;
 
@@ -20,7 +20,5 @@ public class CombatItem extends Item {
     public boolean isMerged() {
         return merged;
     }
-
-    public abstract void use(Character player1, Character player2);
 
 }

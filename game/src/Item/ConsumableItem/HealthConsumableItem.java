@@ -4,7 +4,8 @@ import java.util.*;
 /**
  * @author JoseCorrero
  * 
- * Class HealthConsumableItem represents any ConsumableItem that can be used to recover only health from inventory.
+ * Class HealthConsumableItem represents any ConsumableItem 
+ * that can be used to recover only health from inventory.
  */
 public class HealthConsumableItem extends ConsumableItem {
 

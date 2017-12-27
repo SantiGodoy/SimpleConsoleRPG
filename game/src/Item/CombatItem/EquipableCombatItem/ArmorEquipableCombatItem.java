@@ -1,47 +1,30 @@
-
+package Item.CombatItem.EquipableCombatItem;
 import java.util.*;
 
 /**
+ * @author JoseCorrero
  * 
+ * Class ArmorEquipableCombatItem represents any EquipableCombatItem 
+ * that can be equipped as armor.
  */
-public class Armor extends Equipable {
-
-    /**
-     * Default constructor
-     */
-    public Armor() {
+public abstract class ArmorEquipableCombatItem extends EquipableCombatItem {
+    
+    protected int baseDefense;
+    
+    public ArmorEquipableCombatItem() {}
+    
+    public ArmorEquipableCombatItem(int id, String name, Rarity rarity, String description, 
+                                    int baseDefense) {
+        super(id, name, rarity, description);
+        this.baseDefense = baseDefense;
     }
 
-    /**
-     * 
-     */
-    private int defense;
-
-    /**
-     * @param id 
-     * @param name 
-     * @param rarity 
-     * @param description 
-     * @param price 
-     * @param defense
-     */
-    public void Armor(int id, String name, int rarity, String description, int price, int defense) {
-        // TODO implement here
+    public void setBaseDefense(int baseDefense) {
+        this.baseDefense = baseDefense;
     }
 
-    /**
-     * @param defense
-     */
-    public void setDefense(int defense) {
-        // TODO implement here
-    }
-
-    /**
-     * @return
-     */
-    public int getDefense() {
-        // TODO implement here
-        return 0;
+    public int getBaseDefense() {
+        return baseDefense;
     }
 
 }

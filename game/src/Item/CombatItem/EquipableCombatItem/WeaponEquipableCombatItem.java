@@ -1,47 +1,30 @@
-
+package Item.CombatItem.EquipableCombatItem;
 import java.util.*;
 
 /**
+ * @author JoseCorrero
  * 
+ * Class WeaponEquipableCombatItem represents any EquipableCombatItem 
+ * that can be equipped as weapon.
  */
-public class Weapon extends Equipable {
-
-    /**
-     * Default constructor
-     */
-    public Weapon() {
+public abstract class WeaponEquipableCombatItem extends EquipableCombatItem {
+    
+    protected int baseDamage;
+    
+    public WeaponEquipableCombatItem() {}
+    
+    public WeaponEquipableCombatItem(int id, String name, Rarity rarity, String description, 
+                                     int baseDamage) {
+        super(id, name, rarity, description);
+        this.baseDamage = baseDamage;
     }
 
-    /**
-     * 
-     */
-    private int baseDamage;
-
-    /**
-     * @param id 
-     * @param name 
-     * @param rarity 
-     * @param description 
-     * @param price 
-     * @param baseDamage
-     */
-    public void Weapon(int id, String name, int rarity, String description, int price, int baseDamage) {
-        // TODO implement here
-    }
-
-    /**
-     * @param baseDamage
-     */
     public void setBaseDamage(int baseDamage) {
-        // TODO implement here
+        this.baseDamage = baseDamage;
     }
 
-    /**
-     * @return
-     */
     public int getBaseDamage() {
-        // TODO implement here
-        return 0;
+        return baseDamage;
     }
 
 }
