@@ -1,25 +1,27 @@
-package Item.CombatItem.RuneCombatItem.ArmorRuneCombatItem;
+package com.proyectdss.item.combatitem.runecombatitem.armorrunecombatitem;
+
 import java.util.*;
+import com.proyectdss.Rarity;
 
 /**
  * @author JoseCorrero
  * 
- * Class ThornArmorRuneCombatItem represents any ArmorRuneCombatItem that can be added 
- * to an ArmorEquipableCombatItemDecorator to create a ThornArmorEquipableCombatItem.
+ * Class ReflectArmorRuneCombatItem represents any ArmorRuneCombatItem that can be added 
+ * to an ArmorEquipableCombatItemDecorator to create a ReflectArmorEquipableCombatItem.
  */
-public class ThornArmorRuneCombatItem extends ArmorRuneCombatItem {
+public class ReflectArmorRuneCombatItem extends ArmorRuneCombatItem {
 
-    private int thorn;
+    private int reflect;
 
-    public ThornArmorRuneCombatItem(int id, String name, Rarity rarity, String description, 
-                                    int thorn) {
+    public ReflectArmorRuneCombatItem(int id, String name, Rarity rarity, String description, 
+                                    int reflect) {
         super(id, name, rarity, description);
-        this.thorn = thorn;
+        this.reflect = reflect;
     }
 
     @override
     public int use() {
-        return thorn;
+        return reflect;
     }
 
 }

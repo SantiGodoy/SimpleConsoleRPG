@@ -1,5 +1,8 @@
-package Item;
+package com.proyectdss.item;
+
 import java.util.*;
+import com.proyectdss.Rarity;
+import com.proyectdss.MainCharacter;
 
 /**
  * @author JoseCorrero

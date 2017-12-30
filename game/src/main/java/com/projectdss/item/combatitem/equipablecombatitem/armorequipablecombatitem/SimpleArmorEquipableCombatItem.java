@@ -1,5 +1,8 @@
-package Item.CombatItem.EquipableCombatItem.ArmorEquipableCombatItem;
+package com.proyectdss.item.combatitem.equipablecombatitem.armorequipablecombatitem;
+
 import java.util.*;
+import com.proyectdss.Rarity;
+import com.proyectdss.Character;
 
 /**
  * @author JoseCorrero

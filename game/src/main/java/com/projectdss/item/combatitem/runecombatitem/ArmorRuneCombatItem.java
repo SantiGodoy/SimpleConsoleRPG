@@ -1,5 +1,7 @@
-package Item.CombatItem.RuneCombatItem;
+package com.proyectdss.item.combatitem.runecombatitem;
+
 import java.util.*;
+import com.proyectdss.Rarity;
 
 /**
  * @author JoseCorrero

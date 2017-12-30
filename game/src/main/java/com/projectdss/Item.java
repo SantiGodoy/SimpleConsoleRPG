@@ -1,4 +1,7 @@
+package com.proyectdss;
+
 import java.util.*;
+import com.proyectdss.Rarity;
 
 /**
  * @author JoseCorrero
@@ -14,7 +17,7 @@ public abstract class Item {
 
     public Item() {}
 
-    public void Item(int id, String name, Rarity rarity, String description) {
+    public Item(int id, String name, Rarity rarity, String description) {
        this.id = id;
        this.name = name;
        this.rarity = rarity;
