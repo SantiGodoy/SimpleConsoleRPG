@@ -2,6 +2,7 @@ package com.proyectdss.item.combatitem.runecombatitem;
 
 import java.util.*;
 import com.proyectdss.Rarity;
+import com.proyectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 
 /**
  * @author JoseCorrero
@@ -16,5 +17,11 @@ public abstract class WeaponRuneCombatItem extends RuneCombatItem {
     public WeaponRuneCombatItem(int id, String name, Rarity rarity, String description) {
         super(id, name, rarity, description);
     }
+
+    public abstract int getSharpness();
+
+    public abstract void use(WeaponEquipableCombatItem weapon);
+
+    public abstract void disuse(WeaponEquipableCombatItem weapon);
 
 }

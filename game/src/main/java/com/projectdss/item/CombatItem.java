@@ -10,17 +10,10 @@ import com.proyectdss.Rarity;
  */
 public abstract class CombatItem extends Item {
 
-    protected boolean merged;
-
     public CombatItem() {}
 
     public CombatItem(int id, String name, Rarity rarity, String description) {
-        super(id, name, rarity, description);
-        this.merged = false;
-    }
-
-    public boolean isMerged() {
-        return merged;
+        super(id, name, rarity, description);        
     }
 
 }

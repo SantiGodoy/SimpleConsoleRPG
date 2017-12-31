@@ -11,12 +11,21 @@ import com.proyectdss.Rarity;
  */
 public abstract class RuneCombatItem extends CombatItem {
 
+    protected boolean merged;
+
     public RuneCombatItem() {}
 
     public RuneCombatItem(int id, String name, Rarity rarity, String description) {
         super(id, name, rarity, description);
+        this.merged = false;
     }
 
-    public abstract int use();
+    public void setMerged(boolean merged) {
+        this.merged = merged;
+    }
+
+    public boolean isMerged() {
+        return merged;
+    }
 
 }
