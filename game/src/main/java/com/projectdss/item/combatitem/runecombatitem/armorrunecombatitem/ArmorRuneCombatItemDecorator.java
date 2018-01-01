@@ -1,6 +1,5 @@
 package com.proyectdss.item.combatitem.runecombatitem.armorrunecombatitem;
 
-import java.util.*;
 import com.proyectdss.Rarity;
 import com.proyectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
 
@@ -20,17 +19,17 @@ public abstract class ArmorRuneCombatItemDecorator extends ArmorRuneCombatItem {
         this.rune = rune;
     }
 
-    @override
+    @Override
     public int getFirm() {
         return rune.getFirm();
     }
 
-    @override
+    @Override
     public void use(ArmorEquipableCombatItem armor) {
         rune.use(armor);
     }
 
-    @override
+    @Override
     public void disuse(ArmorEquipableCombatItem armor) {
         rune.disuse(armor);
     }

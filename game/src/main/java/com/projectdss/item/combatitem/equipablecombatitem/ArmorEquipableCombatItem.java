@@ -1,6 +1,6 @@
 package com.proyectdss.item.combatitem.equipablecombatitem;
 
-import java.util.*;
+import java.util.Set;
 import com.proyectdss.Rarity;
 import com.proyectdss.Character;
 import com.proyectdss.ElementType;
@@ -16,12 +16,12 @@ public class ArmorEquipableCombatItem extends EquipableCombatItem {
     private int baseDefense;
     private ElementType type;
     private int reflect;
-    private List<ArmorRuneCombatItem> runes;
+    private Set<ArmorRuneCombatItem> runes;
     
     public ArmorEquipableCombatItem() {}
 
     public ArmorEquipableCombatItem(int id, String name, Rarity rarity, String description, int maxRunes,
-                                    int baseDefense, List<ArmorRuneCombatItem> runes) {
+                                    int baseDefense, Set<ArmorRuneCombatItem> runes) {
         super(id, name, rarity, description, maxRunes);
         this.baseDefense = baseDefense;
         type = BASIC;
@@ -64,12 +64,12 @@ public class ArmorEquipableCombatItem extends EquipableCombatItem {
         return reflect;
     }
 
-    public List<ArmorRuneCombatItem> getRunes() {
+    public Set<ArmorRuneCombatItem> getRunes() {
         return runes;
     }
 
 
-    @override
+    @Override
     public void use(Character player1, Character player 2) {
         int damage = player1.getStrength() - (player2.getDefense() + baseDefense);
 

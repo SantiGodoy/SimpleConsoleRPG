@@ -1,6 +1,5 @@
 package com.proyectdss.item.combatitem.runecombatitem.armorrunecombatitem;
 
-import java.util.*;
 import com.proyectdss.Rarity;
 import com.proyectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
 
@@ -20,17 +19,17 @@ public class FirmArmorRuneCombatItem extends ArmorRuneCombatItem {
         this.firm = firm;
     }
 
-    @override
+    @Override
     public int getFirm() {
         return firm;
     }
 
-    @override
+    @Override
     public void use(ArmorEquipableCombatItem armor) {
         armor.setBaseDefense(armor.getBaseDefense() + firm);
     }
 
-    @override
+    @Override
     public void disuse(ArmorEquipableCombatItem armor) {
         armor.setBaseDefense(armor.getBaseDefense() - firm);
     }

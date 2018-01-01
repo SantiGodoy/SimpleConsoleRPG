@@ -1,6 +1,5 @@
 package com.proyectdss.item;
 
-import java.util.*;
 import com.proyectdss.Rarity;
 
 /**

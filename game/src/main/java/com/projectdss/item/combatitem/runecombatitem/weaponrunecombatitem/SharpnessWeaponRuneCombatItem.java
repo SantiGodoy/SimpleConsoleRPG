@@ -1,6 +1,5 @@
 package com.proyectdss.item.combatitem.runecombatitem.weaponrunecombatitem;
 
-import java.util.*;
 import com.proyectdss.Rarity;
 import com.proyectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 
@@ -20,17 +19,17 @@ public class SharpnessWeaponRuneCombatItem extends WeaponRuneCombatItem {
         this.sharpness = sharpness;
     }
 
-    @override
+    @Override
     public int getSharpness() {
         return sharpness;
     }
 
-    @override
+    @Override
     public void use(WeaponEquipableCombatItem weapon) {
         weapon.setBaseDamage(weapon.getBaseDamage() + sharpness);
     }
 
-    @override
+    @Override
     public void disuse(WeaponEquipableCombatItem weapon) {
         weapon.setBaseDamage(weapon.getBaseDamage() - sharpness);
     }

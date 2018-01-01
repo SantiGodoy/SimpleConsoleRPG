@@ -1,6 +1,6 @@
 package com.proyectdss.item.combatitem.equipablecombatitem;
 
-import java.util.*;
+import java.util.Set;
 import com.proyectdss.Rarity;
 import com.proyectdss.Character;
 import com.proyectdss.ElementType;
@@ -17,7 +17,7 @@ public class WeaponEquipableCombatItem extends EquipableCombatItem {
     private int trueDamage;
     private ElementType type;
     private int lifesteal;
-    private List<WeaponRuneCombatItem> runes;
+    private Set<WeaponRuneCombatItem> runes;
 
     public WeaponEquipableCombatItem() {}
     
@@ -74,12 +74,12 @@ public class WeaponEquipableCombatItem extends EquipableCombatItem {
         return lifesteal;
     }
 
-    public List<WeaponRuneCombatItem> getRunes() {
+    public Set<WeaponRuneCombatItem> getRunes() {
         return runes;
     }
 
 
-    @override
+    @Override
     public void use(Character player1, Character player 2) {
         int damage = player1.getStrength() + baseDamage - player2.getDefense();
 

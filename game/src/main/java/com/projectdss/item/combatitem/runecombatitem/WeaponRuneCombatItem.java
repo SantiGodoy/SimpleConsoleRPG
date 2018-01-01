@@ -1,6 +1,5 @@
 package com.proyectdss.item.combatitem.runecombatitem;
 
-import java.util.*;
 import com.proyectdss.Rarity;
 import com.proyectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 

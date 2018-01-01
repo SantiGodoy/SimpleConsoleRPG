@@ -1,6 +1,5 @@
 package com.proyectdss.item.consumableitem;
 
-import java.util.*;
 import com.proyectdss.Rarity;
 import com.proyectdss.MainCharacter;
 
@@ -21,7 +20,7 @@ public class MultiConsumableItem extends ConsumableItem {
         this.recoveryMana = recoveryMana;
     }
 
-    @override
+    @Override
     public void use(MainCharacter player) {
         player.setCurrentHealth(player.getCurrentHealth + recoveryHealth);
         player.setCurrentMana(player.getCurrentMana + recoveryMana);

@@ -1,6 +1,5 @@
 package com.proyectdss.item.combatitem.runecombatitem.weaponrunecombatitem;
 
-import java.util.*;
 import com.proyectdss.Rarity;
 import com.proyectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 
@@ -20,13 +19,13 @@ public class TrueDamageWeaponRuneCombatItem extends WeaponRuneCombatItemDecorato
         this.trueDamage = trueDamage;
     }
 
-    @override
+    @Override
     public void use(WeaponEquipableCombatItem weapon) {
         super.use(weapon);
         weapon.setTrueDamage(weapon.getTrueDamage() + trueDamage);
     }
 
-    @override
+    @Override
     public void disuse(WeaponEquipableCombatItem weapon) {
         super.disuse(weapon);
         weapon.setTrueDamage(weapon.getTrueDamage() - trueDamage);

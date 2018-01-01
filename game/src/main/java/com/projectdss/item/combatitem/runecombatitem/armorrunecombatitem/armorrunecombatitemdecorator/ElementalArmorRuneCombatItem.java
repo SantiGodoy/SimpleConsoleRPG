@@ -1,6 +1,5 @@
 package com.proyectdss.item.combatitem.runecombatitem.armorrunecombatitem;
 
-import java.util.*;
 import com.proyectdss.Rarity;
 import com.proyectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
 import com.proyectdss.ElementType;
@@ -21,13 +20,13 @@ public class ElementalArmorRuneCombatItem extends ArmorRuneCombatItemDecorator {
         this.type = type;
     }
 
-    @override
+    @Override
     public void use(ArmorEquipableCombatItem armor) {
         super.use(armor);
         armor.setType(type);
     }
 
-    @override
+    @Override
     public void disuse(ArmorEquipableCombatItem armor) {
         super.disuse(armor);
         armor.setType(BASIC);

@@ -1,6 +1,5 @@
 package com.proyectdss.item.combatitem;
 
-import java.util.*;
 import com.proyectdss.Rarity;
 
 /**
