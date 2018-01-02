@@ -1,15 +1,14 @@
+package com.projectdss.event;
 
-import java.util.*;
+import com.projectdss.Event;
 
 /**
+ * Represents the different events in a minizone
  * 
+ * @author Santiago Godoy Poce
  */
 public abstract class MinizoneEvent extends Event {
-
-    /**
-     * Default constructor
-     */
-    public MinizoneEvent() {
+    public MinizoneEvent(int id, String message) {
+        super(id, message);
     }
-
 }

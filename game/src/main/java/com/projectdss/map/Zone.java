@@ -11,13 +11,16 @@ public class Zone {
     private final int id;
     private final String name;
     private final String description;
-    private final Minizone[] minizones;
+    private boolean[][] adjacencyMatrixMinizone;
+    private final Set<Minizone> minizones;
     private final Set<Event> events;
     
-    public Zone(int id, String name, String description, Minizone[] minizones, Set<Event> events) {
+    public Zone(int id, String name, String description,
+        boolean[][] adjacencyMatrixMinizone, Set<Minizone> minizones, Set<Event> events) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.adjacencyMatrixMinizone = adjacencyMatrixMinizone;
         this.minizones = minizones;
         this.events = events;
     }
@@ -34,11 +37,15 @@ public class Zone {
         return description;
     }
 
-    public int length() {
-        return minizones.length;
+    public void invertAdjacencyMinizone(int i, int j) {
+        adjacencyMatrixMinizone[i][j] = !adjacencyMatrixMinizone[i][j];
     }
 
-    public Minizone[] getMinizones() {
+    public int length() {
+        return minizones.size();
+    }
+
+    public Set<Minizone> getMinizones() {
         return minizones;
     }
 

@@ -1,15 +1,16 @@
+package com.projectdss.event;
 
-import java.util.*;
+import com.projectdss.Event;
 
 /**
  * 
  */
-public class InventoryEvent extends InventoryEvent {
-
-    /**
-     * Default constructor
-     */
-    public InventoryEvent() {
+public class InventoryEvent extends Event {
+    public InventoryEvent(int id, String description) {
+        super(id, description);
     }
 
+    public void run() {
+        
+    }
 }

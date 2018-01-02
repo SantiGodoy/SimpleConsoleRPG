@@ -1,15 +1,14 @@
+package com.projectdss.event;
 
-import java.util.*;
+import com.projectdss.Event;
 
 /**
+ * Represents the different events in a zone.
  * 
+ * @author Santiago Godoy Poce
  */
 public abstract class ZoneEvent extends Event {
-
-    /**
-     * Default constructor
-     */
-    public ZoneEvent() {
+    public ZoneEvent(int id, String description) {
+        super(id, description);
     }
-
 }

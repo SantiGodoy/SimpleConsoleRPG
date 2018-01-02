@@ -2,70 +2,35 @@
 package com.projectdss;
 
 /**
+ * Represents the different events that the main character 
+ * can encounter during the game
  * 
+ * @author Santiago Godoy Poce
  */
 public abstract class Event {
-
-    /**
-     * Default constructor
-     */
-    public Event() {
-    }
-
-    /**
-     * 
-     */
     protected int id;
+    protected String description;
 
-    /**
-     * 
-     */
-    protected String message;
-
-
-    /**
-     * @param id 
-     * @param message
-     */
-    public void Event(int id, String message) {
-        // TODO implement here
+    public Event(int id, String description) {
+        this.id = id;
+        this.description = description;    
     }
 
-    /**
-     * @param id
-     */
     public void setId(int id) {
-        // TODO implement here
+        this.id = id;
     }
 
-    /**
-     * @param message
-     */
-    public void setMessage(String message) {
-        // TODO implement here
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    /**
-     * @return
-     */
     public int getId() {
-        // TODO implement here
-        return 0;
+        return id;
     }
 
-    /**
-     * @return
-     */
-    public String getMessage() {
-        // TODO implement here
-        return "";
+    public String getDescription() {    
+        return description;
     }
 
-    /**
-     * 
-     */
-    public void run() {
-        // TODO implement here
-    }
-
+    public abstract void run();
 }
