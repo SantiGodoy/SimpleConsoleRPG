@@ -1,7 +1,8 @@
-package com.proyectdss.item.combatitem.runecombatitem.armorrunecombatitem;
+package com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem;
 
-import com.proyectdss.Rarity;
-import com.proyectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
+import com.projectdss.Rarity;
+import com.projectdss.item.combatitem.runecombatitem.ArmorRuneCombatItem;
+import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
 
 /**
  * @author JoseCorrero
@@ -11,7 +12,7 @@ import com.proyectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatIt
  */
 public abstract class ArmorRuneCombatItemDecorator extends ArmorRuneCombatItem {
 
-    protected ArmorRuneCombatItem rune;
+    protected final ArmorRuneCombatItem rune;
 
     public ArmorRuneCombatItemDecorator(int id, String name, Rarity rarity, String description, 
                                          ArmorRuneCombatItem rune) {
@@ -20,8 +21,8 @@ public abstract class ArmorRuneCombatItemDecorator extends ArmorRuneCombatItem {
     }
 
     @Override
-    public int getFirm() {
-        return rune.getFirm();
+    public int getFirmness() {
+        return rune.getFirmness();
     }
 
     @Override

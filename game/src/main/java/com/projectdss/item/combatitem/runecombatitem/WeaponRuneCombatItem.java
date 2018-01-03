@@ -1,7 +1,8 @@
-package com.proyectdss.item.combatitem.runecombatitem;
+package com.projectdss.item.combatitem.runecombatitem;
 
-import com.proyectdss.Rarity;
-import com.proyectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
+import com.projectdss.Rarity;
+import com.projectdss.item.combatitem.RuneCombatItem;
+import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 
 /**
  * @author JoseCorrero

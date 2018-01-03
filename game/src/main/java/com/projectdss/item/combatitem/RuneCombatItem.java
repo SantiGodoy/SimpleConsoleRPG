@@ -1,6 +1,7 @@
-package com.proyectdss.item.combatitem;
+package com.projectdss.item.combatitem;
 
-import com.proyectdss.Rarity;
+import com.projectdss.Rarity;
+import com.projectdss.item.CombatItem;
 
 /**
  * @author JoseCorrero

@@ -1,7 +1,8 @@
-package com.proyectdss.item;
+package com.projectdss.item;
 
-import com.proyectdss.Rarity;
-import com.proyectdss.MainCharacter;
+import com.projectdss.Item;
+import com.projectdss.Rarity;
+import com.projectdss.Character;
 
 /**
  * @author JoseCorrero
@@ -16,6 +17,6 @@ public abstract class ConsumableItem extends Item {
         super(id, name, rarity, description);
     }
 
-    public abstract void use(MainCharacter player);
+    public abstract void use(Character player);
 
 }

@@ -1,6 +1,7 @@
 package com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem.armorrunecombatitemdecorator;
 
 import com.projectdss.Rarity;
+import com.projectdss.ElementType;
 import com.projectdss.item.combatitem.runecombatitem.ArmorRuneCombatItem;
 import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
 import com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem.ArmorRuneCombatItemDecorator;
@@ -8,29 +9,29 @@ import com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem.ArmorRu
 /**
  * @author JoseCorrero
  * 
- * Class ReflectArmorRuneCombatItem represents any ArmorRuneCombatItemDecorator that 
- * can be added to a ArmorEquipableCombatItem to enhance its reflect.
+ * Class ElementArmorRuneCombatItem represents any ArmorRuneCombatItemDecorator that 
+ * can be added to a ArmorEquipableCombatItem to give it an elemental type.
  */
-public class ReflectArmorRuneCombatItem extends ArmorRuneCombatItemDecorator {
+public class ElementArmorRuneCombatItem extends ArmorRuneCombatItemDecorator {
 
-    private final int reflect;
+    private final ElementType type;
 
-    public ReflectArmorRuneCombatItem(int id, String name, Rarity rarity, String description,  
-                                      ArmorRuneCombatItem rune, int reflect) {
+    public ElementArmorRuneCombatItem(int id, String name, Rarity rarity, String description, 
+                                      ArmorRuneCombatItem rune, ElementType type) {
         super(id, name, rarity, description, rune);
-        this.reflect = reflect;
+        this.type = type;
     }
 
     @Override
     public void use(ArmorEquipableCombatItem armor) {
         super.use(armor);
-        armor.setReflect(armor.getReflect() + reflect);
+        armor.setType(type);
     }
 
     @Override
     public void disuse(ArmorEquipableCombatItem armor) {
         super.disuse(armor);
-        armor.setReflect(armor.getReflect() - reflect);
+        armor.setType(ElementType.BASIC);
     }
 
 }

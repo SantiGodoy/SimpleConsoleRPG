@@ -1,4 +1,4 @@
-package com.proyectdss;
+package com.projectdss;
 
 import com.projectdss.Rarity;
 
@@ -9,10 +9,10 @@ import com.projectdss.Rarity;
  */
 public abstract class Item {
 
-    protected int id;
-    protected String name;
-    protected Rarity rarity;
-    protected String description;
+    protected final int id;
+    protected final String name;
+    protected final Rarity rarity;
+    protected final String description;
 
     public Item() {}
 

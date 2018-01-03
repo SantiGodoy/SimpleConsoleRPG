@@ -1,9 +1,11 @@
-package com.proyectdss.item.combatitem.equipablecombatitem;
+package com.projectdss.item.combatitem.equipablecombatitem;
 
 import java.util.Set;
-import com.proyectdss.Rarity;
-import com.proyectdss.Character;
-import com.proyectdss.ElementType;
+import com.projectdss.Rarity;
+import com.projectdss.Character;
+import com.projectdss.ElementType;
+import com.projectdss.item.combatitem.EquipableCombatItem;
+import com.projectdss.item.combatitem.runecombatitem.WeaponRuneCombatItem;
 
 /**
  * @author JoseCorrero
@@ -15,19 +17,18 @@ public class WeaponEquipableCombatItem extends EquipableCombatItem {
     
     private int baseDamage;
     private int trueDamage;
-    private ElementType type;
     private int lifesteal;
     private Set<WeaponRuneCombatItem> runes;
 
     public WeaponEquipableCombatItem() {}
     
     public WeaponEquipableCombatItem(int id, String name, Rarity rarity, String description, int maxRunes,
-                                     int baseDamage, List<WeaponRuneCombatItem> runes) {
-        super(id, name, rarity, description, maxRunes);
+                                     ElementType type, int baseDamage, int trueDamage, int lifesteal,
+                                     Set<WeaponRuneCombatItem> runes) {
+        super(id, name, rarity, description, maxRunes, type);
         this.baseDamage = baseDamage;
-        trueDamage = 0;
-        type = BASIC;
-        lifesteal = 0;
+        this.trueDamage = trueDamage;
+        this.lifesteal = lifesteal;
         this.runes = runes;
     }
 
@@ -38,10 +39,6 @@ public class WeaponEquipableCombatItem extends EquipableCombatItem {
 
     public void setTrueDamage(int trueDamage) {
         this.trueDamage = trueDamage;
-    }
-
-    public void setType(ElementType type) {
-        this.type = type;
     }
 
     public void setLifesteal(int lifesteal) {
@@ -66,10 +63,6 @@ public class WeaponEquipableCombatItem extends EquipableCombatItem {
         return trueDamage;
     }
 
-    public ElementType getType() {
-        return type;
-    }
-
     public int getLifesteal() {
         return lifesteal;
     }
@@ -80,11 +73,11 @@ public class WeaponEquipableCombatItem extends EquipableCombatItem {
 
 
     @Override
-    public void use(Character player1, Character player 2) {
+    public void use(Character player1, Character player2) {
         int damage = player1.getStrength() + baseDamage - player2.getDefense();
 
         if(damage > 0) {
-            damage *= ElementType.elementalMatrix[type][player2.getType()];
+            damage *= ElementType.getElementDamage(type, player2.getType());
             
             if(trueDamage > 0)
                 player2.setCurrentHealth(player2.getCurrentHealth() - (damage + trueDamage));

@@ -1,7 +1,8 @@
-package com.proyectdss.item.combatitem.runecombatitem.weaponrunecombatitem;
+package com.projectdss.item.combatitem.runecombatitem.weaponrunecombatitem;
 
-import com.proyectdss.Rarity;
-import com.proyectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
+import com.projectdss.Rarity;
+import com.projectdss.item.combatitem.runecombatitem.WeaponRuneCombatItem;
+import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 
 /**
  * @author JoseCorrero
@@ -11,7 +12,7 @@ import com.proyectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatI
  */
 public abstract class WeaponRuneCombatItemDecorator extends WeaponRuneCombatItem {
 
-    protected WeaponRuneCombatItem rune;
+    protected final WeaponRuneCombatItem rune;
 
     public WeaponRuneCombatItemDecorator(int id, String name, Rarity rarity, String description, 
                                          WeaponRuneCombatItem rune) {

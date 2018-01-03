@@ -1,7 +1,8 @@
-package com.proyectdss.item.combatitem.runecombatitem.weaponrunecombatitem;
+package com.projectdss.item.combatitem.runecombatitem.weaponrunecombatitem;
 
-import com.proyectdss.Rarity;
-import com.proyectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
+import com.projectdss.Rarity;
+import com.projectdss.item.combatitem.runecombatitem.WeaponRuneCombatItem;
+import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 
 /**
  * @author JoseCorrero
@@ -11,9 +12,9 @@ import com.proyectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatI
  */
 public class SharpnessWeaponRuneCombatItem extends WeaponRuneCombatItem {
 
-    private int sharpness;
+    private final int sharpness;
 
-    public WeaponRuneCombatItemDecorator(int id, String name, Rarity rarity, String description, 
+    public SharpnessWeaponRuneCombatItem(int id, String name, Rarity rarity, String description, 
                                          int sharpness) {
         super(id, name, rarity, description);
         this.sharpness = sharpness;

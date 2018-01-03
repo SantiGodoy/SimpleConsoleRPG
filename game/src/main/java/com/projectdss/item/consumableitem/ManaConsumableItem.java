@@ -1,7 +1,8 @@
-package com.proyectdss.item.consumableitem;
+package com.projectdss.item.consumableitem;
 
-import com.proyectdss.Rarity;
-import com.proyectdss.MainCharacter;
+import com.projectdss.Rarity;
+import com.projectdss.Character;
+import com.projectdss.item.ConsumableItem;
 
 /**
  * @author JoseCorrero
@@ -11,7 +12,7 @@ import com.proyectdss.MainCharacter;
  */
 public class ManaConsumableItem extends ConsumableItem {
 
-    private int recoveryMana;
+    private final int recoveryMana;
 
     public ManaConsumableItem(int id, String name, Rarity rarity, String description, int recoveryMana) {
         super(id, name, rarity, description);
@@ -19,7 +20,7 @@ public class ManaConsumableItem extends ConsumableItem {
     }
 
     @Override
-    public void use(MainCharacter player) {
+    public void use(Character player) {
         player.setCurrentMana(player.getCurrentMana() + recoveryMana);
     }
     

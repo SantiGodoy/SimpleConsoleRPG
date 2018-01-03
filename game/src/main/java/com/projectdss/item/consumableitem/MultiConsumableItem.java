@@ -1,7 +1,8 @@
-package com.proyectdss.item.consumableitem;
+package com.projectdss.item.consumableitem;
 
-import com.proyectdss.Rarity;
-import com.proyectdss.MainCharacter;
+import com.projectdss.Rarity;
+import com.projectdss.Character;
+import com.projectdss.item.ConsumableItem;
 
 /**
  * @author JoseCorrero
@@ -11,8 +12,8 @@ import com.proyectdss.MainCharacter;
  */
 public class MultiConsumableItem extends ConsumableItem {
 
-    private int recoveryHealth;
-    private int recoveryMana;
+    private final int recoveryHealth;
+    private final int recoveryMana;
 
     public MultiConsumableItem(int id, String name, Rarity rarity, String description, int recoveryHealth, int recoveryMana) {
         super(id, name, rarity, description);
@@ -21,9 +22,9 @@ public class MultiConsumableItem extends ConsumableItem {
     }
 
     @Override
-    public void use(MainCharacter player) {
-        player.setCurrentHealth(player.getCurrentHealth + recoveryHealth);
-        player.setCurrentMana(player.getCurrentMana + recoveryMana);
+    public void use(Character player) {
+        player.setCurrentHealth(player.getCurrentHealth() + recoveryHealth);
+        player.setCurrentMana(player.getCurrentMana() + recoveryMana);
     }
 
 }

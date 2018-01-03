@@ -12,13 +12,17 @@ public enum ElementType {
     ELECTRIC,
     WATER;
 
-    public static final double[][] elementalMatrix = {{1,    1,    1,    1,    1},
+    public static final double[][] ELEMENT_DAMAGE = {{1,    1,    1,    1,    1},
                                                       {1, 0.75,    2,    1,  0.5},
                                                       {1,  0.5, 0.75,    2,    1},
                                                       {1,    1,  0.5, 0.75,    2},
                                                       {1,    2,    1,  0.5, 0.75}};
 
-    @override
+    public static double getElementDamage(ElementType type1, ElementType type2) {
+        return ELEMENT_DAMAGE[type1.ordinal()][type2.ordinal()];
+    }
+
+    @Override
     public String toString() {
         switch(this) {
             case BASIC:     return "Basic";

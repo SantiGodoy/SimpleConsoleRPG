@@ -1,7 +1,9 @@
-package com.proyectdss.item.combatitem.runecombatitem.weaponrunecombatitem;
+package com.projectdss.item.combatitem.runecombatitem.weaponrunecombatitem.weaponrunecombatitemdecorator;
 
-import com.proyectdss.Rarity;
-import com.proyectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
+import com.projectdss.Rarity;
+import com.projectdss.item.combatitem.runecombatitem.WeaponRuneCombatItem;
+import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
+import com.projectdss.item.combatitem.runecombatitem.weaponrunecombatitem.WeaponRuneCombatItemDecorator;
 
 /**
  * @author JoseCorrero
@@ -11,7 +13,7 @@ import com.proyectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatI
  */
 public class TrueDamageWeaponRuneCombatItem extends WeaponRuneCombatItemDecorator {
 
-    private int trueDamage;
+    private final int trueDamage;
 
     public TrueDamageWeaponRuneCombatItem(int id, String name, Rarity rarity, String description, 
                                           WeaponRuneCombatItem rune, int trueDamage) {

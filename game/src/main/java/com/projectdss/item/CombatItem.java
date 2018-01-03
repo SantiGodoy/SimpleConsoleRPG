@@ -1,6 +1,7 @@
-package com.proyectdss.item;
+package com.projectdss.item;
 
-import com.proyectdss.Rarity;
+import com.projectdss.Item;
+import com.projectdss.Rarity;
 
 /**
  * @author JoseCorrero
@@ -12,7 +13,7 @@ public abstract class CombatItem extends Item {
     public CombatItem() {}
 
     public CombatItem(int id, String name, Rarity rarity, String description) {
-        super(id, name, rarity, description);        
+        super(id, name, rarity, description);
     }
 
 }

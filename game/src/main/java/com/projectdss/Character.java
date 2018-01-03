@@ -135,7 +135,7 @@ public abstract class Character {
         return agility;
     }
    
-    public TypeElement getType(){
+    public ElementType getType(){
         return type;
     }
 

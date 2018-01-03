@@ -1,9 +1,11 @@
-package com.proyectdss.item.combatitem.equipablecombatitem;
+package com.projectdss.item.combatitem.equipablecombatitem;
 
 import java.util.Set;
-import com.proyectdss.Rarity;
-import com.proyectdss.Character;
-import com.proyectdss.ElementType;
+import com.projectdss.Rarity;
+import com.projectdss.Character;
+import com.projectdss.ElementType;
+import com.projectdss.item.combatitem.EquipableCombatItem;
+import com.projectdss.item.combatitem.runecombatitem.ArmorRuneCombatItem;
 
 /**
  * @author JoseCorrero
@@ -14,28 +16,23 @@ import com.proyectdss.ElementType;
 public class ArmorEquipableCombatItem extends EquipableCombatItem {
     
     private int baseDefense;
-    private ElementType type;
     private int reflect;
     private Set<ArmorRuneCombatItem> runes;
     
     public ArmorEquipableCombatItem() {}
 
     public ArmorEquipableCombatItem(int id, String name, Rarity rarity, String description, int maxRunes,
-                                    int baseDefense, Set<ArmorRuneCombatItem> runes) {
-        super(id, name, rarity, description, maxRunes);
+                                    ElementType type, int baseDefense, int reflect,
+                                    Set<ArmorRuneCombatItem> runes) {
+        super(id, name, rarity, description, maxRunes, type);
         this.baseDefense = baseDefense;
-        type = BASIC;
-        reflect = 0;
+        this.reflect = reflect;
         this.runes = runes;
     }
 
 
     public void setBaseDefense(int baseDefense) {
         this.baseDefense = baseDefense;
-    }
-
-    public void setType(ElementType type) {
-        this.type = type;
     }
 
     public void setReflect(int reflect) {
@@ -56,10 +53,6 @@ public class ArmorEquipableCombatItem extends EquipableCombatItem {
         return baseDefense;
     }
 
-    public ElementType getType() {
-        return type;
-    }
-
     public int getReflect() {
         return reflect;
     }
@@ -70,11 +63,11 @@ public class ArmorEquipableCombatItem extends EquipableCombatItem {
 
 
     @Override
-    public void use(Character player1, Character player 2) {
+    public void use(Character player1, Character player2) {
         int damage = player1.getStrength() - (player2.getDefense() + baseDefense);
 
         if(damage > 0) {
-            damage *= ElementType.elementalMatrix[player2.getType()][type];
+            damage *= ElementType.getElementDamage(player2.getType(), type);
             
             player2.setCurrentHealth(player2.getCurrentHealth() - damage);
 

@@ -1,6 +1,7 @@
 package com.projectdss.item.combatitem.runecombatitem.weaponrunecombatitem.weaponrunecombatitemdecorator;
 
 import com.projectdss.Rarity;
+import com.projectdss.ElementType;
 import com.projectdss.item.combatitem.runecombatitem.WeaponRuneCombatItem;
 import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 import com.projectdss.item.combatitem.runecombatitem.weaponrunecombatitem.WeaponRuneCombatItemDecorator;
@@ -8,29 +9,29 @@ import com.projectdss.item.combatitem.runecombatitem.weaponrunecombatitem.Weapon
 /**
  * @author JoseCorrero
  * 
- * Class LifestealWeaponRuneCombatItem represents any WeaponRuneCombatItemDecorator that 
- * can be added to a WeaponEquipableCombatItem to enhance its lifesteal.
+ * Class ElementWeaponRuneCombatItem represents any WeaponRuneCombatItemDecorator that 
+ * can be added to a WeaponEquipableCombatItem to give it an elemental type.
  */
-public class LifestealWeaponRuneCombatItem extends WeaponRuneCombatItemDecorator {
+public class ElementWeaponRuneCombatItem extends WeaponRuneCombatItemDecorator {
 
-    private final int lifesteal;
+    private final ElementType type;
 
-    public LifestealWeaponRuneCombatItem(int id, String name, Rarity rarity, String description, 
-                                         WeaponRuneCombatItem rune, int lifesteal) {
+    public ElementWeaponRuneCombatItem(int id, String name, Rarity rarity, String description, 
+                                       WeaponRuneCombatItem rune, ElementType type) {
         super(id, name, rarity, description, rune);
-        this.lifesteal = lifesteal;
+        this.type = type;
     }
 
     @Override
     public void use(WeaponEquipableCombatItem weapon) {
         super.use(weapon);
-        weapon.setLifesteal(weapon.getLifesteal() + lifesteal);
+        weapon.setType(type);
     }
 
     @Override
     public void disuse(WeaponEquipableCombatItem weapon) {
         super.disuse(weapon);
-        weapon.setLifesteal(weapon.getLifesteal() - lifesteal);
+        weapon.setType(ElementType.BASIC);
     }
 
 }
