@@ -1,6 +1,8 @@
 
 package com.projectdss.character;
 
+import java.lang.annotation.ElementType;
+
 import com.projectdss.Character;
 
 /**
@@ -9,29 +11,22 @@ import com.projectdss.Character;
 public class MainCharacter extends Character {
 
     private String gender;    
-    private int experiencePoints;
+    private int xp;
     private Inventory inventory;
 
     public MainCharacter() {
     }
 
-    public MainCharacter(int id, String name, int health, int mana, int strength, int defense, int agility,
-            Set<Ability> abilities, String gender) {
-        super(id, name, 1, health, mana, strength, defense, agility, abilities);
-        this.experiencePoints = 0;
+    public MainCharacter(int id, String name, int health, int mana, int strength, int defense, int agility, ElementType type, Set<Ability> abilities, String gender) {
+        super(id, name, 1, health, mana, strength, defense, agility, BASIC, abilities);
+        this.xp = 0;
         this.gender = gender;
     }
 
-    public void incrementLevel(){
-
-    }
-
     public void setXP(int xp) {
-        experiencePoints = experiencePoints + xp;
-
-        if (experiencePoints >= (100 * level)){
+        while (xp >= (100 * level)){
           ++this.level;
-          this.experiencePoints %= (100 * level);
+          xp -= (100 * level);
         }      
     }
 
@@ -39,24 +34,24 @@ public class MainCharacter extends Character {
         return experiencePoints;
     }
 
-    public void getInventory(){
+    public void getInventory() {
         return inventory;
     }
 
-    public boolean hasWeapon(){
-
+    public boolean hasWeapon() {
+        return inventory.hasWeaponEquipped();
     }
 
-    public void hasArmor(){
-
+    public boolean hasArmor(){
+        return inventory.hasArmorEquipped();
     }
 
     public WeaponEquipableCombatItem getWeapon(){
-
+        return inventory.getEquippedWeapon();
     }
 
     public ArmorEquipableCombatItem getArmor(){
-
+        return inventory.getEquippedArmor();
     }
 
 }

@@ -1,9 +1,7 @@
 package com.projectdss;
 
-import java.util.*;
-
-import javax.lang.model.element.TypeElement;
-
+import java.lang.annotation.ElementType;
+import java.util.Set;
 /**
  * 
  */
@@ -26,7 +24,7 @@ public abstract class Character {
     public Character() {
     }
 
-    public Character(int id, String name, int level, int health, int mana, int strength, int defense, int agility, TypeElement type, Set<Ability> abilities) {
+    public Character(int id, String name, int level, int health, int mana, int strength, int defense, int agility, ElementType type, Set<Ability> abilities) {
         this.id = id;
         this.name = name;
         this.level = level;
@@ -56,41 +54,37 @@ public abstract class Character {
             }
         }
     }
-
+    
     public void setMaxMana(int mana) {
         this.maxMana = mana;
     }
-    //If mana < 0 the currentMana isn't 0, only we can't use the ability.
+    
     public void setCurrentMana(int mana) {
         if(mana > maxMana){
             this.currentMana = maxMana;
-        } else {
-            if(mana < 0){
-                this.currentMana = 0;
-            } else {
-                this.currentMana = mana;
-            }
+        } else {         
+             this.currentMana = mana;           
         }
     }
 
-    public void setStrength (int strength){
+    public void setStrength(int strength) {
         this.strength = strength;
     }
 
-    public void setDefense (int defense){
+    public void setDefense(int defense) {
         this.defense = defense;
     }
 
-    public void setAgility (int agility){
+    public void setAgility(int agility) {
         this.agility = agility;
     }
 
-    public void addAbility (Ability ability){
-
+    public void addAbility(Ability ability) {
+        abilities.add(ability);
     }
 
-    public void removeAbility (Ability ability){
-        
+    public void removeAbility(Ability ability) {
+        abilities.remove(ability);
     }
 
     public int getId() {
@@ -135,7 +129,7 @@ public abstract class Character {
         return agility;
     }
    
-    public TypeElement getType(){
+    public ElementType getType() {
         return type;
     }
 
@@ -143,7 +137,7 @@ public abstract class Character {
         return abilities;
     }
 
-    public Boolean isAlive() {
+    public boolean isAlive() {
         return currentHealth != 0;
     }
 
