@@ -4,11 +4,11 @@ import com.projectdss.event.InventoryEvent;
 import com.projectdss.inventory.Inventory;
 import com.projectdss.character.MainCharacter;
 import com.projectdss.map.Minizone;
-import com.projectdss.character.Enemy;
+import com.projectdss.character.EnemyCharacter;
 import com.projectdss.Character;
 import com.projectdss.Event;
-import com.projectdss.inventory.InventoryEvent;
-import com.proyectdss.Item;
+import com.projectdss.inventory.InventoryAction;
+import com.projectdss.Item;
 import com.projectdss.Ability;
 import java.util.Set;
 
@@ -21,7 +21,7 @@ public abstract class ConsoleOutput implements OutputHandler {
     }
 
     @Override
-    public void showAbilities(Ability abilities) {
+    public void showAbilities(Set<Ability> abilities) {
         for(Ability a: abilities)
             System.out.println(a.getId() + "- " + a.getName() + " (" + a.getDescription() + ")" + 
         " [" + a.getNecessaryMana() + "]");
@@ -51,7 +51,7 @@ public abstract class ConsoleOutput implements OutputHandler {
     }
 
     @Override
-    public void showEnemyInformation(Enemy enemy) {
+    public void showEnemyInformation(EnemyCharacter enemy) {
         System.out.println(enemy.getMessage());
         showCharacterInformation(enemy);
     }
@@ -66,14 +66,14 @@ public abstract class ConsoleOutput implements OutputHandler {
     public abstract void showWinMessage(String message);
 
     @Override
-    public void showEvents(Event events) {
+    public void showEvents(Set<Event> events) {
         for(Event e : events)    
             System.out.println(e.getId() + "- " + e.getDescription());
     }
 
     @Override
-    public void showInventoryEvents(InventoryEvent inventoryEvent) {
-        for(InventoryEvent ie : inventoryEvent)
+    public void showInventoryActions(Set<InventoryAction> inventoryAction) {
+        for(InventoryAction ie : inventoryAction)
             System.out.println(ie.getId() + "- " + ie.getDescription());
     }
 

@@ -33,5 +33,4 @@ public abstract class Event {
     }
 
     public abstract void run();
-    int a = 0;
 }

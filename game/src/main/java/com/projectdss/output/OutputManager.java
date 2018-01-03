@@ -4,19 +4,28 @@ import com.projectdss.output.OutputHandler;
 import com.projectdss.Ability;
 import com.projectdss.inventory.Inventory;
 import com.projectdss.character.MainCharacter;
-import com.projectdss.character.Enemy;
+import com.projectdss.character.EnemyCharacter;
 import com.projectdss.Character;
 import com.projectdss.Event;
-import com.projectdss.inventory.InventoryEvent;
+import com.projectdss.inventory.InventoryAction;
+import java.util.Set;
 
 public class OutputManager {
     private OutputHandler outputHandler;
+
+    public OutputManager(OutputHandler outputHandler) {
+        this.outputHandler = outputHandler;
+    }
+
+    public void setOutputHandler(OutputHandler outputHandler) {
+        this.outputHandler = outputHandler;
+    }
 
     void showInventory(Inventory inventory) {
         outputHandler.showInventory(inventory);
     }
 
-    void showAbilities(Ability abilities) {
+    void showAbilities(Set<Ability> abilities) {
         outputHandler.showAbilities(abilities);
     }
 
@@ -32,7 +41,7 @@ public class OutputManager {
         outputHandler.showMainCharacterInformation(player);
     }
 
-    void showEnemyInformation(Enemy enemy) {
+    void showEnemyInformation(EnemyCharacter enemy) {
         outputHandler.showEnemyInformation(enemy);
     }
 
@@ -48,12 +57,12 @@ public class OutputManager {
         outputHandler.showWinMessage(message);
     }
 
-    void showEvents(Event events) {
+    void showEvents(Set<Event> events) {
         outputHandler.showEvents(events);
     }
 
-    void showInventoryEvents(InventoryEvent inventoryEvent) {
-        outputHandler.showInventoryEvents(inventoryEvent);
+    void showInventoryActions(Set<InventoryAction> inventoryAction) {
+        outputHandler.showInventoryEvents(inventoryAction);
     }
 
     void showGlobalMenu() {
