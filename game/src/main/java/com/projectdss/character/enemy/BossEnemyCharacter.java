@@ -5,17 +5,17 @@ import java.util.*;
 /**
  * 
  */
-public class Boss extends Enemy {
+public class BossEnemyCharacter extends Enemy {
 
  
 
     private State state;
 
-    public Boss() {
+    public BossEnemyCharacter() {
     }
 
-    public Boss(int id, String name, int level, int health, int mana, int strength, int defense, int agility, ElementType type, Set<Ability> abilities, int xpDrop, String message, Map<Item, Integer> itemDrop) {
-    super(id, name, level, health, mana, strength, defense, agility, type, abilities,xpDrop, message, itemDrop);
+    public BossEnemyCharacter(int id, String name, int level, int health, int mana, int strength, int defense, int agility, ElementType type, Set<Ability> abilities, int xpDrop, String message, Map<Item, Integer> itemsDrop) {
+    super(id, name, level, health, mana, strength, defense, agility, type, abilities,xpDrop, message, itemsDrop);
     }
  
  
