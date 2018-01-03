@@ -10,17 +10,17 @@ import com.projectdss.character.Enemy;
  */
 public class Minizone {
     private final int id;
-    private final int idZone;
+    private final Zone zone;
     private final String name;
     private final String description;
     private Set<Event> events;
     private final int enemyProbability;
     private Enemy enemy;
 
-    public Minizone(int id, int idZone, String name, String description, Set<Event> events,
+    public Minizone(int id, Zone zone, String name, String description, Set<Event> events,
          int enemyProbability, Enemy enemy) {
             this.id = id;
-            this.idZone = idZone;
+            this.zone = zone;
             this.name = name;
             this.description = description;
             this.events = events;

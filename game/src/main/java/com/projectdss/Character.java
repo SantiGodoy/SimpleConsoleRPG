@@ -1,3 +1,4 @@
+package com.projectdss;
 
 import java.util.*;
 
@@ -33,11 +34,11 @@ public abstract class Character {
     }
 
   
-    public void setmaxHealth(int health) {
+    public void setMaxHealth(int health) {
         this.maxHealth = health;
     }
 
-    public void setcurrentHealth(int health) {
+    public void setCurrentHealth(int health) {
         if(health > maxHealth){
             this.currentHealth = maxHealth;
         } else {
@@ -63,11 +64,11 @@ public abstract class Character {
     }
 
   
-    public int getmaxHealth() {
+    public int getMaxHealth() {
         return maxHealth;
     }
 
-    public int getcurrentHealth() {
+    public int getCurrentHealth() {
         return currentHealth;
     }
     

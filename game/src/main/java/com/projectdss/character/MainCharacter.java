@@ -1,17 +1,15 @@
 
-import java.util.*;
+package com.projectdss.character;
+
+import com.projectdss.Character;
 
 /**
  * 
  */
 public class MainCharacter extends Character {
 
-    private int maxAbilityPoints;
-    private int currentAbilityPoints;
+    private int xp;
     private Inventory inventory;
-    private Equipment equipment;
-    private int experiencePoints;
-    private int money;
     private String gender;
 
     public MainCharacter() {
@@ -20,31 +18,8 @@ public class MainCharacter extends Character {
     public MainCharacter(int id, String name, int health, int abilityPoints, int strength, int agility, int defense,
             Set<Ability> abilities, String gender) {
         super(id, name, 1, health, strength, agility, defense, abilities);
-        this.maxAbilityPoints = abilityPoints;
-        this.currentAbilityPoints = abilityPoints;
-        this.experiencePoints = 0;
-        this.money = 0;
+        this.xp = xp;
         this.gender = gender;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
-    public void setAgility(int agility) {
-        this.agility = agility;
-    }
-
-    public void setDefense(int defense) {
-        this.defense = defense;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
     }
 
     public void setExperienceP(int xp) {

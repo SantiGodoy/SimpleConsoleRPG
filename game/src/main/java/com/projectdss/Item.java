@@ -1,6 +1,6 @@
 package com.proyectdss;
 
-import com.proyectdss.Rarity;
+import com.projectdss.Rarity;
 
 /**
  * @author JoseCorrero

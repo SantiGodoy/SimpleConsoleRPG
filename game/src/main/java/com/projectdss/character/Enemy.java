@@ -1,5 +1,6 @@
 
 package com.projectdss.character;
+import com.projectdss.Character;
 
 /**
  * 
