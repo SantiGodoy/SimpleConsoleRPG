@@ -1,4 +1,5 @@
 
+import java.lang.annotation.ElementType;
 import java.util.*;
 
 /**
@@ -13,10 +14,10 @@ public class Boss extends Enemy {
     public Boss() {
     }
 
-    public void Boss(int id, String name, int level, int health, int strength, int agility, int defense, Set<Ability> abilities, int xpDrop, String message, int itemDrop) {
-        // TODO implement here
+    public Boss(int id, String name, int level, int health, int mana, int strength, int defense, int agility, ElementType type, Set<Ability> abilities, int xpDrop, String message, Map<Item, Integer> itemDrop) {
+    super(id, name, level, health, mana, strength, defense, agility, type, abilities,xpDrop, message, itemDrop);
     }
-
+ 
  
     public void request() {
         // TODO implement here
@@ -37,10 +38,5 @@ public class Boss extends Enemy {
         return null;
     }
 
-  
-    public Item getItemDrop() {
-        // TODO implement here
-        return null;
-    }
 
 }
