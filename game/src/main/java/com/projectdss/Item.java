@@ -7,7 +7,7 @@ import com.projectdss.Rarity;
  * 
  * Class Item.
  */
-public abstract class Item {
+public abstract class Item implements Comparable<Item> {
 
     protected final int id;
     protected final String name;
@@ -37,6 +37,16 @@ public abstract class Item {
 
     public String getDescription() {
         return description;
+    }
+
+    @Override
+    public int compareTo(Item compareItem) {
+        int compareClasses = this.getClass().getName().compareTo(compareItem.getClass().getName());
+
+        if(compareClasses != 0)
+            return compareClasses;
+        else
+            return this.getRarity().compareTo(compareItem.getRarity());
     }
 
 }

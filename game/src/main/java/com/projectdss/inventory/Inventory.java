@@ -55,10 +55,6 @@ public class Inventory implements Iterable<Item> {
         return equippedArmor;
     }
 
-    public Set<Item> getItems() {
-        return items;
-    }
-
     @Override
     public Iterator<Item> iterator() {
         return items.iterator();
