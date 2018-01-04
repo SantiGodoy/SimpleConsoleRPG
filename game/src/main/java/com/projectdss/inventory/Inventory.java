@@ -1,6 +1,6 @@
 package com.projectdss.inventory;
 
-import java.util.Set;
+import java.util.List;
 import java.util.Iterator;
 import com.projectdss.Item;
 import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
@@ -13,11 +13,11 @@ import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatI
  */
 public class Inventory implements Iterable<Item> {
 
-    private Set<Item> items;
+    private List<Item> items;
     private WeaponEquipableCombatItem equippedWeapon;
     private ArmorEquipableCombatItem equippedArmor;
 
-    public Inventory(Set<Item> items, WeaponEquipableCombatItem weapon, ArmorEquipableCombatItem armor) {
+    public Inventory(List<Item> items, WeaponEquipableCombatItem weapon, ArmorEquipableCombatItem armor) {
         this.items = items;
         equippedWeapon = weapon;
         equippedArmor = armor;
@@ -53,6 +53,10 @@ public class Inventory implements Iterable<Item> {
 
     public ArmorEquipableCombatItem getEquippedArmor() {
         return equippedArmor;
+    }
+
+    public Item searchItem(int index) {
+        return items.get(index);
     }
 
     @Override
