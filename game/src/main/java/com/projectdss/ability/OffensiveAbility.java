@@ -32,7 +32,12 @@ public class OffensiveAbility extends Ability {
 
     @Override
     public int use(Character player1, Character player2) {
-        int appliedDamage = player1.getStrength() + damage - player2.getDefense();
+        int appliedDamage;
+
+        if(type == ElementType.BASIC)
+            appliedDamage = player1.getStrength() + damage - player2.getDefense();
+        else
+            appliedDamage = player1.getMagicalPower() + damage - player2.getDefense();
 
         if(appliedDamage > 0) {
             if(player2.hasArmor()) {

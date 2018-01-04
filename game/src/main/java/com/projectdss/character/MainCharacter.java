@@ -1,10 +1,13 @@
 
 package com.projectdss.character;
 
-import java.lang.annotation.ElementType;
-
+import java.util.Set;
+import com.projectdss.Ability;
 import com.projectdss.Character;
+import com.projectdss.ElementType;
 import com.projectdss.inventory.Inventory;
+import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
+import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 
 /**
  * 
@@ -18,8 +21,8 @@ public class MainCharacter extends Character {
     public MainCharacter() {
     }
 
-    public MainCharacter(int id, String name, int health, int mana, int strength, int defense, int agility, ElementType type, Set<Ability> abilities, String gender) {
-        super(id, name, 1, health, mana, strength, defense, agility, BASIC, abilities);
+    public MainCharacter(int id, String name, int health, int mana, int strength, int magicalPower, int defense, int agility, ElementType type, Set<Ability> abilities, String gender) {
+        super(id, name, 1, health, mana, strength, magicalPower, defense, agility, type, abilities);
         this.xp = 0;
         this.gender = gender;
     }
@@ -36,7 +39,7 @@ public class MainCharacter extends Character {
     }
 
     public int getXP() {
-        return experiencePoints;
+        return xp;
     }
 
     public Inventory getInventory() {
