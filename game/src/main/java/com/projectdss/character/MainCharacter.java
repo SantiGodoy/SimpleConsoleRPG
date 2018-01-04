@@ -4,6 +4,7 @@ package com.projectdss.character;
 import java.lang.annotation.ElementType;
 
 import com.projectdss.Character;
+import com.projectdss.inventory.Inventory;
 
 /**
  * 
@@ -23,6 +24,10 @@ public class MainCharacter extends Character {
         this.gender = gender;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
     public void setXP(int xp) {
         while (xp >= (100 * level)){
           ++this.level;
@@ -34,7 +39,7 @@ public class MainCharacter extends Character {
         return experiencePoints;
     }
 
-    public void getInventory() {
+    public Inventory getInventory() {
         return inventory;
     }
 
@@ -53,5 +58,4 @@ public class MainCharacter extends Character {
     public ArmorEquipableCombatItem getArmor(){
         return inventory.getEquippedArmor();
     }
-
 }

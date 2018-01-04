@@ -1,6 +1,9 @@
 
 package com.projectdss;
 
+import com.projectdss.event.EventParameter;
+
+
 /**
  * Represents the different events that the main character 
  * can encounter during the game
@@ -32,5 +35,5 @@ public abstract class Event {
         return description;
     }
 
-    public abstract void run();
+    public abstract void run(EventParameter eventParameter);
 }
