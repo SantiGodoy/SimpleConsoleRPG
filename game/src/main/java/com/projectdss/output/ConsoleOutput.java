@@ -3,11 +3,12 @@ package com.projectdss.output;
 import com.projectdss.event.InventoryEvent;
 import com.projectdss.inventory.Inventory;
 import com.projectdss.character.MainCharacter;
+import com.projectdss.item.CombatItem;
+import com.projectdss.item.ConsumableItem;
 import com.projectdss.map.Minizone;
 import com.projectdss.character.EnemyCharacter;
 import com.projectdss.Character;
 import com.projectdss.Event;
-import com.projectdss.inventory.InventoryAction;
 import com.projectdss.Item;
 import com.projectdss.Ability;
 import java.util.Set;
@@ -15,16 +16,21 @@ import java.util.Set;
 public abstract class ConsoleOutput implements OutputHandler {
     @Override
     public void showInventory(Inventory inventory) {
-        for(Item i: inventory)
-            System.out.println(i.getId() + "- " + i.getName() + " (" + i.getRarity() + ")");
-        showInventoryEvents(inventory.getInventoryEvents());
+        int counter = 1;
+        for(Item i: inventory) {
+            System.out.println(counter + ". " + i.getName() + " (" + i.getRarity() + ")");
+            ++counter;
+        }
     }
 
     @Override
     public void showAbilities(Set<Ability> abilities) {
-        for(Ability a: abilities)
-            System.out.println(a.getId() + "- " + a.getName() + " (" + a.getDescription() + ")" + 
-        " [" + a.getNecessaryMana() + "]");
+        int counter = 1;
+        for(Ability a: abilities) {
+            System.out.println(counter + ". " + a.getName() + " (" + a.getDescription() + ")" + 
+                " [" + a.getNecessaryMana() + "]");
+            ++counter;
+        }
     }
     
     @Override
@@ -72,9 +78,13 @@ public abstract class ConsoleOutput implements OutputHandler {
     }
 
     @Override
-    public void showInventoryActions(Set<InventoryAction> inventoryAction) {
-        for(InventoryAction ie : inventoryAction)
-            System.out.println(ie.getId() + "- " + ie.getDescription());
+    public void showItemOptions(Item item) {
+            if(item instanceof CombatItem) 
+                System.out.println("1. Description\n2. Drop Item");
+            else {
+                if(item instanceof ConsumableItem)
+                    System.out.println("1. Description\n2. Drop Item\n3. Use");
+            }    
     }
 
     @Override

@@ -11,4 +11,8 @@ public abstract class ZoneEvent extends Event {
     public ZoneEvent(int id, String description) {
         super(id, description);
     }
+
+    public void run(EventParameter eventParameter) {
+
+    }
 }

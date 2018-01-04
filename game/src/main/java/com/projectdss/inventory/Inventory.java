@@ -59,6 +59,10 @@ public class Inventory implements Iterable<Item> {
         return items.get(index);
     }
 
+    public Item searchItem(int index) {
+        return null;
+    }
+
     @Override
     public Iterator<Item> iterator() {
         return items.iterator();

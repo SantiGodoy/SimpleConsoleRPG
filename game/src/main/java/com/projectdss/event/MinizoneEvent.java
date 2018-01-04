@@ -11,4 +11,8 @@ public abstract class MinizoneEvent extends Event {
     public MinizoneEvent(int id, String message) {
         super(id, message);
     }
+
+    public void run(EventParameter eventParameter) {
+
+    }
 }
