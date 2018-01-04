@@ -39,6 +39,6 @@ public abstract class Ability {
         return necessaryMana;
     }
 
-    public abstract void use(Character player1, Character player2);
+    public abstract int use(Character player1, Character player2);
 
 }

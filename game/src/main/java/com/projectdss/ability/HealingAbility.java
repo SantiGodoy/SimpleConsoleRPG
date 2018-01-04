@@ -23,8 +23,12 @@ public class HealingAbility extends Ability {
     }
 
     @Override
-    public void use(Character player1, Character player2) {
-        player2.setCurrentHealth(player2.getCurrentHealth() + player1.getStrength() + healing);
+    public int use(Character player1, Character player2) {
+        int appliedHealing = player1.getStrength() + healing;
+        
+        player2.setCurrentHealth(player2.getCurrentHealth() + appliedHealing);
+        
+        return appliedHealing;
     }
 
 }

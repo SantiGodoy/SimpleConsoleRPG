@@ -31,7 +31,7 @@ public class OffensiveAbility extends Ability {
     }
 
     @Override
-    public void use(Character player1, Character player2) {
+    public int use(Character player1, Character player2) {
         int appliedDamage = player1.getStrength() + damage - player2.getDefense();
 
         if(appliedDamage > 0) {
@@ -46,6 +46,8 @@ public class OffensiveAbility extends Ability {
 
         if(appliedDamage > 0)
             player2.setCurrentHealth(player2.getCurrentHealth() - appliedDamage);
+
+        return appliedDamage;
     }
 
 }
