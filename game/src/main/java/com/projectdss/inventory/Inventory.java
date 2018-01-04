@@ -11,7 +11,7 @@ import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatI
  * 
  * Class Inventory.
  */
-public abstract class Inventory implements Iterable<Item> {
+public class Inventory implements Iterable<Item> {
 
     private Set<Item> items;
     private WeaponEquipableCombatItem equippedWeapon;
