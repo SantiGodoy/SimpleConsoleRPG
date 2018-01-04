@@ -50,6 +50,6 @@ public abstract class EquipableCombatItem extends CombatItem {
         return type != ElementType.BASIC;
     }
 
-    public abstract void use(Character player1, Character player2);
+    public abstract int use(Character player1, Character player2);
 
 }

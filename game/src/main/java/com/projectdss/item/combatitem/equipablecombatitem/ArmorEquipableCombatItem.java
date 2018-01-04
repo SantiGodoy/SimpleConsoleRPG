@@ -63,17 +63,19 @@ public class ArmorEquipableCombatItem extends EquipableCombatItem {
 
 
     @Override
-    public void use(Character player1, Character player2) {
-        int damage = player1.getStrength() - (player2.getDefense() + baseDefense);
+    public int use(Character player1, Character player2) {
+        int appliedDamage = player1.getStrength() - (player2.getDefense() + baseDefense);
 
-        if(damage > 0) {
-            damage *= ElementType.getElementDamage(player2.getType(), type);
+        if(appliedDamage > 0) {
+            appliedDamage *= ElementType.getElementDamage(player2.getType(), type);
             
-            player2.setCurrentHealth(player2.getCurrentHealth() - damage);
+            player2.setCurrentHealth(player2.getCurrentHealth() - appliedDamage);
 
             if(reflect > 0)
-                player1.setCurrentHealth(player1.getCurrentHealth() - (damage * reflect / 100));
+                player1.setCurrentHealth(player1.getCurrentHealth() - (appliedDamage * reflect / 100));
         }
+
+        return appliedDamage;
     }
 
 }

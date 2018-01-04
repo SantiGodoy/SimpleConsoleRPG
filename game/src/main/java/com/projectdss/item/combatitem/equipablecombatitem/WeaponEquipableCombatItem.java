@@ -73,23 +73,23 @@ public class WeaponEquipableCombatItem extends EquipableCombatItem {
 
 
     @Override
-    public void use(Character player1, Character player2) {
-        int damage = player1.getStrength() + baseDamage - player2.getDefense();
+    public int use(Character player1, Character player2) {
+        int appliedDamage = player1.getStrength() + baseDamage - player2.getDefense();
 
-        if(damage > 0) {
-            damage *= ElementType.getElementDamage(type, player2.getType());
+        if(appliedDamage > 0) {
+            appliedDamage *= ElementType.getElementDamage(type, player2.getType());
             
-            if(trueDamage > 0)
-                player2.setCurrentHealth(player2.getCurrentHealth() - (damage + trueDamage));
-            else
-                player2.setCurrentHealth(player2.getCurrentHealth() - damage);
-
             if(lifesteal > 0)
-                player1.setCurrentHealth(player1.getCurrentHealth() + (damage * lifesteal / 100));
+                player1.setCurrentHealth(player1.getCurrentHealth() + (appliedDamage * lifesteal / 100));
         }
-        else
-            if(trueDamage > 0)
-                player2.setCurrentHealth(player2.getCurrentHealth() - trueDamage);
+
+        if(trueDamage > 0)
+            appliedDamage += trueDamage;
+
+        if(appliedDamage > 0)
+            player2.setCurrentHealth(player2.getCurrentHealth() - appliedDamage);
+
+        return appliedDamage;
     }
 
 }
