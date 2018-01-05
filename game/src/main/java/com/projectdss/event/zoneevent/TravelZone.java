@@ -12,6 +12,6 @@ public class TravelZone extends ZoneEvent {
         System.out.println("¿Hacia qué zona desea viajar?");
         eventParameter.getOutput().showAdjacentZones(eventParameter.getPlayer().getZone());
         int idZone = eventParameter.getInput();
-        eventParameter.getPlayer().setZone((Zone)eventParameter.getPlayer().getWorld().getZones().toArray()[idZone]);
+        eventParameter.getPlayer().setZone(eventParameter.getPlayer().getWorld().getZone(idZone));
     }
 }

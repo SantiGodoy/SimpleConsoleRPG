@@ -59,8 +59,15 @@ public class Zone {
         return adjacencyMatrixMinizone;
     }
 
-    public Minizone getMinizone(int index) {
-        return (Minizone)minizones.toArray()[index];
+    public Minizone getAdjacentMinizone(int index, Minizone minizone) {
+        int counter = 0;
+        for(int j = 0; j < adjacencyMatrixMinizone.length; ++j) {
+            if(adjacencyMatrixMinizone[minizone.getId()][j] == true) {
+                if(counter == index)
+                    return (Minizone)minizones.toArray()[j];
+                ++counter;
+            }
+        }
     }
 
     public Set<Zone> getAdjacentZones() {

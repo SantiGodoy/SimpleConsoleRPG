@@ -28,7 +28,7 @@ public class World {
     public Set<Zone> getZones() {
         return zones;
     }
-
+    
     public boolean[][] getAdjacencyMatrixZone() {
         return adjacencyMatrixZone;
     }
@@ -38,6 +38,13 @@ public class World {
     }
 
     public Zone getZone(int index) {
-        return (Zone)zones.toArray()[index];
+        int counter = 0;
+        for(int j = 0; j < adjacencyMatrixZone.length; ++j) {
+            if(adjacencyMatrixZone[id][j] == true) {
+                if(counter == index)
+                    return (Zone)zones.toArray()[j];
+                ++counter;
+            }
+        }
     }
 }

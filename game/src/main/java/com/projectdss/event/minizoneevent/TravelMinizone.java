@@ -15,7 +15,8 @@ public class TravelMinizone extends MinizoneEvent {
     public void run(EventParameter eventParameter) {
         System.out.println("¿Hacia dónde desea viajar?");
         eventParameter.getOutput().showAdjacentMinizones(eventParameter.getPlayer().getMinizone());
-        int idMinizone = eventParameter.getInput();
-        eventParameter.getPlayer().setMinizone((Minizone)eventParameter.getPlayer().getZone().getMinizones().toArray()[idMinizone]);
+        int indexMinizone = eventParameter.getInput();
+        eventParameter.getPlayer().setMinizone(eventParameter.getPlayer().
+        getZone().getAdjacentMinizone(indexMinizone, eventParameter.getPlayer().getMinizone()));
     }
 }
