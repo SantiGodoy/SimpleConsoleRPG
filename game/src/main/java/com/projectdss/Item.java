@@ -14,8 +14,6 @@ public abstract class Item implements Comparable<Item> {
     protected final Rarity rarity;
     protected final String description;
 
-    public Item() {}
-
     public Item(int id, String name, Rarity rarity, String description) {
        this.id = id;
        this.name = name;

@@ -1,5 +1,8 @@
 package com.projectdss.input;
 
+import com.projectdss.Item;
+import com.projectdss.inventory.Inventory;
+
 public class InputManager {
     private InputHandler inputHandler;
 
@@ -13,5 +16,9 @@ public class InputManager {
 
     public int getInput() {
         return inputHandler.getInput();
+    }
+
+    public void getItemInput(Item item, Inventory inventory, int option) {
+        inputHandler.getItemInput(item, inventory, option);
     }
 }

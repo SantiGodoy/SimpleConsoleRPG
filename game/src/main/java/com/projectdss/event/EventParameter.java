@@ -1,5 +1,6 @@
 package com.projectdss.event;
 
+import com.projectdss.Item;
 import com.projectdss.character.EnemyCharacter;
 import com.projectdss.character.MainCharacter;
 import com.projectdss.input.InputManager;
@@ -27,6 +28,10 @@ public class EventParameter {
 
     public int getInput() {
         return input.getInput();
+    }
+
+    public void getItemInput(Item item, Inventory inventory, int option) {
+        input.getItemInput(item, inventory, option);
     }
 
     public MainCharacter getPlayer() {

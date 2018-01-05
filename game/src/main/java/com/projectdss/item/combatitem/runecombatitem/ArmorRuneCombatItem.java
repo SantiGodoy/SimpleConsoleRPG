@@ -12,8 +12,6 @@ import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatIt
  */
 public abstract class ArmorRuneCombatItem extends RuneCombatItem {
 
-    public ArmorRuneCombatItem() {}
-
     public ArmorRuneCombatItem(int id, String name, Rarity rarity, String description) {
         super(id, name, rarity, description);
     }

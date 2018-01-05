@@ -16,8 +16,6 @@ public abstract class EquipableCombatItem extends CombatItem {
     protected final int maxRunes;
     protected ElementType type;
 
-    public EquipableCombatItem() {}
-
     public EquipableCombatItem(int id, String name, Rarity rarity, String description, int maxRunes,
                                ElementType type) {
         super(id, name, rarity, description);

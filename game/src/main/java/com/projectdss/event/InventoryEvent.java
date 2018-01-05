@@ -23,6 +23,8 @@ public class InventoryEvent extends Event {
             Item item = inventory.searchItem(itemSelected - 1);
             eventParameter.getOutput().showItemOptions(item);
             int optionSelected = eventParameter.getInput();
+            eventParameter.getItemInput(item, inventory, optionSelected);
+            run(eventParameter);          
         }
     }
 }

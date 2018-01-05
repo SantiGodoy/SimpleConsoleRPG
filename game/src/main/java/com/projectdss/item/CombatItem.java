@@ -10,8 +10,6 @@ import com.projectdss.Rarity;
  */
 public abstract class CombatItem extends Item {
 
-    public CombatItem() {}
-
     public CombatItem(int id, String name, Rarity rarity, String description) {
         super(id, name, rarity, description);
     }

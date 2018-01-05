@@ -37,10 +37,10 @@ public class World {
         adjacencyMatrixZone[i][j] = !adjacencyMatrixZone[i][j];
     }
 
-    public Zone getZone(int index) {
+    public Zone getZone(int index, Zone zone) {
         int counter = 0;
         for(int j = 0; j < adjacencyMatrixZone.length; ++j) {
-            if(adjacencyMatrixZone[id][j] == true) {
+            if(adjacencyMatrixZone[zone.getId()][j] == true) {
                 if(counter == index)
                     return (Zone)zones.toArray()[j];
                 ++counter;

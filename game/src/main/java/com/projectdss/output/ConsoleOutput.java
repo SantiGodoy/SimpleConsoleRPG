@@ -84,10 +84,10 @@ public abstract class ConsoleOutput implements OutputHandler {
     @Override
     public void showItemOptions(Item item) {
             if(item instanceof CombatItem) 
-                System.out.println("1. Description\n2. Drop Item");
+                System.out.println("1. Description\n2. Drop Item\n3. Return");
             else {
                 if(item instanceof ConsumableItem)
-                    System.out.println("1. Description\n2. Drop Item\n3. Use");
+                    System.out.println("1. Use\n2. Description\n3. Drop Item\n4. Return");
             }    
     }
 
