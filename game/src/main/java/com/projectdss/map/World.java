@@ -29,7 +29,15 @@ public class World {
         return zones;
     }
 
+    public boolean[][] getAdjacencyMatrixZone() {
+        return adjacencyMatrixZone;
+    }
+
     public void invertAdjacencyZone(int i, int j) {
         adjacencyMatrixZone[i][j] = !adjacencyMatrixZone[i][j];
+    }
+
+    public Zone getZone(int index) {
+        return (Zone)zones.toArray()[index];
     }
 }

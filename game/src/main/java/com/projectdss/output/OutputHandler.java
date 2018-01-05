@@ -9,6 +9,8 @@ import com.projectdss.Event;
 import com.projectdss.Ability;
 import com.projectdss.Character;
 
+import com.projectdss.map.Minizone;
+import com.projectdss.map.Zone;
 import java.util.Set;
 
 public interface OutputHandler {
@@ -26,4 +28,8 @@ public interface OutputHandler {
     void showGlobalMenu();
     void showGlobalSettings();
     void showGameInformation();
+    void showZoneEvents();
+    void showMinizoneEvents(Minizone minizone);
+    void showAdjacentMinizones(Minizone minizone);
+    void showAdjacentZones(Zone zone);
 }

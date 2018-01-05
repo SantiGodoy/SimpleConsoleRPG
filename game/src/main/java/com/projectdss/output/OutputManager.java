@@ -1,6 +1,8 @@
 package com.projectdss.output;
 
 import com.projectdss.Item;
+import com.projectdss.map.Minizone;
+import com.projectdss.map.Zone;
 import com.projectdss.output.OutputHandler;
 import com.projectdss.Ability;
 import com.projectdss.inventory.Inventory;
@@ -75,5 +77,21 @@ public class OutputManager {
 
     public void showGameInformation() {
         outputHandler.showGameInformation();
+    }
+
+    public void showZoneEvents() {
+        outputHandler.showZoneEvents();
+    }
+
+    public void showMinizoneEvents(Minizone minizone) {
+        outputHandler.showMinizoneEvents(minizone);
+    }
+
+    public void showAdjacentMinizones(Minizone minizone) {
+        outputHandler.showAdjacentMinizones(minizone);
+    }
+
+    public void showAdjacentZones(Zone zone) {
+        outputHandler.showAdjacentZones(zone);
     }
 }

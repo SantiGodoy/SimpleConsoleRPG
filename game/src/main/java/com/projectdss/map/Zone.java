@@ -1,5 +1,6 @@
 package com.projectdss.map;
 
+import java.util.HashSet;
 import java.util.Set;
 import com.projectdss.Event;
 
@@ -12,6 +13,7 @@ public class Zone {
     private final String name;
     private final String description;
     private boolean[][] adjacencyMatrixMinizone;
+    private final World world;
     private final Set<Minizone> minizones;
     private final Set<Event> events;
     
@@ -37,10 +39,6 @@ public class Zone {
         return description;
     }
 
-    public void invertAdjacencyMinizone(int i, int j) {
-        adjacencyMatrixMinizone[i][j] = !adjacencyMatrixMinizone[i][j];
-    }
-
     public int length() {
         return minizones.size();
     }
@@ -55,5 +53,20 @@ public class Zone {
 
     public Event getEvent(int index) {
         return (Event)events.toArray()[index];
+    }
+
+    public boolean[][] getAdjacencyMatrixMinizone() {
+        return adjacencyMatrixMinizone;
+    }
+
+    public Minizone getMinizone(int index) {
+        return (Minizone)minizones.toArray()[index];
+    }
+
+    public Set<Zone> getAdjacentZones() {
+        Set<Zone> adjacentZones = new HashSet<Zone>();
+        for (int j = 0; j < world.getAdjacencyMatrixZone().length; ++j)
+            if(world.getAdjacencyMatrixZone()[id][j] == true)
+                adjacentZones.add(world.getZone(j));
     }
 }

@@ -20,7 +20,7 @@ public class InventoryEvent extends Event {
             return;
         } else {
             Inventory inventory = eventParameter.getPlayerInventory();
-            Item item = inventory.searchItem(itemSelected);
+            Item item = inventory.searchItem(itemSelected - 1);
             eventParameter.getOutput().showItemOptions(item);
             int optionSelected = eventParameter.getInput();
         }

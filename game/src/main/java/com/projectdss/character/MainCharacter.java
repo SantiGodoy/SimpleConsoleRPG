@@ -1,6 +1,9 @@
 
 package com.projectdss.character;
 
+import com.projectdss.map.Minizone;
+import com.projectdss.map.World;
+import com.projectdss.map.Zone;
 import java.util.Set;
 import com.projectdss.Ability;
 import com.projectdss.Character;
@@ -17,14 +20,22 @@ public class MainCharacter extends Character {
     private String gender;    
     private int xp;
     private Inventory inventory;
+    private final World world;
+    private Zone zone;
+    private Minizone minizone;
 
     public MainCharacter() {
     }
 
-    public MainCharacter(int id, String name, int health, int mana, int strength, int magicalPower, int defense, int agility, ElementType type, Set<Ability> abilities, String gender) {
+    public MainCharacter(int id, String name, int health, int mana, int strength, 
+        int magicalPower, int defense, int agility, ElementType type, Set<Ability> abilities, 
+        String gender, World world, Zone zone, Minizone minizone) {
         super(id, name, 1, health, mana, strength, magicalPower, defense, agility, type, abilities);
         this.xp = 0;
         this.gender = gender;
+        this.world = world;
+        this.zone = zone;
+        this.minizone = minizone;
     }
 
     public String getGender() {
@@ -40,6 +51,26 @@ public class MainCharacter extends Character {
 
     public int getXP() {
         return xp;
+    }
+
+    public World getWorld() {
+        return world;
+    }
+
+    public Zone getZone() {
+        return zone;
+    }
+
+    public void setZone(Zone zone) {
+        this.zone = zone;
+    }
+
+    public Minizone getMinizone() {
+        return minizone;
+    }
+
+    public void setMinizone(Minizone minizone) {
+        this.minizone = minizone;
     }
 
     public Inventory getInventory() {

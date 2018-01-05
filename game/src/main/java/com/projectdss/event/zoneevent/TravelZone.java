@@ -1,25 +1,17 @@
+package com.projectdss.event.zoneevent;
 
-import java.util.*;
-
-/**
- * 
- */
-public class TravelZone extends Event {
-
-    /**
-     * Default constructor
-     */
-    public TravelZone() {
+import com.projectdss.event.EventParameter;
+import com.projectdss.event.ZoneEvent;
+import com.projectdss.map.Zone;
+public class TravelZone extends ZoneEvent {
+    public TravelZone(int id, String description) {
+        super(id, description);
     }
 
-    /**
-     * 
-     */
-    private Zone origen;
-
-    /**
-     * 
-     */
-    private Zone destino;
-
+    public void run(EventParameter eventParameter) {
+        System.out.println("¿Hacia qué zona desea viajar?");
+        eventParameter.getOutput().showAdjacentZones(eventParameter.getPlayer().getZone());
+        int idZone = eventParameter.getInput();
+        eventParameter.getPlayer().setZone((Zone)eventParameter.getPlayer().getWorld().getZones().toArray()[idZone]);
+    }
 }

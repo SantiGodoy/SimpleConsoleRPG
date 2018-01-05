@@ -1,25 +1,21 @@
+package com.projectdss.event.minizoneevent;
 
-import java.util.*;
+import com.projectdss.event.EventParameter;
+import com.projectdss.event.MinizoneEvent;
+import com.projectdss.map.Minizone;
 
 /**
  * 
  */
 public class TravelMinizone extends MinizoneEvent {
-
-    /**
-     * Default constructor
-     */
-    public TravelMinizone() {
+    public TravelMinizone(int id, String description) {
+        super(id, description);
     }
 
-    /**
-     * 
-     */
-    private Minizone origen;
-
-    /**
-     * 
-     */
-    private Minizone destino;
-
+    public void run(EventParameter eventParameter) {
+        System.out.println("¿Hacia dónde desea viajar?");
+        eventParameter.getOutput().showAdjacentMinizones(eventParameter.getPlayer().getMinizone());
+        int idMinizone = eventParameter.getInput();
+        eventParameter.getPlayer().setMinizone((Minizone)eventParameter.getPlayer().getZone().getMinizones().toArray()[idMinizone]);
+    }
 }

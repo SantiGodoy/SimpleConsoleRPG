@@ -11,6 +11,7 @@ import com.projectdss.Character;
 import com.projectdss.Event;
 import com.projectdss.Item;
 import com.projectdss.Ability;
+import com.projectdss.map.Zone;
 import java.util.Set;
 
 public abstract class ConsoleOutput implements OutputHandler {
@@ -73,8 +74,11 @@ public abstract class ConsoleOutput implements OutputHandler {
 
     @Override
     public void showEvents(Set<Event> events) {
-        for(Event e : events)    
-            System.out.println(e.getId() + "- " + e.getDescription());
+        int counter = 1;
+        for(Event e : events) {   
+            System.out.println(counter + ". " + e.getDescription());
+            ++counter;
+        }
     }
 
     @Override
@@ -99,4 +103,32 @@ public abstract class ConsoleOutput implements OutputHandler {
 
     @Override
     public abstract void showGameInformation();
+
+    @Override
+    public void showZoneEvents() {
+        System.out.println("1. Travel\n2. Return");
+    }
+
+    @Override
+    public void showMinizoneEvents(Minizone minizone) {
+        showEvents(minizone.getEvents());
+    }
+
+    @Override
+    public void showAdjacentMinizones(Minizone minizone) {
+        int counter = 1;
+        for(Minizone mz : minizone.getAdjacentMinizones()) {
+            System.out.println(counter + ". " + mz.getName());
+            ++counter;
+        }
+    }
+
+    @Override
+    public void showAdjacentZones(Zone zone) {
+        int counter = 1;
+        for(Zone z : zone.getAdjacentZones()) {
+            System.out.println(counter + ". " + z.getName());
+            ++counter;
+        }
+    }
 }
