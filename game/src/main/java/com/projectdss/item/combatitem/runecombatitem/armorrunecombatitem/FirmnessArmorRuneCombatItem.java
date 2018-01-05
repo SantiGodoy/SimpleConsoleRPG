@@ -1,8 +1,8 @@
 package com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem;
 
 import com.projectdss.Rarity;
+import com.projectdss.CharacterStats;
 import com.projectdss.item.combatitem.runecombatitem.ArmorRuneCombatItem;
-import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
 
 /**
  * @author JoseCorrero
@@ -15,7 +15,7 @@ public class FirmnessArmorRuneCombatItem extends ArmorRuneCombatItem {
     private final int firmness;
 
     public FirmnessArmorRuneCombatItem(int id, String name, Rarity rarity, String description, 
-                                                int firmness) {
+                                       int firmness) {
         super(id, name, rarity, description);
         this.firmness = firmness;
     }
@@ -26,13 +26,8 @@ public class FirmnessArmorRuneCombatItem extends ArmorRuneCombatItem {
     }
 
     @Override
-    public void use(ArmorEquipableCombatItem armor) {
-        armor.setBaseDefense(armor.getBaseDefense() + firmness);
-    }
-
-    @Override
-    public void disuse(ArmorEquipableCombatItem armor) {
-        armor.setBaseDefense(armor.getBaseDefense() - firmness);
+    public void use(CharacterStats characterStats) {
+        characterStats.setBaseDefense(characterStats.getBaseDefense() + firmness);
     }
 
 }

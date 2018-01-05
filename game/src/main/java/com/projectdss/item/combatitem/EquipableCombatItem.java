@@ -1,9 +1,9 @@
 package com.projectdss.item.combatitem;
 
+import java.util.Set;
 import com.projectdss.Rarity;
-import com.projectdss.Character;
-import com.projectdss.ElementType;
 import com.projectdss.item.CombatItem;
+import com.projectdss.item.combatitem.RuneCombatItem;
 
 /**
  * @author JoseCorrero
@@ -14,22 +14,27 @@ public abstract class EquipableCombatItem extends CombatItem {
 
     protected boolean equipped;
     protected final int maxRunes;
-    protected ElementType type;
+    protected Set<RuneCombatItem> runes;
 
     public EquipableCombatItem(int id, String name, Rarity rarity, String description, int maxRunes,
-                               ElementType type) {
+                               Set<RuneCombatItem> runes) {
         super(id, name, rarity, description);
         equipped = false;
         this.maxRunes = maxRunes;
-        this.type = type;
+        this.runes = runes;
     }
 
     public void setEquipped(boolean equipped) {
         this.equipped = equipped;
     }
 
-    public void setType(ElementType type) {
-        this.type = type;
+    public void addRune(RuneCombatItem rune) {
+        if(runes.size() < maxRunes)
+            runes.add(rune);
+    }
+
+    public void removeRune(RuneCombatItem rune) {
+        runes.remove(rune);
     }
 
     public boolean isEquipped() {
@@ -40,14 +45,8 @@ public abstract class EquipableCombatItem extends CombatItem {
         return maxRunes;
     }
 
-    public ElementType getType() {
-        return type;
+    public Set<RuneCombatItem> getRunes() {
+        return runes;
     }
-
-    public boolean hasType() {
-        return type != ElementType.BASIC;
-    }
-
-    public abstract int use(Character player1, Character player2);
 
 }

@@ -1,8 +1,8 @@
 package com.projectdss.item.combatitem.runecombatitem.weaponrunecombatitem.weaponrunecombatitemdecorator;
 
 import com.projectdss.Rarity;
+import com.projectdss.CharacterStats;
 import com.projectdss.item.combatitem.runecombatitem.WeaponRuneCombatItem;
-import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 import com.projectdss.item.combatitem.runecombatitem.weaponrunecombatitem.WeaponRuneCombatItemDecorator;
 
 /**
@@ -22,15 +22,9 @@ public class LifestealWeaponRuneCombatItem extends WeaponRuneCombatItemDecorator
     }
 
     @Override
-    public void use(WeaponEquipableCombatItem weapon) {
-        super.use(weapon);
-        weapon.setLifesteal(weapon.getLifesteal() + lifesteal);
-    }
-
-    @Override
-    public void disuse(WeaponEquipableCombatItem weapon) {
-        super.disuse(weapon);
-        weapon.setLifesteal(weapon.getLifesteal() - lifesteal);
+    public void use(CharacterStats characterStats) {
+        super.use(characterStats);
+        characterStats.setLifesteal(characterStats.getLifesteal() + lifesteal);
     }
 
 }

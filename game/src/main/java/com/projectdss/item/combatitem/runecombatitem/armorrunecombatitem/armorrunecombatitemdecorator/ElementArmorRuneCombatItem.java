@@ -2,8 +2,8 @@ package com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem.armorr
 
 import com.projectdss.Rarity;
 import com.projectdss.ElementType;
+import com.projectdss.CharacterStats;
 import com.projectdss.item.combatitem.runecombatitem.ArmorRuneCombatItem;
-import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
 import com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem.ArmorRuneCombatItemDecorator;
 
 /**
@@ -23,15 +23,9 @@ public class ElementArmorRuneCombatItem extends ArmorRuneCombatItemDecorator {
     }
 
     @Override
-    public void use(ArmorEquipableCombatItem armor) {
-        super.use(armor);
-        armor.setType(type);
-    }
-
-    @Override
-    public void disuse(ArmorEquipableCombatItem armor) {
-        super.disuse(armor);
-        armor.setType(ElementType.BASIC);
+    public void use(CharacterStats characterStats) {
+        super.use(characterStats);
+        characterStats.setDefensiveType(type);
     }
 
 }

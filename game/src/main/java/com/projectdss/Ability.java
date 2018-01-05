@@ -1,6 +1,6 @@
 package com.projectdss;
 
-import com.projectdss.Character;
+import com.projectdss.CharacterStats;
 
 /**
  * @author JoseCorrero
@@ -13,8 +13,6 @@ public abstract class Ability {
     protected final String name;
     protected final String description;
     protected final int necessaryMana;
-
-    public Ability() {}
 
     public Ability(int id, String name, String description, int necessaryMana) {
         this.id = id;
@@ -39,6 +37,6 @@ public abstract class Ability {
         return necessaryMana;
     }
 
-    public abstract int use(Character player1, Character player2);
+    public abstract void use(CharacterStats player1, CharacterStats player2);
 
 }

@@ -1,6 +1,7 @@
 package com.projectdss;
 
 import com.projectdss.Rarity;
+import com.projectdss.CharacterStats;
 
 /**
  * @author JoseCorrero
@@ -46,5 +47,7 @@ public abstract class Item implements Comparable<Item> {
         else
             return this.getRarity().compareTo(compareItem.getRarity());
     }
+
+    public abstract void use(CharacterStats characterStats);
 
 }

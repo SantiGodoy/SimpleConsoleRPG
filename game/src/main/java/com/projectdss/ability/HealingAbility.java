@@ -1,7 +1,7 @@
 package com.projectdss.ability;
 
 import com.projectdss.Ability;
-import com.projectdss.Character;
+import com.projectdss.CharacterStats;
 
 /**
  * @author JoseCorrero
@@ -23,12 +23,8 @@ public class HealingAbility extends Ability {
     }
 
     @Override
-    public int use(Character player1, Character player2) {
-        int appliedHealing = player1.getStrength() + healing;
-        
-        player2.setCurrentHealth(player2.getCurrentHealth() + appliedHealing);
-        
-        return appliedHealing;
+    public void use(CharacterStats player1, CharacterStats player2) {
+        player2.setCurrentHealth(player2.getCurrentHealth() + player1.getMagicalPower() + healing);
     }
 
 }

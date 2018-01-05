@@ -1,7 +1,7 @@
 package com.projectdss.item.consumableitem;
 
 import com.projectdss.Rarity;
-import com.projectdss.Character;
+import com.projectdss.CharacterStats;
 import com.projectdss.item.ConsumableItem;
 
 /**
@@ -22,9 +22,9 @@ public class MultiConsumableItem extends ConsumableItem {
     }
 
     @Override
-    public void use(Character player) {
-        player.setCurrentHealth(player.getCurrentHealth() + recoveryHealth);
-        player.setCurrentMana(player.getCurrentMana() + recoveryMana);
+    public void use(CharacterStats characterStats) {
+        characterStats.setCurrentHealth(characterStats.getCurrentHealth() + recoveryHealth);
+        characterStats.setCurrentMana(characterStats.getCurrentMana() + recoveryHealth);
     }
 
 }

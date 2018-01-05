@@ -2,7 +2,6 @@ package com.projectdss.item.combatitem.runecombatitem;
 
 import com.projectdss.Rarity;
 import com.projectdss.item.combatitem.RuneCombatItem;
-import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
 
 /**
  * @author JoseCorrero
@@ -17,9 +16,5 @@ public abstract class ArmorRuneCombatItem extends RuneCombatItem {
     }
 
     public abstract int getFirmness();
-
-    public abstract void use(ArmorEquipableCombatItem weapon);
-
-    public abstract void disuse(ArmorEquipableCombatItem weapon);
 
 }

@@ -1,8 +1,8 @@
 package com.projectdss.item.combatitem.runecombatitem.weaponrunecombatitem;
 
 import com.projectdss.Rarity;
+import com.projectdss.CharacterStats;
 import com.projectdss.item.combatitem.runecombatitem.WeaponRuneCombatItem;
-import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 
 /**
  * @author JoseCorrero
@@ -26,13 +26,8 @@ public class SharpnessWeaponRuneCombatItem extends WeaponRuneCombatItem {
     }
 
     @Override
-    public void use(WeaponEquipableCombatItem weapon) {
-        weapon.setBaseDamage(weapon.getBaseDamage() + sharpness);
-    }
-
-    @Override
-    public void disuse(WeaponEquipableCombatItem weapon) {
-        weapon.setBaseDamage(weapon.getBaseDamage() - sharpness);
+    public void use(CharacterStats characterStats) {
+        characterStats.setBaseDamage(characterStats.getBaseDamage() + sharpness);
     }
 
 }

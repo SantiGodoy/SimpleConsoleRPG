@@ -1,8 +1,8 @@
 package com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem.armorrunecombatitemdecorator;
 
 import com.projectdss.Rarity;
+import com.projectdss.CharacterStats;
 import com.projectdss.item.combatitem.runecombatitem.ArmorRuneCombatItem;
-import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
 import com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem.ArmorRuneCombatItemDecorator;
 
 /**
@@ -22,15 +22,8 @@ public class ReflectArmorRuneCombatItem extends ArmorRuneCombatItemDecorator {
     }
 
     @Override
-    public void use(ArmorEquipableCombatItem armor) {
-        super.use(armor);
-        armor.setReflect(armor.getReflect() + reflect);
+    public void use(CharacterStats characterStats) {
+        super.use(characterStats);
+        characterStats.setReflect(characterStats.getReflect() + reflect);
     }
-
-    @Override
-    public void disuse(ArmorEquipableCombatItem armor) {
-        super.disuse(armor);
-        armor.setReflect(armor.getReflect() - reflect);
-    }
-
 }

@@ -1,9 +1,8 @@
 package com.projectdss.ability;
 
 import com.projectdss.Ability;
-import com.projectdss.Character;
 import com.projectdss.ElementType;
-import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
+import com.projectdss.CharacterStats;
 
 /**
  * @author JoseCorrero
@@ -31,28 +30,18 @@ public class OffensiveAbility extends Ability {
     }
 
     @Override
-    public int use(Character player1, Character player2) {
+    public void use(CharacterStats player1, CharacterStats player2) {
         int appliedDamage;
 
         if(type == ElementType.BASIC)
-            appliedDamage = player1.getStrength() + damage - player2.getDefense();
+            appliedDamage = player1.getStrength() + damage - player2.getBaseDefense();
         else
-            appliedDamage = player1.getMagicalPower() + damage - player2.getDefense();
+            appliedDamage = player1.getMagicalPower() + damage - player2.getBaseDefense();
 
         if(appliedDamage > 0) {
-            if(player2.hasArmor()) {
-                ArmorEquipableCombatItem armor = player2.getArmor();
-                appliedDamage -= armor.getBaseDefense();
-                appliedDamage *= ElementType.getElementDamage(type, armor.getType());
-            } else {
-                appliedDamage *= ElementType.getElementDamage(type, player2.getType());
-            }
-        }
-
-        if(appliedDamage > 0)
+            appliedDamage *= ElementType.getElementDamage(type, player2.getDefensiveType());
             player2.setCurrentHealth(player2.getCurrentHealth() - appliedDamage);
-
-        return appliedDamage;
+        }
     }
 
 }
