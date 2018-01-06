@@ -13,18 +13,19 @@ public class InventoryEvent extends Event {
     }
 
     public void run(EventParameter eventParameter) {
-        eventParameter.getOutput().showInventory(eventParameter.getPlayerInventory());
-        System.out.println("Selecciona un objeto del inventario ó 0 para salir: ");
-        int itemSelected = eventParameter.getInput();
-        if(itemSelected == 0) {
-            return;
-        } else {
-            Inventory inventory = eventParameter.getPlayerInventory();
-            Item item = inventory.searchItem(itemSelected - 1);
-            eventParameter.getOutput().showItemOptions(item);
-            int optionSelected = eventParameter.getInput();
-            eventParameter.getItemInput(item, inventory, optionSelected);
-            run(eventParameter);          
-        }
+        int itemSelected;
+
+        do {
+            eventParameter.getOutput().showInventory(eventParameter.getPlayerInventory());
+            System.out.println("Selecciona un objeto del inventario ó 0 para salir: ");
+            itemSelected = eventParameter.getInput();
+            if(itemSelected != 0) {
+                Inventory inventory = eventParameter.getPlayerInventory();
+                Item item = inventory.searchItem(itemSelected - 1);
+                eventParameter.getOutput().showItemOptions(item);
+                int optionSelected = eventParameter.getInput();
+                eventParameter.getItemInput(item, inventory, optionSelected);
+            }
+        } while(itemSelected != 0);
     }
 }

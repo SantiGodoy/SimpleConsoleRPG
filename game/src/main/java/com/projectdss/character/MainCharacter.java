@@ -33,11 +33,26 @@ public class MainCharacter extends Character {
         this.inventory = inventory;
     }
 
-    public void setXP(int xp) {
-        while (xp >= (100 * level)){
-          ++this.level;
-          xp -= (100 * level);
-        }      
+    public void incrementLevel(int levelUp) {
+        level += levelUP;
+
+        while(levelUp > 0) {
+            // Upgrade stats.
+            --levelUp;
+        }
+    }
+
+    public void addXP(int xp) {
+        this.xp += xp;
+
+        int levelUp = 0;
+
+        while(this.xp >= (100 * level)) {
+            ++levelUp;
+            this.xp -= (100 * (level + levelUp));
+        }
+
+        incrementLevel(levelUp);
     }
 
     public void setZone(Zone zone) {

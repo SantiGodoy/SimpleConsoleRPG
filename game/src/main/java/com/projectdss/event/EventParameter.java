@@ -1,12 +1,11 @@
 package com.projectdss.event;
 
 import com.projectdss.Item;
-import com.projectdss.character.EnemyCharacter;
-import com.projectdss.character.MainCharacter;
-import com.projectdss.input.InputManager;
 import com.projectdss.inventory.Inventory;
+import com.projectdss.character.MainCharacter;
+import com.projectdss.character.EnemyCharacter;
+import com.projectdss.input.InputManager;
 import com.projectdss.output.OutputManager;
-import java.util.Set;
 
 public class EventParameter {
     private OutputManager output;

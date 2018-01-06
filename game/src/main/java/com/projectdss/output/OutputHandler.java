@@ -4,7 +4,6 @@ import com.projectdss.Item;
 import com.projectdss.character.EnemyCharacter;
 import com.projectdss.inventory.Inventory;
 import com.projectdss.character.MainCharacter;
-import com.projectdss.character.EnemyCharacter;
 import com.projectdss.Event;
 import com.projectdss.Ability;
 import com.projectdss.Character;

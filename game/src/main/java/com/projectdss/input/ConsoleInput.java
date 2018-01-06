@@ -1,5 +1,6 @@
 package com.projectdss.input;
 
+import com.projectdss.CharacterStats;
 import com.projectdss.Item;
 import com.projectdss.inventory.Inventory;
 import com.projectdss.item.CombatItem;
@@ -14,7 +15,7 @@ public class ConsoleInput implements InputHandler {
     }
 
     @Override
-    public void getItemInput(Item item, Inventory inventory, int option) {
+    public void getItemInput(Item item, Inventory inventory, CharacterStats characterStats, int option) {
         if(item instanceof CombatItem) {
             switch(option) {
                 case 1: item.getDescription();
@@ -27,7 +28,7 @@ public class ConsoleInput implements InputHandler {
             }
         } else if(item instanceof ConsumableItem) {
             switch(option) {
-                case 1: item.use();
+                case 1: item.use(characterStats);
                     break;
                 case 2: item.getDescription();
                     break;

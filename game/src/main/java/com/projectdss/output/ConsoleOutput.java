@@ -28,9 +28,8 @@ public abstract class ConsoleOutput implements OutputHandler {
     public void showAbilities(Set<Ability> abilities) {
         int counter = 1;
         for(Ability a: abilities) {
-            System.out.println(counter + ". " + a.getName() + " (" + a.getDescription() + ")" + 
+            System.out.println(counter++ + ". " + a.getName() + " (" + a.getDescription() + ")" + 
                 " [" + a.getNecessaryMana() + "]");
-            ++counter;
         }
     }
     
