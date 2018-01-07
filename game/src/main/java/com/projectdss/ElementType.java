@@ -10,13 +10,17 @@ public enum ElementType {
     FIRE,
     AIR,
     ELECTRIC,
-    WATER;
+    WATER,
+    PURE,
+    DAMNED;
 
-    public static final double[][] ELEMENT_DAMAGE = {{1,    1,    1,    1,    1},
-                                                      {1, 0.75,    2,    1,  0.5},
-                                                      {1,  0.5, 0.75,    2,    1},
-                                                      {1,    1,  0.5, 0.75,    2},
-                                                      {1,    2,    1,  0.5, 0.75}};
+    public static final double[][] ELEMENT_DAMAGE = {{    1,    1,    1,    1,    1,    1,  0.2},
+                                                     {    1, 0.75,    2,    1,  0.5,    1,  0.2},
+                                                     {    1,  0.5, 0.75,    2,    1,    1,  0.2},
+                                                     {    1,    1,  0.5, 0.75,    2,    1,  0.2},
+                                                     {    1,    2,    1,  0.5, 0.75,    1,  0.2},
+                                                     {   -1,   -1,   -1,   -1,   -1,   -1,    5},
+                                                     {    1,    1,    1,    1,    1,    0,  0.2}};
 
     public static double getElementDamage(ElementType type1, ElementType type2) {
         return ELEMENT_DAMAGE[type1.ordinal()][type2.ordinal()];
