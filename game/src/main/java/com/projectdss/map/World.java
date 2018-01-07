@@ -47,5 +47,6 @@ public class World {
                 ++counter;
             }
         }
+        return zone;
     }
 }

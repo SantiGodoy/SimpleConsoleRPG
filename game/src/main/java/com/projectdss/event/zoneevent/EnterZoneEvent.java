@@ -9,8 +9,8 @@ import com.projectdss.event.ZoneEvent;
  * 
  * @author Santiago Godoy Poce
  */
-public class EnterZone extends ZoneEvent {
-    public EnterZone(int id, String description) {
+public class EnterZoneEvent extends ZoneEvent {
+    public EnterZoneEvent(int id, String description) {
         super(id, description);
     }
 

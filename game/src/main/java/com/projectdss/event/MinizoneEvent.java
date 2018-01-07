@@ -12,7 +12,5 @@ public abstract class MinizoneEvent extends Event {
         super(id, description);
     }
 
-    public void run(EventParameter eventParameter) {
-
-    }
+    public abstract void run(EventParameter eventParameter);
 }

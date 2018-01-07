@@ -8,8 +8,8 @@ import com.projectdss.event.MinizoneEvent;
  * 
  * @author Santiago Godoy Poce
  */
-public class Joke extends MinizoneEvent {
-    public Joke(int id, String description) {
+public class JokeMinizoneEvent extends MinizoneEvent {
+    public JokeMinizoneEvent(int id, String description) {
         super(id, description);
     }
 

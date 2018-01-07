@@ -10,8 +10,7 @@ import com.projectdss.character.MainCharacter;
 import com.projectdss.character.EnemyCharacter;
 import com.projectdss.inventory.Inventory;
 import com.projectdss.Ability;
-import com.projectdss.ability.HealingAbility;
-import com.projectdss.ability.OffensiveAbility;
+import com.projectdss.ability.ElementAbility;
 import com.projectdss.Event;
 import com.projectdss.event.MinizoneEvent;
 import com.projectdss.event.EventParameter;
@@ -22,13 +21,13 @@ import com.projectdss.output.OutputManager;
  * 
  * 
  */
-public class CombatEvent extends MinizoneEvent {
+public class CombatMinizoneEvent extends MinizoneEvent {
 
     private static final double AGILITY_RUN = 1.5;
     private static final int NUM_STATS = 6;
     private static final int NUM_OPTIONS_STATS = 3;
 
-    public CombatEvent(int id, String description) {
+    public CombatMinizoneEvent(int id, String description) {
         super(id, description);
     }
 

@@ -10,8 +10,8 @@ import java.util.Set;
  * 
  * @author Santiago Godoy Poce
  */
-public class ExitMinizone extends MinizoneEvent {
-    public ExitMinizone(int id, String description) {
+public class ExitMinizoneEvent extends MinizoneEvent {
+    public ExitMinizoneEvent(int id, String description) {
         super(id, description);
     }
 

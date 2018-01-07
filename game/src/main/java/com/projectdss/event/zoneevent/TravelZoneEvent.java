@@ -9,8 +9,8 @@ import com.projectdss.map.Zone;
  * 
  * @author Santiago Godoy Poce
  */
-public class TravelZone extends ZoneEvent {
-    public TravelZone(int id, String description) {
+public class TravelZoneEvent extends ZoneEvent {
+    public TravelZoneEvent(int id, String description) {
         super(id, description);
     }
 
