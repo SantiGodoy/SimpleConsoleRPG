@@ -68,10 +68,13 @@ public class ColoredConsoleOutput extends ConsoleOutput {
                 break;
             case "Air": return ANSI_PURPLE + "Air" + ANSI_RESET;
                 break;
-            case "Electricity": return ANSI_YELLOW + "Electricity" + ANSI_RESET;
+            case "Electric": return ANSI_YELLOW + "Electric" + ANSI_RESET;
                 break;
             case "Water": return ANSI_BLUE + "Water" + ANSI_RESET;
                 break;
+            case "Pure": return ANSI_CYAN + "Pure" + ANSI_RESET;
+                break;
+            case "Damned": return ANSI_GREEN + "Damned" + ANSI_RESET;
         }
     }
 
@@ -103,5 +106,35 @@ public class ColoredConsoleOutput extends ConsoleOutput {
     @Override
     public void showLoserBattleMessage(EnemyCharacter enemy) {
         System.out.println(ANSI_RED + "You lost against " + enemy.getName() + " :((" + ANSI_RESET);
+    }
+
+    private String showAbilityType(ElementType elementType) {
+        switch(elementType.toString()) {
+            case "Basic": return ANSI_WHITE;
+                break;
+            case "Fire": return ANSI_RED;
+                break;
+            case "Air": return ANSI_PURPLE;
+                break;
+            case "Electric": return ANSI_YELLOW;
+                break;
+            case "Water": return ANSI_BLUE;
+                break;
+            case "Pure": return ANSI_CYAN;
+                break;
+            case "Damned": return ANSI_GREEN;
+        }
+    }
+
+    @Override
+    public int showAbilitiesCombat(MainCharacter player) {
+        int i = 1;
+        for(Ability ability : player.getAbilities()) {
+            if(player.getStats().getCurrentMana() < ability.getNecessaryMana()) {
+                System.out.println(showAbilityType(ability.getType()) + i + ". " + ability.getName() + ANSI_RESET);
+                ++i;
+            } else 
+                System.out.println(ability.getName() + " (Not enough mana)");
+        }
     }
 }

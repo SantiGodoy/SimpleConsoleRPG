@@ -139,16 +139,7 @@ public abstract class ConsoleOutput implements OutputHandler {
     public abstract void showBattleState(MainCharacter player, EnemyCharacter enemy);
 
     @Override
-    public int showAbilitiesCombat(MainCharacter player) {
-        int i = 1;
-        for(Ability ability : player.getAbilities()) {
-            if(player.getStats().getCurrentMana() < ability.getNecessaryMana()) {
-                System.out.println(i + ". " + ability.getName());
-                ++i;
-            } else 
-                System.out.println(ability.getName() + " (Not enough mana)");
-        }
-    }
+    public abstract int showAbilitiesCombat(MainCharacter player);
 
     @Override
     public abstract void showWinnerBattleMessage(EnemyCharacter enemy);

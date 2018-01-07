@@ -75,4 +75,16 @@ public class StandardConsoleOutput extends ConsoleOutput {
     public void showLoserBattleMessage(EnemyCharacter enemy) {
         System.out.println("You lost against " + enemy.getName() + " :((");
     }
+
+    @Override
+    public int showAbilitiesCombat(MainCharacter player) {
+        int i = 1;
+        for(Ability ability : player.getAbilities()) {
+            if(player.getStats().getCurrentMana() < ability.getNecessaryMana()) {
+                System.out.println(i + ". " + ability.getName());
+                ++i;
+            } else 
+                System.out.println(ability.getName() + " (Not enough mana)");
+        }
+    }
 }

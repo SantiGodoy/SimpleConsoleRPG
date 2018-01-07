@@ -58,10 +58,15 @@ public class Minizone {
         return enemy;
     }
 
+    public void setEnemy(EnemyCharacter enemy) {
+        this.enemy = enemy;
+    }
+
     public Set<Minizone> getAdjacentMinizones() {
         Set<Minizone> adjacentMinizones = new HashSet<Minizone>();
         for (int j = 0; j < zone.getAdjacencyMatrixMinizone().length; ++j)
             if(zone.getAdjacencyMatrixMinizone()[id][j] == true)
                 adjacentMinizones.add(zone.getMinizones()[j]);
+        return adjacentMinizones;
     }
 }
