@@ -14,6 +14,11 @@ import com.projectdss.Ability;
 import com.projectdss.map.Zone;
 import java.util.Set;
 
+/**
+ * ConsoleOutput.java
+ * 
+ * @author Santiago Godoy Poce
+ */
 public abstract class ConsoleOutput implements OutputHandler {
     @Override
     public void showInventory(Inventory inventory) {
@@ -40,12 +45,13 @@ public abstract class ConsoleOutput implements OutputHandler {
     public void showCharacterInformation(Character character) {
         System.out.println("Name: " + character.getName() +
         "\nLevel: " + character.getLevel() +
-        "\nHealth: " + character.getCurrentHealth() + "/" + character.getMaxHealth() +
-        "\nMana: " + character.getCurrentMana() + "/" + character.getMaxMana() +
-        "\nStrength: " + character.getStrength() +
-        "\nDefense: " + character.getDefense() +
-        "\nAgility: " + character.getAgility() +
-        "\nElement Type: " + character.getType());
+        "\nHealth: " + character.getStats().getCurrentHealth() + "/" + character.getStats().getMaxHealth() +
+        "\nMana: " + character.getStats().getCurrentMana() + "/" + character.getStats().getMaxMana() +
+        "\nStrength: " + character.getStats().getStrength() +
+        "\nDefense: " + character.getStats().getResistance() +
+        "\nAgility: " + character.getStats().getAgility() +
+        "\nElement Type (Offensive): " + character.getStats().getOffensiveType() + 
+        "\nElement Type (Defensive): " + character.getStats().getDefensiveType());
     }
 
     @Override
@@ -72,12 +78,10 @@ public abstract class ConsoleOutput implements OutputHandler {
     public abstract void showWinMessage(String message);
 
     @Override
-    public void showEvents(Set<Event> events) {
-        int counter = 1;
-        for(Event e : events) {   
-            System.out.println(counter + ". " + e.getDescription());
-            ++counter;
-        }
+    public void showEvents(Event[] events) {
+        int counter = 0;
+        for(int i = 0; i < events.length; ++i) 
+            System.out.println(++counter + ". " + events[i].getDescription());
     }
 
     @Override
@@ -129,5 +133,94 @@ public abstract class ConsoleOutput implements OutputHandler {
             System.out.println(counter + ". " + z.getName());
             ++counter;
         }
+    }
+
+    @Override
+    public abstract void showBattleState(MainCharacter player, EnemyCharacter enemy);
+
+    @Override
+    public int showAbilitiesCombat(MainCharacter player) {
+        int i = 1;
+        for(Ability ability : player.getAbilities()) {
+            if(player.getStats().getCurrentMana() < ability.getNecessaryMana()) {
+                System.out.println(i + ". " + ability.getName());
+                ++i;
+            } else 
+                System.out.println(ability.getName() + " (Not enough mana)");
+        }
+    }
+
+    @Override
+    public abstract void showWinnerBattleMessage(EnemyCharacter enemy);
+
+    @Override
+    public abstract void showLoserBattleMessage(EnemyCharacter enemy);
+
+    @Override
+    public void showStartBattleMessage(EnemyCharacter enemy) {
+        System.out.println("The battle against " + enemy.getName() +  " has begun!");
+    }
+
+    @Override
+    public void showCombatOptions() {
+        System.out.println("What do you want to do?" +
+        "\n1. Attack" + 
+        "\n2. Select target" + 
+        "\n3. Inventory" +
+        "\n4. Run away");
+    }
+
+    @Override
+    public void showTargetOptions(MainCharacter player, EnemyCharacter enemy) {
+        System.out.println("1. " + player.getName() +
+        "\n2. " + enemy.getName());
+    }
+
+    @Override
+    public void showUseAbility(Character player1, Character player2, 
+        Ability ability, int abilityDamage) {
+            System.out.println(player1.getName() + " used the ability '" + ability.getName() + 
+            "' on " + player2.getName() + " dealing " + abilityDamage + " damage");
+        }
+
+    @Override
+    public void showRunAway() {
+        System.out.println("Wow! You got out of that battle!");
+    }
+
+    @Override
+    public void showUseAttack(Character player1, Character player2, int appliedDamage) {
+        System.out.println(player1.getName() + " attacked to " + player2.getName() + " dealing " +
+        appliedDamage + " damage!");
+    }
+    
+    @Override
+    public void showXPGain(int xpDrop, int levelUp) {
+        System.out.print("You earned " + xpDrop + " experience points ");
+        if(levelUp == 0)
+            System.out.println("but you didn't reach the next level :(");
+        else
+            System.out.println("and you have got " + levelUp + " levels");
+    }
+    
+    @Override
+    public void showLevelUpOptions() {
+        System.out.println("Select the stat which you want to level: " +
+        "\n1. Maximum health" + 
+        "\n2. Maximum mana" +
+        "\n3. Strength" +
+        "\n4. Magical power" +
+        "\n5. Resistance" +
+        "\n6. Agility");
+    }
+    
+    @Override
+    public void showItemGain(Item item) {
+        System.out.println("You picked up a " + item.getName() + " (" + item.getRarity() + ")");
+    }
+
+    @Override
+    public void showJoke(String message) {
+        System.out.println(message);
     }
 }

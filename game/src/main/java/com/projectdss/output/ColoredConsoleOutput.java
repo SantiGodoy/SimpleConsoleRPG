@@ -1,8 +1,17 @@
 package com.projectdss.output;
 
+import com.projectdss.Ability;
+import com.projectdss.character.EnemyCharacter;
 import com.projectdss.output.ConsoleOutput;
 import com.projectdss.character.MainCharacter;
+import com.projectdss.ElementType;
+import java.util.Set;
 
+/**
+ * ColoredConsoleOutput.java
+ * 
+ * @author Santiago Godoy Poce
+ */
 public class ColoredConsoleOutput extends ConsoleOutput {
 
     private static final String ANSI_RESET = "\u001B[0m";
@@ -49,5 +58,50 @@ public class ColoredConsoleOutput extends ConsoleOutput {
         "\n\tSantiago Godoy Poce" +
         "\n\tAntonio García Velatta" + ANSI_RESET);
         Thread.sleep(7000);
+    }
+
+    private String showElementType(ElementType elementType) {
+        switch(elementType.toString()) {
+            case "Basic": return ANSI_WHITE + "Basic" + ANSI_RESET;
+                break;
+            case "Fire": return ANSI_RED + "Fire" + ANSI_RESET;
+                break;
+            case "Air": return ANSI_PURPLE + "Air" + ANSI_RESET;
+                break;
+            case "Electricity": return ANSI_YELLOW + "Electricity" + ANSI_RESET;
+                break;
+            case "Water": return ANSI_BLUE + "Water" + ANSI_RESET;
+                break;
+        }
+    }
+
+    @Override
+    public void showBattleState(MainCharacter player, EnemyCharacter enemy) {
+        System.out.println("\n\tENEMY" +
+        "\nName: " + enemy.getName() +
+        "\nLevel: " + enemy.getLevel() +
+        "\nHealth: " + ANSI_GREEN + enemy.getStats().getCurrentHealth() + "/" + 
+            enemy.getStats().getMaxHealth() + ANSI_RESET +
+        "\nMana: " + ANSI_BLUE + enemy.getStats().getCurrentMana() + "/" + 
+            enemy.getStats().getMaxMana() + ANSI_RESET +
+        "\nElement Type: " + showElementType(enemy.getStats().getDefensiveType()));
+
+        System.out.println("\n\tYOU" +
+        "\nName: " + player.getName() +
+        "\nLevel: " + player.getLevel() +
+        "\nHealth: " + ANSI_GREEN + player.getStats().getCurrentHealth() + "/" + 
+            player.getStats().getMaxHealth() + ANSI_RESET +
+        "\nMana: " + ANSI_BLUE + player.getStats().getCurrentMana() + "/" + 
+            player.getStats().getMaxMana() + ANSI_RESET);
+    }
+
+    @Override
+    public void showWinnerBattleMessage(EnemyCharacter enemy) {
+        System.out.println(ANSI_GREEN + "You won against " + enemy.getName() + "!!!" + ANSI_RESET);
+    }
+
+    @Override
+    public void showLoserBattleMessage(EnemyCharacter enemy) {
+        System.out.println(ANSI_RED + "You lost against " + enemy.getName() + " :((" + ANSI_RESET);
     }
 }

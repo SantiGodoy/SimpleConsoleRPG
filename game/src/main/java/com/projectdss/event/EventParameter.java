@@ -1,5 +1,6 @@
 package com.projectdss.event;
 
+import com.projectdss.CharacterStats;
 import com.projectdss.Item;
 import com.projectdss.inventory.Inventory;
 import com.projectdss.character.MainCharacter;
@@ -7,6 +8,11 @@ import com.projectdss.character.EnemyCharacter;
 import com.projectdss.input.InputManager;
 import com.projectdss.output.OutputManager;
 
+/**
+ * EventParameter.java
+ * 
+ * @author Santiago Godoy Poce
+ */
 public class EventParameter {
     private OutputManager output;
     private InputManager input;
@@ -25,12 +31,12 @@ public class EventParameter {
         return output;
     }
 
-    public int getInput() {
-        return input.getInput();
+    public int getInput(int firstOption, int lastOption) {
+        return input.getInput(firstOption, lastOption);
     }
 
-    public void getItemInput(Item item, Inventory inventory, int option) {
-        input.getItemInput(item, inventory, option);
+    public void getItemInput(Item item, Inventory inventory, CharacterStats characterStats, int option) {
+        input.getItemInput(item, inventory, characterStats, option);
     }
 
     public MainCharacter getPlayer() {

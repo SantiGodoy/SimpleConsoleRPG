@@ -6,7 +6,9 @@ import com.projectdss.event.ZoneEvent;
 import java.util.Set;
 
 /**
+ * ExitMinizone.java
  * 
+ * @author Santiago Godoy Poce
  */
 public class ExitMinizone extends MinizoneEvent {
     public ExitMinizone(int id, String description) {
@@ -15,6 +17,6 @@ public class ExitMinizone extends MinizoneEvent {
 
     public void run(EventParameter eventParameter) {
         eventParameter.getOutput().showZoneEvents();
-        eventParameter.getInput();
+        eventParameter.getInput(1, 2);
     }
 }

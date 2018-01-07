@@ -3,6 +3,12 @@ package com.projectdss.event.zoneevent;
 import com.projectdss.event.EventParameter;
 import com.projectdss.event.ZoneEvent;
 import com.projectdss.map.Zone;
+
+/**
+ * TravelZone.java
+ * 
+ * @author Santiago Godoy Poce
+ */
 public class TravelZone extends ZoneEvent {
     public TravelZone(int id, String description) {
         super(id, description);
@@ -11,8 +17,8 @@ public class TravelZone extends ZoneEvent {
     public void run(EventParameter eventParameter) {
         System.out.println("¿Hacia qué zona desea viajar?");
         eventParameter.getOutput().showAdjacentZones(eventParameter.getPlayer().getZone());
-        int idZone = eventParameter.getInput();
+        int idZone = eventParameter.getInput(1, 5);
         eventParameter.getPlayer().setZone(eventParameter.getPlayer().getWorld().
-        getZone(idZone, eventParameter.getPlayer().getZone()));
+        getAdjacentZone(idZone, eventParameter.getPlayer().getZone()));
     }
 }

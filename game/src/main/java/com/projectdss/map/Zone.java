@@ -5,7 +5,8 @@ import java.util.Set;
 import com.projectdss.Event;
 
 /**
- * Represents each zone of the world
+ * Zone.java
+ * 
  * @author Santiago Godoy Poce
  */
 public class Zone {
@@ -14,11 +15,11 @@ public class Zone {
     private final String description;
     private boolean[][] adjacencyMatrixMinizone;
     private final World world;
-    private final Set<Minizone> minizones;
-    private final Set<Event> events;
+    private final Minizone[] minizones;
+    private final Event[] events;
     
     public Zone(int id, String name, String description,
-        boolean[][] adjacencyMatrixMinizone, Set<Minizone> minizones, Set<Event> events) {
+        boolean[][] adjacencyMatrixMinizone, Minizone[] minizones, Event[] events) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -40,19 +41,15 @@ public class Zone {
     }
 
     public int length() {
-        return minizones.size();
+        return minizones.length;
     }
 
-    public Set<Minizone> getMinizones() {
+    public Minizone[] getMinizones() {
         return minizones;
     }
 
-    public Set<Event> getEvents() {
+    public Event[] getEvents() {
         return events;
-    }
-
-    public Event getEvent(int index) {
-        return (Event)events.toArray()[index];
     }
 
     public boolean[][] getAdjacencyMatrixMinizone() {
@@ -64,7 +61,7 @@ public class Zone {
         for(int j = 0; j < adjacencyMatrixMinizone.length; ++j) {
             if(adjacencyMatrixMinizone[minizone.getId()][j] == true) {
                 if(counter == index)
-                    return (Minizone)minizones.toArray()[j];
+                    return minizones[j];
                 ++counter;
             }
         }
@@ -74,6 +71,7 @@ public class Zone {
         Set<Zone> adjacentZones = new HashSet<Zone>();
         for (int j = 0; j < world.getAdjacencyMatrixZone().length; ++j)
             if(world.getAdjacencyMatrixZone()[id][j] == true)
-                adjacentZones.add(world.getZone(j));
+                adjacentZones.add(world.getZones()[j]);
+        return adjacentZones;
     }
 }

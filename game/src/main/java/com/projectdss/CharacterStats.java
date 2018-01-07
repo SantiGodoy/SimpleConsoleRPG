@@ -1,7 +1,6 @@
 package com.projectdss;
 
 import com.projectdss.ElementType;
-import java.lang.annotation.ElementType;
 
 public class CharacterStats {
 

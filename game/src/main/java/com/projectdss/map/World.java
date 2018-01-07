@@ -3,15 +3,16 @@ package com.projectdss.map;
 import java.util.Set;
 
 /**
- * Represents the global map of the game.
+ * World.java
+ * 
  * @author Santiago Godoy Poce
  */
 public class World {
     private final String name;
     private boolean[][] adjacencyMatrixZone;
-    private final Set<Zone> zones;
+    private final Zone[] zones;
 
-    public World(String name, Set<Zone> zones, boolean[][] adjacencyMatrixZone) {
+    public World(String name, Zone[] zones, boolean[][] adjacencyMatrixZone) {
         this.name   = name;
         this.adjacencyMatrixZone = adjacencyMatrixZone;
         this.zones  = zones;
@@ -22,10 +23,10 @@ public class World {
     }
 
     public int length() {
-        return zones.size();
+        return zones.length;
     }
 
-    public Set<Zone> getZones() {
+    public Zone[] getZones() {
         return zones;
     }
     
@@ -37,12 +38,12 @@ public class World {
         adjacencyMatrixZone[i][j] = !adjacencyMatrixZone[i][j];
     }
 
-    public Zone getZone(int index, Zone zone) {
+    public Zone getAdjacentZone(int index, Zone zone) {
         int counter = 0;
         for(int j = 0; j < adjacencyMatrixZone.length; ++j) {
             if(adjacencyMatrixZone[zone.getId()][j] == true) {
                 if(counter == index)
-                    return (Zone)zones.toArray()[j];
+                    return zones[j];
                 ++counter;
             }
         }

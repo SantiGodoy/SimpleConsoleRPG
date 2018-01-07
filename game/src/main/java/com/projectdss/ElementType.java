@@ -30,7 +30,7 @@ public enum ElementType {
             case AIR:       return "Air";
             case ELECTRIC:  return "Electric";
             case WATER:     return "Water";
-            case default:   return "";
+            default:   return "";
         }
     }
 }

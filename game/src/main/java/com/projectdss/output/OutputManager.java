@@ -12,6 +12,11 @@ import com.projectdss.Character;
 import com.projectdss.Event;
 import java.util.Set;
 
+/**
+ * OutputManager.java
+ * 
+ * @author Santiago Godoy Poce
+ */
 public class OutputManager {
     private OutputHandler outputHandler;
 
@@ -59,7 +64,7 @@ public class OutputManager {
         outputHandler.showWinMessage(message);
     }
 
-    public void showEvents(Set<Event> events) {
+    public void showEvents(Event[] events) {
         outputHandler.showEvents(events);
     }
 
@@ -93,5 +98,62 @@ public class OutputManager {
 
     public void showAdjacentZones(Zone zone) {
         outputHandler.showAdjacentZones(zone);
+    }
+
+    public void showStartBattleMessage(EnemyCharacter enemy) {
+        outputHandler.showStartBattleMessage(enemy);
+    }
+
+    public void showBattleState(MainCharacter player, EnemyCharacter enemy) {
+        outputHandler.showBattleState(player, enemy);
+    }
+
+    public void showCombatOptions() {
+        outputHandler.showCombatOptions();
+    }
+
+    public int showAbilitiesCombat(MainCharacter player) {
+        return outputHandler.showAbilitiesCombat(player);
+    }
+
+    public void showTargetOptions(MainCharacter player, EnemyCharacter enemy) {
+        outputHandler.showTargetOptions(player, enemy);
+    }
+
+    public void showUseAbility(Character player1, Character player2, 
+        Ability ability, int abilityDamage) {
+            outputHandler.showUseAbility(player1, player2, ability, abilityDamage);
+        }
+
+    public void showRunAway() {
+        outputHandler.showRunAway();
+    }
+
+    public void showWinnerBattleMessage(MainCharacter player, EnemyCharacter enemy) {
+        outputHandler.showWinnerBattleMessage(enemy);
+    }
+
+    public void showLoserBattleMessage(MainCharacter player, EnemyCharacter enemy) {
+        outputHandler.showLoserBattleMessage(enemy);
+    }
+
+    public void showUseAttack(Character player1, Character player2, int appliedDamage) {
+        outputHandler.showUseAttack(player1, player2, appliedDamage);
+    }
+
+    public void showXPGain(int xpDrop, int levelUp) {
+        outputHandler.showXPGain(xpDrop, levelUp);
+    }
+
+    public void showLevelUpOptions() {
+        outputHandler.showLevelUpOptions();
+    }
+
+    public void showItemGain(Item item) {
+        outputHandler.showItemGain(item);
+    }
+
+    public void showJoke(String message) {
+        outputHandler.showJoke(message);
     }
 }

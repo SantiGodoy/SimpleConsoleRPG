@@ -55,7 +55,7 @@ public class CombatEvent extends MinizoneEvent {
                     case 2: int numAbilities = 0,
                                 selectedAbility = 0;
                             do {
-                                numAbilities = output.showAbilitiesCombat(player.getAbilities());
+                                numAbilities = output.showAbilitiesCombat(player);
                                 selectedAbility = eventParameter.getInput(0, numAbilities);
                                 if(selectedAbility == 0)
                                     option = 0;
@@ -123,7 +123,7 @@ public class CombatEvent extends MinizoneEvent {
             getRewards(eventParameter);
             ///////////// Remove enemy from its minizone.
         } else {
-            output.showLosserBattleMessage(player, enemy);
+            output.showLoserBattleMessage(player, enemy);
             ///////////// Consequences?
             ///////////// Restore enemy stats.
         }
@@ -180,7 +180,7 @@ public class CombatEvent extends MinizoneEvent {
             int[] options = new int[NUM_OPTIONS_STATS];
             do {
                 option = -1;
-                output.showLevelUpOptions(player);
+                output.showLevelUpOptions();
                 for(int i = 0; i < NUM_OPTIONS_STATS && option != 0; ++i)
                     options[i] = option = eventParameter.getInput(0, NUM_STATS);
 

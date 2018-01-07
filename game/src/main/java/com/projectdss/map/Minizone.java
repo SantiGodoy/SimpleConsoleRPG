@@ -6,7 +6,8 @@ import com.projectdss.Event;
 import com.projectdss.character.EnemyCharacter;
 
 /**
- * Represents each minizone inside a concrete zone
+ * Minizone.java
+ * 
  * @author Santiago Godoy Poce
  */
 public class Minizone {
@@ -14,11 +15,11 @@ public class Minizone {
     private final Zone zone;
     private final String name;
     private final String description;
-    private Set<Event> events;
+    private Event[] events;
     private final int enemyProbability;
     private EnemyCharacter enemy;
 
-    public Minizone(int id, Zone zone, String name, String description, Set<Event> events,
+    public Minizone(int id, Zone zone, String name, String description, Event[] events,
          int enemyProbability, EnemyCharacter enemy) {
             this.id = id;
             this.zone = zone;
@@ -41,16 +42,12 @@ public class Minizone {
         return description;
     }
 
-    public void setEvents(Set<Event> events) {
+    public void setEvents(Event[] events) {
         this.events = events;
     }
 
-    public Set<Event> getEvents() {
+    public Event[] getEvents() {
         return events;
-    }
-
-    public Event getEvent(int index) {
-        return (Event)events.toArray()[index];
     }
 
     public int getEnemyProb() {
@@ -65,6 +62,6 @@ public class Minizone {
         Set<Minizone> adjacentMinizones = new HashSet<Minizone>();
         for (int j = 0; j < zone.getAdjacencyMatrixMinizone().length; ++j)
             if(zone.getAdjacencyMatrixMinizone()[id][j] == true)
-                adjacentMinizones.add(zone.getMinizone(j));
+                adjacentMinizones.add(zone.getMinizones()[j]);
     }
 }

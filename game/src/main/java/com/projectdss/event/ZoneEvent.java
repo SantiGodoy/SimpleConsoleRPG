@@ -3,7 +3,7 @@ package com.projectdss.event;
 import com.projectdss.Event;
 
 /**
- * Represents the different events in a zone.
+ * ZoneEvent.java
  * 
  * @author Santiago Godoy Poce
  */
