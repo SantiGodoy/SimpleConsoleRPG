@@ -24,8 +24,9 @@ import com.projectdss.output.OutputManager;
  */
 public class CombatEvent extends MinizoneEvent {
 
-    private static final double AGILITY_MULTIPLIER = 1.5;
-    private static final int LEVELING_UP_STATS = 6;
+    private static final double AGILITY_RUN = 1.5;
+    private static final int NUM_STATS = 6;
+    private static final int NUM_OPTIONS_STATS = 3;
 
     public CombatEvent(int id, String description) {
         super(id, description);
@@ -40,12 +41,11 @@ public class CombatEvent extends MinizoneEvent {
 
         int option = 0,
             target = 0;
-        boolean runAway = false;
         Ability ability;
 
         output.showBattleState(player, enemy);
 
-        while((player.isAlive() && enemy.isAlive()) && !runAway) {
+        while(player.isAlive() && enemy.isAlive()) {
             do {
                 output.showCombatOptions();
 
@@ -75,70 +75,46 @@ public class CombatEvent extends MinizoneEvent {
             } while(option < 1 || option > 4);
 
             output.showBattleState(player, enemy);
+            
+            boolean turn = enemy.getStats().getAgility() > player.getStats().getAgility();
 
-            if(player.getStats().getAgility() >= enemy.getStats().getAgility()) {
+            if(turn) {
+                enemyAttack(enemy, player, output);
+                output.showBattleState(player, enemy);
+            }
+
+            if(player.isAlive()) {
                 switch(option) {
-                    case 1: attack(player.getStats(), enemy.getStats(), output);
+                    case 1: attack(player, enemy, output);
                         break;
                     case 2: int abilityDamage;
                             if(target == 1) {
                                 abilityDamage = ability.use(player.getStats(), player.getStats());
-                                output.showAbilityUse(player, enemy, ability, abilityDamage);
+                                output.showUseAbility(player, enemy, ability, abilityDamage);
                             } else {
                                 abilityDamage = ability.use(player.getStats(), enemy.getStats());
-                                output.showAbilityUse(player, player, ability, abilityDamage);
+                                output.showUseAbility(player, player, ability, abilityDamage);
                             }
                             player.getStats().setCurrentMana(
                                 player.getStats().getCurrentMana() - ability.getNecessaryMana());
                         break;
                     case 3: //Inventory
                         break;
-                    case 4: if(player.getStats().getAgility() * AGILITY_MULTIPLIER > enemy.getStats().getAgility())
-                                runAway = true;
+                    case 4: if(player.getStats().getAgility() * AGILITY_RUN > enemy.getStats().getAgility()) {
+                                output.showRunAway();
+                                //////////// Restore enemy stats.
+                                return;
+                            }
                         break;
                     default: 
                 }
+            }
 
-                if(!runAway) {
-                    output.showBattleState(player, enemy);
+            output.showBattleState(player, enemy);
 
-                    if(enemy.isAlive()) {
-                        enemyAttack(enemy, player, output);
-                        output.showBattleState(player, enemy);
-                    }
-                }
-                
-
-            } else {
+            if(!turn && enemy.isAlive()) {
                 enemyAttack(enemy, player, output);
-
                 output.showBattleState(player, enemy);
-
-                if(player.isAlive()) {
-                    switch(option) {
-                        case 1: attack(player.getStats(), enemy.getStats(), output);
-                            break;
-                        case 2: int abilityDamage;
-                                if(target == 1) {
-                                    abilityDamage = ability.use(player.getStats(), player.getStats());
-                                    output.showAbilityUse(player, enemy, ability, abilityDamage);
-                                } else {
-                                    abilityDamage = ability.use(player.getStats(), enemy.getStats());
-                                    output.showAbilityUse(player, player, ability, abilityDamage);
-                                }
-                                player.getStats().setCurrentMana(
-                                    player.getStats().getCurrentMana() - ability.getNecessaryMana());
-                            break;
-                        case 3: //Inventory
-                            break;
-                        case 4: if(player.getStats().getAgility() * AGILITY_MULTIPLIER > enemy.getStats().getAgility())
-                                    runAway = true;
-                            break;
-                        default: 
-                    }
-                    
-                    output.showBattleState(player, enemy);
-                }
             }
         }
 
@@ -149,26 +125,29 @@ public class CombatEvent extends MinizoneEvent {
         } else {
             output.showLosserBattleMessage(player, enemy);
             ///////////// Consequences?
+            ///////////// Restore enemy stats.
         }
     }
 
-    private void attack(CharacterStats player1, CharacterStats player2, OutputManager output) {
-        int appliedDamage = player1.getBaseDamage() - player2.getBaseDefense();
+    private void attack(Character player1, Character player2, OutputManager output) {
+        CharacterStats statsPlayer1 = player1.getStats(),
+                       statsPlayer2 = player2.getStats();
+        int appliedDamage = statsPlayer1.getBaseDamage() - statsPlayer2.getBaseDefense();
 
         if(appliedDamage > 0) {
-            appliedDamage *= ElementType.getElementDamage(player1.getOffensiveType(), player2.getDefensiveType());
+            appliedDamage *= ElementType.getElementDamage(statsPlayer1.getOffensiveType(), statsPlayer2.getDefensiveType());
             
-            if(player1.getLifesteal() > 0)
-                player1.setCurrentHealth(player1.getCurrentHealth() + (appliedDamage * player1.getLifesteal() / 100));
+            if(statsPlayer1.getLifesteal() > 0)
+                statsPlayer1.setCurrentHealth(statsPlayer1.getCurrentHealth() + (appliedDamage * statsPlayer1.getLifesteal() / 100));
         }
 
-        if(player1.getTrueDamage() > 0)
-            appliedDamage += player1.getTrueDamage();
+        if(statsPlayer1.getTrueDamage() > 0)
+            appliedDamage += statsPlayer1.getTrueDamage();
 
         if(appliedDamage > 0)
-            player2.setCurrentHealth(player2.getCurrentHealth() - appliedDamage);
+            statsPlayer2.setCurrentHealth(statsPlayer2.getCurrentHealth() - appliedDamage);
 
-        output.showAttackUse(player1, player2, appliedDamage);
+        output.showUseAttack(player1, player2, appliedDamage);
     }
 
     private void enemyAttack(EnemyCharacter enemy, MainCharacter player, OutputManager output) {
@@ -179,13 +158,13 @@ public class CombatEvent extends MinizoneEvent {
             if(action != 0) {
                 Ability ability = enemy.searchAvailableAbility(action);
                 int abilityDamage = ability.use(enemy.getStats(), player.getStats());
-                output.showAbilityUse(enemy, player, ability, abilityDamage);
+                output.showUseAbility(enemy, player, ability, abilityDamage);
                 enemy.getStats().setCurrentMana(enemy.getStats().getCurrentMana() - ability.getNecessaryMana());
                 return;
             }
         }
 
-        attack(enemy.getStats(), player.getStats(), output);
+        attack(enemy, player, output);
     }
 
     private void getRewards(EventParameter eventParameter) {
@@ -195,14 +174,22 @@ public class CombatEvent extends MinizoneEvent {
 
         int levelUp = player.addXP(enemy.getXPDrop());
         output.showXPGain(enemy.getXPDrop(), levelUp);
+
         while(levelUp > 0) {
-            output.showLevelUpOptions(player);
-            int option1 = eventParameter.getInput(1, LEVELING_UP_STATS),
-                option2 = eventParameter.getInput(1, LEVELING_UP_STATS),
-                option3 = eventParameter.getInput(1, LEVELING_UP_STATS);
-            player.incrementLevel(option1, option2, option3);
+            int option;
+            int[] options = new int[NUM_OPTIONS_STATS];
+            do {
+                option = -1;
+                output.showLevelUpOptions(player);
+                for(int i = 0; i < NUM_OPTIONS_STATS && option != 0; ++i)
+                    options[i] = option = eventParameter.getInput(0, NUM_STATS);
+
+            } while(option != 0);
+            
+            player.incrementLevel(options);
             --levelUp;
         }
+
         if(enemy.getItemsDrop().size() > 0) {
             Random random = new Random();
             int dropProb = random.nextInt(100);

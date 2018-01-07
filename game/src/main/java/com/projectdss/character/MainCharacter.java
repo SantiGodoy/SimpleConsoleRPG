@@ -33,28 +33,22 @@ public class MainCharacter extends Character {
         this.inventory = inventory;
     }
 
-    public void incrementLevel(int option1, int option2, int option3) {
+    public void incrementLevel(int[] options) {
         ++level;
 
-        int[] options = new int[3];
-
-        options[0] = option1;
-        options[1] = option2;
-        options[2] = option3;
-
-        for(int i = 0; i < 3; ++i) {
+        for(int i = 0; i < options.length; ++i) {
             switch(options[i]) {
-                case 1: characterStats.setMaxHealth(characterStats.getMaxHealth() + 80);
+                case 1: characterStats.setMaxHealth(characterStats.getMaxHealth() + 15);
                     break;
-                case 2: characterStats.setMaxMana(characterStats.getMaxMana() + 30);
+                case 2: characterStats.setMaxMana(characterStats.getMaxMana() + 5);
                     break;
-                case 3: characterStats.setStrength(characterStats.getStrength() + 5);
+                case 3: characterStats.setStrength(characterStats.getStrength() + 2);
                     break;
-                case 4: characterStats.setMagicalPower(characterStats.getMagicalPower() + 6);
+                case 4: characterStats.setMagicalPower(characterStats.getMagicalPower() + 3);
                     break;
-                case 5: characterStats.setResistance(characterStats.getResistance() + 5);
+                case 5: characterStats.setResistance(characterStats.getResistance() + 2);
                     break;
-                case 6: characterStats.setAgility(characterStats.getAgility() + 4);
+                case 6: characterStats.setAgility(characterStats.getAgility() + 2);
                     break;
             }
         }
