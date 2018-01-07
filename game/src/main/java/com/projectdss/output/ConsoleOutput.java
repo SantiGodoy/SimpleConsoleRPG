@@ -156,22 +156,28 @@ public abstract class ConsoleOutput implements OutputHandler {
     public void showCombatOptions() {
         System.out.println("What do you want to do?" +
         "\n1. Attack" + 
-        "\n2. Select target" + 
+        "\n2. Use ability" + 
         "\n3. Inventory" +
         "\n4. Run away");
     }
 
     @Override
     public void showTargetOptions(MainCharacter player, EnemyCharacter enemy) {
-        System.out.println("1. " + player.getName() +
+        System.out.println("Select de target" + 
+        "\n1. " + player.getName() +
         "\n2. " + enemy.getName());
     }
 
     @Override
     public void showUseAbility(Character player1, Character player2, 
         Ability ability, int abilityDamage) {
-            System.out.println(player1.getName() + " used the ability '" + ability.getName() + 
-            "' on " + player2.getName() + " dealing " + abilityDamage + " damage");
+            if(abilityDamage >= 0) {
+                System.out.println(player1.getName() + " used the ability '" + ability.getName() + 
+                    "' on " + player2.getName() + " dealing " + abilityDamage + " damage");
+            } else {
+                System.out.println(player1.getName() + " has healed " + abilityDamage + 
+                    " with '" + ability.getName() + "'");
+            }
         }
 
     @Override

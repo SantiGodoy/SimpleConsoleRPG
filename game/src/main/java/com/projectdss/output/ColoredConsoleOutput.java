@@ -114,15 +114,15 @@ public class ColoredConsoleOutput extends ConsoleOutput {
                 break;
             case "Fire": return ANSI_RED;
                 break;
-            case "Air": return ANSI_PURPLE;
+            case "Air": return ANSI_CYAN;
                 break;
             case "Electric": return ANSI_YELLOW;
                 break;
             case "Water": return ANSI_BLUE;
                 break;
-            case "Pure": return ANSI_CYAN;
+            case "Pure": return ANSI_GREEN;
                 break;
-            case "Damned": return ANSI_GREEN;
+            case "Damned": return ANSI_PURPLE;
         }
     }
 
