@@ -21,7 +21,7 @@ public class ManaConsumableItem extends ConsumableItem {
 
     @Override
     public void use(CharacterStats characterStats) {
-        characterStats.setCurrentMana(characterStats.getCurrentMana() + recoveryHealth);
+        characterStats.setCurrentMana(characterStats.getCurrentMana() + recoveryMana);
     }
     
 }
