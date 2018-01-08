@@ -14,12 +14,14 @@ public abstract class Ability implements Comparable<Ability> {
     protected final String name;
     protected final String description;
     protected final int necessaryMana;
+    protected final ElementType type;
 
-    public Ability(int id, String name, String description, int necessaryMana) {
+    public Ability(int id, String name, String description, int necessaryMana, ElementType type) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.necessaryMana = necessaryMana;
+        this.type = type;
     }
 
     public int getId() {
@@ -38,24 +40,19 @@ public abstract class Ability implements Comparable<Ability> {
         return necessaryMana;
     }
 
-    @Override
-    public int compareTo(Ability compareAbility) {
-        if(this.getType() == null)
-            if(compareAbility.getType() == null)
-                return this.getName().compareTo(compareAbility.getName());
-            else
-                return 1;
-        else
-            if(compareAbility.getType() == null)
-                return -1;
-            else
-                if(this.getType() == compareAbility.getType())
-                    return this.getName().compareTo(compareAbility.getName());
-                else
-                    return this.getType().compareTo(compareAbility.getType());
+    public ElementType getType() {
+        return type;
     }
 
-    public abstract ElementType getType();
+    @Override
+    public int compareTo(Ability compareAbility) {
+        int compareTypes = this.type.compareTo(compareAbility.getType());
+
+        if(compareTypes == 0)
+            return this.getName().compareTo(compareAbility.getName());
+        else
+            return compareTypes;
+    }
 
     public abstract int use(CharacterStats player1, CharacterStats player2);
 

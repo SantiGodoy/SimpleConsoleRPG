@@ -7,27 +7,20 @@ import com.projectdss.CharacterStats;
 /**
  * @author JoseCorrero
  * 
- * Class ElementAbility represents any Ability that has an elemental type.
+ * Class HealthAbility represents any Ability that has an impact on health.
  */
-public class ElementAbility extends Ability {
+public class HealthAbility extends Ability {
 
     private final int power;
-    private final ElementType type;
 
-    public ElementAbility(int id, String name, String description, int necessaryMana,
-                            int power, ElementType type) {
-        super(id, name, description, necessaryMana);
+    public HealthAbility(int id, String name, String description, int necessaryMana,
+                          int power, ElementType type) {
+        super(id, name, description, necessaryMana, type);
         this.power = power;
-        this.type = type;
     }
 
     public int getPower() {
         return power;
-    }
-
-    @Override
-    public ElementType getType() {
-        return type;
     }
 
     @Override
