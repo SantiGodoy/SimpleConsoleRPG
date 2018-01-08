@@ -155,13 +155,13 @@ public abstract class ConsoleOutput implements OutputHandler {
     @Override
     public void showCombatOptions() {
         System.out.println("What do you want to do?" +
-        "\n1. Attack        2. Ability" + 
-        "\n3. Inventory     4. Run away");
+        "\n1. Attack\t\t2. Ability" + 
+        "\n3. Inventory\t\t4. Run away");
     }
 
     @Override
     public void showTargetOptions(MainCharacter player, EnemyCharacter enemy) {
-        System.out.println("Select de target:" + 
+        System.out.println("Select the target:" + 
         "\n1. " + player.getName() +
         "\n2. " + enemy.getName());
     }
@@ -217,14 +217,14 @@ public abstract class ConsoleOutput implements OutputHandler {
     }
     
     @Override
-    public void showLevelUpOptions(Character player) {
-        System.out.println("Select the stats you want to level:     (Current)" +
-                           "\n1. Maximum health     (" + player.getStats().getMaxHealth() + ")" +
-                           "\n2. Maximum mana       (" + player.getStats().getMaxMana() + ")" +
-                           "\n3. Strength           (" + player.getStats().getStrength() + ")" +
-                           "\n4. Magical power      (" + player.getStats().getMagicalPower() + ")" +
-                           "\n5. Resistance         (" + player.getStats().getResistance() + ")" +
-                           "\n6. Agility            (" + player.getStats().getAgility() + ")");
+    public void showLevelUpOptions(MainCharacter player) {
+        System.out.println("Select the stats you want to level:\t\tLevel " + player.getLevel() +
+                           "\n1. Maximum health\t\t(" + player.getStats().getMaxHealth() + ")" +
+                           "\n2. Maximum mana\t\t(" + player.getStats().getMaxMana() + ")" +
+                           "\n3. Strength\t\t(" + player.getStats().getStrength() + ")" +
+                           "\n4. Magical power\t\t(" + player.getStats().getMagicalPower() + ")" +
+                           "\n5. Resistance\t\t(" + player.getStats().getResistance() + ")" +
+                           "\n6. Agility\t\t(" + player.getStats().getAgility() + ")");
     }
     
     @Override

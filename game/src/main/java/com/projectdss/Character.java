@@ -55,7 +55,7 @@ public abstract class Character {
         return characterStats.getCurrentHealth() > 0;
     }
 
-    public Ability searcAbility(int abilityIndex) {
+    public Ability searchAbility(int abilityIndex) {
         int counter = 0;
 
         for(Ability ability : abilities) {

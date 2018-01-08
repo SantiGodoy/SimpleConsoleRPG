@@ -48,7 +48,7 @@ public interface OutputHandler {
     void showLoserBattleMessage(EnemyCharacter enemy);
     void showUseAttack(Character player1, Character player2, int appliedDamage);
     void showXPGain(int xpDrop, int levelUp);
-    void showLevelUpOptions(Character player);
+    void showLevelUpOptions(MainCharacter player);
     void showItemGain(Item item);
     void showJoke(String message);
 }

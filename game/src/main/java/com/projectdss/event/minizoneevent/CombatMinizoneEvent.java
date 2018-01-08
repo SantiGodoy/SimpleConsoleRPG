@@ -179,7 +179,7 @@ public class CombatMinizoneEvent extends MinizoneEvent {
             int[] options = new int[NUM_OPTIONS_STATS];
             do {
                 option = -1;
-                output.showLevelUpOptions();
+                output.showLevelUpOptions(player);
                 for(int i = 0; i < NUM_OPTIONS_STATS && option != 0; ++i)
                     options[i] = option = eventParameter.getInput(0, NUM_STATS);
 

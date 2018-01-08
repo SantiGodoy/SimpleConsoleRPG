@@ -145,8 +145,8 @@ public class OutputManager {
         outputHandler.showXPGain(xpDrop, levelUp);
     }
 
-    public void showLevelUpOptions(Character player) {
-        outputHandler.showLevelUpOptions();
+    public void showLevelUpOptions(MainCharacter player) {
+        outputHandler.showLevelUpOptions(player);
     }
 
     public void showItemGain(Item item) {
