@@ -155,7 +155,7 @@ public class CombatMinizoneEvent extends MinizoneEvent {
             Random random = new Random();
             int action = random.nextInt(abilitiesSize + 1);
             if(action != 0) {
-                Ability ability = enemy.searchAvailableAbility(action);
+                Ability ability = enemy.searchAbility(action);
                 int abilityDamage = ability.use(enemy.getStats(), player.getStats());
                 output.showUseAbility(enemy, player, ability, abilityDamage);
                 enemy.getStats().setCurrentMana(enemy.getStats().getCurrentMana() - ability.getNecessaryMana());

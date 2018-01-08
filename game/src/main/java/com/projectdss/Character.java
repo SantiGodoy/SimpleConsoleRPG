@@ -55,6 +55,17 @@ public abstract class Character {
         return characterStats.getCurrentHealth() > 0;
     }
 
+    public Ability searcAbility(int abilityIndex) {
+        int counter = 0;
+
+        for(Ability ability : abilities) {
+            ++counter;
+
+            if(counter == abilityIndex)
+                return ability;
+        }
+    }
+
     public Ability searchAvailableAbility(int availableAbilityIndex) {
         int currentMana = characterStats.getCurrentMana(),
             counter = 0;
