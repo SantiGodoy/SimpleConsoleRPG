@@ -75,6 +75,7 @@ public class MainCharacter extends Character {
         this.minizone = minizone;
     }
 
+    @Override
     public String getGender() {
         return gender;
     }

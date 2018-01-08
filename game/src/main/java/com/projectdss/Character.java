@@ -55,4 +55,6 @@ public abstract class Character {
         return characterStats.getCurrentHealth() > 0;
     }
 
+    public abstract String getGender();
+
 }

@@ -35,4 +35,9 @@ public abstract class EnemyCharacter extends Character {
         return itemsDrop;
     }
 
+    @Override
+    public String getGender() {
+        return "Monster";
+    }
+
 }

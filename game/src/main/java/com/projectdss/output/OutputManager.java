@@ -121,8 +121,8 @@ public class OutputManager {
     }
 
     public void showUseAbility(Character player1, Character player2, 
-        Ability ability, int abilityDamage) {
-            outputHandler.showUseAbility(player1, player2, ability, abilityDamage);
+        Ability ability, int abilityPower) {
+            outputHandler.showUseAbility(player1, player2, ability, abilityPower);
         }
 
     public void showRunAway() {
@@ -145,7 +145,7 @@ public class OutputManager {
         outputHandler.showXPGain(xpDrop, levelUp);
     }
 
-    public void showLevelUpOptions() {
+    public void showLevelUpOptions(Character player) {
         outputHandler.showLevelUpOptions();
     }
 

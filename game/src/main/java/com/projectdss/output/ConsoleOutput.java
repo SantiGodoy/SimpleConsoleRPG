@@ -155,29 +155,36 @@ public abstract class ConsoleOutput implements OutputHandler {
     @Override
     public void showCombatOptions() {
         System.out.println("What do you want to do?" +
-        "\n1. Attack" + 
-        "\n2. Use ability" + 
-        "\n3. Inventory" +
-        "\n4. Run away");
+        "\n1. Attack        2. Ability" + 
+        "\n3. Inventory     4. Run away");
     }
 
     @Override
     public void showTargetOptions(MainCharacter player, EnemyCharacter enemy) {
-        System.out.println("Select de target" + 
+        System.out.println("Select de target:" + 
         "\n1. " + player.getName() +
         "\n2. " + enemy.getName());
     }
 
     @Override
     public void showUseAbility(Character player1, Character player2, 
-        Ability ability, int abilityDamage) {
-            if(abilityDamage >= 0) {
-                System.out.println(player1.getName() + " used the ability '" + ability.getName() + 
-                    "' on " + player2.getName() + " dealing " + abilityDamage + " damage");
-            } else {
-                System.out.println(player1.getName() + " has healed " + abilityDamage + 
-                    " with '" + ability.getName() + "'");
-            }
+                               Ability ability, int abilityPower) {
+            String message = player1.getName() + " used the ability '" + ability.getName() + "' on ";
+            
+            if(player1.equals(player2))
+                if(player1.getGender().equals("Man"))
+                    message += "himself, ";
+                else
+                    message += "herself, ";
+            else
+                message += player2.getName() + ", ";
+
+            if(abilityPower >= 0)
+                message += "dealing " + abilityPower + " damage!";
+            else
+                message += "restoring " + (abilityPower * -1) + " health!";
+
+            System.out.println(message);
         }
 
     @Override
@@ -187,8 +194,17 @@ public abstract class ConsoleOutput implements OutputHandler {
 
     @Override
     public void showUseAttack(Character player1, Character player2, int appliedDamage) {
-        System.out.println(player1.getName() + " attacked to " + player2.getName() + " dealing " +
-        appliedDamage + " damage!");
+        String message = player1.getName() + " attacked to ";
+            
+        if(player1.equals(player2))
+            if(player1.getGender().equals("Man"))
+                message += "himself, ";
+            else
+                message += "herself, ";
+        else
+            message += player2.getName() + ", ";
+
+        message += "dealing " + appliedDamage + " damage!";
     }
     
     @Override
@@ -201,14 +217,14 @@ public abstract class ConsoleOutput implements OutputHandler {
     }
     
     @Override
-    public void showLevelUpOptions() {
-        System.out.println("Select the stat which you want to level: " +
-        "\n1. Maximum health" + 
-        "\n2. Maximum mana" +
-        "\n3. Strength" +
-        "\n4. Magical power" +
-        "\n5. Resistance" +
-        "\n6. Agility");
+    public void showLevelUpOptions(Character player) {
+        System.out.println("Select the stats you want to level:     (Current)" +
+                           "\n1. Maximum health     (" + player.getStats().getMaxHealth() + ")" +
+                           "\n2. Maximum mana       (" + player.getStats().getMaxMana() + ")" +
+                           "\n3. Strength           (" + player.getStats().getStrength() + ")" +
+                           "\n4. Magical power      (" + player.getStats().getMagicalPower() + ")" +
+                           "\n5. Resistance         (" + player.getStats().getResistance() + ")" +
+                           "\n6. Agility            (" + player.getStats().getAgility() + ")");
     }
     
     @Override

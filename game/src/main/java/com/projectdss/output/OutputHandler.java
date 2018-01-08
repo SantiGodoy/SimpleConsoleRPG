@@ -42,13 +42,13 @@ public interface OutputHandler {
     int showAbilitiesCombat(MainCharacter player);
     void showTargetOptions(MainCharacter player, EnemyCharacter enemy);
     void showUseAbility(Character player1, Character player2, 
-        Ability ability, int abilityDamage);
+        Ability ability, int abilityPower);
     void showRunAway();
     void showWinnerBattleMessage(EnemyCharacter enemy);
     void showLoserBattleMessage(EnemyCharacter enemy);
     void showUseAttack(Character player1, Character player2, int appliedDamage);
     void showXPGain(int xpDrop, int levelUp);
-    void showLevelUpOptions();
+    void showLevelUpOptions(Character player);
     void showItemGain(Item item);
     void showJoke(String message);
 }
