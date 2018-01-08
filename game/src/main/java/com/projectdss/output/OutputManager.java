@@ -36,10 +36,6 @@ public class OutputManager {
         outputHandler.showAbilities(abilities);
     }
 
-    public void showHUD(MainCharacter player) {
-        outputHandler.showHUD(player);
-    }
-
     public void showCharacterInformation(Character character) {
         outputHandler.showCharacterInformation(character);
     }

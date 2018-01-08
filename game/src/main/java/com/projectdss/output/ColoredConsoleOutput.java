@@ -22,11 +22,6 @@ public class ColoredConsoleOutput extends ConsoleOutput {
     private static final String ANSI_PURPLE = "\u001B[35m";
     private static final String ANSI_CYAN = "\u001B[36m";
     private static final String ANSI_WHITE = "\u001B[37m";
-    
-    @Override
-    public void showHUD(MainCharacter player) {
-        System.out.println();
-    }
 
     @Override
     public void showStartingMessage(String message) {

@@ -10,7 +10,6 @@ import com.projectdss.character.MainCharacter;
 import com.projectdss.character.EnemyCharacter;
 import com.projectdss.inventory.Inventory;
 import com.projectdss.Ability;
-import com.projectdss.ability.ElementAbility;
 import com.projectdss.Event;
 import com.projectdss.event.MinizoneEvent;
 import com.projectdss.event.EventParameter;
@@ -40,7 +39,7 @@ public class CombatMinizoneEvent extends MinizoneEvent {
 
         int option = 0,
             target = 0;
-        Ability ability;
+        Ability ability = null;
 
         output.showBattleState(player, enemy);
 

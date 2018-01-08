@@ -20,7 +20,6 @@ import java.util.Set;
 public interface OutputHandler {
     void showInventory(Inventory inventory);
     void showAbilities(Set<Ability> abilities);
-    void showHUD(MainCharacter player);
     void showCharacterInformation(Character character);
     void showMainCharacterInformation(MainCharacter player);
     void showEnemyInformation(EnemyCharacter enemy);

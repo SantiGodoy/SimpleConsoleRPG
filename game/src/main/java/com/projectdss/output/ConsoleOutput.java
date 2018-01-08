@@ -37,27 +37,24 @@ public abstract class ConsoleOutput implements OutputHandler {
                 " [" + a.getNecessaryMana() + "]");
         }
     }
-    
-    @Override
-    public abstract void showHUD(MainCharacter player);
 
     @Override
     public void showCharacterInformation(Character character) {
-        System.out.println("Name: " + character.getName() +
-        "\nLevel: " + character.getLevel() +
-        "\nHealth: " + character.getStats().getCurrentHealth() + "/" + character.getStats().getMaxHealth() +
-        "\nMana: " + character.getStats().getCurrentMana() + "/" + character.getStats().getMaxMana() +
-        "\nStrength: " + character.getStats().getStrength() +
-        "\nDefense: " + character.getStats().getResistance() +
-        "\nAgility: " + character.getStats().getAgility() +
-        "\nElement Type (Offensive): " + character.getStats().getOffensiveType() + 
-        "\nElement Type (Defensive): " + character.getStats().getDefensiveType());
+        
     }
 
     @Override
     public void showMainCharacterInformation(MainCharacter player) {
-        showCharacterInformation(player);
-        System.out.println("Gender: " + player.getGender() +
+        System.out.println("Name: " + player.getName() +
+        "\nLevel: " + player.getLevel() +
+        "\nHealth: " + player.getStats().getCurrentHealth() + "/" + player.getStats().getMaxHealth() +
+        "\nMana: " + player.getStats().getCurrentMana() + "/" + player.getStats().getMaxMana() +
+        "\nStrength: " + player.getStats().getStrength() +
+        "\nDefense: " + player.getStats().getResistance() +
+        "\nAgility: " + player.getStats().getAgility() +
+        "\nElement Type (Offensive): " + player.getStats().getOffensiveType() + 
+        "\nElement Type (Defensive): " + player.getStats().getDefensiveType() +
+        "\nGender: " + player.getGender() +
         "\nExperience Points: " + player.getXP());
         showAbilities(player.getAbilities());
     }

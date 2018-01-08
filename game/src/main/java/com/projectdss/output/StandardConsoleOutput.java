@@ -15,11 +15,6 @@ import java.util.Set;
 public class StandardConsoleOutput extends ConsoleOutput {
 
     @Override
-    public void showHUD(MainCharacter player) {
-        System.out.println();
-    }
-
-    @Override
     public void showStartingMessage(String message) {
         System.out.println(message);
     }
