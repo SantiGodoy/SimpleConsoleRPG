@@ -1,5 +1,6 @@
 package com.projectdss;
 
+import com.projectdss.ElementType;
 import com.projectdss.CharacterStats;
 
 /**
@@ -7,7 +8,7 @@ import com.projectdss.CharacterStats;
  * 
  * Class Ability.
  */
-public abstract class Ability {
+public abstract class Ability implements Comparable<Ability> {
 
     protected final int id;
     protected final String name;
@@ -36,6 +37,25 @@ public abstract class Ability {
     public int getNecessaryMana() {
         return necessaryMana;
     }
+
+    @Override
+    public int compareTo(Ability compareAbility) {
+        if(this.getType() == null)
+            if(compareAbility.getType() == null)
+                return this.getName().compareTo(compareAbility.getName());
+            else
+                return 1;
+        else
+            if(compareAbility.getType() == null)
+                return -1;
+            else
+                if(this.getType() == compareAbility.getType())
+                    return this.getName().compareTo(compareAbility.getName());
+                else
+                    return this.getType().compareTo(compareAbility.getType());
+    }
+
+    public abstract ElementType getType();
 
     public abstract void use(CharacterStats player1, CharacterStats player2);
 

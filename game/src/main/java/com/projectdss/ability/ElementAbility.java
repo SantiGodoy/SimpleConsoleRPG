@@ -25,6 +25,7 @@ public class ElementAbility extends Ability {
         return power;
     }
 
+    @Override
     public ElementType getType() {
         return type;
     }
