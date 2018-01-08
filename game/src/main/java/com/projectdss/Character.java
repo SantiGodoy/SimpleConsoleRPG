@@ -55,6 +55,19 @@ public abstract class Character {
         return characterStats.getCurrentHealth() > 0;
     }
 
+    public Ability searchAvailableAbility(int availableAbilityIndex) {
+        int currentMana = characterStats.getCurrentMana(),
+            counter = 0;
+
+        for(Ability ability : abilities) {
+            if(ability.getNecessaryMana() <= currentMana)
+                ++counter;
+
+            if(counter == availableAbilityIndex)
+                return ability;
+        }
+    }
+
     public abstract String getGender();
 
 }

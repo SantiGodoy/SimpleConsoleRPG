@@ -57,6 +57,6 @@ public abstract class Ability implements Comparable<Ability> {
 
     public abstract ElementType getType();
 
-    public abstract void use(CharacterStats player1, CharacterStats player2);
+    public abstract int use(CharacterStats player1, CharacterStats player2);
 
 }

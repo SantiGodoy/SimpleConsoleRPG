@@ -31,7 +31,7 @@ public class ElementAbility extends Ability {
     }
 
     @Override
-    public void use(CharacterStats player1, CharacterStats player2) {
+    public int use(CharacterStats player1, CharacterStats player2) {
         int appliedPower;
 
         if(type == ElementType.BASIC)
@@ -45,6 +45,8 @@ public class ElementAbility extends Ability {
             appliedPower *= ElementType.getElementDamage(type, player2.getDefensiveType());
             player2.setCurrentHealth(player2.getCurrentHealth() - appliedPower);
         }
+
+        return appliedPower;
     }
 
 }
