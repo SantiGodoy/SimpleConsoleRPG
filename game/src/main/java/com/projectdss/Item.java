@@ -40,12 +40,7 @@ public abstract class Item implements Comparable<Item> {
 
     @Override
     public int compareTo(Item compareItem) {
-        int compareClasses = this.getClass().getName().compareTo(compareItem.getClass().getName());
-
-        if(compareClasses != 0)
-            return compareClasses;
-        else
-            return this.getRarity().compareTo(compareItem.getRarity());
+        return id - compareItem.getId();
     }
 
     public abstract void use(CharacterStats characterStats);

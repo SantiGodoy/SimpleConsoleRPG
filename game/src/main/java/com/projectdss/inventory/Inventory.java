@@ -1,6 +1,7 @@
 package com.projectdss.inventory;
 
 import java.util.List;
+import java.util.Iterator;
 import com.projectdss.Item;
 
 /**
@@ -8,7 +9,7 @@ import com.projectdss.Item;
  * 
  * Class Inventory.
  */
-public class Inventory {
+public class Inventory implements Iterable<Item> {
 
     private List<Item> items;
     private InventoryManager inventoryManager;
@@ -25,10 +26,6 @@ public class Inventory {
     public void removeItem(Item item) {
         items.remove(item);
     }
-
-    public List<Item> getItems() {
-        return items;
-    }
     
     public int size() {
         return items.size();
@@ -36,6 +33,11 @@ public class Inventory {
 
     public InventoryManager getInventoryManager() {
         return inventoryManager;
+    }
+
+    @Override
+    public Iterator<Item> iterator() {
+        return items.iterator();
     }
 
 }

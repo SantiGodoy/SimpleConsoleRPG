@@ -15,6 +15,11 @@ public class InventoryManager {
 
     private WeaponEquipableCombatItem equippedWeapon;
     private ArmorEquipableCombatItem equippedArmor;
+
+    public InventoryManager(WeaponEquipableCombatItem weapon, ArmorEquipableCombatItem armor) {
+        this.equippedWeapon = weapon;
+        this.equippedArmor = armor;
+    }
     
     public void equipWeapon(WeaponEquipableCombatItem weapon, Character player) {
         if(equippedWeapon != null)
@@ -85,21 +90,29 @@ public class InventoryManager {
     }
 
     public void getConsumables(Inventory inventory, List<ConsumableItem> consumables) {
-        for(Item item : inventory.getItems())
+        for(Item item : inventory)
             if(item instanceof ConsumableItem)
                 consumables.add((ConsumableItem) item);
     }
 
     public void getEquipables(Inventory inventory, List<EquipableCombatItem> equipables) {
-        for(Item item : inventory.getItems())
+        for(Item item : inventory)
             if(item instanceof EquipableCombatItem)
                 equipables.add((EquipableCombatItem) item);
     }
 
     public void getRunes(Inventory inventory, List<RuneCombatItem> runes) {
-        for(Item item : inventory.getItems())
+        for(Item item : inventory)
             if(item instanceof RuneCombatItem)
                 runes.add((RuneCombatItem) item);
+    }
+
+    public WeaponEquipableCombatItem getEquippedWeapon() {
+        return equippedWeapon;
+    }
+
+    public ArmorEquipableCombatItem getEquippedArmor() {
+        return equippedArmor;
     }
     
 }
