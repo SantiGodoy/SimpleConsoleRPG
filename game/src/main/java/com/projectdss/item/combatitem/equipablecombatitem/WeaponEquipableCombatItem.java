@@ -28,10 +28,19 @@ public class WeaponEquipableCombatItem extends EquipableCombatItem {
 
     @Override
     public void use(CharacterStats characterStats) {
-        characterStats.setBaseDamage(characterStats.getStrength() + baseDamage);
+        characterStats.setBaseDamage(characterStats.getBaseDamage() + baseDamage);
 
         for(RuneCombatItem rune : runes) {
             rune.use(characterStats);
+        }
+    }
+
+    @Override
+    public void disuse(CharacterStats characterStats) {
+        characterStats.setBaseDamage(characterStats.getBaseDamage() - baseDamage);
+
+        for(RuneCombatItem rune : runes) {
+            rune.disuse(characterStats);
         }
     }
 

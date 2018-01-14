@@ -30,4 +30,9 @@ public class FirmnessArmorRuneCombatItem extends ArmorRuneCombatItem {
         characterStats.setBaseDefense(characterStats.getBaseDefense() + firmness);
     }
 
+    @Override
+    public void disuse(CharacterStats characterStats) {
+        characterStats.setBaseDefense(characterStats.getBaseDefense() - firmness);
+    }
+
 }

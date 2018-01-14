@@ -28,4 +28,10 @@ public class ElementArmorRuneCombatItem extends ArmorRuneCombatItemDecorator {
         characterStats.setDefensiveType(type);
     }
 
+    @Override
+    public void disuse(CharacterStats characterStats) {
+        super.disuse(characterStats);
+        characterStats.setDefensiveType(ElementType.BASIC);
+    }
+
 }

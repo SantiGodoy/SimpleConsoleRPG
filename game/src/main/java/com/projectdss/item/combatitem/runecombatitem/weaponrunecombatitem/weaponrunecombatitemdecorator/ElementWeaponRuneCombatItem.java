@@ -29,4 +29,10 @@ public class ElementWeaponRuneCombatItem extends WeaponRuneCombatItemDecorator {
         characterStats.setOffensiveType(type);
     }
 
+    @Override
+    public void disuse(CharacterStats characterStats) {
+        super.disuse(characterStats);
+        characterStats.setOffensiveType(ElementType.BASIC);
+    }
+
 }

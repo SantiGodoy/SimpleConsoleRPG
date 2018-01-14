@@ -27,4 +27,10 @@ public class LifestealWeaponRuneCombatItem extends WeaponRuneCombatItemDecorator
         characterStats.setLifesteal(characterStats.getLifesteal() + lifesteal);
     }
 
+    @Override
+    public void disuse(CharacterStats characterStats) {
+        super.disuse(characterStats);
+        characterStats.setLifesteal(characterStats.getLifesteal() - lifesteal);
+    }
+
 }

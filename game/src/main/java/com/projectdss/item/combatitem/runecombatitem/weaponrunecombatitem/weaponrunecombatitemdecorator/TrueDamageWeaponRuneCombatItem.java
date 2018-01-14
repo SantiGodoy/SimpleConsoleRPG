@@ -27,4 +27,10 @@ public class TrueDamageWeaponRuneCombatItem extends WeaponRuneCombatItemDecorato
         characterStats.setTrueDamage(characterStats.getTrueDamage() + trueDamage);
     }
 
+    @Override
+    public void disuse(CharacterStats characterStats) {
+        super.disuse(characterStats);
+        characterStats.setTrueDamage(characterStats.getTrueDamage() - trueDamage);
+    }
+
 }

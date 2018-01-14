@@ -2,6 +2,7 @@ package com.projectdss.item;
 
 import com.projectdss.Item;
 import com.projectdss.Rarity;
+import com.projectdss.CharacterStats;
 
 /**
  * @author JoseCorrero
@@ -14,4 +15,5 @@ public abstract class CombatItem extends Item {
         super(id, name, rarity, description);
     }
 
+    public abstract void disuse(CharacterStats characteStats);
 }

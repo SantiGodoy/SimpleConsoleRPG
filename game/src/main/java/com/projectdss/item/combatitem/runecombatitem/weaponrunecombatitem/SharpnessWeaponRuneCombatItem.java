@@ -30,4 +30,9 @@ public class SharpnessWeaponRuneCombatItem extends WeaponRuneCombatItem {
         characterStats.setBaseDamage(characterStats.getBaseDamage() + sharpness);
     }
 
+    @Override
+    public void disuse(CharacterStats characterStats) {
+        characterStats.setBaseDamage(characterStats.getBaseDamage() - sharpness);
+    }
+
 }

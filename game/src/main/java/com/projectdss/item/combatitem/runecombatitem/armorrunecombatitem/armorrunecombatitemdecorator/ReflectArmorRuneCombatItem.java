@@ -26,4 +26,11 @@ public class ReflectArmorRuneCombatItem extends ArmorRuneCombatItemDecorator {
         super.use(characterStats);
         characterStats.setReflect(characterStats.getReflect() + reflect);
     }
+
+    @Override
+    public void disuse(CharacterStats characterStats) {
+        super.disuse(characterStats);
+        characterStats.setReflect(characterStats.getReflect() - reflect);
+    }
+
 }

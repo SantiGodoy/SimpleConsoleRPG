@@ -30,4 +30,9 @@ public abstract class WeaponRuneCombatItemDecorator extends WeaponRuneCombatItem
         rune.use(characterStats);
     }
 
+    @Override
+    public void disuse(CharacterStats characterStats) {
+        rune.disuse(characterStats);
+    }
+
 }

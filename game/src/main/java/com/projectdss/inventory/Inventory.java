@@ -1,26 +1,21 @@
 package com.projectdss.inventory;
 
 import java.util.List;
-import java.util.Iterator;
 import com.projectdss.Item;
-import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
-import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 
 /**
  * @author JoseCorrero
  * 
  * Class Inventory.
  */
-public class Inventory implements Iterable<Item> {
+public class Inventory {
 
     private List<Item> items;
-    private WeaponEquipableCombatItem equippedWeapon;
-    private ArmorEquipableCombatItem equippedArmor;
+    private InventoryManager inventoryManager;
 
-    public Inventory(List<Item> items, WeaponEquipableCombatItem weapon, ArmorEquipableCombatItem armor) {
+    public Inventory(List<Item> items, InventoryManager inventoryManager) {
         this.items = items;
-        equippedWeapon = weapon;
-        equippedArmor = armor;
+        this.inventoryManager = inventoryManager;
     }
 
     public void addItem(Item item) {
@@ -31,37 +26,16 @@ public class Inventory implements Iterable<Item> {
         items.remove(item);
     }
 
-    public void setEquippedWeapon(WeaponEquipableCombatItem weapon) {
-        equippedWeapon = weapon;
+    public List<Item> getItems() {
+        return items;
+    }
+    
+    public int size() {
+        return items.size();
     }
 
-    public void setEquippedArmor(ArmorEquipableCombatItem armor) {
-        equippedArmor = armor;
-    }
-
-    public boolean hasWeaponEquipped() {
-        return equippedWeapon != null;
-    }
-
-    public boolean hasArmorEquipped() {
-        return equippedArmor != null;
-    }
-
-    public WeaponEquipableCombatItem getEquippedWeapon() {
-        return equippedWeapon;
-    }
-
-    public ArmorEquipableCombatItem getEquippedArmor() {
-        return equippedArmor;
-    }
-
-    public Item searchItem(int index) {
-        return items.get(index);
-    }
-
-    @Override
-    public Iterator<Item> iterator() {
-        return items.iterator();
+    public InventoryManager getInventoryManager() {
+        return inventoryManager;
     }
 
 }
