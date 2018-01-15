@@ -41,11 +41,6 @@ public abstract class ConsoleOutput implements OutputHandler {
     }
 
     @Override
-    public void showCharacterInformation(Character character) {
-        
-    }
-
-    @Override
     public void showMainCharacterInformation(MainCharacter player) {
         System.out.println("Name: " + player.getName() +
         "\nLevel: " + player.getLevel() +
