@@ -67,16 +67,16 @@ public class OutputManager {
         outputHandler.showEvents(events);
     }
 
-    public int showItemOptions(ConsumableItem item) {
-        return outputHandler.showItemOptions(item);
+    public void showItemOptions(ConsumableItem item) {
+        outputHandler.showItemOptions(item);
     }
 
-    public int showItemOptions(EquipableCombatItem item) {
-        return outputHandler.showItemOptions(item);
+    public void showItemOptions(EquipableCombatItem item) {
+        outputHandler.showItemOptions(item);
     }
 
-    public int showItemOptions(RuneCombatItem item) {
-        return outputHandler.showItemOptions(item);
+    public void showItemOptions(RuneCombatItem item) {
+        outputHandler.showItemOptions(item);
     }
 
     public void showGlobalMenu() {

@@ -5,6 +5,8 @@ import com.projectdss.Item;
 import com.projectdss.inventory.Inventory;
 import com.projectdss.item.CombatItem;
 import com.projectdss.item.ConsumableItem;
+import com.projectdss.item.combatitem.EquipableCombatItem;
+import com.projectdss.item.combatitem.RuneCombatItem;
 import java.io.IOException;
 import java.util.Scanner;
 import javax.imageio.IIOException;
@@ -31,29 +33,49 @@ public class ConsoleInput implements InputHandler {
     }
 
     @Override
-    public void getItemInput(Item item, Inventory inventory, CharacterStats characterStats, int option) {
-        if(item instanceof CombatItem) {
-            switch(option) {
-                case 1: item.getDescription();
-                    break;
-                case 2: inventory.removeItem(item);
-                    break;
-                case 3:
-                    break;
-                default: 
-            }
-        } else if(item instanceof ConsumableItem) {
-            switch(option) {
-                case 1: item.use(characterStats);
-                    break;
-                case 2: item.getDescription();
-                    break;
-                case 3: inventory.removeItem(item);
-                    break;
-                case 4: 
-                    break;
-                default:
-            }
+    public void getItemInput(EquipableCombatItem item, Inventory inventory, CharacterStats characterStats, int option) {
+        switch(option) {
+            case 1:
+                if(item.isEquipped())
+                    item.setEquipped(false);
+                else
+                    item.setEquipped(true);
+                break;
+            case 2: inventory.removeItem(item);
+                break;
+            case 3:
+                break;
+            default: 
+        }
+    }
+
+    @Override
+    public void getItemInput(ConsumableItem item, Inventory inventory, CharacterStats characterStats, int option) {
+        switch(option) {
+            case 1: item.use(characterStats);
+                break;
+            case 2: inventory.removeItem(item);
+                break;
+            case 3:
+                break;
+            default: 
+        }
+    }
+
+    @Override
+    public void getItemInput(RuneCombatItem item, Inventory inventory, CharacterStats characterStats, int option) {
+        switch(option){
+            case 1: 
+                if(item.isMerged())
+                    item.setMerged(false);
+                else
+                    item.setMerged(true);
+                break;
+            case 2: inventory.removeItem(item);
+                break;
+            case 3:
+                break;
+            default: 
         }
     }
 }

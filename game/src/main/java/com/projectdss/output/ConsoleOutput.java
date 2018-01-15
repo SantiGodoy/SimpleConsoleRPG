@@ -84,27 +84,30 @@ public abstract class ConsoleOutput implements OutputHandler {
     }
 
     @Override
-    public int showItemOptions(ConsumableItem item) {
-        System.out.println("1. Usar" +
-        "\n2. Eliminar" +
-        "\n3. Volver");
+    public void showItemOptions(ConsumableItem item) {
+        System.out.println("1. Use" +
+        "\n2. Remove" +
+        "\n3. Return");
     }
 
     @Override
-    public int showItemOptions(EquipableCombatItem item) {
+    public void showItemOptions(EquipableCombatItem item) {
         if(item.isEquipped())
-            System.out.println("1. Desequipar");
+            System.out.println("1. Take off");
         else
-            System.out.println("1. Equipar");
-        System.out.println("2. Eliminar" +
-        "\n3. Volver");
+            System.out.println("1. Equip");
+        System.out.println("2. Remove item" +
+        "\n3. Return");
     }
 
     @Override
-    public int showItemOptions(RuneCombatItem item) {
-        System.out.println("1. Merge" +
-        "\n2. Eliminar" +
-        "\n3. Volver");
+    public void showItemOptions(RuneCombatItem item) {
+        if(item.isMerged())
+            System.out.println("1. Dismerge");
+        else
+            System.out.println("1. Merge");
+        System.out.println("2. Remove item" +
+        "\n3. Return");
     }
 
     @Override

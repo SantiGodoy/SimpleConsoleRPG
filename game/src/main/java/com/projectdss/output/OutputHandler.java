@@ -30,9 +30,9 @@ public interface OutputHandler {
     void showGameOverMessage(String message);
     void showWinMessage(String message);
     void showEvents(Event[] events);
-    int showItemOptions(ConsumableItem item);
-    int showItemOptions(EquipableCombatItem item);
-    int showItemOptions(RuneCombatItem item);
+    void showItemOptions(ConsumableItem item);
+    void showItemOptions(EquipableCombatItem item);
+    void showItemOptions(RuneCombatItem item);
     void showGlobalMenu();
     void showGlobalSettings();
     void showGameInformation();

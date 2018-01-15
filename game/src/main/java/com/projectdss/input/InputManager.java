@@ -3,6 +3,9 @@ package com.projectdss.input;
 import com.projectdss.CharacterStats;
 import com.projectdss.Item;
 import com.projectdss.inventory.Inventory;
+import com.projectdss.item.ConsumableItem;
+import com.projectdss.item.combatitem.EquipableCombatItem;
+import com.projectdss.item.combatitem.RuneCombatItem;
 
 /**
  * InputManager.java
@@ -24,7 +27,15 @@ public class InputManager {
         return inputHandler.getInput(firstOption, lastOption);
     }
 
-    public void getItemInput(Item item, Inventory inventory, CharacterStats characterStats, int option) {
+    public void getItemInput(EquipableCombatItem item, Inventory inventory, CharacterStats characterStats, int option) {
+        inputHandler.getItemInput(item, inventory, characterStats, option);
+    }
+
+    public void getItemInput(ConsumableItem item, Inventory inventory, CharacterStats characterStats, int option) {
+        inputHandler.getItemInput(item, inventory, characterStats, option);
+    }
+
+    public void getItemInput(RuneCombatItem item, Inventory inventory, CharacterStats characterStats, int option) {
         inputHandler.getItemInput(item, inventory, characterStats, option);
     }
 }
