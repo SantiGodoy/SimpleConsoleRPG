@@ -126,10 +126,11 @@ public class ColoredConsoleOutput extends ConsoleOutput {
         int i = 1;
         for(Ability ability : player.getAbilities()) {
             if(player.getStats().getCurrentMana() < ability.getNecessaryMana()) {
-                System.out.println(showAbilityType(ability.getType()) + i + ". " + ability.getName() + ANSI_RESET);
+                System.out.println(i + ". " + ability.getName() + " " + showAbilityType(ability.getType()) + ANSI_RESET);
                 ++i;
             } else 
                 System.out.println(ability.getName() + " (Not enough mana)");
         }
+        return i;
     }
 }

@@ -81,5 +81,6 @@ public class StandardConsoleOutput extends ConsoleOutput {
             } else 
                 System.out.println(ability.getName() + " (Not enough mana)");
         }
+        return i;
     }
 }

@@ -8,6 +8,9 @@ import com.projectdss.Event;
 import com.projectdss.Ability;
 import com.projectdss.Character;
 
+import com.projectdss.item.ConsumableItem;
+import com.projectdss.item.combatitem.EquipableCombatItem;
+import com.projectdss.item.combatitem.RuneCombatItem;
 import com.projectdss.map.Minizone;
 import com.projectdss.map.Zone;
 import java.util.Set;
@@ -27,7 +30,9 @@ public interface OutputHandler {
     void showGameOverMessage(String message);
     void showWinMessage(String message);
     void showEvents(Event[] events);
-    void showItemOptions(Item item);
+    int showItemOptions(ConsumableItem item);
+    int showItemOptions(EquipableCombatItem item);
+    int showItemOptions(RuneCombatItem item);
     void showGlobalMenu();
     void showGlobalSettings();
     void showGameInformation();

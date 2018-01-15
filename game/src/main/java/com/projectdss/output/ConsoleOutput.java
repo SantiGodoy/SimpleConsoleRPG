@@ -5,6 +5,8 @@ import com.projectdss.inventory.Inventory;
 import com.projectdss.character.MainCharacter;
 import com.projectdss.item.CombatItem;
 import com.projectdss.item.ConsumableItem;
+import com.projectdss.item.combatitem.EquipableCombatItem;
+import com.projectdss.item.combatitem.RuneCombatItem;
 import com.projectdss.map.Minizone;
 import com.projectdss.character.EnemyCharacter;
 import com.projectdss.Character;
@@ -24,7 +26,7 @@ public abstract class ConsoleOutput implements OutputHandler {
     public void showInventory(Inventory inventory) {
         int counter = 1;
         for(Item i: inventory) {
-            System.out.println(counter + ". " + i.getName() + " (" + i.getRarity() + ")");
+            System.out.println(counter + ". " + i.getName() + " (" + i.getRarity() + "): " + i.getDescription());
             ++counter;
         }
     }
@@ -82,13 +84,27 @@ public abstract class ConsoleOutput implements OutputHandler {
     }
 
     @Override
-    public void showItemOptions(Item item) {
-            if(item instanceof CombatItem) 
-                System.out.println("1. Description\n2. Drop Item\n3. Return");
-            else {
-                if(item instanceof ConsumableItem)
-                    System.out.println("1. Use\n2. Description\n3. Drop Item\n4. Return");
-            }    
+    public int showItemOptions(ConsumableItem item) {
+        System.out.println("1. Usar" +
+        "\n2. Eliminar" +
+        "\n3. Volver");
+    }
+
+    @Override
+    public int showItemOptions(EquipableCombatItem item) {
+        if(item.isEquipped())
+            System.out.println("1. Desequipar");
+        else
+            System.out.println("1. Equipar");
+        System.out.println("2. Eliminar" +
+        "\n3. Volver");
+    }
+
+    @Override
+    public int showItemOptions(RuneCombatItem item) {
+        System.out.println("1. Merge" +
+        "\n2. Eliminar" +
+        "\n3. Volver");
     }
 
     @Override

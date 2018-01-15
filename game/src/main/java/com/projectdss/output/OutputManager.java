@@ -1,6 +1,9 @@
 package com.projectdss.output;
 
 import com.projectdss.Item;
+import com.projectdss.item.ConsumableItem;
+import com.projectdss.item.combatitem.EquipableCombatItem;
+import com.projectdss.item.combatitem.RuneCombatItem;
 import com.projectdss.map.Minizone;
 import com.projectdss.map.Zone;
 import com.projectdss.output.OutputHandler;
@@ -64,8 +67,16 @@ public class OutputManager {
         outputHandler.showEvents(events);
     }
 
-    public void showItemOptions(Item item) {
-        outputHandler.showItemOptions(item);
+    public int showItemOptions(ConsumableItem item) {
+        return outputHandler.showItemOptions(item);
+    }
+
+    public int showItemOptions(EquipableCombatItem item) {
+        return outputHandler.showItemOptions(item);
+    }
+
+    public int showItemOptions(RuneCombatItem item) {
+        return outputHandler.showItemOptions(item);
     }
 
     public void showGlobalMenu() {
