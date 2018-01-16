@@ -12,9 +12,8 @@ public class World {
     private boolean[][] adjacencyMatrixZone;
     private final Zone[] zones;
 
-    public World(String name, Zone[] zones, boolean[][] adjacencyMatrixZone) {
+    public World(String name, Zone[] zones) {
         this.name   = name;
-        this.adjacencyMatrixZone = adjacencyMatrixZone;
         this.zones  = zones;
     }
 
@@ -34,8 +33,8 @@ public class World {
         return adjacencyMatrixZone;
     }
 
-    public void invertAdjacencyZone(int i, int j) {
-        adjacencyMatrixZone[i][j] = !adjacencyMatrixZone[i][j];
+    public void setAdjacencyMatrixZone(boolean[][] adjacencyMatrixZone) {
+        this.adjacencyMatrixZone = adjacencyMatrixZone;
     }
 
     public Zone getAdjacentZone(int index, Zone zone) {

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+  <!--'MINIZONE 0.0'-->
+  <bean id="minizone00" class="com.projectdss.map.Minizone">
+    <property name="name" value=""/>
+    <property name="zone">
+      <ref bean="zone0"/>
+    </property>
+    <property name="description" value=""/>
+    <property name="events">
+      <ref bean="event000"/>
+    </property>
+    <property name="enemy"><null/></property>
+  </bean>
+
+  <!--'MINIZONE 0.1'-->
+  <bean id="minizone01" class="com.projectdss.map.Minizone">
+    <property name="name" value=""/>
+    <property name="zone">
+      <ref bean="zone0"/>
+    </property>
+    <property name="description" value=""/>
+    <property name="events">
+      <ref bean="event010"/>
+    </property>
+    <property name="enemy"><null/></property>
+  </bean>
+
+  <!--'MINIZONE 1.0'-->
+  <bean id="minizone10" class="com.projectdss.map.Minizone">
+    <property name="name" value=""/>
+    <property name="zone">
+      <ref bean="zone1"/>
+    </property>
+    <property name="description" value=""/>
+    <property name="events">
+      <ref bean="event100"/>
+    </property>
+    <property name="enemy"><null/></property>
+  </bean>
+
+  <!--'MINIZONE 1.1'-->
+  <bean id="minizone11" class="com.projectdss.map.Minizone">
+    <property name="name" value=""/>
+    <property name="zone">
+      <ref bean="zone1"/>
+    </property>
+    <property name="description" value=""/>
+    <property name="events">
+      <ref bean="event110"/>
+    </property>
+    <property name="enemy"><null/></property>
+  </bean>
+
+  <!--'MINIZONE 1.2'-->
+  <bean id="minizone12" class="com.projectdss.map.Minizone">
+    <property name="name" value=""/>
+    <property name="zone">
+      <ref bean="zone1"/>
+    </property>
+    <property name="description" value=""/>
+    <property name="events">
+      <ref bean="event120"/>
+    </property>
+    <property name="enemy"><null/></property>
+  </bean>
+
+  <!--'MINIZONE 2.0'-->
+  <bean id="minizone20" class="com.projectdss.map.Minizone">
+    <property name="name" value=""/>
+    <property name="zone">
+      <ref bean="zone2"/>
+    </property>
+    <property name="description" value=""/>
+    <property name="events">
+      <ref bean="event200"/>
+    </property>
+    <property name="enemy"><null/></property>
+  </bean>
+
+  <!--'MINIZONE 2.1'-->
+  <bean id="minizone21" class="com.projectdss.map.Minizone">
+    <property name="name" value=""/>
+    <property name="zone">
+      <ref bean="zone2"/>
+    </property>
+    <property name="description" value=""/>
+    <property name="events">
+      <ref bean="event200"/>
+    </property>
+    <property name="enemy"><null/></property>
+  </bean>
+
+  <!--'MINIZONE 3.0'-->
+  <bean id="minizone30" class="com.projectdss.map.Minizone">
+    <property name="name" value=""/>
+    <property name="zone">
+      <ref bean="zone3"/>
+    </property>
+    <property name="description" value=""/>
+    <property name="events">
+      <ref bean="event300"/>
+    </property>
+    <property name="enemy"><null/></property>
+  </bean>
+
+  <!--'EVENT ZONE 0'-->
+  <bean id="eventz0" class="com.projectdss.event.ZoneEvent">
+    <property name="description" value=""/>
+  </bean>
+
+  <!--'EVENT ZONE 0'-->
+  <bean id="eventz1" class="com.projectdss.event.ZoneEvent">
+    <property name="description" value=""/>
+  </bean>
+
+  <!--'EVENT ZONE 0'-->
+
+  <!--'ZONE 0'-->
+  <bean id="zone0" class="com.projectdss.map.Zone">
+    <property name="name" value=""/>
+    <property name="minizones">
+      <ref bean="minizone00"/>
+      <ref bean="minizone01"/>
+    </property>
+    <property name="description" value=""/>
+    <property name="events">
+      <ref bean="eventz0"/>
+      <ref bean="eventz1"/>
+    </property>
+    <property name="world">
+      <ref bean="world"/>
+    </property>
+  </bean>
+
+  <!--'ZONE 1'-->
+  <bean id="zone1" class="com.projectdss.map.Zone">
+    <property name="name" value=""/>
+    <property name="minizones">
+      <ref bean="minizone10"/>
+      <ref bean="minizone11"/>
+      <ref bean="minizone12"/>
+    </property>
+    <property name="description" value=""/>
+    <property name="events">
+      <ref bean="eventz0"/>
+      <ref bean="eventz1"/>
+    </property>
+    <property name="world">
+      <ref bean="world"/>
+    </property>
+  </bean>
+
+  <!--'ZONE 2'-->
+  <bean id="zone2" class="com.projectdss.map.Zone">
+    <property name="name" value=""/>
+    <property name="minizones">
+      <ref bean="minizone20"/>
+      <ref bean="minizone21"/>
+    </property>
+    <property name="description" value=""/>
+    <property name="events">
+      <ref bean="eventz0"/>
+      <ref bean="eventz1"/>
+    </property>
+    <property name="world">
+      <ref bean="world"/>
+    </property>
+  </bean>
+
+  <!--'ZONE 3'-->
+  <bean id="zone3" class="com.projectdss.map.Zone">
+    <property name="name" value=""/>
+    <property name="minizones">
+      <ref bean="minizone30"/>
+    </property>
+    <property name="description" value=""/>
+    <property name="events">
+      <ref bean="eventz0"/>
+      <ref bean="eventz1"/>
+    </property>
+    <property name="world">
+      <ref bean="world"/>
+    </property>
+  </bean>
+
+  <!--'WORLD'-->
+  <bean id="world" class="com.projectdss.map.World">
+    <property name="name" value=""/>
+    <property name="zones">
+      <ref bean="zone0"/>
+      <ref bean="zone1"/>
+      <ref bean="zone3"/>
+    </property>
+  </bean>
+
+
+  <!--'MAIN STATS'-->
+  <bean id="characterStatsMain" class="com.projectdss.CharacterStats">
+    <property name="health" value="100"/>
+    <property name="mana" value="100"/>
+    <property name="strength" value=""/>
+    <property name="magicalPower" value=""/>
+    <property name="resistance" value=""/>
+    <property name="agility" value=""/>
+    <property name="type" value="BASIC"/>
+  </bean>
+
+  <!--'ITEM MAIN 0'-->
+  <bean id="item0" class="com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem">
+    <property name="name" value=""/>
+    <property name="rarity" value="COMMON"/>
+    <property name="description" value=""/>
+    <property name="maxRunes" value=""/>
+    <property name="runes">
+      <set></set>
+    </property>
+    <property name="baseDamage" value=""/>
+  </bean>
+
+  <!--'ITEM MAIN 1'-->
+  <bean id="item1" class="com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem">
+    <property name="name" value=""/>
+    <property name="rarity" value="COMMON"/>
+    <property name="description" value=""/>
+    <property name="maxRunes" value=""/>
+    <property name="runes">
+      <set></set>
+    </property>
+    <property name="baseDefense" value=""/>
+  </bean>
+
+  <!--'INVENTORY MAIN'-->
+  <bean id="inventoryMain" class="com.projectdss.inventory.Inventory">
+    <property name="items">
+      <list>
+        <ref bean="item0"/>
+        <ref bean="item1"/>
+      </list>
+    </property>
+    <property name="equippedWeapon"><null/></property>
+    <property name="equippedArmor"><null/></property>
+  </bean>
+
+  <!--'ABILITY MAIN 0'-->
+  <bean id="abilityMain0" class="com.projectdss.ability.HealthAbility">
+    <property name="name" value=""/>
+    <property name="description" value=""/>
+    <property name="necessaryMana" value=""/>
+    <property name="power" value=""/>
+  </bean>
+
+  <!--'ABILITY MAIN 1'-->
+  <bean id="abilityMain1" class="com.projectdss.ability.HealthAbility">
+    <property name="name" value=""/>
+    <property name="description" value=""/>
+    <property name="necessaryMana" value=""/>
+    <property name="power" value=""/>
+  </bean>
+
+  <!--'MAIN CHARACTER'-->
+  <bean id="mainCharacter" class="com.projectdss.character.MainCharacter">
+    <property name="name" value=""/>
+    <property name="characterStats">
+      <ref bean="characterStatsMain"/>
+    </property>
+    <property name="abilities">
+      <set>
+        <ref bean="abilityMain0"/>
+        <ref bean="abilityMain1"/>
+      </set>
+    </property>
+    <property name="gender" value=""/>
+    <property name="xp" value=""/>
+    <property name="world">
+      <ref bean="world"/>
+    </property>
+    <property name="zone">
+      <ref bean="zone0"/>
+    </property>
+    <property name="minizone">
+      <ref bean="minizone00"/>
+    </property>
+    <property name="inventory">
+      <ref bean="inventoryMain"/>
+    </property>
+  </bean>
+
+  <!--'ENEMY STATS'-->
+  <bean id="characterStats0" class="com.projectdss.CharacterStats">
+    <property name="health" value="100"/>
+    <property name="health" value="100"/>
+    <property name="mana" value="100"/>
+    <property name="strength" value=""/>
+    <property name="magicalPower" value=""/>
+    <property name="resistance" value=""/>
+    <property name="agility" value=""/>
+    <property name="type" value=""/>
+  </bean>
+
+  <!--'ENEMY CHARACTER'-->
+  <bean id="minionEnemyCharacter" class="com.projectdss.character.enemy.MinionEnemyCharacter">
+    <property name="name" value=""/>
+    <property name="characterStats">
+      <ref bean="characterStats0"/>
+    </property>
+    <property name="abilities">
+      <set>
+        <ref bean="abilityEnemy0"/>
+        <ref bean="abilityEnemy1"/>
+      </set>
+    </property>
+    <property name="xpDrop" value=""/>
+    <property name="message" value=""/>
+    <property name="itemsDrop">
+      <map>
+        <entry key-ref="itemDrop0" value=""/>
+        <entry key-ref="itemDrop1" value=""/>
+      </map>
+    </property>
+  </bean>
+
+  <!--'BOSS STATS'-->
+  <bean id="characterStats1" class="com.projectdss.CharacterStats">
+    <property name="health" value=""/>
+    <property name="health" value=""/>
+    <property name="mana" value=""/>
+    <property name="strength" value=""/>
+    <property name="magicalPower" value=""/>
+    <property name="resistance" value=""/>
+    <property name="agility" value=""/>
+    <property name="type" value=""/>
+  </bean>
+
+  <!--'BOSS CHARACTER'-->
+  <bean id="bossEnemyCharacter" class="com.projectdss.character.enemy.BossEnemyCharacter">
+    <property name="name" value=""/>
+    <property name="characterStats">
+      <ref bean="characterStats1"/>
+    </property>
+    <property name="abilities">
+      <set>
+        <ref bean="abilityEnemyBoss0"/>
+        <ref bean="abilityEnemyBoss1"/>
+      </set>
+    </property>
+  </bean>
+
+</beans>
