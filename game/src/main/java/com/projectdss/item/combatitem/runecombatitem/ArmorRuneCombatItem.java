@@ -11,8 +11,8 @@ import com.projectdss.item.combatitem.RuneCombatItem;
  */
 public abstract class ArmorRuneCombatItem extends RuneCombatItem {
 
-    public ArmorRuneCombatItem(int id, String name, Rarity rarity, String description) {
-        super(id, name, rarity, description);
+    public ArmorRuneCombatItem(String name, Rarity rarity, String description) {
+        super(name, rarity, description);
     }
 
     public abstract int getFirmness();

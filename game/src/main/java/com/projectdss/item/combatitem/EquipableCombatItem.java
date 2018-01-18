@@ -16,9 +16,9 @@ public abstract class EquipableCombatItem extends CombatItem {
     protected final int maxRunes;
     protected Set<RuneCombatItem> runes;
 
-    public EquipableCombatItem(int id, String name, Rarity rarity, String description, int maxRunes,
+    public EquipableCombatItem(String name, Rarity rarity, String description, int maxRunes,
                                Set<RuneCombatItem> runes) {
-        super(id, name, rarity, description);
+        super(name, rarity, description);
         equipped = false;
         this.maxRunes = maxRunes;
         this.runes = runes;

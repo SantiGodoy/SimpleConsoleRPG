@@ -11,8 +11,8 @@ import com.projectdss.CharacterStats;
  */
 public abstract class CombatItem extends Item {
 
-    public CombatItem(int id, String name, Rarity rarity, String description) {
-        super(id, name, rarity, description);
+    public CombatItem(String name, Rarity rarity, String description) {
+        super(name, rarity, description);
     }
 
     public abstract void disuse(CharacterStats characteStats);

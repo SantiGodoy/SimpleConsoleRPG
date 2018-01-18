@@ -16,9 +16,9 @@ public class ArmorEquipableCombatItem extends EquipableCombatItem {
     
     private final int baseDefense;
     
-    public ArmorEquipableCombatItem(int id, String name, Rarity rarity, String description, int maxRunes,
+    public ArmorEquipableCombatItem(String name, Rarity rarity, String description, int maxRunes,
                                     Set<RuneCombatItem> runes, int baseDefense) {
-        super(id, name, rarity, description, maxRunes, runes);
+        super(name, rarity, description, maxRunes, runes);
         this.baseDefense = baseDefense;
     }
 

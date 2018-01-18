@@ -51,25 +51,17 @@ public class ColoredConsoleOutput extends ConsoleOutput {
         System.out.println(ANSI_PURPLE + "Developers:" + 
         "\n\tJosé Correro Barquín" +
         "\n\tSantiago Godoy Poce" + ANSI_RESET);
-        Thread.sleep(7000);
     }
 
     private String showElementType(ElementType elementType) {
         switch(elementType.toString()) {
             case "Basic": return ANSI_WHITE + "Basic" + ANSI_RESET;
-                break;
             case "Fire": return ANSI_RED + "Fire" + ANSI_RESET;
-                break;
             case "Air": return ANSI_CYAN + "Air" + ANSI_RESET;
-                break;
             case "Electric": return ANSI_YELLOW + "Electric" + ANSI_RESET;
-                break;
             case "Water": return ANSI_BLUE + "Water" + ANSI_RESET;
-                break;
             case "Pure": return ANSI_GREEN + "Pure" + ANSI_RESET;
-                break;
             case "Damned": return ANSI_PURPLE + "Damned" + ANSI_RESET;
-                break;
             default: return "";
         }
     }
@@ -109,19 +101,12 @@ public class ColoredConsoleOutput extends ConsoleOutput {
     private String showAbilityType(ElementType elementType) {
         switch(elementType.toString()) {
             case "Basic": return ANSI_WHITE;
-                break;
             case "Fire": return ANSI_RED;
-                break;
             case "Air": return ANSI_CYAN;
-                break;
             case "Electric": return ANSI_YELLOW;
-                break;
             case "Water": return ANSI_BLUE;
-                break;
             case "Pure": return ANSI_GREEN;
-                break;
             case "Damned": return ANSI_PURPLE;
-                break;
             default: return "";
         }
     }

@@ -14,9 +14,9 @@ public abstract class WeaponRuneCombatItemDecorator extends WeaponRuneCombatItem
 
     protected final WeaponRuneCombatItem rune;
 
-    public WeaponRuneCombatItemDecorator(int id, String name, Rarity rarity, String description, 
+    public WeaponRuneCombatItemDecorator(String name, Rarity rarity, String description, 
                                          WeaponRuneCombatItem rune) {
-        super(id, name, rarity, description);
+        super(name, rarity, description);
         this.rune = rune;
     }
 

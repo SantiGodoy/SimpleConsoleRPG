@@ -10,8 +10,8 @@ import com.projectdss.map.Minizone;
  * @author Santiago Godoy Poce
  */
 public class TravelMinizoneEvent extends MinizoneEvent {
-    public TravelMinizoneEvent(int id, String description) {
-        super(id, description);
+    public TravelMinizoneEvent(String description) {
+        super(description);
     }
 
     public void run(EventParameter eventParameter) {

@@ -22,9 +22,9 @@ public class MainCharacter extends Character {
     private Minizone minizone;
     private final Inventory inventory;
 
-    public MainCharacter(int id, String name, CharacterStats characterStats, Set<Ability> abilities, 
+    public MainCharacter(String name, CharacterStats characterStats, Set<Ability> abilities, 
                          String gender, World world, Zone zone, Minizone minizone, Inventory inventory) {
-        super(id, name, 1, characterStats, abilities);
+        super(name, 1, characterStats, abilities);
         this.gender = gender;
         this.xp = 0;
         this.world = world;

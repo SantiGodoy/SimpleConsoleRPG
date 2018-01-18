@@ -13,8 +13,8 @@ public abstract class RuneCombatItem extends CombatItem {
 
     protected boolean merged;
 
-    public RuneCombatItem(int id, String name, Rarity rarity, String description) {
-        super(id, name, rarity, description);
+    public RuneCombatItem(String name, Rarity rarity, String description) {
+        super(name, rarity, description);
         this.merged = false;
     }
 

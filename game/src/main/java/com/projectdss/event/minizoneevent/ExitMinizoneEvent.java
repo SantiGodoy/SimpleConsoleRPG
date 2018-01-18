@@ -11,8 +11,8 @@ import java.util.Set;
  * @author Santiago Godoy Poce
  */
 public class ExitMinizoneEvent extends MinizoneEvent {
-    public ExitMinizoneEvent(int id, String description) {
-        super(id, description);
+    public ExitMinizoneEvent(String description) {
+        super(description);
     }
 
     public void run(EventParameter eventParameter) {

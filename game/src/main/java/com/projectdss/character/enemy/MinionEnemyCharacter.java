@@ -1,18 +1,14 @@
+package com.projectdss.character.enemy;
+
+import com.projectdss.Ability;
+import com.projectdss.CharacterStats;
+import com.projectdss.Item;
+import com.projectdss.character.EnemyCharacter;
 
 import java.util.*;
-
-/**
- * 
- */
-public class MinionEnemyCharacter extends Enemy {
-
+public class MinionEnemyCharacter extends EnemyCharacter {
   
-    public MinionEnemyCharacter() {
+    public MinionEnemyCharacter(String name, int level, CharacterStats characterStats, Set<Ability> abilities, int xpDrop, String message, Map<Item, Integer> itemsDrop) {
+        super(name, level, characterStats, abilities, xpDrop, message, itemsDrop);
     }
-
-  
-    public MinionEnemyCharacter(int id, String name, int level, int health, int mana, int strength,  int defense, int agility, ElementType type, Set<Ability> abilities, int xpDrop, String message, Map<item, Integer> itemsDrop) {
-        super(id, name, level, health, mana, strength, defense, agility, type, abilities, xpDrop, message, itemsDrop);
-    }
-
 }

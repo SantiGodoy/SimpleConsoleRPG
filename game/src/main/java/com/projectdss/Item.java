@@ -10,20 +10,14 @@ import com.projectdss.CharacterStats;
  */
 public abstract class Item implements Comparable<Item> {
 
-    protected final int id;
     protected final String name;
     protected final Rarity rarity;
     protected final String description;
 
-    public Item(int id, String name, Rarity rarity, String description) {
-       this.id = id;
+    public Item(String name, Rarity rarity, String description) {
        this.name = name;
        this.rarity = rarity;
        this.description = description;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getName() {
@@ -40,7 +34,12 @@ public abstract class Item implements Comparable<Item> {
 
     @Override
     public int compareTo(Item compareItem) {
-        return id - compareItem.getId();
+        int compareClasses = this.getClass().getName().compareTo(compareItem.getClass().getName());
+
+        if(compareClasses != 0)
+            return compareClasses;
+        else
+            return this.getRarity().compareTo(compareItem.getRarity());
     }
 
     public abstract void use(CharacterStats characterStats);

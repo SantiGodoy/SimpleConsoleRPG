@@ -15,8 +15,8 @@ public class HealthConsumableItem extends ConsumableItem {
 
     private final int recoveryHealth;
 
-    public HealthConsumableItem(int id, String name, Rarity rarity, String description, int recoveryHealth) {
-        super(id, name, rarity, description);
+    public HealthConsumableItem(String name, Rarity rarity, String description, int recoveryHealth) {
+        super(name, rarity, description);
         this.recoveryHealth = recoveryHealth;
     }
 

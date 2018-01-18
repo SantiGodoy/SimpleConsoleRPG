@@ -14,9 +14,9 @@ public class FirmnessArmorRuneCombatItem extends ArmorRuneCombatItem {
 
     private final int firmness;
 
-    public FirmnessArmorRuneCombatItem(int id, String name, Rarity rarity, String description, 
+    public FirmnessArmorRuneCombatItem(String name, Rarity rarity, String description, 
                                        int firmness) {
-        super(id, name, rarity, description);
+        super(name, rarity, description);
         this.firmness = firmness;
     }
 

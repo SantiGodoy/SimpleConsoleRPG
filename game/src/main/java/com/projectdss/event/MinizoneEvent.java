@@ -8,8 +8,8 @@ import com.projectdss.Event;
  * @author Santiago Godoy Poce
  */
 public abstract class MinizoneEvent extends Event {
-    public MinizoneEvent(int id, String description) {
-        super(id, description);
+    public MinizoneEvent(String description) {
+        super(description);
     }
 
     public abstract void run(EventParameter eventParameter);

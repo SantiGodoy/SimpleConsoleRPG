@@ -4,13 +4,13 @@ import com.projectdss.event.EventParameter;
 import com.projectdss.event.MinizoneEvent;
 
 /**
- * Joke.java
+ * MessageMinizoneEvent.java
  * 
  * @author Santiago Godoy Poce
  */
-public class JokeMinizoneEvent extends MinizoneEvent {
-    public JokeMinizoneEvent(int id, String description) {
-        super(id, description);
+public class MessageMinizoneEvent extends MinizoneEvent {
+    public MessageMinizoneEvent(String description) {
+        super(description);
     }
 
     public void run(EventParameter eventParameter) {
