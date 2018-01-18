@@ -11,19 +11,8 @@ import com.projectdss.item.CombatItem;
  */
 public abstract class RuneCombatItem extends CombatItem {
 
-    protected boolean merged;
-
     public RuneCombatItem(String name, Rarity rarity, String description) {
         super(name, rarity, description);
-        this.merged = false;
-    }
-
-    public void setMerged(boolean merged) {
-        this.merged = merged;
-    }
-
-    public boolean isMerged() {
-        return merged;
     }
 
 }

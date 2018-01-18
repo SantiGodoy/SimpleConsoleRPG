@@ -7,6 +7,8 @@ import com.projectdss.item.CombatItem;
 import com.projectdss.item.ConsumableItem;
 import com.projectdss.item.combatitem.EquipableCombatItem;
 import com.projectdss.item.combatitem.RuneCombatItem;
+import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
+import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 import com.projectdss.map.Minizone;
 import com.projectdss.character.EnemyCharacter;
 import com.projectdss.Character;
@@ -28,6 +30,15 @@ public abstract class ConsoleOutput implements OutputHandler {
         int counter = 1;
         for(Item i: inventory) {
             System.out.println(counter + ". " + i.getName() + " (" + i.getRarity() + "): " + i.getDescription());
+            if(i instanceof WeaponEquipableCombatItem) {
+                WeaponEquipableCombatItem weapon = (WeaponEquipableCombatItem) i;
+                System.out.println(weapon.getBaseDamage() + " damage.\n" +
+                                   weapon.getRunes().size() + "/" + weapon.getRunes().size() + " runes.");
+            } else if(i instanceof ArmorEquipableCombatItem) {
+                ArmorEquipableCombatItem armor = (ArmorEquipableCombatItem) i;
+                System.out.println(armor.getBaseDefense() + " defense.\n" +
+                                   armor.getRunes().size() + "/" + armor.getRunes().size() + " runes.");
+            }
             ++counter;
         }
     }
@@ -78,12 +89,9 @@ public abstract class ConsoleOutput implements OutputHandler {
 
     @Override
     public int showItemOptions(RuneCombatItem item) {
-        if(item.isMerged())
-            System.out.println("1. Dismerge");
-        else
-            System.out.println("1. Merge");
-        System.out.println("2. Remove item" +
-        "\n0. Return");
+        System.out.println("1. Merge\n" +
+                           "2. Remove item\n" +
+                           "0. Return");
         return 3;
     }
 

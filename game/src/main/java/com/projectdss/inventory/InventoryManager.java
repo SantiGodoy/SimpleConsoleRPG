@@ -9,7 +9,7 @@ import com.projectdss.item.combatitem.runecombatitem.ArmorRuneCombatItem;
 import com.projectdss.item.combatitem.runecombatitem.WeaponRuneCombatItem;
 import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
 import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
-import com.projectdss.Character;
+import com.projectdss.CharacterStats;
 
 public class InventoryManager {
 
@@ -23,62 +23,60 @@ public class InventoryManager {
         return INSTANCE;
     }
     
-    public void equipWeapon(WeaponEquipableCombatItem weapon, Character player) {
+    public void equipWeapon(WeaponEquipableCombatItem weapon, CharacterStats player) {
         if(inventory.hasWeaponEquipped())
             discardWeapon(player);
 
         inventory.setEquippedWeapon(weapon);
         weapon.setEquipped(true);
-        weapon.use(player.getStats());
+        weapon.use(player);
     }
 
-    public void equipArmor(ArmorEquipableCombatItem armor, Character player) {
+    public void equipArmor(ArmorEquipableCombatItem armor, CharacterStats player) {
         if(inventory.hasArmorEquipped())
             discardArmor(player);
 
         inventory.setEquippedArmor(armor);
         armor.setEquipped(true);
-        armor.use(player.getStats());
+        armor.use(player);
     }
 
-    public void discardWeapon(Character player) {
+    public void discardWeapon(CharacterStats player) {
         if(inventory.hasWeaponEquipped()) {
-            inventory.getEquippedWeapon().disuse(player.getStats());
+            inventory.getEquippedWeapon().disuse(player);
             inventory.getEquippedWeapon().setEquipped(false);
         }
     }
 
-    public void discardArmor(Character player) {
+    public void discardArmor(CharacterStats player) {
         if(inventory.hasArmorEquipped()) {
-            inventory.getEquippedArmor().disuse(player.getStats());
+            inventory.getEquippedArmor().disuse(player);
             inventory.getEquippedArmor().setEquipped(false);
         }
     }
 
     public boolean mergeWeaponRune(WeaponEquipableCombatItem weapon, WeaponRuneCombatItem rune,
-                                Character player) {
+                                   CharacterStats player) {
         if(weapon.getMaxRunes() == weapon.getRunes().size())
             return false;
 
         weapon.addRune(rune);
-        rune.setMerged(true);
 
         if(weapon.isEquipped())
-            rune.use(player.getStats());
+            rune.use(player);
 
         return true;
     }
 
     public boolean mergeArmorRune(ArmorEquipableCombatItem armor, ArmorRuneCombatItem rune,
-                               Character player) {
+                                  CharacterStats player) {
         if(armor.getMaxRunes() == armor.getRunes().size())
             return false;
 
         armor.addRune(rune);
-        rune.setMerged(true);
 
         if(armor.isEquipped())
-            rune.use(player.getStats());
+            rune.use(player);
 
         return true;
     }
