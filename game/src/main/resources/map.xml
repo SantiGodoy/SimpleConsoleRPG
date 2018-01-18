@@ -323,7 +323,7 @@
     </property>
   </bean>
 
-  <!--'BOSS STATS'-->
+  <!--'FINAL ENEMY STATS'-->
   <bean id="characterStats1" class="com.projectdss.CharacterStats">
     <property name="health" value=""/>
     <property name="health" value=""/>

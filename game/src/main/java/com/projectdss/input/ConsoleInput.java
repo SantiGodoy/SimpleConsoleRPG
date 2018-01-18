@@ -43,7 +43,7 @@ public class ConsoleInput implements InputHandler {
                 break;
             case 2: inventory.removeItem(item);
                 break;
-            case 3:
+            case 0:
                 break;
             default: 
         }
@@ -56,7 +56,7 @@ public class ConsoleInput implements InputHandler {
                 break;
             case 2: inventory.removeItem(item);
                 break;
-            case 3:
+            case 0:
                 break;
             default: 
         }
@@ -73,7 +73,7 @@ public class ConsoleInput implements InputHandler {
                 break;
             case 2: inventory.removeItem(item);
                 break;
-            case 3:
+            case 0:
                 break;
             default: 
         }

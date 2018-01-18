@@ -41,28 +41,6 @@ public abstract class ConsoleOutput implements OutputHandler {
     }
 
     @Override
-    public void showMainCharacterInformation(MainCharacter player) {
-        System.out.println("Name: " + player.getName() +
-        "\nLevel: " + player.getLevel() +
-        "\nHealth: " + player.getStats().getCurrentHealth() + "/" + player.getStats().getMaxHealth() +
-        "\nMana: " + player.getStats().getCurrentMana() + "/" + player.getStats().getMaxMana() +
-        "\nStrength: " + player.getStats().getStrength() +
-        "\nDefense: " + player.getStats().getResistance() +
-        "\nAgility: " + player.getStats().getAgility() +
-        "\nElement Type (Offensive): " + player.getStats().getOffensiveType() + 
-        "\nElement Type (Defensive): " + player.getStats().getDefensiveType() +
-        "\nGender: " + player.getGender() +
-        "\nExperience Points: " + player.getXP());
-        showAbilities(player.getAbilities());
-    }
-
-    @Override
-    public void showEnemyInformation(EnemyCharacter enemy) {
-        System.out.println(enemy.getMessage());
-        showCharacterInformation(enemy);
-    }
-
-    @Override
     public abstract void showStartingMessage(String message);
 
     @Override
@@ -82,7 +60,7 @@ public abstract class ConsoleOutput implements OutputHandler {
     public int showItemOptions(ConsumableItem item) {
         System.out.println("1. Use" +
         "\n2. Remove" +
-        "\n3. Return");
+        "\n0. Return");
         return 3;
     }
 
@@ -93,7 +71,7 @@ public abstract class ConsoleOutput implements OutputHandler {
         else
             System.out.println("1. Equip");
         System.out.println("2. Remove item" +
-        "\n3. Return");
+        "\n0. Return");
         return 3;
     }
 
@@ -104,7 +82,7 @@ public abstract class ConsoleOutput implements OutputHandler {
         else
             System.out.println("1. Merge");
         System.out.println("2. Remove item" +
-        "\n3. Return");
+        "\n0. Return");
         return 3;
     }
 
@@ -170,7 +148,7 @@ public abstract class ConsoleOutput implements OutputHandler {
     public void showCombatOptions() {
         System.out.println("What do you want to do?" +
         "\n1. Attack\t\t2. Ability" + 
-        "\n3. Inventory\t\t4. Run away");
+        "\n3. Run away");
     }
 
     @Override

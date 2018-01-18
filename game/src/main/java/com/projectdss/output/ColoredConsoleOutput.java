@@ -50,8 +50,7 @@ public class ColoredConsoleOutput extends ConsoleOutput {
     public void showGameInformation() {
         System.out.println(ANSI_PURPLE + "Developers:" + 
         "\n\tJosé Correro Barquín" +
-        "\n\tSantiago Godoy Poce" +
-        "\n\tAntonio García Velatta" + ANSI_RESET);
+        "\n\tSantiago Godoy Poce" + ANSI_RESET);
         Thread.sleep(7000);
     }
 
@@ -70,6 +69,8 @@ public class ColoredConsoleOutput extends ConsoleOutput {
             case "Pure": return ANSI_GREEN + "Pure" + ANSI_RESET;
                 break;
             case "Damned": return ANSI_PURPLE + "Damned" + ANSI_RESET;
+                break;
+            default: return "";
         }
     }
 
@@ -90,7 +91,9 @@ public class ColoredConsoleOutput extends ConsoleOutput {
         "\nHealth: " + ANSI_GREEN + player.getStats().getCurrentHealth() + "/" + 
             player.getStats().getMaxHealth() + ANSI_RESET +
         "\nMana: " + ANSI_BLUE + player.getStats().getCurrentMana() + "/" + 
-            player.getStats().getMaxMana() + ANSI_RESET);
+            player.getStats().getMaxMana() + ANSI_RESET +
+        "\nElement Type (Offensive): " + player.getStats().getOffensiveType() + 
+        "\nElement Type (Defensive): " + player.getStats().getDefensiveType());
     }
 
     @Override
@@ -118,6 +121,8 @@ public class ColoredConsoleOutput extends ConsoleOutput {
             case "Pure": return ANSI_GREEN;
                 break;
             case "Damned": return ANSI_PURPLE;
+                break;
+            default: return "";
         }
     }
 

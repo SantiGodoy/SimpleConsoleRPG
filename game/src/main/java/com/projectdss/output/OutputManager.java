@@ -39,14 +39,6 @@ public class OutputManager {
         outputHandler.showAbilities(abilities);
     }
 
-    public void showMainCharacterInformation(MainCharacter player) {
-        outputHandler.showMainCharacterInformation(player);
-    }
-
-    public void showEnemyInformation(EnemyCharacter enemy) {
-        outputHandler.showEnemyInformation(enemy);
-    }
-
     public void showStartingMessage(String message) {
         outputHandler.showStartingMessage(message);
     }

@@ -6,6 +6,9 @@ import com.projectdss.inventory.Inventory;
 import com.projectdss.character.MainCharacter;
 import com.projectdss.character.EnemyCharacter;
 import com.projectdss.input.InputManager;
+import com.projectdss.item.ConsumableItem;
+import com.projectdss.item.combatitem.EquipableCombatItem;
+import com.projectdss.item.combatitem.RuneCombatItem;
 import com.projectdss.output.OutputManager;
 
 /**
@@ -35,7 +38,15 @@ public class EventParameter {
         return input.getInput(firstOption, lastOption);
     }
 
-    public void getItemInput(Item item, Inventory inventory, CharacterStats characterStats, int option) {
+    public void getItemInput(ConsumableItem item, Inventory inventory, CharacterStats characterStats, int option) {
+        input.getItemInput(item, inventory, characterStats, option);
+    }
+
+    public void getItemInput(EquipableCombatItem item, Inventory inventory, CharacterStats characterStats, int option) {
+        input.getItemInput(item, inventory, characterStats, option);
+    }
+
+    public void getItemInput(RuneCombatItem item, Inventory inventory, CharacterStats characterStats, int option) {
         input.getItemInput(item, inventory, characterStats, option);
     }
 
