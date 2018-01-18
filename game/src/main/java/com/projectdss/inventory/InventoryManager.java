@@ -52,6 +52,7 @@ public class InventoryManager {
         if(inventory.hasArmorEquipped()) {
             inventory.getEquippedArmor().disuse(player.getStats());
             inventory.getEquippedArmor().setEquipped(false);
+        }
     }
 
     public boolean mergeWeaponRune(WeaponEquipableCombatItem weapon, WeaponRuneCombatItem rune,
