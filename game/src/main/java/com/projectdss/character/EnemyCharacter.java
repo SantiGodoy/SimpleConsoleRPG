@@ -8,7 +8,9 @@ import com.projectdss.Character;
 import com.projectdss.CharacterStats;
 
 /**
+ * @author JoseCorrero
  * 
+ * Class EnemyCharacter.
  */
 public abstract class EnemyCharacter extends Character {
 

@@ -1,4 +1,3 @@
-
 package com.projectdss.character;
 
 import java.util.Set;
@@ -11,7 +10,9 @@ import com.projectdss.CharacterStats;
 import com.projectdss.inventory.Inventory;
 
 /**
+ * @author JoseCorrero
  * 
+ * Class MainCharacter.
  */
 public class MainCharacter extends Character {
 
