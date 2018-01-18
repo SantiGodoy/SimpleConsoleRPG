@@ -1,12 +1,11 @@
 package com.projectdss.event;
 
+import java.util.List;
+import java.util.ArrayList;
 import com.projectdss.inventory.InventoryManager;
 import com.projectdss.item.ConsumableItem;
 import com.projectdss.item.combatitem.EquipableCombatItem;
 import com.projectdss.item.combatitem.RuneCombatItem;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
 import com.projectdss.Event;
 import com.projectdss.Item;
 import com.projectdss.inventory.Inventory;
@@ -24,15 +23,15 @@ public class InventoryEvent extends Event {
     @Override
     public void run(EventParameter eventParameter) {
         Inventory inventory = eventParameter.getPlayerInventory();
-        InventoryManager manager = inventory.getInventoryManager();
+        InventoryManager manager = InventoryManager.getInstance(inventory);
 
         ArrayList<ConsumableItem> consumables = new ArrayList<ConsumableItem>();
         ArrayList<EquipableCombatItem> equipables = new ArrayList<EquipableCombatItem>();
         ArrayList<RuneCombatItem> runes = new ArrayList<RuneCombatItem>();
 
-        manager.getConsumables(inventory, consumables);
-        manager.getEquipables(inventory, equipables);
-        manager.getRunes(inventory, runes);
+        manager.getConsumables(consumables);
+        manager.getEquipables(equipables);
+        manager.getRunes(runes);
 
         int itemSelected = 0;
 

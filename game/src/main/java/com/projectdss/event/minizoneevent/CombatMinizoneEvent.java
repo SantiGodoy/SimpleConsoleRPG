@@ -25,6 +25,7 @@ public class CombatMinizoneEvent extends MinizoneEvent {
     private static final double AGILITY_RUN = 1.5;
     private static final int NUM_STATS = 6;
     private static final int NUM_OPTIONS_STATS = 3;
+    private static final int NUM_OPTIONS_COMBAT = 3;
 
     public CombatMinizoneEvent(int id, String description) {
         super(id, description);
@@ -47,7 +48,7 @@ public class CombatMinizoneEvent extends MinizoneEvent {
             do {
                 output.showCombatOptions();
 
-                option = eventParameter.getInput(1, 4);
+                option = eventParameter.getInput(1, NUM_OPTIONS_COMBAT);
 
                 switch(option) {
                     case 2: int numAbilities = 0,
@@ -66,11 +67,9 @@ public class CombatMinizoneEvent extends MinizoneEvent {
                             if(option != 0)
                                 ability = player.searchAvailableAbility(selectedAbility);
                         break;
-                    case 3: //Inventory
-                        break;
                     default:
                 }
-            } while(option < 1 || option > 4);
+            } while(option < 1 || option > NUM_OPTIONS_COMBAT);
 
             output.showBattleState(player, enemy);
             
@@ -96,9 +95,7 @@ public class CombatMinizoneEvent extends MinizoneEvent {
                             player.getStats().setCurrentMana(
                                 player.getStats().getCurrentMana() - ability.getNecessaryMana());
                         break;
-                    case 3: //Inventory
-                        break;
-                    case 4: if(player.getStats().getAgility() * AGILITY_RUN > enemy.getStats().getAgility()) {
+                    case 3: if(player.getStats().getAgility() * AGILITY_RUN > enemy.getStats().getAgility()) {
                                 output.showRunAway();
                                 //////////// Restore enemy stats.
                                 return;
@@ -119,11 +116,9 @@ public class CombatMinizoneEvent extends MinizoneEvent {
         if(!enemy.isAlive()) {
             output.showWinnerBattleMessage(player, enemy);
             getRewards(eventParameter);
-            ///////////// Remove enemy from its minizone.
         } else {
             output.showLoserBattleMessage(player, enemy);
             ///////////// Consequences?
-            ///////////// Restore enemy stats.
         }
     }
 

@@ -1,5 +1,7 @@
 package com.projectdss.inventory;
 
+import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
+import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 import java.util.List;
 import java.util.Iterator;
 import com.projectdss.Item;
@@ -12,11 +14,15 @@ import com.projectdss.Item;
 public class Inventory implements Iterable<Item> {
 
     private List<Item> items;
-    private InventoryManager inventoryManager;
+    private WeaponEquipableCombatItem equippedWeapon;
+    private ArmorEquipableCombatItem equippedArmor;
 
-    public Inventory(List<Item> items, InventoryManager inventoryManager) {
+    public Inventory() {}
+
+    public Inventory(List<Item> items, WeaponEquipableCombatItem weapon, ArmorEquipableCombatItem armor) {
         this.items = items;
-        this.inventoryManager = inventoryManager;
+        this.equippedWeapon = weapon;
+        this.equippedArmor = armor;
     }
 
     public void addItem(Item item) {
@@ -26,13 +32,33 @@ public class Inventory implements Iterable<Item> {
     public void removeItem(Item item) {
         items.remove(item);
     }
+
+    public void setEquippedWeapon(WeaponEquipableCombatItem weapon) {
+        equippedWeapon = weapon;
+    }
     
-    public int size() {
-        return items.size();
+    public void setEquippedArmor(ArmorEquipableCombatItem armor) {
+        equippedArmor = armor;
     }
 
-    public InventoryManager getInventoryManager() {
-        return inventoryManager;
+    public boolean hasWeaponEquipped() {
+        return equippedWeapon != null;
+    }
+
+    public boolean hasArmorEquipped() {
+        return equippedArmor != null;
+    }
+
+    public WeaponEquipableCombatItem getEquippedWeapon() {
+        return equippedWeapon;
+    }
+
+    public ArmorEquipableCombatItem getEquippedArmor() {
+        return equippedArmor;
+    }
+
+    public int size() {
+        return items.size();
     }
 
     @Override
