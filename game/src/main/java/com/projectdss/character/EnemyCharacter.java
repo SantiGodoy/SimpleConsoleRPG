@@ -18,8 +18,8 @@ public abstract class EnemyCharacter extends Character {
     protected final String message;
     protected final Map<Item, Integer> itemsDrop;
     
-    public EnemyCharacter(int id, String name, int level, CharacterStats characterStats, Set<Ability> abilities, int xpDrop, String message, Map<Item, Integer> itemsDrop) {
-        super(id, name, level, characterStats, abilities);   
+    public EnemyCharacter(String name, int level, CharacterStats characterStats, Set<Ability> abilities, int xpDrop, String message, Map<Item, Integer> itemsDrop) {
+        super(name, level, characterStats, abilities);   
         this.xpDrop = xpDrop;
         this.itemsDrop = itemsDrop;
         this.message = message;

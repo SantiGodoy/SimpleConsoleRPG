@@ -15,9 +15,9 @@ public class TrueDamageWeaponRuneCombatItem extends WeaponRuneCombatItemDecorato
 
     private final int trueDamage;
 
-    public TrueDamageWeaponRuneCombatItem(int id, String name, Rarity rarity, String description, 
+    public TrueDamageWeaponRuneCombatItem(String name, Rarity rarity, String description, 
                                           WeaponRuneCombatItem rune, int trueDamage) {
-        super(id, name, rarity, description, rune);
+        super(name, rarity, description, rune);
         this.trueDamage = trueDamage;
     }
 

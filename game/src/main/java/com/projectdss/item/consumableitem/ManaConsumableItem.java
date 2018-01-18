@@ -14,8 +14,8 @@ public class ManaConsumableItem extends ConsumableItem {
 
     private final int recoveryMana;
 
-    public ManaConsumableItem(int id, String name, Rarity rarity, String description, int recoveryMana) {
-        super(id, name, rarity, description);
+    public ManaConsumableItem(String name, Rarity rarity, String description, int recoveryMana) {
+        super(name, rarity, description);
         this.recoveryMana = recoveryMana;
     }
 

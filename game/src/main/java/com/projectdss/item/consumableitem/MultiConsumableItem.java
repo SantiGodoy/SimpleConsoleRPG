@@ -16,8 +16,8 @@ public class MultiConsumableItem extends ConsumableItem {
     private final int recoveryHealth;
     private final int recoveryMana;
 
-    public MultiConsumableItem(int id, String name, Rarity rarity, String description, int recoveryHealth, int recoveryMana) {
-        super(id, name, rarity, description);
+    public MultiConsumableItem(String name, Rarity rarity, String description, int recoveryHealth, int recoveryMana) {
+        super(name, rarity, description);
         this.recoveryHealth = recoveryHealth;
         this.recoveryMana = recoveryMana;
     }

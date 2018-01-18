@@ -14,9 +14,9 @@ public abstract class ArmorRuneCombatItemDecorator extends ArmorRuneCombatItem {
 
     protected final ArmorRuneCombatItem rune;
 
-    public ArmorRuneCombatItemDecorator(int id, String name, Rarity rarity, String description, 
+    public ArmorRuneCombatItemDecorator(String name, Rarity rarity, String description, 
                                          ArmorRuneCombatItem rune) {
-        super(id, name, rarity, description);
+        super(name, rarity, description);
         this.rune = rune;
     }
 

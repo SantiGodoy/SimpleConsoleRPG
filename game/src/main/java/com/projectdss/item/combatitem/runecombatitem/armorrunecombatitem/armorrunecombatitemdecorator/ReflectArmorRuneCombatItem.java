@@ -15,9 +15,9 @@ public class ReflectArmorRuneCombatItem extends ArmorRuneCombatItemDecorator {
 
     private final int reflect;
 
-    public ReflectArmorRuneCombatItem(int id, String name, Rarity rarity, String description,  
+    public ReflectArmorRuneCombatItem(String name, Rarity rarity, String description,  
                                       ArmorRuneCombatItem rune, int reflect) {
-        super(id, name, rarity, description, rune);
+        super(name, rarity, description, rune);
         this.reflect = reflect;
     }
 

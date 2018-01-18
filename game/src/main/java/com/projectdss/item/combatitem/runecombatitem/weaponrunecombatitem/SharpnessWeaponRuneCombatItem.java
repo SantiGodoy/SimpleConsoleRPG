@@ -14,9 +14,9 @@ public class SharpnessWeaponRuneCombatItem extends WeaponRuneCombatItem {
 
     private final int sharpness;
 
-    public SharpnessWeaponRuneCombatItem(int id, String name, Rarity rarity, String description, 
+    public SharpnessWeaponRuneCombatItem(String name, Rarity rarity, String description, 
                                          int sharpness) {
-        super(id, name, rarity, description);
+        super(name, rarity, description);
         this.sharpness = sharpness;
     }
 

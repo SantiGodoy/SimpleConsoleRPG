@@ -9,14 +9,12 @@ import com.projectdss.CharacterStats;
  */
 public abstract class Character {
 
-    protected final int id;
     protected final String name;
     protected int level;
     protected final CharacterStats characterStats;
     protected final Set<Ability> abilities;
 
-    public Character(int id, String name, int level, CharacterStats characterStats, Set<Ability> abilities) {
-        this.id = id;
+    public Character(String name, int level, CharacterStats characterStats, Set<Ability> abilities) {
         this.name = name;
         this.level = level;
         this.characterStats = characterStats;
@@ -29,10 +27,6 @@ public abstract class Character {
 
     public void removeAbility(Ability ability) {
         abilities.remove(ability);
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getName() {

@@ -15,9 +15,9 @@ public class LifestealWeaponRuneCombatItem extends WeaponRuneCombatItemDecorator
 
     private final int lifesteal;
 
-    public LifestealWeaponRuneCombatItem(int id, String name, Rarity rarity, String description, 
+    public LifestealWeaponRuneCombatItem(String name, Rarity rarity, String description, 
                                          WeaponRuneCombatItem rune, int lifesteal) {
-        super(id, name, rarity, description, rune);
+        super(name, rarity, description, rune);
         this.lifesteal = lifesteal;
     }
 

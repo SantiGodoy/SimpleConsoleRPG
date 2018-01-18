@@ -1,4 +1,4 @@
-package com.projectdss.character.enemycharacter;
+package com.projectdss.character.enemy;
 
 import com.projectdss.Ability;
 import com.projectdss.CharacterStats;
@@ -16,8 +16,8 @@ import com.projectdss.character.EnemyCharacter;
  */
 public class MinionEnemyCharacter extends EnemyCharacter {
 
-    public MinionEnemyCharacter(int id, String name, int level, CharacterStats characterStats, Set<Ability> abilities, int xpDrop, String message, Map<Item, Integer> itemsDrop) {
-        super(id, name, level, characterStats, abilities, xpDrop, message, itemsDrop);
+    public MinionEnemyCharacter(String name, int level, CharacterStats characterStats, Set<Ability> abilities, int xpDrop, String message, Map<Item, Integer> itemsDrop) {
+        super(name, level, characterStats, abilities, xpDrop, message, itemsDrop);
     }
 
 }

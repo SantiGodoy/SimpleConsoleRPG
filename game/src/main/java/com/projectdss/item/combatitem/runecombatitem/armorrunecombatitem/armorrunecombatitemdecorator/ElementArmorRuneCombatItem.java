@@ -16,9 +16,9 @@ public class ElementArmorRuneCombatItem extends ArmorRuneCombatItemDecorator {
 
     private final ElementType type;
 
-    public ElementArmorRuneCombatItem(int id, String name, Rarity rarity, String description, 
+    public ElementArmorRuneCombatItem(String name, Rarity rarity, String description, 
                                       ArmorRuneCombatItem rune, ElementType type) {
-        super(id, name, rarity, description, rune);
+        super(name, rarity, description, rune);
         this.type = type;
     }
 

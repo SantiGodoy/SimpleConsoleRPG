@@ -16,8 +16,8 @@ import com.projectdss.inventory.Inventory;
  * @author Santiago Godoy Poce
  */
 public class InventoryEvent extends Event {
-    public InventoryEvent(int id, String description) {
-        super(id, description);
+    public InventoryEvent(String description) {
+        super(description);
     }
 
     @Override
