@@ -64,6 +64,8 @@ public abstract class Character {
             if(counter == abilityIndex)
                 return ability;
         }
+
+        return null;
     }
 
     public Ability searchAvailableAbility(int availableAbilityIndex) {
@@ -77,6 +79,8 @@ public abstract class Character {
             if(counter == availableAbilityIndex)
                 return ability;
         }
+
+        return null;
     }
 
     public abstract String getGender();

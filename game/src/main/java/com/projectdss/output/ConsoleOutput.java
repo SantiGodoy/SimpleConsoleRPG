@@ -22,6 +22,7 @@ import java.util.Set;
  * @author Santiago Godoy Poce
  */
 public abstract class ConsoleOutput implements OutputHandler {
+    
     @Override
     public void showInventory(Inventory inventory) {
         int counter = 1;
@@ -197,6 +198,8 @@ public abstract class ConsoleOutput implements OutputHandler {
             message += player2.getName() + ", ";
 
         message += "dealing " + appliedDamage + " damage!";
+
+        System.out.println(message);
     }
     
     @Override
