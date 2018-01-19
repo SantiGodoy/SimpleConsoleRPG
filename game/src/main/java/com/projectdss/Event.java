@@ -13,6 +13,8 @@ import com.projectdss.event.EventParameter;
 public abstract class Event {
     protected String description;
 
+    public Event(){}
+
     public Event(String description) {
         this.description = description;    
     }

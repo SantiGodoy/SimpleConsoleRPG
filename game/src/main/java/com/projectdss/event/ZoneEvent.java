@@ -8,6 +8,8 @@ import com.projectdss.Event;
  * @author Santiago Godoy Poce
  */
 public abstract class ZoneEvent extends Event {
+    public ZoneEvent() {}
+
     public ZoneEvent(String description) {
         super(description);
     }

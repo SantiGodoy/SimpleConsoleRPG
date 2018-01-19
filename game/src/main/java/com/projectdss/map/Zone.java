@@ -10,14 +10,16 @@ import com.projectdss.Event;
  * @author Santiago Godoy Poce
  */
 public class Zone {
-    private final int id;
-    private final String name;
-    private final String description;
+    private int id;
+    private String name;
+    private String description;
     private boolean[][] adjacencyMatrixMinizone;
-    private final World world;
-    private final Minizone[] minizones;
-    private final Event[] events;
-    
+    private World world;
+    private Minizone[] minizones;
+    private Event[] events;
+
+    public Zone(){}
+
     public Zone(int id, String name, String description, World world,
          Minizone[] minizones, Event[] events) {
         this.id = id;
@@ -32,24 +34,52 @@ public class Zone {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
         return description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public int length() {
         return minizones.length;
+    }
+
+    public World getWorld() {
+        return this.world;
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
     }
 
     public Minizone[] getMinizones() {
         return minizones;
     }
 
+    public void setMinizones(Minizone[] minizones) {
+        this.minizones = minizones;
+    }
+
     public Event[] getEvents() {
         return events;
+    }
+
+    public void setEvents(Event[] events) {
+        this.events = events;
     }
 
     public boolean[][] getAdjacencyMatrixMinizone() {

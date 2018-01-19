@@ -8,6 +8,8 @@ import com.projectdss.Event;
  * @author Santiago Godoy Poce
  */
 public abstract class MinizoneEvent extends Event {
+    public MinizoneEvent() {}
+
     public MinizoneEvent(String description) {
         super(description);
     }

@@ -9,6 +9,9 @@ import com.projectdss.event.MinizoneEvent;
  * @author Santiago Godoy Poce
  */
 public class MessageMinizoneEvent extends MinizoneEvent {
+
+    public MessageMinizoneEvent(){}
+
     public MessageMinizoneEvent(String description) {
         super(description);
     }

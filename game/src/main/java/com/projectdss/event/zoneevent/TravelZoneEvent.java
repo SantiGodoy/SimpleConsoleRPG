@@ -10,6 +10,9 @@ import com.projectdss.map.Zone;
  * @author Santiago Godoy Poce
  */
 public class TravelZoneEvent extends ZoneEvent {
+
+    public TravelZoneEvent(){}
+
     public TravelZoneEvent(String description) {
         super(description);
     }

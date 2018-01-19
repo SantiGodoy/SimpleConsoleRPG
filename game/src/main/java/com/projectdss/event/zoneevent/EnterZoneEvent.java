@@ -10,6 +10,8 @@ import com.projectdss.event.ZoneEvent;
  * @author Santiago Godoy Poce
  */
 public class EnterZoneEvent extends ZoneEvent {
+    public EnterZoneEvent(){}
+
     public EnterZoneEvent(String description) {
         super(description);
     }

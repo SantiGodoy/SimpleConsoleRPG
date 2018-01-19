@@ -20,6 +20,8 @@ public class CharacterStats {
     private int baseDefense;
     private int reflect;
 
+    public CharacterStats() {}
+
     public CharacterStats(int health, int mana, int strength, int magicalPower, 
                           int resistance, int agility, ElementType type) {
         this.maxHealth = health;

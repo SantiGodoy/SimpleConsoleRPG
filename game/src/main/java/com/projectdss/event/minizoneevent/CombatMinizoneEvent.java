@@ -27,6 +27,8 @@ public class CombatMinizoneEvent extends MinizoneEvent {
     private static final int NUM_OPTIONS_STATS = 3;
     private static final int NUM_OPTIONS_COMBAT = 3;
 
+    public CombatMinizoneEvent(){}
+
     public CombatMinizoneEvent(String description) {
         super(description);
     }

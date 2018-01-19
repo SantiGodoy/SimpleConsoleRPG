@@ -16,6 +16,9 @@ import com.projectdss.inventory.Inventory;
  * @author Santiago Godoy Poce
  */
 public class InventoryEvent extends Event {
+
+    public InventoryEvent(){}
+
     public InventoryEvent(String description) {
         super(description);
     }

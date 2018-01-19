@@ -8,9 +8,11 @@ import java.util.Set;
  * @author Santiago Godoy Poce
  */
 public class World {
-    private final String name;
+    private String name;
     private boolean[][] adjacencyMatrixZone;
-    private final Zone[] zones;
+    private Zone[] zones;
+
+    public World() {}
 
     public World(String name, Zone[] zones) {
         this.name   = name;
@@ -21,12 +23,20 @@ public class World {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int length() {
         return zones.length;
     }
 
     public Zone[] getZones() {
         return zones;
+    }
+
+    public void setZones(Zone[] zones) {
+        this.zones = zones;
     }
     
     public boolean[][] getAdjacencyMatrixZone() {

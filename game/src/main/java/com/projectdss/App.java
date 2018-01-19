@@ -18,7 +18,7 @@ public class App {
         
         ConsoleInput consoleInput = new ConsoleInput();
 
-        String filePath = "../../../resources/map.xml";
+        String filePath = "../src/main/resources/map.xml";
         Loader mapLoader = new Loader();
         Saver mapSaver = new Saver();
 

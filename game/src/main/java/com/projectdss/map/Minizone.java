@@ -11,22 +11,22 @@ import com.projectdss.character.EnemyCharacter;
  * @author Santiago Godoy Poce
  */
 public class Minizone {
-    private final int id;
-    private final Zone zone;
-    private final String name;
-    private final String description;
+    private int id;
+    private Zone zone;
+    private String name;
+    private String description;
     private Event[] events;
-    private final int enemyProbability;
     private EnemyCharacter enemy;
 
-    public Minizone(int id, Zone zone, String name, String description, Event[] events,
-         int enemyProbability, EnemyCharacter enemy) {
+    public Minizone(){}
+
+    public Minizone(int id, Zone zone, String name, String description,
+         Event[] events, EnemyCharacter enemy) {
             this.id = id;
             this.zone = zone;
             this.name = name;
             this.description = description;
             this.events = events;
-            this.enemyProbability = enemyProbability;
             this.enemy = enemy;
     }
 
@@ -34,12 +34,32 @@ public class Minizone {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Zone getZone() {
+        return this.zone;
+    }
+
+    public void setZone(Zone zone) {
+        this.zone = zone;
+    }
+
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDescription() {
         return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setEvents(Event[] events) {
@@ -48,10 +68,6 @@ public class Minizone {
 
     public Event[] getEvents() {
         return events;
-    }
-
-    public int getEnemyProb() {
-        return enemyProbability;
     }
 
     public EnemyCharacter getEnemy() {
