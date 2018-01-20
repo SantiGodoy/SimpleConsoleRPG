@@ -71,21 +71,21 @@ public class ColoredConsoleOutput extends ConsoleOutput {
         System.out.println("\n\tENEMY" +
         "\nName: " + enemy.getName() +
         "\nLevel: " + enemy.getLevel() +
-        "\nHealth: " + ANSI_GREEN + enemy.getStats().getCurrentHealth() + "/" + 
-            enemy.getStats().getMaxHealth() + ANSI_RESET +
-        "\nMana: " + ANSI_BLUE + enemy.getStats().getCurrentMana() + "/" + 
-            enemy.getStats().getMaxMana() + ANSI_RESET +
-        "\nElement Type: " + showElementType(enemy.getStats().getDefensiveType()));
+        "\nHealth: " + ANSI_GREEN + enemy.getCharacterStats().getCurrentHealth() + "/" + 
+            enemy.getCharacterStats().getMaxHealth() + ANSI_RESET +
+        "\nMana: " + ANSI_BLUE + enemy.getCharacterStats().getCurrentMana() + "/" + 
+            enemy.getCharacterStats().getMaxMana() + ANSI_RESET +
+        "\nElement Type: " + showElementType(enemy.getCharacterStats().getDefensiveType()));
 
         System.out.println("\n\tYOU" +
         "\nName: " + player.getName() +
         "\nLevel: " + player.getLevel() +
-        "\nHealth: " + ANSI_GREEN + player.getStats().getCurrentHealth() + "/" + 
-            player.getStats().getMaxHealth() + ANSI_RESET +
-        "\nMana: " + ANSI_BLUE + player.getStats().getCurrentMana() + "/" + 
-            player.getStats().getMaxMana() + ANSI_RESET +
-        "\nElement Type (Offensive): " + player.getStats().getOffensiveType() + 
-        "\nElement Type (Defensive): " + player.getStats().getDefensiveType());
+        "\nHealth: " + ANSI_GREEN + player.getCharacterStats().getCurrentHealth() + "/" + 
+            player.getCharacterStats().getMaxHealth() + ANSI_RESET +
+        "\nMana: " + ANSI_BLUE + player.getCharacterStats().getCurrentMana() + "/" + 
+            player.getCharacterStats().getMaxMana() + ANSI_RESET +
+        "\nElement Type (Offensive): " + player.getCharacterStats().getOffensiveType() + 
+        "\nElement Type (Defensive): " + player.getCharacterStats().getDefensiveType());
     }
 
     @Override
@@ -115,7 +115,7 @@ public class ColoredConsoleOutput extends ConsoleOutput {
     public int showAbilitiesCombat(MainCharacter player) {
         int i = 1;
         for(Ability ability : player.getAbilities()) {
-            if(player.getStats().getCurrentMana() < ability.getNecessaryMana()) {
+            if(player.getCharacterStats().getCurrentMana() < ability.getNecessaryMana()) {
                 System.out.println(i + ". " + ability.getName() + " " + showAbilityType(ability.getType()) + ability.getType() + ANSI_RESET);
                 ++i;
             } else 

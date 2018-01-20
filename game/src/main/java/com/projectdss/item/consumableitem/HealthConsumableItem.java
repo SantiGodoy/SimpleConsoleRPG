@@ -13,10 +13,20 @@ import com.projectdss.item.ConsumableItem;
  */
 public class HealthConsumableItem extends ConsumableItem {
 
-    private final int recoveryHealth;
+    private int recoveryHealth;
+
+    public HealthConsumableItem(){}
 
     public HealthConsumableItem(String name, Rarity rarity, String description, int recoveryHealth) {
         super(name, rarity, description);
+        this.recoveryHealth = recoveryHealth;
+    }
+
+    public int getRecoveryHealth() {
+        return recoveryHealth;
+    }
+
+    public void setRecoveryHealth(int recoveryHealth) {
         this.recoveryHealth = recoveryHealth;
     }
 

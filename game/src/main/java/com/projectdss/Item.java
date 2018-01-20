@@ -10,9 +10,11 @@ import com.projectdss.CharacterStats;
  */
 public abstract class Item implements Comparable<Item> {
 
-    protected final String name;
-    protected final Rarity rarity;
-    protected final String description;
+    protected String name;
+    protected Rarity rarity;
+    protected String description;
+
+    public Item(){}
 
     public Item(String name, Rarity rarity, String description) {
        this.name = name;
@@ -24,12 +26,24 @@ public abstract class Item implements Comparable<Item> {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Rarity getRarity() {
         return rarity;
     }
 
+    public void setRarity(Rarity rarity) {
+        this.rarity = rarity;
+    }
+
     public String getDescription() {
         return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override

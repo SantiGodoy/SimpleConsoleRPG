@@ -13,8 +13,10 @@ import com.projectdss.item.combatitem.RuneCombatItem;
 public abstract class EquipableCombatItem extends CombatItem {
 
     protected boolean equipped;
-    protected final int maxRunes;
+    protected int maxRunes;
     protected Set<RuneCombatItem> runes;
+
+    public EquipableCombatItem(){}
 
     public EquipableCombatItem(String name, Rarity rarity, String description, int maxRunes,
                                Set<RuneCombatItem> runes) {
@@ -45,8 +47,16 @@ public abstract class EquipableCombatItem extends CombatItem {
         return maxRunes;
     }
 
+    public void setMaxRunes(int maxRunes) {
+        this.maxRunes = maxRunes;
+    }
+
     public Set<RuneCombatItem> getRunes() {
         return runes;
+    }
+
+    public void setRunes(Set<RuneCombatItem> runes) {
+        this.runes = runes;
     }
 
 }

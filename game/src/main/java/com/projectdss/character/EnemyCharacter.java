@@ -14,9 +14,11 @@ import com.projectdss.CharacterStats;
  */
 public abstract class EnemyCharacter extends Character {
 
-    protected final int xpDrop;
-    protected final String message;
-    protected final Map<Item, Integer> itemsDrop;
+    protected int xpDrop;
+    protected String message;
+    protected Map<Item, Integer> itemsDrop;
+
+    public EnemyCharacter() {}
     
     public EnemyCharacter(String name, int level, CharacterStats characterStats, Set<Ability> abilities, int xpDrop, String message, Map<Item, Integer> itemsDrop) {
         super(name, level, characterStats, abilities);   
@@ -25,7 +27,7 @@ public abstract class EnemyCharacter extends Character {
         this.message = message;
     }
 
-    public int getXPDrop() {
+    public int getxpDrop() {
         return xpDrop;
     }
  
@@ -40,6 +42,18 @@ public abstract class EnemyCharacter extends Character {
     @Override
     public String getGender() {
         return "Monster";
+    }
+
+    public void setxpDrop(int xpDrop) {
+        this.xpDrop = xpDrop;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setItemsDrop(Map<Item, Integer> itemsDrop) {
+        this.itemsDrop = itemsDrop;
     }
 
 }

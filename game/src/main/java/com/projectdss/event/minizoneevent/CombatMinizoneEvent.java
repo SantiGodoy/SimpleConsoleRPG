@@ -75,7 +75,7 @@ public class CombatMinizoneEvent extends MinizoneEvent {
 
             output.showBattleState(player, enemy);
             
-            boolean turn = enemy.getStats().getAgility() > player.getStats().getAgility();
+            boolean turn = enemy.getCharacterStats().getAgility() > player.getCharacterStats().getAgility();
 
             if(turn) {
                 enemyAttack(enemy, player, output);
@@ -88,16 +88,16 @@ public class CombatMinizoneEvent extends MinizoneEvent {
                         break;
                     case 2: int abilityDamage;
                             if(target == 1) {
-                                abilityDamage = ability.use(player.getStats(), player.getStats());
+                                abilityDamage = ability.use(player.getCharacterStats(), player.getCharacterStats());
                                 output.showUseAbility(player, enemy, ability, abilityDamage);
                             } else {
-                                abilityDamage = ability.use(player.getStats(), enemy.getStats());
+                                abilityDamage = ability.use(player.getCharacterStats(), enemy.getCharacterStats());
                                 output.showUseAbility(player, player, ability, abilityDamage);
                             }
-                            player.getStats().setCurrentMana(
-                                player.getStats().getCurrentMana() - ability.getNecessaryMana());
+                            player.getCharacterStats().setCurrentMana(
+                                player.getCharacterStats().getCurrentMana() - ability.getNecessaryMana());
                         break;
-                    case 3: if(player.getStats().getAgility() * AGILITY_RUN > enemy.getStats().getAgility()) {
+                    case 3: if(player.getCharacterStats().getAgility() * AGILITY_RUN > enemy.getCharacterStats().getAgility()) {
                                 output.showRunAway();
                                 //////////// Restore enemy stats.
                                 return;
@@ -125,8 +125,8 @@ public class CombatMinizoneEvent extends MinizoneEvent {
     }
 
     private void attack(Character player1, Character player2, OutputManager output) {
-        CharacterStats statsPlayer1 = player1.getStats(),
-                       statsPlayer2 = player2.getStats();
+        CharacterStats statsPlayer1 = player1.getCharacterStats(),
+                       statsPlayer2 = player2.getCharacterStats();
         int appliedDamage = statsPlayer1.getBaseDamage() - statsPlayer2.getBaseDefense();
 
         if(appliedDamage > 0) {
@@ -152,9 +152,9 @@ public class CombatMinizoneEvent extends MinizoneEvent {
             int action = random.nextInt(abilitiesSize + 1);
             if(action != 0) {
                 Ability ability = enemy.searchAbility(action);
-                int abilityDamage = ability.use(enemy.getStats(), player.getStats());
+                int abilityDamage = ability.use(enemy.getCharacterStats(), player.getCharacterStats());
                 output.showUseAbility(enemy, player, ability, abilityDamage);
-                enemy.getStats().setCurrentMana(enemy.getStats().getCurrentMana() - ability.getNecessaryMana());
+                enemy.getCharacterStats().setCurrentMana(enemy.getCharacterStats().getCurrentMana() - ability.getNecessaryMana());
                 return;
             }
         }
@@ -167,8 +167,8 @@ public class CombatMinizoneEvent extends MinizoneEvent {
         EnemyCharacter enemy = eventParameter.getEnemy();
         OutputManager output = eventParameter.getOutput();
 
-        int levelUp = player.addXP(enemy.getXPDrop());
-        output.showXPGain(enemy.getXPDrop(), levelUp);
+        int levelUp = player.addXP(enemy.getxpDrop());
+        output.showXPGain(enemy.getxpDrop(), levelUp);
 
         while(levelUp > 0) {
             int option;

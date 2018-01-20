@@ -14,11 +14,21 @@ import com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem.ArmorRu
  */
 public class ElementArmorRuneCombatItem extends ArmorRuneCombatItemDecorator {
 
-    private final ElementType type;
+    private ElementType type;
+
+    public ElementArmorRuneCombatItem() {}
 
     public ElementArmorRuneCombatItem(String name, Rarity rarity, String description, 
                                       ArmorRuneCombatItem rune, ElementType type) {
         super(name, rarity, description, rune);
+        this.type = type;
+    }
+
+    public ElementType getType() {
+        return type;
+    }
+
+    public void setType(ElementType type) {
         this.type = type;
     }
 

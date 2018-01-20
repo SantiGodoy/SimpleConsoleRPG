@@ -51,14 +51,14 @@ public class InventoryEvent extends Event {
                     numOptions = eventParameter.getOutput().showItemOptions(consumable);
                     optionSelected = eventParameter.getInput(0, numOptions);
                     if(optionSelected != 0)
-                        eventParameter.getItemInput(consumable, inventory, eventParameter.getPlayer().getStats(),
+                        eventParameter.getItemInput(consumable, inventory, eventParameter.getPlayer().getCharacterStats(),
                                                     optionSelected);
                 } else if(consumables.size() < itemSelected && itemSelected < equipables.size() + 1) {
                     EquipableCombatItem equipable = equipables.get(itemSelected - consumables.size() - 1);
                     numOptions = eventParameter.getOutput().showItemOptions(equipable);
                     optionSelected = eventParameter.getInput(0, numOptions);
                     if(optionSelected != 0)
-                        eventParameter.getItemInput(equipable, inventory, eventParameter.getPlayer().getStats(),
+                        eventParameter.getItemInput(equipable, inventory, eventParameter.getPlayer().getCharacterStats(),
                                                     optionSelected);
                 } else if(consumables.size() + equipables.size() < itemSelected && 
                           itemSelected < consumables.size() + equipables.size() + 1) {
@@ -66,7 +66,7 @@ public class InventoryEvent extends Event {
                     numOptions = eventParameter.getOutput().showItemOptions(rune);
                     optionSelected = eventParameter.getInput(0, numOptions);
                     if(optionSelected != 0)
-                        eventParameter.getItemInput(rune, inventory, eventParameter.getPlayer().getStats(),
+                        eventParameter.getItemInput(rune, inventory, eventParameter.getPlayer().getCharacterStats(),
                                                     optionSelected);
                 }
             }

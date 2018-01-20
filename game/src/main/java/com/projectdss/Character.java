@@ -9,10 +9,12 @@ import com.projectdss.CharacterStats;
  */
 public abstract class Character {
 
-    protected final String name;
+    protected String name;
     protected int level;
-    protected final CharacterStats characterStats;
-    protected final Set<Ability> abilities;
+    protected CharacterStats characterStats;
+    protected Set<Ability> abilities;
+
+    public Character() {}
 
     public Character(String name, int level, CharacterStats characterStats, Set<Ability> abilities) {
         this.name = name;
@@ -33,21 +35,39 @@ public abstract class Character {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getLevel() {
         return level;
     }
 
-    public CharacterStats getStats() {
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public CharacterStats getCharacterStats() {
         return characterStats;
+    }
+
+    public void setCharacterStats(CharacterStats characterStats) {
+        this.characterStats = characterStats;
     }
 
     public Set<Ability> getAbilities() {
         return abilities;
     }
 
+    public void setAbilities(Set<Ability> abilities) {
+        this.abilities = abilities;
+    }
+
     public boolean isAlive() {
         return characterStats.getCurrentHealth() > 0;
     }
+
+    public abstract String getGender();
 
     public Ability searchAbility(int abilityIndex) {
         int counter = 0;
@@ -76,7 +96,4 @@ public abstract class Character {
 
         return null;
     }
-
-    public abstract String getGender();
-
 }

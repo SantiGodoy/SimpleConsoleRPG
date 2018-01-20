@@ -10,6 +10,8 @@ import com.projectdss.Rarity;
  */
 public abstract class ConsumableItem extends Item {
 
+    public ConsumableItem(){}
+
     public ConsumableItem(String name, Rarity rarity, String description) {
         super(name, rarity, description);
     }

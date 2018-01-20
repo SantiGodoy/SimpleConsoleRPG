@@ -13,11 +13,21 @@ import com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem.ArmorRu
  */
 public class ReflectArmorRuneCombatItem extends ArmorRuneCombatItemDecorator {
 
-    private final int reflect;
+    private int reflect;
+
+    public ReflectArmorRuneCombatItem(){}
 
     public ReflectArmorRuneCombatItem(String name, Rarity rarity, String description,  
                                       ArmorRuneCombatItem rune, int reflect) {
         super(name, rarity, description, rune);
+        this.reflect = reflect;
+    }
+
+    public int getReflect() {
+        return reflect;
+    }
+
+    public void setReflect(int reflect) {
         this.reflect = reflect;
     }
 

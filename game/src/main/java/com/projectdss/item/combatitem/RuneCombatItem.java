@@ -11,6 +11,8 @@ import com.projectdss.item.CombatItem;
  */
 public abstract class RuneCombatItem extends CombatItem {
 
+    public RuneCombatItem(){}
+
     public RuneCombatItem(String name, Rarity rarity, String description) {
         super(name, rarity, description);
     }

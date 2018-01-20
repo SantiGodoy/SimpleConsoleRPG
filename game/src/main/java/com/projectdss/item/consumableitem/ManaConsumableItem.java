@@ -12,10 +12,20 @@ import com.projectdss.item.ConsumableItem;
  */
 public class ManaConsumableItem extends ConsumableItem {
 
-    private final int recoveryMana;
+    private int recoveryMana;
+
+    public ManaConsumableItem(){}
 
     public ManaConsumableItem(String name, Rarity rarity, String description, int recoveryMana) {
         super(name, rarity, description);
+        this.recoveryMana = recoveryMana;
+    }
+
+    public int getRecoveryMana() {
+        return recoveryMana;
+    }
+
+    public void setRecoveryMana(int recoveryMana) {
         this.recoveryMana = recoveryMana;
     }
 

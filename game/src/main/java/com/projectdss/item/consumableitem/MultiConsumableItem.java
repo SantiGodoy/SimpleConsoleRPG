@@ -13,12 +13,30 @@ import com.projectdss.item.ConsumableItem;
  */
 public class MultiConsumableItem extends ConsumableItem {
 
-    private final int recoveryHealth;
-    private final int recoveryMana;
+    private int recoveryHealth;
+    private int recoveryMana;
+
+    public MultiConsumableItem() {}
 
     public MultiConsumableItem(String name, Rarity rarity, String description, int recoveryHealth, int recoveryMana) {
         super(name, rarity, description);
         this.recoveryHealth = recoveryHealth;
+        this.recoveryMana = recoveryMana;
+    }
+
+    public int getRecoveryHealth() {
+        return recoveryHealth;
+    }
+
+    public int getRecoveryMana() {
+        return recoveryMana;
+    }
+
+    public void setRecoveryHealth(int recoveryHealth) {
+        this.recoveryHealth = recoveryHealth;
+    }
+
+    public void setRecoveryMana(int recoveryMana) {
         this.recoveryMana = recoveryMana;
     }
 

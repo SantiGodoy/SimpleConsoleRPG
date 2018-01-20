@@ -222,12 +222,12 @@ public abstract class ConsoleOutput implements OutputHandler {
     @Override
     public void showLevelUpOptions(MainCharacter player) {
         System.out.println("Select the stats you want to level:\t\tLevel " + player.getLevel() +
-                           "\n1. Maximum health\t\t(" + player.getStats().getMaxHealth() + ")" +
-                           "\n2. Maximum mana\t\t(" + player.getStats().getMaxMana() + ")" +
-                           "\n3. Strength\t\t(" + player.getStats().getStrength() + ")" +
-                           "\n4. Magical power\t\t(" + player.getStats().getMagicalPower() + ")" +
-                           "\n5. Resistance\t\t(" + player.getStats().getResistance() + ")" +
-                           "\n6. Agility\t\t(" + player.getStats().getAgility() + ")");
+                           "\n1. Maximum health\t\t(" + player.getCharacterStats().getMaxHealth() + ")" +
+                           "\n2. Maximum mana\t\t(" + player.getCharacterStats().getMaxMana() + ")" +
+                           "\n3. Strength\t\t(" + player.getCharacterStats().getStrength() + ")" +
+                           "\n4. Magical power\t\t(" + player.getCharacterStats().getMagicalPower() + ")" +
+                           "\n5. Resistance\t\t(" + player.getCharacterStats().getResistance() + ")" +
+                           "\n6. Agility\t\t(" + player.getCharacterStats().getAgility() + ")");
     }
     
     @Override

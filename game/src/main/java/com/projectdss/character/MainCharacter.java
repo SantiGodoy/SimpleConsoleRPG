@@ -16,12 +16,14 @@ import com.projectdss.inventory.Inventory;
  */
 public class MainCharacter extends Character {
 
-    private final String gender;    
+    private String gender;    
     private int xp;
-    private final World world;
+    private World world;
     private Zone zone;
     private Minizone minizone;
-    private final Inventory inventory;
+    private Inventory inventory;
+
+    public MainCharacter() {}
 
     public MainCharacter(String name, CharacterStats characterStats, Set<Ability> abilities, 
                          String gender, World world, Zone zone, Minizone minizone, Inventory inventory) {
@@ -75,18 +77,30 @@ public class MainCharacter extends Character {
     public void setMinizone(Minizone minizone) {
         this.minizone = minizone;
     }
-
+    
     @Override
     public String getGender() {
         return gender;
     }
 
-    public int getXP() {
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getXp() {
         return xp;
+    }
+
+    public void setXp(int xp) {
+        this.xp = xp;
     }
 
     public World getWorld() {
         return world;
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
     }
 
     public Zone getZone() {
@@ -99,6 +113,10 @@ public class MainCharacter extends Character {
     
     public Inventory getInventory() {
         return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
     }
 
 }

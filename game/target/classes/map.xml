@@ -336,7 +336,7 @@
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
-    <property name="equipped" value=""/>
+    <property name="equipped" value="false"/>
     <property name="maxRunes" value="0"/>
     <property name="runes">
       <set></set>
@@ -349,7 +349,7 @@
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
-    <property name="equipped" value=""/>
+    <property name="equipped" value="false"/>
     <property name="maxRunes" value="0"/>
     <property name="runes">
       <set></set>
@@ -362,7 +362,7 @@
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
-    <property name="equipped" value=""/>
+    <property name="equipped" value="false"/>
     <property name="maxRunes" value="0"/>
     <property name="runes">
       <set></set>
@@ -375,7 +375,7 @@
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
-    <property name="equipped" value=""/>
+    <property name="equipped" value="false"/>
     <property name="maxRunes" value="0"/>
     <property name="runes">
       <set></set>
@@ -388,7 +388,7 @@
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
-    <property name="equipped" value=""/>
+    <property name="equipped" value="false"/>
     <property name="maxRunes" value="0"/>
     <property name="runes">
       <set></set>
@@ -401,7 +401,7 @@
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
-    <property name="equipped" value=""/>
+    <property name="equipped" value="false"/>
     <property name="maxRunes" value="0"/>
     <property name="runes">
       <set></set>
@@ -435,11 +435,10 @@
   </bean>
 
   <!--'ITEM 9'-->
-  <bean id="item9" class="com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem.FirmnessWeaponRuneCombatItem">
+  <bean id="item9" class="com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem.FirmnessArmorRuneCombatItem">
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
-    <property name="merged" value=""/>
     <property name="firmness" value="0"/>
   </bean>
 
@@ -448,7 +447,6 @@
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
-    <property name="merged" value=""/>
     <property name="sharpness" value="0"/>
   </bean>
 
@@ -457,7 +455,7 @@
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
-    <property name="equipped" value=""/>
+    <property name="equipped" value="false"/>
     <property name="maxRunes" value="0"/>
     <property name="runes">
       <set></set>
