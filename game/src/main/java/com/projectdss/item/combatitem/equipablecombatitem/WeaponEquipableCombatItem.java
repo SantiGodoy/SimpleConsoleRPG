@@ -14,7 +14,9 @@ import com.projectdss.item.combatitem.EquipableCombatItem;
  */
 public class WeaponEquipableCombatItem extends EquipableCombatItem {
     
-    private final int baseDamage;
+    private int baseDamage;
+
+    public WeaponEquipableCombatItem(){}
 
     public WeaponEquipableCombatItem(String name, Rarity rarity, String description, int maxRunes,
                                      Set<RuneCombatItem> runes, int baseDamage) {
@@ -24,6 +26,10 @@ public class WeaponEquipableCombatItem extends EquipableCombatItem {
 
     public int getBaseDamage() {
         return baseDamage;
+    }
+
+    public void setBaseDamage(int baseDamage) {
+        this.baseDamage = baseDamage;
     }
 
     @Override

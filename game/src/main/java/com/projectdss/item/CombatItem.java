@@ -11,6 +11,8 @@ import com.projectdss.CharacterStats;
  */
 public abstract class CombatItem extends Item {
 
+    public CombatItem(){}
+
     public CombatItem(String name, Rarity rarity, String description) {
         super(name, rarity, description);
     }

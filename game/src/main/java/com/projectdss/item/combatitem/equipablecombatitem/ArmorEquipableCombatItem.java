@@ -14,8 +14,10 @@ import com.projectdss.item.combatitem.EquipableCombatItem;
  */
 public class ArmorEquipableCombatItem extends EquipableCombatItem {
     
-    private final int baseDefense;
+    private int baseDefense;
     
+    public ArmorEquipableCombatItem(){}
+
     public ArmorEquipableCombatItem(String name, Rarity rarity, String description, int maxRunes,
                                     Set<RuneCombatItem> runes, int baseDefense) {
         super(name, rarity, description, maxRunes, runes);
@@ -24,6 +26,10 @@ public class ArmorEquipableCombatItem extends EquipableCombatItem {
 
     public int getBaseDefense() {
         return baseDefense;
+    }
+
+    public void setBaseDefense(int baseDefense) {
+        this.baseDefense = baseDefense;
     }
 
     @Override

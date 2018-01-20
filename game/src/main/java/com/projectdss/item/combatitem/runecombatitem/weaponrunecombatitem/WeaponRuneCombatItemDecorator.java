@@ -12,7 +12,9 @@ import com.projectdss.item.combatitem.runecombatitem.WeaponRuneCombatItem;
  */
 public abstract class WeaponRuneCombatItemDecorator extends WeaponRuneCombatItem {
 
-    protected final WeaponRuneCombatItem rune;
+    protected WeaponRuneCombatItem rune;
+
+    public WeaponRuneCombatItemDecorator(){}
 
     public WeaponRuneCombatItemDecorator(String name, Rarity rarity, String description, 
                                          WeaponRuneCombatItem rune) {
@@ -23,6 +25,14 @@ public abstract class WeaponRuneCombatItemDecorator extends WeaponRuneCombatItem
     @Override
     public int getSharpness() {
         return rune.getSharpness();
+    }
+
+    public WeaponRuneCombatItem getRune() {
+        return rune;
+    }
+
+    public void setRune(WeaponRuneCombatItem rune) {
+        this.rune = rune;
     }
 
     @Override

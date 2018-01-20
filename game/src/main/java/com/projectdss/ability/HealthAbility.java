@@ -11,7 +11,9 @@ import com.projectdss.CharacterStats;
  */
 public class HealthAbility extends Ability {
 
-    private final int power;
+    private int power;
+
+    public HealthAbility(){}
 
     public HealthAbility(String name, String description, int necessaryMana,
                           int power, ElementType type) {
@@ -21,6 +23,10 @@ public class HealthAbility extends Ability {
 
     public int getPower() {
         return power;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
     }
 
     @Override

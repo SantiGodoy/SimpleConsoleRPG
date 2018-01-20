@@ -13,11 +13,21 @@ import com.projectdss.item.combatitem.runecombatitem.weaponrunecombatitem.Weapon
  */
 public class TrueDamageWeaponRuneCombatItem extends WeaponRuneCombatItemDecorator {
 
-    private final int trueDamage;
+    private int trueDamage;
+
+    public TrueDamageWeaponRuneCombatItem(){}
 
     public TrueDamageWeaponRuneCombatItem(String name, Rarity rarity, String description, 
                                           WeaponRuneCombatItem rune, int trueDamage) {
         super(name, rarity, description, rune);
+        this.trueDamage = trueDamage;
+    }
+
+    public int getTrueDamage() {
+        return trueDamage;
+    }
+
+    public void setTrueDamage(int trueDamage) {
         this.trueDamage = trueDamage;
     }
 

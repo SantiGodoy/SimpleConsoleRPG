@@ -12,7 +12,9 @@ import com.projectdss.item.combatitem.runecombatitem.ArmorRuneCombatItem;
  */
 public class FirmnessArmorRuneCombatItem extends ArmorRuneCombatItem {
 
-    private final int firmness;
+    private int firmness;
+
+    public FirmnessArmorRuneCombatItem(){}
 
     public FirmnessArmorRuneCombatItem(String name, Rarity rarity, String description, 
                                        int firmness) {
@@ -23,6 +25,10 @@ public class FirmnessArmorRuneCombatItem extends ArmorRuneCombatItem {
     @Override
     public int getFirmness() {
         return firmness;
+    }
+
+    public void setFirmness(int firmness) {
+        this.firmness = firmness;
     }
 
     @Override

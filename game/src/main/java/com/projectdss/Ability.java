@@ -10,10 +10,12 @@ import com.projectdss.CharacterStats;
  */
 public abstract class Ability implements Comparable<Ability> {
 
-    protected final String name;
-    protected final String description;
-    protected final int necessaryMana;
-    protected final ElementType type;
+    protected String name;
+    protected String description;
+    protected int necessaryMana;
+    protected ElementType type;
+
+    public Ability(){}
 
     public Ability(String name, String description, int necessaryMana, ElementType type) {
         this.name = name;
@@ -26,16 +28,32 @@ public abstract class Ability implements Comparable<Ability> {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDescription() {
         return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getNecessaryMana() {
         return necessaryMana;
     }
 
+    public void setNecessaryMana(int necessaryMana) {
+        this.necessaryMana = necessaryMana;
+    }
+
     public ElementType getType() {
         return type;
+    }
+
+    public void setType(ElementType type) {
+        this.type = type;
     }
 
     @Override

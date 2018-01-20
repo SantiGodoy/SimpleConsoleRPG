@@ -16,6 +16,8 @@ import com.projectdss.character.EnemyCharacter;
  */
 public class MinionEnemyCharacter extends EnemyCharacter {
 
+    public MinionEnemyCharacter() {}
+
     public MinionEnemyCharacter(String name, int level, CharacterStats characterStats, Set<Ability> abilities, int xpDrop, String message, Map<Item, Integer> itemsDrop) {
         super(name, level, characterStats, abilities, xpDrop, message, itemsDrop);
     }

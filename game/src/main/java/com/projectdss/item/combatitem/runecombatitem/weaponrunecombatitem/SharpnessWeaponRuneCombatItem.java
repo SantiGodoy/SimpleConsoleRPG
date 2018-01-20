@@ -12,7 +12,9 @@ import com.projectdss.item.combatitem.runecombatitem.WeaponRuneCombatItem;
  */
 public class SharpnessWeaponRuneCombatItem extends WeaponRuneCombatItem {
 
-    private final int sharpness;
+    private int sharpness;
+
+    public SharpnessWeaponRuneCombatItem(){}
 
     public SharpnessWeaponRuneCombatItem(String name, Rarity rarity, String description, 
                                          int sharpness) {
@@ -23,6 +25,10 @@ public class SharpnessWeaponRuneCombatItem extends WeaponRuneCombatItem {
     @Override
     public int getSharpness() {
         return sharpness;
+    }
+
+    public void setSharpness(int sharpness) {
+        this.sharpness = sharpness;
     }
 
     @Override

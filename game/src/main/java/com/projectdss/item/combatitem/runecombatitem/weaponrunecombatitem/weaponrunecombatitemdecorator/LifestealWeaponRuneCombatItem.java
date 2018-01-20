@@ -13,11 +13,21 @@ import com.projectdss.item.combatitem.runecombatitem.weaponrunecombatitem.Weapon
  */
 public class LifestealWeaponRuneCombatItem extends WeaponRuneCombatItemDecorator {
 
-    private final int lifesteal;
+    private int lifesteal;
+
+    public LifestealWeaponRuneCombatItem(){}
 
     public LifestealWeaponRuneCombatItem(String name, Rarity rarity, String description, 
                                          WeaponRuneCombatItem rune, int lifesteal) {
         super(name, rarity, description, rune);
+        this.lifesteal = lifesteal;
+    }
+
+    public int getLifesteal() {
+        return lifesteal;
+    }
+
+    public void setLifesteal(int lifesteal) {
         this.lifesteal = lifesteal;
     }
 

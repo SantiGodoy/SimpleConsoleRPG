@@ -50,15 +50,15 @@ public class StandardConsoleOutput extends ConsoleOutput {
         System.out.println("\n\tENEMY" +
         "\nName: " + enemy.getName() +
         "\nLevel: " + enemy.getLevel() +
-        "\nHealth: " + enemy.getStats().getCurrentHealth() + "/" + enemy.getStats().getMaxHealth() +
-        "\nMana: " + enemy.getStats().getCurrentMana() + "/" + enemy.getStats().getMaxMana() +
-        "\nElement Type: " + enemy.getStats().getDefensiveType());
+        "\nHealth: " + enemy.getCharacterStats().getCurrentHealth() + "/" + enemy.getCharacterStats().getMaxHealth() +
+        "\nMana: " + enemy.getCharacterStats().getCurrentMana() + "/" + enemy.getCharacterStats().getMaxMana() +
+        "\nElement Type: " + enemy.getCharacterStats().getDefensiveType());
 
         System.out.println("\n\tYOU" +
         "\nName: " + player.getName() +
         "\nLevel: " + player.getLevel() +
-        "\nHealth: " + player.getStats().getCurrentHealth() + "/" + player.getStats().getMaxHealth() +
-        "\nMana: " + player.getStats().getCurrentMana() + "/" + player.getStats().getMaxMana());
+        "\nHealth: " + player.getCharacterStats().getCurrentHealth() + "/" + player.getCharacterStats().getMaxHealth() +
+        "\nMana: " + player.getCharacterStats().getCurrentMana() + "/" + player.getCharacterStats().getMaxMana());
     }
 
     @Override
@@ -75,7 +75,7 @@ public class StandardConsoleOutput extends ConsoleOutput {
     public int showAbilitiesCombat(MainCharacter player) {
         int counter = 0;
         for(Ability ability : player.getAbilities()) {
-            if(player.getStats().getCurrentMana() < ability.getNecessaryMana()) {
+            if(player.getCurrentStats().getCurrentMana() < ability.getNecessaryMana()) {
                 System.out.println(++counter + ". " + ability.getName());
             } else 
                 System.out.println(ability.getName() + " (Not enough mana)");
