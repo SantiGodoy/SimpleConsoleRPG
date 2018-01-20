@@ -10,7 +10,8 @@ import com.projectdss.map.Minizone;
  * @author Santiago Godoy Poce
  */
 public class TravelMinizoneEvent extends MinizoneEvent {
-    public TravelMinizoneEvent(){}
+
+    public TravelMinizoneEvent() {}
 
     public TravelMinizoneEvent(String description) {
         super(description);
@@ -18,9 +19,10 @@ public class TravelMinizoneEvent extends MinizoneEvent {
 
     public void run(EventParameter eventParameter) {
         System.out.println("¿Hacia dónde desea viajar?");
-        eventParameter.getOutput().showAdjacentMinizones(eventParameter.getPlayer().getMinizone());
-        int indexMinizone = eventParameter.getInput(1, 5);
-        eventParameter.getPlayer().setMinizone(eventParameter.getPlayer().
-        getZone().getAdjacentMinizone(indexMinizone, eventParameter.getPlayer().getMinizone()));
+        int options = eventParameter.getOutput().showAdjacentMinizones(eventParameter.getPlayer().getMinizone());
+        int indexMinizone = eventParameter.getInput(0, options);
+        if(indexMinizone != 0)
+            eventParameter.getPlayer().setMinizone(eventParameter.getPlayer().
+                getZone().getAdjacentMinizone(indexMinizone, eventParameter.getPlayer().getMinizone()));
     }
 }

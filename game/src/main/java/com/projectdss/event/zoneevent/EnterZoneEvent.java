@@ -1,6 +1,6 @@
-
 package com.projectdss.event.zoneevent;
 
+import com.projectdss.character.MainCharacter;
 import com.projectdss.event.EventParameter;
 import com.projectdss.event.ZoneEvent;
 
@@ -16,8 +16,8 @@ public class EnterZoneEvent extends ZoneEvent {
         super(description);
     }
 
+    @Override
     public void run(EventParameter eventParameter) {
-        eventParameter.getOutput().showMinizoneEvents(eventParameter.getPlayer().getMinizone());
-        eventParameter.getInput(1, 4);
+        eventParameter.getPlayer().setIsIn(true);
     }
 }

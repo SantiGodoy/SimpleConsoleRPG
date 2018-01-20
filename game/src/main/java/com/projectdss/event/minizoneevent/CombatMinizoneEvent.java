@@ -35,10 +35,11 @@ public class CombatMinizoneEvent extends MinizoneEvent {
 
     public void run(EventParameter eventParameter) {
         OutputManager output = eventParameter.getOutput();
-        output.showStartBattleMessage(eventParameter.getEnemy());
 
         MainCharacter player = eventParameter.getPlayer();
-        EnemyCharacter enemy = eventParameter.getEnemy();
+        EnemyCharacter enemy = player.getMinizone().getEnemy();
+
+        output.showStartBattleMessage(enemy);
 
         int option = 0,
             target = 0;
@@ -99,7 +100,7 @@ public class CombatMinizoneEvent extends MinizoneEvent {
                         break;
                     case 3: if(player.getStats().getAgility() * AGILITY_RUN > enemy.getStats().getAgility()) {
                                 output.showRunAway();
-                                //////////// Restore enemy stats.
+                                restoreEnemyStats(enemy);
                                 return;
                             }
                         break;
@@ -117,10 +118,10 @@ public class CombatMinizoneEvent extends MinizoneEvent {
 
         if(!enemy.isAlive()) {
             output.showWinnerBattleMessage(player, enemy);
-            getRewards(eventParameter);
+            getRewards(eventParameter, enemy);
+            restoreEnemyStats(enemy);
         } else {
             output.showLoserBattleMessage(player, enemy);
-            ///////////// Consequences?
         }
     }
 
@@ -162,9 +163,14 @@ public class CombatMinizoneEvent extends MinizoneEvent {
         attack(enemy, player, output);
     }
 
-    private void getRewards(EventParameter eventParameter) {
+    private void restoreEnemyStats(EnemyCharacter enemy) {
+        CharacterStats enemyStats = enemy.getCharacterStats();
+        enemyStats.setCurrentHealth(enemyStats.getMaxHealth());
+        enemyStats.setCurrentMana(enemyStats.getMaxMana());
+    }
+
+    private void getRewards(EventParameter eventParameter, EnemyCharacter enemy) {
         MainCharacter player = eventParameter.getPlayer();
-        EnemyCharacter enemy = eventParameter.getEnemy();
         OutputManager output = eventParameter.getOutput();
 
         int levelUp = player.addXP(enemy.getXPDrop());

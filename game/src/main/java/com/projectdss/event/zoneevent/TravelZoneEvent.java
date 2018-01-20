@@ -11,7 +11,7 @@ import com.projectdss.map.Zone;
  */
 public class TravelZoneEvent extends ZoneEvent {
 
-    public TravelZoneEvent(){}
+    public TravelZoneEvent() {}
 
     public TravelZoneEvent(String description) {
         super(description);
@@ -19,9 +19,10 @@ public class TravelZoneEvent extends ZoneEvent {
 
     public void run(EventParameter eventParameter) {
         System.out.println("¿Hacia qué zona desea viajar?");
-        eventParameter.getOutput().showAdjacentZones(eventParameter.getPlayer().getZone());
-        int idZone = eventParameter.getInput(1, 5);
-        eventParameter.getPlayer().setZone(eventParameter.getPlayer().getWorld().
-        getAdjacentZone(idZone, eventParameter.getPlayer().getZone()));
+        int options = eventParameter.getOutput().showAdjacentZones(eventParameter.getPlayer().getZone());
+        int indexZone = eventParameter.getInput(0, options);
+        if(indexZone != 0)
+            eventParameter.getPlayer().setZone(eventParameter.getPlayer().getWorld().
+                getAdjacentZone(indexZone, eventParameter.getPlayer().getZone()));
     }
 }

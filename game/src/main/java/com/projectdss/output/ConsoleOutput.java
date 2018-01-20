@@ -53,19 +53,12 @@ public abstract class ConsoleOutput implements OutputHandler {
     }
 
     @Override
-    public abstract void showStartingMessage(String message);
-
-    @Override
-    public abstract void showGameOverMessage(String message);
-
-    @Override
-    public abstract void showWinMessage(String message);
-
-    @Override
-    public void showEvents(Event[] events) {
+    public int showEvents(Event[] events) {
         int counter = 0;
         for(int i = 0; i < events.length; ++i) 
             System.out.println(++counter + ". " + events[i].getDescription());
+        System.out.println("0. Save and exit");
+        return counter;
     }
 
     @Override
@@ -96,9 +89,6 @@ public abstract class ConsoleOutput implements OutputHandler {
     }
 
     @Override
-    public abstract void showGlobalMenu();
-
-    @Override
     public void showGlobalSettings() {
         System.out.println("Settings" + 
         "\n\t1- Change to white/black screen" + 
@@ -106,47 +96,22 @@ public abstract class ConsoleOutput implements OutputHandler {
     }
 
     @Override
-    public abstract void showGameInformation();
-
-    @Override
-    public void showZoneEvents() {
-        System.out.println("1. Travel\n2. Return");
-    }
-
-    @Override
-    public void showMinizoneEvents(Minizone minizone) {
-        showEvents(minizone.getEvents());
-    }
-
-    @Override
-    public void showAdjacentMinizones(Minizone minizone) {
-        int counter = 1;
+    public int showAdjacentMinizones(Minizone minizone) {
+        int counter = 0;
         for(Minizone mz : minizone.getAdjacentMinizones()) {
-            System.out.println(counter + ". " + mz.getName());
-            ++counter;
+            System.out.println(++counter + ". " + mz.getName());
         }
+        return counter;
     }
 
     @Override
-    public void showAdjacentZones(Zone zone) {
-        int counter = 1;
+    public int showAdjacentZones(Zone zone) {
+        int counter = 0;
         for(Zone z : zone.getAdjacentZones()) {
-            System.out.println(counter + ". " + z.getName());
-            ++counter;
+            System.out.println(++counter + ". " + z.getName());
         }
+        return counter;
     }
-
-    @Override
-    public abstract void showBattleState(MainCharacter player, EnemyCharacter enemy);
-
-    @Override
-    public abstract int showAbilitiesCombat(MainCharacter player);
-
-    @Override
-    public abstract void showWinnerBattleMessage(EnemyCharacter enemy);
-
-    @Override
-    public abstract void showLoserBattleMessage(EnemyCharacter enemy);
 
     @Override
     public void showStartBattleMessage(EnemyCharacter enemy) {
@@ -156,15 +121,16 @@ public abstract class ConsoleOutput implements OutputHandler {
     @Override
     public void showCombatOptions() {
         System.out.println("What do you want to do?" +
-        "\n1. Attack\t\t2. Ability" + 
-        "\n3. Run away");
+                         "\n1. Attack\t\t2. Ability" + 
+                         "\n3. Run away");
     }
 
     @Override
     public void showTargetOptions(MainCharacter player, EnemyCharacter enemy) {
         System.out.println("Select the target:" + 
-        "\n1. " + player.getName() +
-        "\n2. " + enemy.getName());
+                         "\n1. " + player.getName() +
+                         "\n2. " + enemy.getName() +
+                         "\n0. Return");
     }
 
     @Override
@@ -236,7 +202,23 @@ public abstract class ConsoleOutput implements OutputHandler {
     }
 
     @Override
-    public void showJoke(String message) {
+    public void showMessage(String message) {
         System.out.println(message);
+    }
+
+    @Override
+    public void showWorldInformation(MainCharacter player) {
+        System.out.println("Zone : " + player.getZone().getName());
+        if(player.isIn())
+            System.out.println("Minizone : " + player.getMinizone().getName());
+    }
+
+    @Override
+    public void showSaveLoadExitOptions() {
+        System.out.println("1. Load\n" + 
+                           "2. Save\n" +
+                           "3. Save and exit\n" +
+                           "4. Exit\n" +
+                           "0. Return");
     }
 }

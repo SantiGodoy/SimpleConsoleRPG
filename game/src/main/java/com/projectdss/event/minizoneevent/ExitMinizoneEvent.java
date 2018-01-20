@@ -1,5 +1,6 @@
 package com.projectdss.event.minizoneevent;
 
+import com.projectdss.character.MainCharacter;
 import com.projectdss.event.EventParameter;
 import com.projectdss.event.MinizoneEvent;
 import com.projectdss.event.ZoneEvent;
@@ -19,7 +20,6 @@ public class ExitMinizoneEvent extends MinizoneEvent {
     }
 
     public void run(EventParameter eventParameter) {
-        eventParameter.getOutput().showZoneEvents();
-        eventParameter.getInput(1, 2);
+        eventParameter.getPlayer().setIsIn(false);
     }
 }

@@ -17,6 +17,6 @@ public class MessageMinizoneEvent extends MinizoneEvent {
     }
 
     public void run(EventParameter eventParameter) {
-        eventParameter.getOutput().showJoke(description);
+        eventParameter.getOutput().showMessage(description);
     }
 }

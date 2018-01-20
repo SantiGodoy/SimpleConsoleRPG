@@ -21,6 +21,7 @@ import java.util.Scanner;
  * @author Santiago Godoy Poce
  */
 public class ConsoleInput implements InputHandler {
+
     @Override
     public int getInput(int firstOption, int lastOption) {
         Scanner input = new Scanner(System.in);
@@ -31,7 +32,6 @@ public class ConsoleInput implements InputHandler {
             else
                 return inputValue;
         } catch(IOException ioe) {
-            System.out.println("Incorrect option");
             return 0;
         } finally {
             input.close();

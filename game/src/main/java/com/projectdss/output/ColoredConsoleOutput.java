@@ -97,7 +97,7 @@ public class ColoredConsoleOutput extends ConsoleOutput {
     public void showLoserBattleMessage(EnemyCharacter enemy) {
         System.out.println(ANSI_RED + "You lost against " + enemy.getName() + " :((" + ANSI_RESET);
     }
-
+    
     private String showAbilityType(ElementType elementType) {
         switch(elementType.toString()) {
             case "Basic": return ANSI_WHITE;
@@ -113,14 +113,13 @@ public class ColoredConsoleOutput extends ConsoleOutput {
 
     @Override
     public int showAbilitiesCombat(MainCharacter player) {
-        int i = 1;
+        int counter = 0;
         for(Ability ability : player.getAbilities()) {
             if(player.getStats().getCurrentMana() < ability.getNecessaryMana()) {
-                System.out.println(i + ". " + ability.getName() + " " + showAbilityType(ability.getType()) + ability.getType() + ANSI_RESET);
-                ++i;
+                System.out.println(++counter + ". " + ability.getName() + " " + showAbilityType(ability.getType()) + ability.getType() + ANSI_RESET);
             } else 
                 System.out.println(ability.getName() + " (Not enough mana)");
         }
-        return i;
+        return counter;
     }
 }

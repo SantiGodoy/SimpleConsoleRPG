@@ -73,14 +73,13 @@ public class StandardConsoleOutput extends ConsoleOutput {
 
     @Override
     public int showAbilitiesCombat(MainCharacter player) {
-        int i = 1;
+        int counter = 0;
         for(Ability ability : player.getAbilities()) {
             if(player.getStats().getCurrentMana() < ability.getNecessaryMana()) {
-                System.out.println(i + ". " + ability.getName());
-                ++i;
+                System.out.println(++counter + ". " + ability.getName());
             } else 
                 System.out.println(ability.getName() + " (Not enough mana)");
         }
-        return i;
+        return counter;
     }
 }

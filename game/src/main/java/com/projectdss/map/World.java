@@ -48,7 +48,7 @@ public class World {
     }
 
     public Zone getAdjacentZone(int index, Zone zone) {
-        int counter = 0;
+        int counter = 1;
         for(int j = 0; j < adjacencyMatrixZone.length; ++j) {
             if(adjacencyMatrixZone[zone.getId()][j] == true) {
                 if(counter == index)

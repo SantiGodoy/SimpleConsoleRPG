@@ -91,7 +91,7 @@ public class Zone {
     }
 
     public Minizone getAdjacentMinizone(int index, Minizone minizone) {
-        int counter = 0;
+        int counter = 1;
         for(int j = 0; j < adjacencyMatrixMinizone.length; ++j) {
             if(adjacencyMatrixMinizone[minizone.getId()][j] == true) {
                 if(counter == index)

@@ -21,6 +21,7 @@ public class MainCharacter extends Character {
     private final World world;
     private Zone zone;
     private Minizone minizone;
+    private boolean isIn;
     private final Inventory inventory;
 
     public MainCharacter(String name, CharacterStats characterStats, Set<Ability> abilities, 
@@ -32,6 +33,7 @@ public class MainCharacter extends Character {
         this.zone = zone;
         this.minizone = minizone;
         this.inventory = inventory;
+        this.isIn = true;
     }
 
     public void incrementLevel(int[] options) {
@@ -76,6 +78,10 @@ public class MainCharacter extends Character {
         this.minizone = minizone;
     }
 
+    public void setIsIn(boolean isIn) {
+        this.isIn = isIn;
+    }
+
     @Override
     public String getGender() {
         return gender;
@@ -95,6 +101,10 @@ public class MainCharacter extends Character {
 
     public Minizone getMinizone() {
         return minizone;
+    }
+
+    public boolean isIn() {
+        return isIn;
     }
     
     public Inventory getInventory() {

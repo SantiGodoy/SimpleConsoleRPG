@@ -51,8 +51,8 @@ public class OutputManager {
         outputHandler.showWinMessage(message);
     }
 
-    public void showEvents(Event[] events) {
-        outputHandler.showEvents(events);
+    public int showEvents(Event[] events) {
+        return outputHandler.showEvents(events);
     }
 
     public int showItemOptions(ConsumableItem item) {
@@ -79,20 +79,12 @@ public class OutputManager {
         outputHandler.showGameInformation();
     }
 
-    public void showZoneEvents() {
-        outputHandler.showZoneEvents();
+    public int showAdjacentMinizones(Minizone minizone) {
+        return outputHandler.showAdjacentMinizones(minizone);
     }
 
-    public void showMinizoneEvents(Minizone minizone) {
-        outputHandler.showMinizoneEvents(minizone);
-    }
-
-    public void showAdjacentMinizones(Minizone minizone) {
-        outputHandler.showAdjacentMinizones(minizone);
-    }
-
-    public void showAdjacentZones(Zone zone) {
-        outputHandler.showAdjacentZones(zone);
+    public int showAdjacentZones(Zone zone) {
+        return outputHandler.showAdjacentZones(zone);
     }
 
     public void showStartBattleMessage(EnemyCharacter enemy) {
@@ -148,7 +140,15 @@ public class OutputManager {
         outputHandler.showItemGain(item);
     }
 
-    public void showJoke(String message) {
-        outputHandler.showJoke(message);
+    public void showMessage(String message) {
+        outputHandler.showMessage(message);
+    }
+
+    public void showWorldInformation(MainCharacter player) {
+        outputHandler.showWorldInformation(player);
+    }
+
+    public void showSaveLoadExitOptions() {
+        outputHandler.showSaveLoadExitOptions();
     }
 }

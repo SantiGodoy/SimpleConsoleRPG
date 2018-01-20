@@ -25,7 +25,7 @@ public class InventoryEvent extends Event {
 
     @Override
     public void run(EventParameter eventParameter) {
-        Inventory inventory = eventParameter.getPlayerInventory();
+        Inventory inventory = eventParameter.getPlayer().getInventory();
         InventoryManager manager = InventoryManager.getInstance(inventory);
 
         ArrayList<ConsumableItem> consumables = new ArrayList<ConsumableItem>();
@@ -41,7 +41,7 @@ public class InventoryEvent extends Event {
         do {
             eventParameter.getOutput().showInventory(inventory);
             System.out.println("Selecciona un objeto del inventario ó 0 para salir: ");
-            itemSelected = eventParameter.getInput(1, inventory.size());
+            itemSelected = eventParameter.getInput(0, inventory.size());
             if(itemSelected != 0) {
                 int numOptions = 0,
                     optionSelected = 0;

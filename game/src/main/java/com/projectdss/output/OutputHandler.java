@@ -26,17 +26,15 @@ public interface OutputHandler {
     void showStartingMessage(String message);
     void showGameOverMessage(String message);
     void showWinMessage(String message);
-    void showEvents(Event[] events);
+    int showEvents(Event[] events);
     int showItemOptions(ConsumableItem item);
     int showItemOptions(EquipableCombatItem item);
     int showItemOptions(RuneCombatItem item);
     void showGlobalMenu();
     void showGlobalSettings();
     void showGameInformation();
-    void showZoneEvents();
-    void showMinizoneEvents(Minizone minizone);
-    void showAdjacentMinizones(Minizone minizone);
-    void showAdjacentZones(Zone zone);
+    int showAdjacentMinizones(Minizone minizone);
+    int showAdjacentZones(Zone zone);
     void showStartBattleMessage(EnemyCharacter enemy);
     void showBattleState(MainCharacter player, EnemyCharacter enemy);
     void showCombatOptions();
@@ -51,5 +49,8 @@ public interface OutputHandler {
     void showXPGain(int xpDrop, int levelUp);
     void showLevelUpOptions(MainCharacter player);
     void showItemGain(Item item);
-    void showJoke(String message);
+    void showMessage(String message);
+    void showWorldInformation(MainCharacter player);
+    void showSaveLoadExitOptions();
+
 }
