@@ -18,6 +18,9 @@ public class EnterZoneEvent extends ZoneEvent {
 
     @Override
     public void run(EventParameter eventParameter) {
-        eventParameter.getPlayer().setIsIn(true);
+        MainCharacter player = eventParameter.getPlayer();
+        player.setIsIn(true);
+        player.setMinizone(player.getZone().getMinizones()[0]);
     }
+
 }

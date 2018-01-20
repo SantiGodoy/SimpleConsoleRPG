@@ -75,7 +75,7 @@ public class StandardConsoleOutput extends ConsoleOutput {
     public int showAbilitiesCombat(MainCharacter player) {
         int counter = 0;
         for(Ability ability : player.getAbilities()) {
-            if(player.getCurrentStats().getCurrentMana() < ability.getNecessaryMana()) {
+            if(player.getCharacterStats().getCurrentMana() < ability.getNecessaryMana()) {
                 System.out.println(++counter + ". " + ability.getName());
             } else 
                 System.out.println(ability.getName() + " (Not enough mana)");
