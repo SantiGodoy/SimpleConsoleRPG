@@ -91,8 +91,9 @@ public abstract class ConsoleOutput implements OutputHandler {
     @Override
     public void showGlobalSettings() {
         System.out.println("Settings" + 
-        "\n\t1- Change to white/black screen" + 
-        "\n\t2- Change to colored screen");
+        "\n\t1. White/black screen" + 
+        "\n\t2. Colored screen" + 
+        "\n\t0. Return");
     }
 
     @Override

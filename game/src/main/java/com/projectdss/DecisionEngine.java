@@ -3,6 +3,7 @@ package com.projectdss;
 import com.projectdss.character.MainCharacter;
 import com.projectdss.event.EventParameter;
 import com.projectdss.input.InputManager;
+import com.projectdss.output.ColoredConsoleOutput;
 import com.projectdss.output.OutputHandler;
 import com.projectdss.output.OutputManager;
 import com.projectdss.output.StandardConsoleOutput;
@@ -15,22 +16,52 @@ import com.projectdss.output.StandardConsoleOutput;
  */
 public class DecisionEngine {
 
-    private MainCharacter player;
     private OutputManager output;
     private InputManager input;
     private Loader loader;
     private Saver saver;
+    private final String startFilePath = "../src/main/resources/map.xml";
+    private final String saveFilePath = "../src/main/resources/save.xml";
 
-    public DecisionEngine(MainCharacter player, OutputManager output, InputManager input,
+    public DecisionEngine(OutputManager output, InputManager input,
                           Loader loader, Saver saver) {
-        this.player = player;
         this.output= output;
         this.input = input;
         this.loader = loader;
         this.saver = saver;
     }
 
-    public void run() {
+    public void startMenu() {
+        int option;
+
+        do {
+            output.showGlobalMenu();
+            option = input.getInput(0, 4);
+            switch(option) {
+                case 1: run(loader.loadMainCharacter(startFilePath));
+                    break;
+                case 2: run(loader.loadMainCharacter(saveFilePath));
+                    break;
+                case 3: output.showGlobalSettings();
+                        option = input.getInput(0, 2);
+                        switch(option) {
+                            case 1: output = new OutputManager(new StandardConsoleOutput());
+                                break;
+                            case 2: output = new OutputManager(new ColoredConsoleOutput());
+                                break;
+                            default:
+                                break;
+                        }
+                    break;
+                case 4: output.showGameInformation();
+                    break;
+                default:
+                    break;
+            }
+        } while(option != 0);
+    }
+
+    private void run(MainCharacter player) {
         int numOptions, indexEvent;
         Event[] events;
 
@@ -58,6 +89,7 @@ public class DecisionEngine {
                     case 4: return;
                         break;
                     default:
+                        break;
                 }
             } else
                 events[indexEvent - 1].run(new EventParameter(output, input, player));

@@ -32,17 +32,18 @@ public class StandardConsoleOutput extends ConsoleOutput {
     @Override
     public void showGlobalMenu() {
         System.out.println("Main Menu" + 
-        "\n\t1- New Game" +
-        "\n\t2- Option" +
-        "\n\t3- Credits");
+        "\n\t1. New Game" +
+        "\n\t2. Load game" +
+        "\n\t3. Option" +
+        "\n\t4. Credits" + 
+        "\n\t0. Close game");
     }
 
     @Override
     public void showGameInformation() {
         System.out.println("Developers:" + 
         "\n\tJosé Correro Barquín" +
-        "\n\tSantiago Godoy Poce" +
-        "\n\tAntonio García Velatta");
+        "\n\tSantiago Godoy Poce");
     }
 
     @Override

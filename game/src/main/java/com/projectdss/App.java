@@ -19,10 +19,10 @@ public class App {
         ConsoleInput consoleInput = new ConsoleInput();
 
         String filePath = "../src/main/resources/map.xml";
-        Loader mapLoader = new Loader();
-        Saver mapSaver = new Saver();
+        Loader loader = new Loader();
+        Saver saver = new Saver();
 
-        World world = mapLoader.loadWorld(filePath);
-        MainCharacter mainCharacter = mapLoader.loadMainCharacter(filePath);
+        World world = loader.loadWorld(filePath);
+        MainCharacter mainCharacter = loader.loadMainCharacter(filePath);
     }
 }
