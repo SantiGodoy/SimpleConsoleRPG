@@ -73,8 +73,6 @@ public class CombatMinizoneEvent extends MinizoneEvent {
                     default:
                 }
             } while(option < 1 || option > NUM_OPTIONS_COMBAT);
-
-            output.showBattleState(player, enemy);
             
             boolean turn = enemy.getCharacterStats().getAgility() > player.getCharacterStats().getAgility();
 
