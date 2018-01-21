@@ -33,11 +33,11 @@ public abstract class ConsoleOutput implements OutputHandler {
             if(i instanceof WeaponEquipableCombatItem) {
                 WeaponEquipableCombatItem weapon = (WeaponEquipableCombatItem) i;
                 System.out.println(weapon.getBaseDamage() + " damage.\n" +
-                                   weapon.getRunes().size() + "/" + weapon.getRunes().size() + " runes.");
+                                   weapon.getRunes().size() + "/" + weapon.getMaxRunes() + " runes.");
             } else if(i instanceof ArmorEquipableCombatItem) {
                 ArmorEquipableCombatItem armor = (ArmorEquipableCombatItem) i;
                 System.out.println(armor.getBaseDefense() + " defense.\n" +
-                                   armor.getRunes().size() + "/" + armor.getRunes().size() + " runes.");
+                                   armor.getRunes().size() + "/" + armor.getMaxRunes() + " runes.");
             }
             ++counter;
         }
@@ -63,6 +63,7 @@ public abstract class ConsoleOutput implements OutputHandler {
 
     @Override
     public int showItemOptions(ConsumableItem item) {
+        System.out.println(item.getName());
         System.out.println("1. Use" +
         "\n2. Remove" +
         "\n0. Return");
@@ -71,6 +72,7 @@ public abstract class ConsoleOutput implements OutputHandler {
 
     @Override
     public int showItemOptions(EquipableCombatItem item) {
+        System.out.println(item.getName());
         if(item.isEquipped())
             System.out.println("1. Take off");
         else
@@ -82,6 +84,7 @@ public abstract class ConsoleOutput implements OutputHandler {
 
     @Override
     public int showItemOptions(RuneCombatItem item) {
+        System.out.println(item.getName());
         System.out.println("1. Merge\n" +
                            "2. Remove item\n" +
                            "0. Return");
@@ -99,18 +102,22 @@ public abstract class ConsoleOutput implements OutputHandler {
     @Override
     public int showAdjacentMinizones(Minizone minizone) {
         int counter = 0;
+        System.out.println("Where do you want to go?");
         for(Minizone mz : minizone.getAdjacentMinizones()) {
             System.out.println(++counter + ". " + mz.getName() + "\t\t" + mz.getDescription());
         }
+        System.out.println("0. Return");
         return counter;
     }
 
     @Override
     public int showAdjacentZones(Zone zone) {
         int counter = 0;
+        System.out.println("Where do you want to go?");
         for(Zone z : zone.getAdjacentZones()) {
-            System.out.println(++counter + ". " + z.getName());
+            System.out.println(++counter + ". " + z.getName() + "\t\t" + z.getDescription());
         }
+        System.out.println("0. Return");
         return counter;
     }
 
@@ -173,7 +180,10 @@ public abstract class ConsoleOutput implements OutputHandler {
         else
             message += player2.getName() + ", ";
 
-        message += "dealing " + appliedDamage + " damage!";
+        if(appliedDamage <= 0)
+            message += "but it did not deal damage!";
+        else
+            message += "dealing " + appliedDamage + " damage!";
 
         System.out.println(message);
     }
@@ -190,10 +200,10 @@ public abstract class ConsoleOutput implements OutputHandler {
     @Override
     public void showLevelUpOptions(MainCharacter player) {
         System.out.println("Select the stats you want to level:\t\tLevel " + player.getLevel() +
-                           "\n1. Maximum health\t\t(" + player.getCharacterStats().getMaxHealth() + ")" +
+                           "\n1. Maximum health\t(" + player.getCharacterStats().getMaxHealth() + ")" +
                            "\n2. Maximum mana\t\t(" + player.getCharacterStats().getMaxMana() + ")" +
                            "\n3. Strength\t\t(" + player.getCharacterStats().getStrength() + ")" +
-                           "\n4. Magical power\t\t(" + player.getCharacterStats().getMagicalPower() + ")" +
+                           "\n4. Magical power\t(" + player.getCharacterStats().getMagicalPower() + ")" +
                            "\n5. Resistance\t\t(" + player.getCharacterStats().getResistance() + ")" +
                            "\n6. Agility\t\t(" + player.getCharacterStats().getAgility() + ")");
     }

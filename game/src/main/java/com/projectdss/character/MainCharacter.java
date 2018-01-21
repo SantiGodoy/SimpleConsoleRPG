@@ -34,8 +34,8 @@ public class MainCharacter extends Character {
         this.world = world;
         this.zone = zone;
         this.minizone = minizone;
-        this.inventory = inventory;
         this.isIn = true;
+        this.inventory = inventory;
     }
 
     public void incrementLevel(int[] options) {

@@ -69,9 +69,9 @@ public class DecisionEngine {
             output.showWorldInformation(player);
 
             if(player.isIn())
-                events = player.getZone().getEvents();
-            else
                 events = player.getMinizone().getEvents();
+            else
+                events = player.getZone().getEvents();
 
             numOptions = output.showEvents(events);
             indexEvent = input.getInput(0, numOptions);

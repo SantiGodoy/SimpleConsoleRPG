@@ -86,8 +86,8 @@ public class ColoredConsoleOutput extends ConsoleOutput {
             player.getCharacterStats().getMaxHealth() + ANSI_RESET +
         "\nMana: " + ANSI_BLUE + player.getCharacterStats().getCurrentMana() + "/" + 
             player.getCharacterStats().getMaxMana() + ANSI_RESET +
-        "\nElement Type (Offensive): " + player.getCharacterStats().getOffensiveType() + 
-        "\nElement Type (Defensive): " + player.getCharacterStats().getDefensiveType());
+        "\nElement Type (Offensive): " + showElementType(player.getCharacterStats().getOffensiveType()) + 
+        "\nElement Type (Defensive): " + showElementType(player.getCharacterStats().getDefensiveType()));
     }
 
     @Override
@@ -117,12 +117,14 @@ public class ColoredConsoleOutput extends ConsoleOutput {
     @Override
     public int showAbilitiesCombat(MainCharacter player) {
         int counter = 0;
+        System.out.println(player.getCharacterStats().getCurrentMana());
         for(Ability ability : player.getAbilities()) {
-            if(player.getCharacterStats().getCurrentMana() < ability.getNecessaryMana()) {
+            if(player.getCharacterStats().getCurrentMana() >= ability.getNecessaryMana()) {
                 System.out.println(++counter + ". " + ability.getName() + " " + showAbilityType(ability.getType()) + ability.getType() + ANSI_RESET);
             } else 
                 System.out.println(ability.getName() + " (Not enough mana)");
         }
+        System.out.println("0. Return");
         return counter;
     }
 }
