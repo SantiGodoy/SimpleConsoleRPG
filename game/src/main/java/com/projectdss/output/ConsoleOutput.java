@@ -57,7 +57,7 @@ public abstract class ConsoleOutput implements OutputHandler {
         int counter = 0;
         for(int i = 0; i < events.length; ++i) 
             System.out.println(++counter + ". " + events[i].getDescription());
-        System.out.println("0. Save and exit");
+        System.out.println("0. Options");
         return counter;
     }
 

@@ -12,13 +12,8 @@ import com.projectdss.output.StandardConsoleOutput;
 
 public class App {
     public static void main(String[] args) {
-        StandardConsoleOutput standardOutput = new StandardConsoleOutput();
-        ColoredConsoleOutput coloredOutput = new ColoredConsoleOutput();
-
-        OutputManager outputManager = new OutputManager(standardOutput);
-        
-        ConsoleInput consoleInput = new ConsoleInput();
-        InputManager inputManager = new InputManager(consoleInput);
+        OutputManager outputManager = new OutputManager(new StandardConsoleOutput());
+        InputManager inputManager = new InputManager(new ConsoleInput());
         
         Loader loader = new Loader();
         Saver saver = new Saver();

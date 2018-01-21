@@ -43,8 +43,8 @@ public class DecisionEngine {
                 case 2: run(loader.loadMainCharacter(saveFilePath));
                     break;
                 case 3: output.showGlobalSettings();
-                        option = input.getInput(0, 2);
-                        switch(option) {
+                        int option3 = input.getInput(0, 2);
+                        switch(option3) {
                             case 1: output = new OutputManager(new StandardConsoleOutput());
                                 break;
                             case 2: output = new OutputManager(new ColoredConsoleOutput());
