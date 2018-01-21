@@ -46,6 +46,7 @@ public class InventoryManager {
         if(inventory.hasWeaponEquipped()) {
             inventory.getEquippedWeapon().disuse(player);
             inventory.getEquippedWeapon().setEquipped(false);
+            inventory.setEquippedWeapon(null);
         }
     }
 
@@ -53,6 +54,7 @@ public class InventoryManager {
         if(inventory.hasArmorEquipped()) {
             inventory.getEquippedArmor().disuse(player);
             inventory.getEquippedArmor().setEquipped(false);
+            inventory.setEquippedArmor(null);
         }
     }
 
