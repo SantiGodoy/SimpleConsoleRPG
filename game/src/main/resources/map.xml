@@ -689,6 +689,7 @@
     </property>
     <property name="gender" value="Woman"/>
     <property name="xp" value="0"/>
+    <property name="isIn" value="true"/>
     <property name="world">
       <ref bean="world"/>
     </property>
