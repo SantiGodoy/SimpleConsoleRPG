@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
-  "http://www.springframework.org/dtd/spring-beans.dtd">
-<beans>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beans default-autowire="no" default-dependency-check="none" default-lazy-init="false">
 
   <!--'MINIZONE 0.0'-->
-  <bean id="minizone00" class="com.projectdss.map.Minizone">
+  <bean autowire="default" class="com.projectdss.map.Minizone" dependency-check="default" id="minizone00" lazy-init="default">
     <property name="id" value="0"/>
     <property name="name" value=""/>
     <property name="zone">
@@ -20,7 +17,7 @@
   </bean>
 
   <!--'MINIZONE 0.1'-->
-  <bean id="minizone01" class="com.projectdss.map.Minizone">
+  <bean autowire="default" class="com.projectdss.map.Minizone" dependency-check="default" id="minizone01" lazy-init="default">
     <property name="id" value="0"/>
     <property name="name" value=""/>
     <property name="zone">
@@ -36,7 +33,7 @@
   </bean>
 
   <!--'MINIZONE 1.0'-->
-  <bean id="minizone10" class="com.projectdss.map.Minizone">
+  <bean autowire="default" class="com.projectdss.map.Minizone" dependency-check="default" id="minizone10" lazy-init="default">
     <property name="id" value="1"/>
     <property name="name" value=""/>
     <property name="zone">
@@ -52,7 +49,7 @@
   </bean>
 
   <!--'MINIZONE 1.1'-->
-  <bean id="minizone11" class="com.projectdss.map.Minizone">
+  <bean autowire="default" class="com.projectdss.map.Minizone" dependency-check="default" id="minizone11" lazy-init="default">
     <property name="id" value="1"/>
     <property name="name" value=""/>
     <property name="zone">
@@ -68,7 +65,7 @@
   </bean>
 
   <!--'MINIZONE 1.2'-->
-  <bean id="minizone12" class="com.projectdss.map.Minizone">
+  <bean autowire="default" class="com.projectdss.map.Minizone" dependency-check="default" id="minizone12" lazy-init="default">
     <property name="id" value="1"/>
     <property name="name" value=""/>
     <property name="zone">
@@ -84,7 +81,7 @@
   </bean>
 
   <!--'MINIZONE 2.0'-->
-  <bean id="minizone20" class="com.projectdss.map.Minizone">
+  <bean autowire="default" class="com.projectdss.map.Minizone" dependency-check="default" id="minizone20" lazy-init="default">
     <property name="id" value="2"/>
     <property name="name" value=""/>
     <property name="zone">
@@ -100,7 +97,7 @@
   </bean>
 
   <!--'MINIZONE 2.1'-->
-  <bean id="minizone21" class="com.projectdss.map.Minizone">
+  <bean autowire="default" class="com.projectdss.map.Minizone" dependency-check="default" id="minizone21" lazy-init="default">
     <property name="id" value="2"/>
     <property name="name" value=""/>
     <property name="zone">
@@ -116,7 +113,7 @@
   </bean>
 
   <!--'MINIZONE 2.2'-->
-  <bean id="minizone22" class="com.projectdss.map.Minizone">
+  <bean autowire="default" class="com.projectdss.map.Minizone" dependency-check="default" id="minizone22" lazy-init="default">
     <property name="id" value="2"/>
     <property name="name" value=""/>
     <property name="zone">
@@ -132,7 +129,7 @@
   </bean>
 
   <!--'MINIZONE 3.0'-->
-  <bean id="minizone30" class="com.projectdss.map.Minizone">
+  <bean autowire="default" class="com.projectdss.map.Minizone" dependency-check="default" id="minizone30" lazy-init="default">
     <property name="id" value="3"/>
     <property name="name" value=""/>
     <property name="zone">
@@ -148,7 +145,7 @@
   </bean>
 
   <!--'MINIZONE 3.1'-->
-  <bean id="minizone31" class="com.projectdss.map.Minizone">
+  <bean autowire="default" class="com.projectdss.map.Minizone" dependency-check="default" id="minizone31" lazy-init="default">
     <property name="id" value="3"/>
     <property name="name" value=""/>
     <property name="zone">
@@ -164,7 +161,7 @@
   </bean>
 
   <!--'MINIZONE 3.2'-->
-  <bean id="minizone32" class="com.projectdss.map.Minizone">
+  <bean autowire="default" class="com.projectdss.map.Minizone" dependency-check="default" id="minizone32" lazy-init="default">
     <property name="id" value="3"/>
     <property name="name" value=""/>
     <property name="zone">
@@ -180,42 +177,42 @@
   </bean>
 
   <!--'EVENT ZONES 0'-->
-  <bean id="eventz0" class="com.projectdss.event.zoneevent.EnterZoneEvent">
+  <bean autowire="default" class="com.projectdss.event.zoneevent.EnterZoneEvent" dependency-check="default" id="eventz0" lazy-init="default">
     <property name="description" value=""/>
   </bean>
 
   <!--'EVENT ZONES 1'-->
-  <bean id="eventz1" class="com.projectdss.event.zoneevent.TravelZoneEvent">
+  <bean autowire="default" class="com.projectdss.event.zoneevent.TravelZoneEvent" dependency-check="default" id="eventz1" lazy-init="default">
     <property name="description" value=""/>
   </bean>
 
   <!--'EVENT MINIZONES 0'-->
-  <bean id="event0" class="com.projectdss.event.minizoneevent.CombatMinizoneEvent">
+  <bean autowire="default" class="com.projectdss.event.minizoneevent.CombatMinizoneEvent" dependency-check="default" id="event0" lazy-init="default">
     <property name="description" value=""/>
   </bean>
 
   <!--'EVENT MINIZONES 1'-->
-  <bean id="event1" class="com.projectdss.event.minizoneevent.ExitMinizoneEvent">
+  <bean autowire="default" class="com.projectdss.event.minizoneevent.ExitMinizoneEvent" dependency-check="default" id="event1" lazy-init="default">
     <property name="description" value=""/>
   </bean>
 
   <!--'EVENT MINIZONES 2'-->
-  <bean id="event2" class="com.projectdss.event.minizoneevent.TravelMinizoneEvent">
+  <bean autowire="default" class="com.projectdss.event.minizoneevent.TravelMinizoneEvent" dependency-check="default" id="event2" lazy-init="default">
     <property name="description" value=""/>
   </bean>
 
   <!--'EVENT MINIZONES 3'-->
-  <bean id="event3" class="com.projectdss.event.minizoneevent.MessageMinizoneEvent">
+  <bean autowire="default" class="com.projectdss.event.minizoneevent.MessageMinizoneEvent" dependency-check="default" id="event3" lazy-init="default">
     <property name="description" value=""/>
   </bean>
 
   <!--'INVENTORY EVENT'-->
-  <bean id="event4" class="com.projectdss.event.InventoryEvent">
+  <bean autowire="default" class="com.projectdss.event.InventoryEvent" dependency-check="default" id="event4" lazy-init="default">
     <property name="description" value=""/>
   </bean>
 
   <!--'ZONE 0'-->
-  <bean id="zone0" class="com.projectdss.map.Zone">
+  <bean autowire="default" class="com.projectdss.map.Zone" dependency-check="default" id="zone0" lazy-init="default">
     <property name="id" value="0"/>
     <property name="name" value=""/>
     <property name="description" value=""/>
@@ -237,7 +234,7 @@
   </bean>
 
   <!--'ZONE 1'-->
-  <bean id="zone1" class="com.projectdss.map.Zone">
+  <bean autowire="default" class="com.projectdss.map.Zone" dependency-check="default" id="zone1" lazy-init="default">
     <property name="id" value="1"/>
     <property name="name" value=""/>
     <property name="minizones">
@@ -260,7 +257,7 @@
   </bean>
 
   <!--'ZONE 2'-->
-  <bean id="zone2" class="com.projectdss.map.Zone">
+  <bean autowire="default" class="com.projectdss.map.Zone" dependency-check="default" id="zone2" lazy-init="default">
     <property name="id" value="2"/>
     <property name="name" value=""/>
     <property name="minizones">
@@ -283,7 +280,7 @@
   </bean>
 
   <!--'ZONE 3'-->
-  <bean id="zone3" class="com.projectdss.map.Zone">
+  <bean autowire="default" class="com.projectdss.map.Zone" dependency-check="default" id="zone3" lazy-init="default">
     <property name="id" value="3"/>
     <property name="name" value=""/>
     <property name="minizones">
@@ -306,7 +303,7 @@
   </bean>
 
   <!--'WORLD'-->
-  <bean id="world" class="com.projectdss.map.World">
+  <bean autowire="default" class="com.projectdss.map.World" dependency-check="default" id="world" lazy-init="default">
     <property name="name" value=""/>
     <property name="zones">
       <list>
@@ -320,7 +317,7 @@
 
 
   <!--'MAIN STATS'-->
-  <bean id="characterStatsMain" class="com.projectdss.CharacterStats">
+  <bean autowire="default" class="com.projectdss.CharacterStats" dependency-check="default" id="characterStatsMain" lazy-init="default">
     <property name="maxHealth" value="100"/>
     <property name="currentHealth" value="100"/>
     <property name="maxMana" value="100"/>
@@ -336,85 +333,85 @@
   </bean>
 
   <!--'ITEM 0'-->
-  <bean id="item0" class="com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem">
+  <bean autowire="default" class="com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem" dependency-check="default" id="item0" lazy-init="default">
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
     <property name="equipped" value="false"/>
     <property name="maxRunes" value="0"/>
     <property name="runes">
-      <set></set>
+      <set/>
     </property>
     <property name="baseDamage" value="0"/>
   </bean>
 
   <!--'ITEM 1'-->
-  <bean id="item1" class="com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem">
+  <bean autowire="default" class="com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem" dependency-check="default" id="item1" lazy-init="default">
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
     <property name="equipped" value="false"/>
     <property name="maxRunes" value="0"/>
     <property name="runes">
-      <set></set>
+      <set/>
     </property>
     <property name="baseDefense" value="0"/>
   </bean>
 
   <!--'ITEM 2'-->
-  <bean id="item2" class="com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem">
+  <bean autowire="default" class="com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem" dependency-check="default" id="item2" lazy-init="default">
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
     <property name="equipped" value="false"/>
     <property name="maxRunes" value="0"/>
     <property name="runes">
-      <set></set>
+      <set/>
     </property>
     <property name="baseDamage" value="0"/>
   </bean>
 
   <!--'ITEM 3'-->
-  <bean id="item3" class="com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem">
+  <bean autowire="default" class="com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem" dependency-check="default" id="item3" lazy-init="default">
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
     <property name="equipped" value="false"/>
     <property name="maxRunes" value="0"/>
     <property name="runes">
-      <set></set>
+      <set/>
     </property>
     <property name="baseDefense" value="0"/>
   </bean>
 
   <!--'ITEM 4'-->
-  <bean id="item4" class="com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem">
+  <bean autowire="default" class="com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem" dependency-check="default" id="item4" lazy-init="default">
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
     <property name="equipped" value="false"/>
     <property name="maxRunes" value="0"/>
     <property name="runes">
-      <set></set>
+      <set/>
     </property>
     <property name="baseDamage" value="0"/>
   </bean>
 
   <!--'ITEM 5'-->
-  <bean id="item5" class="com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem">
+  <bean autowire="default" class="com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem" dependency-check="default" id="item5" lazy-init="default">
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
     <property name="equipped" value="false"/>
     <property name="maxRunes" value="0"/>
     <property name="runes">
-      <set></set>
+      <set/>
     </property>
     <property name="baseDefense" value="0"/>
   </bean>
 
   <!--'ITEM 6'-->
-  <bean id="item6" class="com.projectdss.item.consumableitem.HealthConsumableItem">
+  <bean autowire="default" class="com.projectdss.item.consumableitem.HealthConsumableItem" dependency-check="default" id="item6" lazy-init="default">
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
@@ -422,7 +419,7 @@
   </bean>
 
   <!--'ITEM 7'-->
-  <bean id="item7" class="com.projectdss.item.consumableitem.ManaConsumableItem">
+  <bean autowire="default" class="com.projectdss.item.consumableitem.ManaConsumableItem" dependency-check="default" id="item7" lazy-init="default">
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
@@ -430,7 +427,7 @@
   </bean>
 
   <!--'ITEM 8'-->
-  <bean id="item8" class="com.projectdss.item.consumableitem.MultiConsumableItem">
+  <bean autowire="default" class="com.projectdss.item.consumableitem.MultiConsumableItem" dependency-check="default" id="item8" lazy-init="default">
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
@@ -439,7 +436,7 @@
   </bean>
 
   <!--'ITEM 9'-->
-  <bean id="item9" class="com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem.FirmnessArmorRuneCombatItem">
+  <bean autowire="default" class="com.projectdss.item.combatitem.runecombatitem.armorrunecombatitem.FirmnessArmorRuneCombatItem" dependency-check="default" id="item9" lazy-init="default">
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
@@ -447,7 +444,7 @@
   </bean>
 
   <!--'ITEM 10'-->
-  <bean id="item10" class="com.projectdss.item.combatitem.runecombatitem.weaponrunecombatitem.SharpnessWeaponRuneCombatItem">
+  <bean autowire="default" class="com.projectdss.item.combatitem.runecombatitem.weaponrunecombatitem.SharpnessWeaponRuneCombatItem" dependency-check="default" id="item10" lazy-init="default">
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
@@ -455,20 +452,20 @@
   </bean>
 
   <!--'ITEM 11'-->
-  <bean id="item11" class="com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem">
+  <bean autowire="default" class="com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem" dependency-check="default" id="item11" lazy-init="default">
     <property name="name" value=""/>
     <property name="rarity" value="COMMON"/>
     <property name="description" value=""/>
     <property name="equipped" value="false"/>
     <property name="maxRunes" value="0"/>
     <property name="runes">
-      <set></set>
+      <set/>
     </property>
     <property name="baseDefense" value="0"/>
   </bean>
 
   <!--'INVENTORY'-->
-  <bean id="inventory" class="com.projectdss.inventory.Inventory">
+  <bean autowire="default" class="com.projectdss.inventory.Inventory" dependency-check="default" id="inventory" lazy-init="default">
     <property name="items">
       <list>
         <ref bean="item0"/>
@@ -480,7 +477,7 @@
   </bean>
 
   <!--'ABILITY 0'-->
-  <bean id="ability0" class="com.projectdss.ability.HealthAbility">
+  <bean autowire="default" class="com.projectdss.ability.HealthAbility" dependency-check="default" id="ability0" lazy-init="default">
     <property name="name" value=""/>
     <property name="description" value=""/>
     <property name="necessaryMana" value="0"/>
@@ -489,7 +486,7 @@
   </bean>
 
   <!--'ABILITY 1'-->
-  <bean id="ability1" class="com.projectdss.ability.HealthAbility">
+  <bean autowire="default" class="com.projectdss.ability.HealthAbility" dependency-check="default" id="ability1" lazy-init="default">
     <property name="name" value=""/>
     <property name="description" value=""/>
     <property name="necessaryMana" value="0"/>
@@ -498,7 +495,7 @@
   </bean>
 
   <!--'ABILITY 2'-->
-  <bean id="ability2" class="com.projectdss.ability.HealthAbility">
+  <bean autowire="default" class="com.projectdss.ability.HealthAbility" dependency-check="default" id="ability2" lazy-init="default">
     <property name="name" value=""/>
     <property name="description" value=""/>
     <property name="necessaryMana" value="0"/>
@@ -507,7 +504,7 @@
   </bean>
 
   <!--'ABILITY 3'-->
-  <bean id="ability3" class="com.projectdss.ability.HealthAbility">
+  <bean autowire="default" class="com.projectdss.ability.HealthAbility" dependency-check="default" id="ability3" lazy-init="default">
     <property name="name" value=""/>
     <property name="description" value=""/>
     <property name="necessaryMana" value="0"/>
@@ -516,7 +513,7 @@
   </bean>
 
   <!--'MAIN CHARACTER'-->
-  <bean id="mainCharacter" class="com.projectdss.character.MainCharacter">
+  <bean autowire="default" class="com.projectdss.character.MainCharacter" dependency-check="default" id="mainCharacter" lazy-init="default">
     <property name="name" value=""/>
     <property name="characterStats">
       <ref bean="characterStatsMain"/>
@@ -545,7 +542,7 @@
   </bean>
 
   <!--'ENEMY STATS 0'-->
-  <bean id="characterStats0" class="com.projectdss.CharacterStats">
+  <bean autowire="default" class="com.projectdss.CharacterStats" dependency-check="default" id="characterStats0" lazy-init="default">
     <property name="maxHealth" value="0"/>
     <property name="currentHealth" value="0"/>
     <property name="maxMana" value="0"/>
@@ -561,7 +558,7 @@
   </bean>
 
   <!--'ENEMY STATS 1'-->
-  <bean id="characterStats1" class="com.projectdss.CharacterStats">
+  <bean autowire="default" class="com.projectdss.CharacterStats" dependency-check="default" id="characterStats1" lazy-init="default">
     <property name="maxHealth" value="0"/>
     <property name="currentHealth" value="0"/>
     <property name="maxMana" value="0"/>
@@ -577,7 +574,7 @@
   </bean>
 
   <!--'ENEMY STATS 2'-->
-  <bean id="characterStats2" class="com.projectdss.CharacterStats">
+  <bean autowire="default" class="com.projectdss.CharacterStats" dependency-check="default" id="characterStats2" lazy-init="default">
     <property name="maxHealth" value="0"/>
     <property name="currentHealth" value="0"/>
     <property name="maxMana" value="0"/>
@@ -593,7 +590,7 @@
   </bean>
 
   <!--'ENEMY CHARACTER 0'-->
-  <bean id="minionEnemyCharacter0" class="com.projectdss.character.enemy.MinionEnemyCharacter">
+  <bean autowire="default" class="com.projectdss.character.enemy.MinionEnemyCharacter" dependency-check="default" id="minionEnemyCharacter0" lazy-init="default">
     <property name="name" value=""/>
     <property name="characterStats">
       <ref bean="characterStats0"/>
@@ -615,7 +612,7 @@
   </bean>
 
   <!--'ENEMY CHARACTER 1'-->
-  <bean id="minionEnemyCharacter1" class="com.projectdss.character.enemy.MinionEnemyCharacter">
+  <bean autowire="default" class="com.projectdss.character.enemy.MinionEnemyCharacter" dependency-check="default" id="minionEnemyCharacter1" lazy-init="default">
     <property name="name" value=""/>
     <property name="characterStats">
       <ref bean="characterStats1"/>
@@ -637,7 +634,7 @@
   </bean>
 
   <!--'ENEMY CHARACTER 2'-->
-  <bean id="minionEnemyCharacter2" class="com.projectdss.character.enemy.MinionEnemyCharacter">
+  <bean autowire="default" class="com.projectdss.character.enemy.MinionEnemyCharacter" dependency-check="default" id="minionEnemyCharacter2" lazy-init="default">
     <property name="name" value=""/>
     <property name="characterStats">
       <ref bean="characterStats2"/>

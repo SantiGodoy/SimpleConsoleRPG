@@ -9,12 +9,15 @@ import java.nio.channels.FileChannel;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
+import org.w3c.dom.DocumentType;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -58,12 +61,24 @@ public class Saver {
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
             Document doc = docBuilder.parse(filePath);
 
-            Node minizone00 = doc.getElementsByTagName("bean").item(0);
-            Node attribute = minizone00.getAttributes().getNamedItem("name");
+            //Node minizone00 = doc.getElementsByTagName("bean").item(0);
+            //Node attribute = minizone00.getAttributes().getNamedItem("name");
 
             //write the content into xml file
             Transformer xformer = TransformerFactory.newInstance().newTransformer();
-            xformer.transform(new DOMSource(doc), new StreamResult(new File(filePath)));
+            xformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            xformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+            xformer.setOutputProperty(OutputKeys.METHOD, "xml");
+
+            DOMImplementation domImpl = docBuilder.getDOMImplementation();
+            DocumentType docType = domImpl.createDocumentType("doctype", "-//SPRING//DTD BEAN//EN",
+            "http://www.springframework.org/dtd/spring-beans.dtd");
+            xformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC, docType.getPublicId());
+            xformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, docType.getSystemId());
+
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File(filePath));
+            xformer.transform(source, result);
 
 		    System.out.println("Game saved");
 
