@@ -46,18 +46,8 @@ public class InventoryEvent extends Event {
                 int numOptions = 0,
                     optionSelected = 0;
 
-                if(0 < itemSelected && itemSelected < consumables.size() + 1) {
-                    ConsumableItem consumable = consumables.get(itemSelected - 1);
-                    numOptions = eventParameter.getOutput().showItemOptions(consumable);
-                    optionSelected = eventParameter.getInput(0, numOptions);
-                    if(optionSelected != 0) {
-                        eventParameter.getItemInput(consumable, inventory, eventParameter.getPlayer().getCharacterStats(),
-                                                    optionSelected);
-                        consumables.clear();
-                        manager.getConsumables(consumables);
-                    }
-                } else if(consumables.size() < itemSelected && itemSelected < consumables.size() + equipables.size() + 1) {
-                    EquipableCombatItem equipable = equipables.get(itemSelected - consumables.size() - 1);
+                if(0 < itemSelected && itemSelected < equipables.size() + 1) {
+                    EquipableCombatItem equipable = equipables.get(itemSelected - 1);
                     numOptions = eventParameter.getOutput().showItemOptions(equipable);
                     optionSelected = eventParameter.getInput(0, numOptions);
                     if(optionSelected != 0) {
@@ -66,9 +56,8 @@ public class InventoryEvent extends Event {
                         equipables.clear();
                         manager.getEquipables(equipables);
                     }
-                } else if(consumables.size() + equipables.size() < itemSelected && 
-                          itemSelected < consumables.size() + equipables.size() + runes.size() + 1) {
-                    RuneCombatItem rune = runes.get(itemSelected - consumables.size() - equipables.size() - 1);
+                } else if(equipables.size() < itemSelected && itemSelected < equipables.size() + runes.size() + 1) {
+                    RuneCombatItem rune = runes.get(itemSelected - equipables.size() - 1);
                     numOptions = eventParameter.getOutput().showItemOptions(rune);
                     optionSelected = eventParameter.getInput(0, numOptions);
                     if(optionSelected != 0) {
@@ -77,7 +66,18 @@ public class InventoryEvent extends Event {
                         runes.clear();
                         manager.getRunes(runes);
                     }
-                }
+                } else if(equipables.size() + runes.size() < itemSelected && 
+                            itemSelected < equipables.size() + runes.size() + consumables.size() + 1) {
+                    ConsumableItem consumable = consumables.get(itemSelected - equipables.size() - runes.size() -  1);
+                    numOptions = eventParameter.getOutput().showItemOptions(consumable);
+                    optionSelected = eventParameter.getInput(0, numOptions);
+                    if(optionSelected != 0) {
+                        eventParameter.getItemInput(consumable, inventory, eventParameter.getPlayer().getCharacterStats(),
+                                                    optionSelected);
+                        consumables.clear();
+                        manager.getConsumables(consumables);
+                    }
+                }  
             }
         } while(itemSelected != 0);
     }

@@ -177,17 +177,14 @@ public class CombatMinizoneEvent extends MinizoneEvent {
         output.showXPGain(enemy.getxpDrop(), levelUp);
 
         while(levelUp > 0) {
-            int option;
-            int[] options = new int[NUM_OPTIONS_STATS];
-            do {
-                option = -1;
-                output.showLevelUpOptions(player);
-                for(int i = 0; i < NUM_OPTIONS_STATS && option != 0; ++i)
-                    options[i] = option = eventParameter.getInput(0, NUM_STATS);
-
-            } while(option != 0);
+            int option = 0;
             
-            player.incrementLevel(options);
+            do {
+                output.showLevelUpOptions(player);
+                option = eventParameter.getInput(0, NUM_STATS);
+            } while(option == 0);
+            
+            player.incrementLevel(option);
             --levelUp;
         }
 

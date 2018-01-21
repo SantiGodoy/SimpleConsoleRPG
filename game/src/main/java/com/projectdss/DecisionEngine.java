@@ -81,7 +81,7 @@ public class DecisionEngine {
                 switch(option) {
                     case 1: loader.loadMainCharacter(saveFilePath);
                         break;
-                    case 2: saver.saveMainCharacter(saveFilePath);
+                    case 2: saver.saveGame(player);
                         break;
                     case 3: saver.saveMainCharacter(saveFilePath);
                             return;

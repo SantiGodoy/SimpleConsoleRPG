@@ -40,7 +40,8 @@ public class ColoredConsoleOutput extends ConsoleOutput {
 
     @Override
     public void showGlobalMenu() {
-        System.out.println(ANSI_WHITE + "Main Menu" + ANSI_RESET + 
+        System.out.println(ANSI_YELLOW + "PLAYERUNKNOWN'S RPG" + ANSI_RESET +
+        ANSI_WHITE + "\n\nMain Menu" + ANSI_RESET + 
         ANSI_GREEN + "\n\t1. New game" +
                      "\n\t2. Load game" +
                      "\n\t3. Option" +

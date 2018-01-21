@@ -31,7 +31,8 @@ public class StandardConsoleOutput extends ConsoleOutput {
 
     @Override
     public void showGlobalMenu() {
-        System.out.println("Main Menu" + 
+        System.out.println("PLAYERUNKNOWN'S RPG" +
+        "\n\nMain Menu" + 
         "\n\t1. New Game" +
         "\n\t2. Load game" +
         "\n\t3. Option" +
