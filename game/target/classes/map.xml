@@ -329,6 +329,8 @@
     <property name="magicalPower" value="0"/>
     <property name="resistance" value="0"/>
     <property name="agility" value="0"/>
+    <property name="baseDamage" value="0"/>
+    <property name="baseDefense" value="0"/>
     <property name="offensiveType" value="BASIC"/>
     <property name="defensiveType" value="BASIC"/>
   </bean>
@@ -483,6 +485,7 @@
     <property name="description" value=""/>
     <property name="necessaryMana" value="0"/>
     <property name="power" value="0"/>
+    <property name="type" value=""/>
   </bean>
 
   <!--'ABILITY 1'-->
@@ -491,6 +494,7 @@
     <property name="description" value=""/>
     <property name="necessaryMana" value="0"/>
     <property name="power" value="0"/>
+    <property name="type" value=""/>
   </bean>
 
   <!--'ABILITY 2'-->
@@ -499,6 +503,7 @@
     <property name="description" value=""/>
     <property name="necessaryMana" value="0"/>
     <property name="power" value="0"/>
+    <property name="type" value=""/>
   </bean>
 
   <!--'ABILITY 3'-->
@@ -507,6 +512,7 @@
     <property name="description" value=""/>
     <property name="necessaryMana" value="0"/>
     <property name="power" value="0"/>
+    <property name="type" value=""/>
   </bean>
 
   <!--'MAIN CHARACTER'-->
@@ -523,6 +529,7 @@
     </property>
     <property name="gender" value=""/>
     <property name="xp" value="0"/>
+    <property name="isIn" value="true"/>
     <property name="world">
       <ref bean="world"/>
     </property>
@@ -539,36 +546,48 @@
 
   <!--'ENEMY STATS 0'-->
   <bean id="characterStats0" class="com.projectdss.CharacterStats">
+    <property name="maxHealth" value="0"/>
     <property name="currentHealth" value="0"/>
+    <property name="maxMana" value="0"/>
     <property name="currentMana" value="0"/>
     <property name="strength" value="0"/>
     <property name="magicalPower" value="0"/>
     <property name="resistance" value="0"/>
     <property name="agility" value="0"/>
+    <property name="baseDamage" value="0"/>
+    <property name="baseDefense" value="0"/>
     <property name="offensiveType" value="BASIC"/>
     <property name="defensiveType" value="BASIC"/>
   </bean>
 
   <!--'ENEMY STATS 1'-->
   <bean id="characterStats1" class="com.projectdss.CharacterStats">
+    <property name="maxHealth" value="0"/>
     <property name="currentHealth" value="0"/>
+    <property name="maxMana" value="0"/>
     <property name="currentMana" value="0"/>
     <property name="strength" value="0"/>
     <property name="magicalPower" value="0"/>
     <property name="resistance" value="0"/>
     <property name="agility" value="0"/>
+    <property name="baseDamage" value="0"/>
+    <property name="baseDefense" value="0"/>
     <property name="offensiveType" value="BASIC"/>
     <property name="defensiveType" value="BASIC"/>
   </bean>
 
   <!--'ENEMY STATS 2'-->
   <bean id="characterStats2" class="com.projectdss.CharacterStats">
+    <property name="maxHealth" value="0"/>
     <property name="currentHealth" value="0"/>
+    <property name="maxMana" value="0"/>
     <property name="currentMana" value="0"/>
     <property name="strength" value="0"/>
     <property name="magicalPower" value="0"/>
     <property name="resistance" value="0"/>
     <property name="agility" value="0"/>
+    <property name="baseDamage" value="0"/>
+    <property name="baseDefense" value="0"/>
     <property name="offensiveType" value="BASIC"/>
     <property name="defensiveType" value="BASIC"/>
   </bean>
