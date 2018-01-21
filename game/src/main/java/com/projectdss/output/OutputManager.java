@@ -116,7 +116,7 @@ public class OutputManager {
         outputHandler.showRunAway();
     }
 
-    public void showWinnerBattleMessage(MainCharacter player, EnemyCharacter enemy) {
+    public void showWinnerBattleMessage(EnemyCharacter enemy) {
         outputHandler.showWinnerBattleMessage(enemy);
     }
 

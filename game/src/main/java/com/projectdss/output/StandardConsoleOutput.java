@@ -64,7 +64,8 @@ public class StandardConsoleOutput extends ConsoleOutput {
 
     @Override
     public void showWinnerBattleMessage(EnemyCharacter enemy) {
-        System.out.println("You won against " + enemy.getName() + "!!!");
+        System.out.println("You won against " + enemy.getName() + "!!!\n" +
+                            enemy.getEndMessage());
     }
 
     @Override

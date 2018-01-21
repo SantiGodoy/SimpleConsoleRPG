@@ -16,7 +16,7 @@ public class HealthAbility extends Ability {
     public HealthAbility(){}
 
     public HealthAbility(String name, String description, int necessaryMana,
-                          int power, ElementType type) {
+                         ElementType type, int power) {
         super(name, description, necessaryMana, type);
         this.power = power;
     }

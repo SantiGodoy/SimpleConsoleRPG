@@ -78,15 +78,11 @@ public class ConsoleInput implements InputHandler {
         switch(option){
             case 1: InventoryManager manager = InventoryManager.getInstance(inventory);
                     if(item instanceof WeaponRuneCombatItem)
-                        if(manager.mergeWeaponRune(inventory.getEquippedWeapon(),
-                                                  (WeaponRuneCombatItem) item, 
-                                                  characterStats))
+                        if(manager.mergeWeaponRune((WeaponRuneCombatItem) item, characterStats))
                             inventory.removeItem(item);
                             
                     else if(item instanceof ArmorRuneCombatItem)
-                        if(manager.mergeArmorRune(inventory.getEquippedArmor(),
-                                                  (ArmorRuneCombatItem) item, 
-                                                  characterStats))
+                        if(manager.mergeArmorRune((ArmorRuneCombatItem) item, characterStats))
                             inventory.removeItem(item);
 
                 break;

@@ -117,7 +117,7 @@ public class CombatMinizoneEvent extends MinizoneEvent {
         }
 
         if(!enemy.isAlive()) {
-            output.showWinnerBattleMessage(player, enemy);
+            output.showWinnerBattleMessage(enemy);
             getRewards(eventParameter, enemy);
             restoreEnemyStats(enemy);
         } else {

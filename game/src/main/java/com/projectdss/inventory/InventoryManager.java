@@ -19,7 +19,8 @@ public class InventoryManager {
     private InventoryManager() {}
 
     public static InventoryManager getInstance(Inventory playerInventory) {
-        inventory = playerInventory;
+        if(inventory == null)
+            inventory = playerInventory;
         return INSTANCE;
     }
     
@@ -55,8 +56,9 @@ public class InventoryManager {
         }
     }
 
-    public boolean mergeWeaponRune(WeaponEquipableCombatItem weapon, WeaponRuneCombatItem rune,
-                                   CharacterStats player) {
+    public boolean mergeWeaponRune(WeaponRuneCombatItem rune, CharacterStats player) {
+        WeaponEquipableCombatItem weapon = inventory.getEquippedWeapon();
+
         if(weapon.getMaxRunes() == weapon.getRunes().size())
             return false;
 
@@ -65,11 +67,14 @@ public class InventoryManager {
         if(weapon.isEquipped())
             rune.use(player);
 
+        inventory.removeItem(rune);
+
         return true;
     }
 
-    public boolean mergeArmorRune(ArmorEquipableCombatItem armor, ArmorRuneCombatItem rune,
-                                  CharacterStats player) {
+    public boolean mergeArmorRune(ArmorRuneCombatItem rune, CharacterStats player) {
+        ArmorEquipableCombatItem armor = inventory.getEquippedArmor();
+
         if(armor.getMaxRunes() == armor.getRunes().size())
             return false;
 
@@ -77,6 +82,8 @@ public class InventoryManager {
 
         if(armor.isEquipped())
             rune.use(player);
+
+        inventory.removeItem(rune);
 
         return true;
     }

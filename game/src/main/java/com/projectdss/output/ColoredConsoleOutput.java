@@ -92,7 +92,8 @@ public class ColoredConsoleOutput extends ConsoleOutput {
 
     @Override
     public void showWinnerBattleMessage(EnemyCharacter enemy) {
-        System.out.println(ANSI_GREEN + "You won against " + enemy.getName() + "!!!" + ANSI_RESET);
+        System.out.println(ANSI_GREEN + "You won against " + enemy.getName() + "!!!\n" + 
+                           enemy.getEndMessage() + ANSI_RESET);
     }
 
     @Override

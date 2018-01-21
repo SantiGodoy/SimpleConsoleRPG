@@ -100,7 +100,7 @@ public abstract class ConsoleOutput implements OutputHandler {
     public int showAdjacentMinizones(Minizone minizone) {
         int counter = 0;
         for(Minizone mz : minizone.getAdjacentMinizones()) {
-            System.out.println(++counter + ". " + mz.getName());
+            System.out.println(++counter + ". " + mz.getName() + "\t\t" + mz.getDescription());
         }
         return counter;
     }
@@ -116,7 +116,8 @@ public abstract class ConsoleOutput implements OutputHandler {
 
     @Override
     public void showStartBattleMessage(EnemyCharacter enemy) {
-        System.out.println("The battle against " + enemy.getName() +  " has begun!");
+        System.out.println("The battle against " + enemy.getName() +  " has begun!\n" +
+                            enemy.getInitMessage());
     }
 
     @Override

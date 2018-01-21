@@ -15,24 +15,29 @@ import com.projectdss.CharacterStats;
 public abstract class EnemyCharacter extends Character {
 
     protected int xpDrop;
-    protected String message;
+    protected String initMessage, endMessage;
     protected Map<Item, Integer> itemsDrop;
 
     public EnemyCharacter() {}
     
-    public EnemyCharacter(String name, int level, CharacterStats characterStats, Set<Ability> abilities, int xpDrop, String message, Map<Item, Integer> itemsDrop) {
+    public EnemyCharacter(String name, int level, CharacterStats characterStats, Set<Ability> abilities, int xpDrop, String initMessage, String endMessage, Map<Item, Integer> itemsDrop) {
         super(name, level, characterStats, abilities);   
         this.xpDrop = xpDrop;
         this.itemsDrop = itemsDrop;
-        this.message = message;
+        this.initMessage = initMessage;
+        this.endMessage = endMessage;
     }
 
     public int getxpDrop() {
         return xpDrop;
     }
  
-    public String getMessage() {
-        return message;
+    public String getInitMessage() {
+        return initMessage;
+    }
+
+    public String getEndMessage() {
+        return endMessage;
     }
  
     public Map<Item, Integer> getItemsDrop() {
@@ -48,8 +53,12 @@ public abstract class EnemyCharacter extends Character {
         this.xpDrop = xpDrop;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setInitMessage(String initMessage) {
+        this.initMessage = initMessage;
+    }
+
+    public void setEndMessage(String endMessage) {
+        this.endMessage = endMessage;
     }
 
     public void setItemsDrop(Map<Item, Integer> itemsDrop) {

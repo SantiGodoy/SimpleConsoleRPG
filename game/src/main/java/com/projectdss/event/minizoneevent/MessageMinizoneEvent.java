@@ -10,13 +10,20 @@ import com.projectdss.event.MinizoneEvent;
  */
 public class MessageMinizoneEvent extends MinizoneEvent {
 
-    public MessageMinizoneEvent(){}
+    private String message;
 
-    public MessageMinizoneEvent(String description) {
+    public MessageMinizoneEvent() {}
+
+    public MessageMinizoneEvent(String description, String message) {
         super(description);
+        this.message = message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public void run(EventParameter eventParameter) {
-        eventParameter.getOutput().showMessage(description);
+        eventParameter.getOutput().showMessage(message);
     }
 }
