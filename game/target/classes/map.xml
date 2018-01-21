@@ -321,12 +321,12 @@
 
   <!--'MAIN STATS'-->
   <bean id="characterStatsMain" class="com.projectdss.CharacterStats">
-    <property name="currentHealth" value="0"/>
-    <property name="currentMana" value="0"/>
-    <property name="strength" value="0"/>
-    <property name="magicalPower" value="0"/>
-    <property name="resistance" value="0"/>
-    <property name="agility" value="0"/>
+    <property name="currentHealth" value="1"/>
+    <property name="currentMana" value="1"/>
+    <property name="strength" value="1"/>
+    <property name="magicalPower" value="1"/>
+    <property name="resistance" value="1"/>
+    <property name="agility" value="1"/>
     <property name="offensiveType" value="BASIC"/>
     <property name="defensiveType" value="BASIC"/>
   </bean>

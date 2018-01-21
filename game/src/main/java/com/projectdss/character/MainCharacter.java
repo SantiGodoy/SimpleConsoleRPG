@@ -24,6 +24,8 @@ public class MainCharacter extends Character {
     private boolean isIn;
     private Inventory inventory;
 
+    public MainCharacter(){}
+
     public MainCharacter(String name, CharacterStats characterStats, Set<Ability> abilities, 
                          String gender, World world, Zone zone, Minizone minizone, Inventory inventory) {
         super(name, 1, characterStats, abilities);

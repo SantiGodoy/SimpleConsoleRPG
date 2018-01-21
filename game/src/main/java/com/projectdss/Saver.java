@@ -1,5 +1,6 @@
 package com.projectdss;
 
+import com.projectdss.character.MainCharacter;
 import java.io.File;
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
@@ -19,7 +20,7 @@ import org.xml.sax.SAXException;
 
 public class Saver {
 
-    public void load(String filePath) {
+    public MainCharacter saveMainCharacter(String filePath) {
         try {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -43,5 +44,6 @@ public class Saver {
            } catch (SAXException sae) {
             sae.printStackTrace();
            }
+           return null;
     }
 }

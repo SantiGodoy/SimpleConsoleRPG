@@ -17,6 +17,7 @@ com/projectdss/output/OutputManager.class
 com/projectdss/output/OutputHandler.class
 com/projectdss/Rarity.class
 com/projectdss/item/consumableitem/ManaConsumableItem.class
+com/projectdss/DecisionEngine.class
 com/projectdss/output/ConsoleOutput.class
 com/projectdss/item/combatitem/equipablecombatitem/WeaponEquipableCombatItem.class
 com/projectdss/ElementType.class
@@ -47,7 +48,6 @@ com/projectdss/output/StandardConsoleOutput.class
 com/projectdss/event/zoneevent/EnterZoneEvent.class
 com/projectdss/event/MinizoneEvent.class
 com/projectdss/Rarity$1.class
-State.class
 com/projectdss/input/InputHandler.class
 com/projectdss/input/InputManager.class
 com/projectdss/ElementType$1.class

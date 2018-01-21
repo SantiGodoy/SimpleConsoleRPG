@@ -33,8 +33,6 @@ public class ConsoleInput implements InputHandler {
                 return inputValue;
         } catch(IOException ioe) {
             return 0;
-        } finally {
-            input.close();
         }
     }
 

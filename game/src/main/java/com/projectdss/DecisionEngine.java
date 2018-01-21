@@ -79,17 +79,14 @@ public class DecisionEngine {
                 output.showSaveLoadExitOptions();
                 int option = input.getInput(0, 4);
                 switch(option) {
-                    case 1: //Load
+                    case 1: loader.loadMainCharacter(saveFilePath);
                         break;
-                    case 2: //Save
+                    case 2: saver.saveMainCharacter(saveFilePath);
                         break;
-                    case 3: //Save
+                    case 3: saver.saveMainCharacter(saveFilePath);
                             return;
-                        break;
                     case 4: return;
-                        break;
                     default:
-                        break;
                 }
             } else
                 events[indexEvent - 1].run(new EventParameter(output, input, player));
