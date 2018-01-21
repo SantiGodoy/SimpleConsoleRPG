@@ -321,8 +321,10 @@
 
   <!--'MAIN STATS'-->
   <bean id="characterStatsMain" class="com.projectdss.CharacterStats">
-    <property name="currentHealth" value="0"/>
-    <property name="currentMana" value="0"/>
+    <property name="maxHealth" value="100"/>
+    <property name="currentHealth" value="100"/>
+    <property name="maxMana" value="100"/>
+    <property name="currentMana" value="100"/>
     <property name="strength" value="0"/>
     <property name="magicalPower" value="0"/>
     <property name="resistance" value="0"/>

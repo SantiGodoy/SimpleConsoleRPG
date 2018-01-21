@@ -14,7 +14,7 @@ public class Loader {
         BeanFactory factory = new XmlBeanFactory(new FileSystemResource(filePath));
         
         MainCharacter mainCharacter = (MainCharacter)factory.getBean("mainCharacter");
-       
+        System.out.println(mainCharacter.getCharacterStats().getCurrentHealth());
         return mainCharacter;
     }
 }
