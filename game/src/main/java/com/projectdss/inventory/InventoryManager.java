@@ -57,6 +57,9 @@ public class InventoryManager {
     }
 
     public boolean mergeWeaponRune(WeaponRuneCombatItem rune, CharacterStats player) {
+        if(!inventory.hasWeaponEquipped())
+            return false;
+
         WeaponEquipableCombatItem weapon = inventory.getEquippedWeapon();
 
         if(weapon.getMaxRunes() == weapon.getRunes().size())
@@ -64,8 +67,7 @@ public class InventoryManager {
 
         weapon.addRune(rune);
 
-        if(weapon.isEquipped())
-            rune.use(player);
+        rune.use(player);
 
         inventory.removeItem(rune);
 
@@ -73,6 +75,9 @@ public class InventoryManager {
     }
 
     public boolean mergeArmorRune(ArmorRuneCombatItem rune, CharacterStats player) {
+        if(!inventory.hasArmorEquipped())
+            return false;
+
         ArmorEquipableCombatItem armor = inventory.getEquippedArmor();
 
         if(armor.getMaxRunes() == armor.getRunes().size())
@@ -80,8 +85,7 @@ public class InventoryManager {
 
         armor.addRune(rune);
 
-        if(armor.isEquipped())
-            rune.use(player);
+        rune.use(player);
 
         inventory.removeItem(rune);
 

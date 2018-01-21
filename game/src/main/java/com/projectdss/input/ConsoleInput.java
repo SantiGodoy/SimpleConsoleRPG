@@ -40,16 +40,17 @@ public class ConsoleInput implements InputHandler {
     public void getItemInput(EquipableCombatItem item, Inventory inventory, CharacterStats characterStats, int option) {
         switch(option) {
             case 1: InventoryManager manager = InventoryManager.getInstance(inventory);
-                    if(item.isEquipped())
+                    if(item.isEquipped()) {
                         if(item instanceof WeaponEquipableCombatItem)
                             manager.discardWeapon(characterStats);
                         else if(item instanceof ArmorEquipableCombatItem)
                             manager.discardArmor(characterStats);
-                    else
+                    } else {
                         if(item instanceof WeaponEquipableCombatItem)
                             manager.equipWeapon((WeaponEquipableCombatItem) item, characterStats);
                         else if(item instanceof ArmorEquipableCombatItem)
                             manager.equipArmor((ArmorEquipableCombatItem) item, characterStats);
+                    }
                 break;
             case 2: inventory.removeItem(item);
                 break;
@@ -78,13 +79,13 @@ public class ConsoleInput implements InputHandler {
         switch(option){
             case 1: InventoryManager manager = InventoryManager.getInstance(inventory);
                     if(item instanceof WeaponRuneCombatItem)
-                        if(manager.mergeWeaponRune((WeaponRuneCombatItem) item, characterStats))
-                            inventory.removeItem(item);
-                            
+                        if(inventory.hasWeaponEquipped())
+                            if(manager.mergeWeaponRune((WeaponRuneCombatItem) item, characterStats))
+                                inventory.removeItem(item);
                     else if(item instanceof ArmorRuneCombatItem)
-                        if(manager.mergeArmorRune((ArmorRuneCombatItem) item, characterStats))
-                            inventory.removeItem(item);
-
+                        if(inventory.hasArmorEquipped())
+                            if(manager.mergeArmorRune((ArmorRuneCombatItem) item, characterStats))
+                                inventory.removeItem(item);
                 break;
             case 2: inventory.removeItem(item);
                 break;

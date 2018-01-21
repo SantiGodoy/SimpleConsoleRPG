@@ -14,30 +14,25 @@ public class Loader {
         BeanFactory factory = new XmlBeanFactory(new FileSystemResource(filePath));
         
         MainCharacter mainCharacter = (MainCharacter)factory.getBean("mainCharacter");
-        boolean adjacencyMatrixZone[][] = { {false, true, true, false},
-                                            {true, false, false, true},
-                                            {true, false, false, true},
-                                            {false, true, true, false}};
+        boolean adjacencyMatrixZone[][] = { {false, true, false, false},
+                                            {true, false, true, false},
+                                            {false, true, false, true},
+                                            {false, false, true, false}};
 
-        boolean adjacencyMatrixMinizone0[][] = {{false, true, true, false},
-                                                {true, false, false, true},
-                                                {true, false, false, true},
-                                                {false, true, true, false}};
+        boolean adjacencyMatrixMinizone0[][] = {{false, true},
+                                                {true, false}};
 
-        boolean adjacencyMatrixMinizone1[][] = {{false, true, true, false},
-                                                {true, false, false, true},
-                                                {true, false, false, true},
-                                                {false, true, true, false}};
+        boolean adjacencyMatrixMinizone1[][] = {{false, true, true},
+                                                {true, false, true},
+                                                {true, true, false}};
         
-        boolean adjacencyMatrixMinizone2[][] = {{false, true, true, false},
-                                                {true, false, false, true},
-                                                {true, false, false, true},
-                                                {false, true, true, false}};
+        boolean adjacencyMatrixMinizone2[][] = {{false, true, true},
+                                                {true, false, true},
+                                                {true, true, false}};
 
-        boolean adjacencyMatrixMinizone3[][] = {{false, true, true, false},
-                                                {true, false, false, true},
-                                                {true, false, false, true},
-                                                {false, true, true, false}};
+        boolean adjacencyMatrixMinizone3[][] = {{false, true, false},
+                                                {true, false, true},
+                                                {false, true, false}};
 
         mainCharacter.getWorld().setAdjacencyMatrixZone(adjacencyMatrixZone);
         mainCharacter.getWorld().getZones()[0].setAdjacencyMatrixMinizone(adjacencyMatrixMinizone0);

@@ -59,7 +59,9 @@ public class StandardConsoleOutput extends ConsoleOutput {
         "\nName: " + player.getName() +
         "\nLevel: " + player.getLevel() +
         "\nHealth: " + player.getCharacterStats().getCurrentHealth() + "/" + player.getCharacterStats().getMaxHealth() +
-        "\nMana: " + player.getCharacterStats().getCurrentMana() + "/" + player.getCharacterStats().getMaxMana());
+        "\nMana: " + player.getCharacterStats().getCurrentMana() + "/" + player.getCharacterStats().getMaxMana() +
+        "\nElement Type (Offensive): " + player.getCharacterStats().getOffensiveType() + 
+        "\nElement Type (Defensive): " + player.getCharacterStats().getDefensiveType());
     }
 
     @Override
@@ -76,12 +78,14 @@ public class StandardConsoleOutput extends ConsoleOutput {
     @Override
     public int showAbilitiesCombat(MainCharacter player) {
         int counter = 0;
+        System.out.println(player.getCharacterStats().getCurrentMana());
         for(Ability ability : player.getAbilities()) {
-            if(player.getCharacterStats().getCurrentMana() < ability.getNecessaryMana()) {
+            if(player.getCharacterStats().getCurrentMana() >= ability.getNecessaryMana()) {
                 System.out.println(++counter + ". " + ability.getName());
             } else 
                 System.out.println(ability.getName() + " (Not enough mana)");
         }
+        System.out.println("0. Return");
         return counter;
     }
 }
