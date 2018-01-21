@@ -38,24 +38,24 @@ public class MainCharacter extends Character {
         this.inventory = inventory;
     }
 
-    public void incrementLevel(int[] options) {
-        ++level;
-
-        for(int i = 0; i < options.length; ++i) {
-            switch(options[i]) {
-                case 1: characterStats.setMaxHealth(characterStats.getMaxHealth() + 15);
-                    break;
-                case 2: characterStats.setMaxMana(characterStats.getMaxMana() + 5);
-                    break;
-                case 3: characterStats.setStrength(characterStats.getStrength() + 2);
-                    break;
-                case 4: characterStats.setMagicalPower(characterStats.getMagicalPower() + 3);
-                    break;
-                case 5: characterStats.setResistance(characterStats.getResistance() + 2);
-                    break;
-                case 6: characterStats.setAgility(characterStats.getAgility() + 2);
-                    break;
-            }
+    public void incrementLevel(int option) {
+        switch(option) {
+            case 1: characterStats.setMaxHealth(characterStats.getMaxHealth() + 15);
+                    characterStats.setCurrentHealth(characterStats.getCurrentHealth() + 15);
+                break;
+            case 2: characterStats.setMaxMana(characterStats.getMaxMana() + 5);
+                    characterStats.setCurrentMana(characterStats.getCurrentMana() + 15);
+                break;
+            case 3: characterStats.setStrength(characterStats.getStrength() + 2);
+                    characterStats.setBaseDamage(characterStats.getBaseDamage() + 2);
+                break;
+            case 4: characterStats.setMagicalPower(characterStats.getMagicalPower() + 3);
+                break;
+            case 5: characterStats.setResistance(characterStats.getResistance() + 2);
+                    characterStats.setBaseDefense(characterStats.getBaseDefense() + 2);
+                break;
+            case 6: characterStats.setAgility(characterStats.getAgility() + 2);
+                break;
         }
     }
 

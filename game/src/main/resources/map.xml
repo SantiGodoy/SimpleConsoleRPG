@@ -582,12 +582,12 @@
   <bean id="inventory" class="com.projectdss.inventory.Inventory">
     <property name="items">
       <list>
-        <ref bean="item0"/>
         <ref bean="item1"/>
+        <ref bean="item0"/>
         <ref bean="item9"/>
+        <ref bean="item15"/>
         <ref bean="item13"/>
         <ref bean="item14"/>
-        <ref bean="item15"/>
         <ref bean="item3"/>
         <ref bean="item6"/>
         <ref bean="item4"/>

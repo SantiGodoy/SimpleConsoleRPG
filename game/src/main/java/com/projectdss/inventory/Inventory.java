@@ -2,6 +2,7 @@ package com.projectdss.inventory;
 
 import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
 import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
+import java.util.Collections;
 import java.util.List;
 import java.util.Iterator;
 import com.projectdss.Item;
@@ -31,6 +32,7 @@ public class Inventory implements Iterable<Item> {
 
     public void addItem(Item item) {
         items.add(item);
+        Collections.sort(items);
     }
 
     public void removeItem(Item item) {
