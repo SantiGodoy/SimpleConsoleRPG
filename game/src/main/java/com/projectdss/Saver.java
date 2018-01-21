@@ -59,7 +59,7 @@ public class Saver {
 
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-            Document doc = docBuilder.parse(filePath);
+            Document doc = docBuilder.parse("../src/main/resources/map.xml");
 
             //Node minizone00 = doc.getElementsByTagName("bean").item(0);
             //Node attribute = minizone00.getAttributes().getNamedItem("name");
