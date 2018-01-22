@@ -123,7 +123,7 @@ public abstract class ConsoleOutput implements OutputHandler {
 
     @Override
     public void showStartBattleMessage(EnemyCharacter enemy) {
-        System.out.println("The battle against " + enemy.getName() +  " has begun!\n" +
+        System.out.println("The battle against '" + enemy.getName() +  "' has begun!\n" +
                             enemy.getInitMessage());
     }
 
@@ -155,10 +155,12 @@ public abstract class ConsoleOutput implements OutputHandler {
             else
                 message += player2.getName() + ", ";
 
-            if(abilityPower >= 0)
+            if(abilityPower > 0)
                 message += "dealing " + abilityPower + " damage!";
+            else if(abilityPower < 0)
+                    message += "restoring " + (abilityPower * -1) + " health!";
             else
-                message += "restoring " + (abilityPower * -1) + " health!";
+                message += "but it had no effect!";
 
             System.out.println(message);
         }
@@ -199,7 +201,7 @@ public abstract class ConsoleOutput implements OutputHandler {
     
     @Override
     public void showLevelUpOptions(MainCharacter player) {
-        System.out.println("Select the stats you want to level:\t\tLevel " + player.getLevel() +
+        System.out.println("Select the stats you want to level:\t\tLevel " + player.getLevel() + " -> " + (player.getLevel() + 1) +
                            "\n1. Maximum health\t(" + player.getCharacterStats().getMaxHealth() + ")" +
                            "\n2. Maximum mana\t\t(" + player.getCharacterStats().getMaxMana() + ")" +
                            "\n3. Strength\t\t(" + player.getCharacterStats().getStrength() + ")" +

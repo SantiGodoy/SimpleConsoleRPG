@@ -45,6 +45,9 @@ public class HealthAbility extends Ability {
             player2.setCurrentHealth(player2.getCurrentHealth() - appliedPower);
         }
 
+        if(appliedPower < 0)
+            appliedPower = 0;
+
         return appliedPower;
     }
 

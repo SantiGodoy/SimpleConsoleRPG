@@ -8,14 +8,13 @@ import com.projectdss.map.Minizone;
 import com.projectdss.Character;
 import com.projectdss.CharacterStats;
 import com.projectdss.inventory.Inventory;
-import java.io.Serializable;
 
 /**
  * @author JoseCorrero
  * 
  * Class MainCharacter.
  */
-public class MainCharacter extends Character implements Serializable {
+public class MainCharacter extends Character {
 
     private String gender;    
     private int xp;
@@ -40,6 +39,7 @@ public class MainCharacter extends Character implements Serializable {
     }
 
     public void incrementLevel(int option) {
+        ++level;
         switch(option) {
             case 1: characterStats.setMaxHealth(characterStats.getMaxHealth() + 15);
                     characterStats.setCurrentHealth(characterStats.getCurrentHealth() + 15);

@@ -787,7 +787,7 @@
     </property>
     <property name="xpDrop" value="200"/>
     <property name="initMessage" value="I though that zombies in games was over, but..."/>
-    <property name="endMessage" value="Effectively, it was ez pz."/>
+    <property name="endMessage" value="Well done, Carl ;)"/>
     <property name="itemsDrop">
       <map>
         <entry key-ref="item2" value="100"/>

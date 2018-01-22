@@ -88,10 +88,10 @@ public class CombatMinizoneEvent extends MinizoneEvent {
                     case 2: int abilityDamage;
                             if(target == 1) {
                                 abilityDamage = ability.use(player.getCharacterStats(), player.getCharacterStats());
-                                output.showUseAbility(player, enemy, ability, abilityDamage);
+                                output.showUseAbility(player, player, ability, abilityDamage);
                             } else {
                                 abilityDamage = ability.use(player.getCharacterStats(), enemy.getCharacterStats());
-                                output.showUseAbility(player, player, ability, abilityDamage);
+                                output.showUseAbility(player, enemy, ability, abilityDamage);
                             }
                             player.getCharacterStats().setCurrentMana(
                                 player.getCharacterStats().getCurrentMana() - ability.getNecessaryMana());
