@@ -20,8 +20,8 @@ public class DecisionEngine {
     private InputManager input;
     private Loader loader;
     private Saver saver;
-    private final String startFilePath = "../src/main/resources/map.xml";
-    private final String saveFilePath = "../src/main/resources/save.xml";
+    private final String startFilePath = "../src/main/resources/newGame.xml";
+    //private final String saveFilePath = "../src/main/resources/save.xml";
 
     public DecisionEngine(OutputManager output, InputManager input,
                           Loader loader, Saver saver) {
@@ -40,7 +40,7 @@ public class DecisionEngine {
             switch(option) {
                 case 1: run(loader.loadMainCharacter(startFilePath));
                     break;
-                case 2: run(loader.loadMainCharacter(saveFilePath));
+                case 2: //run(loader.loadMainCharacter(saveFilePath));
                     break;
                 case 3: output.showGlobalSettings();
                         int option3 = input.getInput(0, 2);
@@ -79,11 +79,11 @@ public class DecisionEngine {
                 output.showSaveLoadExitOptions();
                 int option = input.getInput(0, 4);
                 switch(option) {
-                    case 1: loader.loadMainCharacter(saveFilePath);
+                    case 1: //loader.loadMainCharacter(saveFilePath);
                         break;
-                    case 2: saver.saveMainCharacter(saveFilePath);
+                    case 2: //saver.saveMainCharacter(saveFilePath);
                         break;
-                    case 3: saver.saveMainCharacter(saveFilePath);
+                    case 3: //saver.saveMainCharacter(saveFilePath);
                             return;
                     case 4: return;
                     default:

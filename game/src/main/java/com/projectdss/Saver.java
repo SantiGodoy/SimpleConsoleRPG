@@ -54,7 +54,7 @@ public class Saver {
     public MainCharacter saveMainCharacter(String filePath) {
         try {
 
-            File loadedFile = new File("../src/main/resources/map.xml");
+            File loadedFile = new File("../src/main/resources/newGame.xml");
             File savedFile = new File("../src/main/resources/save.xml");
 
             copyFile(loadedFile, savedFile);
@@ -81,8 +81,6 @@ public class Saver {
             DOMSource source = new DOMSource(doc);
             StreamResult result = new StreamResult(new File(filePath));
             xformer.transform(source, result);
-
-		    System.out.println("Game saved");
 
            } catch (ParserConfigurationException pce) {
             pce.printStackTrace();
