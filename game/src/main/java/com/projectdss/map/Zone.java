@@ -1,7 +1,7 @@
 package com.projectdss.map;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
 import com.projectdss.Event;
 
 /**
@@ -102,8 +102,8 @@ public class Zone {
         return minizone;
     }
 
-    public Set<Zone> getAdjacentZones() {
-        Set<Zone> adjacentZones = new HashSet<Zone>();
+    public List<Zone> getAdjacentZones() {
+        List<Zone> adjacentZones = new ArrayList<Zone>();
         for (int j = 0; j < world.getAdjacencyMatrixZone().length; ++j)
             if(world.getAdjacencyMatrixZone()[id][j] == true)
                 adjacentZones.add(world.getZones()[j]);

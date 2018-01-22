@@ -1,7 +1,7 @@
 package com.projectdss.map;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
 import com.projectdss.Event;
 import com.projectdss.character.EnemyCharacter;
 
@@ -78,8 +78,8 @@ public class Minizone {
         this.enemy = enemy;
     }
 
-    public Set<Minizone> getAdjacentMinizones() {
-        Set<Minizone> adjacentMinizones = new HashSet<Minizone>();
+    public List<Minizone> getAdjacentMinizones() {
+        List<Minizone> adjacentMinizones = new ArrayList<Minizone>();
         for (int j = 0; j < zone.getAdjacencyMatrixMinizone().length; ++j)
             if(zone.getAdjacencyMatrixMinizone()[id][j] == true)
                 adjacentMinizones.add(zone.getMinizones()[j]);
