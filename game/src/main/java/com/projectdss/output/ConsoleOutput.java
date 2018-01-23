@@ -10,6 +10,7 @@ import com.projectdss.item.combatitem.RuneCombatItem;
 import com.projectdss.item.combatitem.equipablecombatitem.ArmorEquipableCombatItem;
 import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatItem;
 import com.projectdss.map.Minizone;
+import com.projectdss.map.World;
 import com.projectdss.character.EnemyCharacter;
 import com.projectdss.Character;
 import com.projectdss.Event;
@@ -221,10 +222,11 @@ public abstract class ConsoleOutput implements OutputHandler {
     }
 
     @Override
-    public void showWorldInformation(MainCharacter player) {
-        System.out.println("Zone : " + player.getZone().getName());
+    public void showWorldInformation(MainCharacter player, World world) {
+        System.out.println("Zone : " + world.getZones()[player.getIdZone()].getName());
         if(player.isIn())
-            System.out.println("Minizone : " + player.getMinizone().getName());
+            System.out.println("Minizone : " + world.getZones()[player.getIdZone()].
+                                                     getMinizones()[player.getIdMinizone()].getName());
     }
 
     @Override

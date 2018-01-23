@@ -191,10 +191,12 @@
         <ref bean="eventi"/>
         <ref bean="event1"/>
         <ref bean="event2"/>
-        <ref bean="eventmessage7"/>
+        <ref bean="event0"/>
       </list>
     </property>
-    <property name="enemy"><null/></property>
+    <property name="enemy">
+      <ref bean="minionEnemyCharacter2"/>
+    </property>
   </bean>
 
   <!--'MINIZONE 3.2'-->
@@ -210,12 +212,10 @@
         <ref bean="eventi"/>
         <ref bean="event1"/>
         <ref bean="event2"/>
-        <ref bean="event0"/>
+        <ref bean="eventmessage7"/>
       </list>
     </property>
-    <property name="enemy">
-      <ref bean="minionEnemyCharacter2"/>
-    </property>
+    <property name="enemy"><null/></property>
   </bean>
 
   <!--'EVENT ZONES 0'-->
@@ -282,13 +282,13 @@
   <!--'EVENT MINIZONES MESSAGE 6'-->
   <bean id="eventmessage6" class="com.projectdss.event.minizoneevent.MessageMinizoneEvent">
     <property name="description" value="Message"/>
-    <property name="message" value="You are doing well!"/>
+    <property name="message" value="I perceive a powerful source of evil near..."/>
   </bean>
 
   <!--'EVENT MINIZONES MESSAGE 7'-->
   <bean id="eventmessage7" class="com.projectdss.event.minizoneevent.MessageMinizoneEvent">
     <property name="description" value="Message"/>
-    <property name="message" value="I perceive a powerful source of evil near..."/>
+    <property name="message" value="This is an open world game, so you can keep walking around again and again!"/>
   </bean>
 
   <!--'INVENTORY EVENT'-->
@@ -564,7 +564,7 @@
     <property name="rune">
       <ref bean="item11"/>
     </property>
-    <property name="trueDamage" value="10"/>
+    <property name="trueDamage" value="5"/>
   </bean>
 
   <!--'ITEM 15'-->
@@ -682,15 +682,8 @@
     </property>
     <property name="gender" value="Woman"/>
     <property name="xp" value="0"/>
-    <property name="world">
-      <ref bean="world"/>
-    </property>
-    <property name="zone">
-      <ref bean="zone0"/>
-    </property>
-    <property name="minizone">
-      <ref bean="minizone00"/>
-    </property>
+    <property name="idZone" value="0"/>
+    <property name="idMinizone" value="0"/>
     <property name="isIn" value="true"/>
     <property name="inventory">
       <ref bean="inventory"/>
@@ -701,15 +694,15 @@
   <bean id="characterStats0" class="com.projectdss.CharacterStats">
     <property name="maxHealth" value="20"/>
     <property name="currentHealth" value="20"/>
-    <property name="maxMana" value="0"/>
-    <property name="currentMana" value="0"/>
-    <property name="strength" value="4"/>
+    <property name="maxMana" value="10"/>
+    <property name="currentMana" value="10"/>
+    <property name="strength" value="8"/>
     <property name="magicalPower" value="0"/>
     <property name="resistance" value="3"/>
     <property name="agility" value="2"/>
     <property name="offensiveType" value="BASIC"/>
     <property name="defensiveType" value="BASIC"/>
-    <property name="baseDamage" value="4"/>
+    <property name="baseDamage" value="8"/>
     <property name="trueDamage" value="0"/>
     <property name="lifesteal" value="0"/>
     <property name="baseDefense" value="3"/>
@@ -718,17 +711,17 @@
 
   <!--'ENEMY STATS 1'-->
   <bean id="characterStats1" class="com.projectdss.CharacterStats">
-    <property name="maxHealth" value="80"/>
-    <property name="currentHealth" value="80"/>
-    <property name="maxMana" value="0"/>
-    <property name="currentMana" value="0"/>
-    <property name="strength" value="10"/>
+    <property name="maxHealth" value="100"/>
+    <property name="currentHealth" value="100"/>
+    <property name="maxMana" value="10"/>
+    <property name="currentMana" value="10"/>
+    <property name="strength" value="20"/>
     <property name="magicalPower" value="0"/>
-    <property name="resistance" value="0"/>
+    <property name="resistance" value="15"/>
     <property name="agility" value="1"/>
     <property name="offensiveType" value="DAMNED"/>
     <property name="defensiveType" value="DAMNED"/>
-    <property name="baseDamage" value="1"/>
+    <property name="baseDamage" value="20"/>
     <property name="trueDamage" value="0"/>
     <property name="lifesteal" value="0"/>
     <property name="baseDefense" value="15"/>
@@ -741,13 +734,13 @@
     <property name="currentHealth" value="3999"/>
     <property name="maxMana" value="0"/>
     <property name="currentMana" value="0"/>
-    <property name="strength" value="5"/>
+    <property name="strength" value="20"/>
     <property name="magicalPower" value="0"/>
     <property name="resistance" value="100"/>
     <property name="agility" value="2"/>
     <property name="offensiveType" value="BASIC"/>
     <property name="defensiveType" value="BASIC"/>
-    <property name="baseDamage" value="5"/>
+    <property name="baseDamage" value="20"/>
     <property name="trueDamage" value="0"/>
     <property name="lifesteal" value="0"/>
     <property name="baseDefense" value="100"/>
@@ -786,7 +779,7 @@
       </set>
     </property>
     <property name="xpDrop" value="200"/>
-    <property name="initMessage" value="I though that zombies in games was over, but..."/>
+    <property name="initMessage" value="Zombies? I though this trend was over, but..."/>
     <property name="endMessage" value="Well done, Carl ;)"/>
     <property name="itemsDrop">
       <map>

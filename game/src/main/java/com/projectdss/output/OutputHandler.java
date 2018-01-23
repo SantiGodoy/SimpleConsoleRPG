@@ -12,6 +12,7 @@ import com.projectdss.item.ConsumableItem;
 import com.projectdss.item.combatitem.EquipableCombatItem;
 import com.projectdss.item.combatitem.RuneCombatItem;
 import com.projectdss.map.Minizone;
+import com.projectdss.map.World;
 import com.projectdss.map.Zone;
 import java.util.Set;
 
@@ -50,7 +51,7 @@ public interface OutputHandler {
     void showLevelUpOptions(MainCharacter player);
     void showItemGain(Item item);
     void showMessage(String message);
-    void showWorldInformation(MainCharacter player);
+    void showWorldInformation(MainCharacter player, World world);
     void showSaveLoadExitOptions();
 
 }

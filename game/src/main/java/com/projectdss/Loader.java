@@ -1,6 +1,7 @@
 package com.projectdss;
 
 import com.projectdss.character.MainCharacter;
+import com.projectdss.map.World;
 import java.io.FileInputStream;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -10,10 +11,11 @@ import org.springframework.core.io.Resource;
 
 public class Loader {
 
-    public MainCharacter loadMainCharacter(String filePath) {
+    public World loadWorld(String filePath) {
         BeanFactory factory = new XmlBeanFactory(new FileSystemResource(filePath));
+
+        World world = (World)factory.getBean("world");
         
-        MainCharacter mainCharacter = (MainCharacter)factory.getBean("mainCharacter");
         boolean adjacencyMatrixZone[][] = { {false, true, false, false},
                                             {true, false, true, false},
                                             {false, true, false, true},
@@ -34,11 +36,19 @@ public class Loader {
                                                 {true, false, true},
                                                 {false, true, false}};
 
-        mainCharacter.getWorld().setAdjacencyMatrixZone(adjacencyMatrixZone);
-        mainCharacter.getWorld().getZones()[0].setAdjacencyMatrixMinizone(adjacencyMatrixMinizone0);
-        mainCharacter.getWorld().getZones()[1].setAdjacencyMatrixMinizone(adjacencyMatrixMinizone1);
-        mainCharacter.getWorld().getZones()[2].setAdjacencyMatrixMinizone(adjacencyMatrixMinizone2);
-        mainCharacter.getWorld().getZones()[3].setAdjacencyMatrixMinizone(adjacencyMatrixMinizone3);
+        world.setAdjacencyMatrixZone(adjacencyMatrixZone);
+        world.getZones()[0].setAdjacencyMatrixMinizone(adjacencyMatrixMinizone0);
+        world.getZones()[1].setAdjacencyMatrixMinizone(adjacencyMatrixMinizone1);
+        world.getZones()[2].setAdjacencyMatrixMinizone(adjacencyMatrixMinizone2);
+        world.getZones()[3].setAdjacencyMatrixMinizone(adjacencyMatrixMinizone3);
+
+        return world;
+    }
+
+    public MainCharacter loadMainCharacter(String filePath) {
+        BeanFactory factory = new XmlBeanFactory(new FileSystemResource(filePath));
+        
+        MainCharacter mainCharacter = (MainCharacter)factory.getBean("mainCharacter");
 
         return mainCharacter;
     }

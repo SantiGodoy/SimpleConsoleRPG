@@ -13,6 +13,7 @@ import com.projectdss.item.combatitem.equipablecombatitem.WeaponEquipableCombatI
 import com.projectdss.item.combatitem.runecombatitem.ArmorRuneCombatItem;
 import com.projectdss.item.combatitem.runecombatitem.WeaponRuneCombatItem;
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -25,13 +26,14 @@ public class ConsoleInput implements InputHandler {
     @Override
     public int getInput(int firstOption, int lastOption) {
         Scanner input = new Scanner(System.in);
-        int inputValue = input.nextInt();
         try {
+            int inputValue = input.nextInt();
+        
             if(inputValue < firstOption || inputValue > lastOption) 
                 throw new IOException();
             else
                 return inputValue;
-        } catch(IOException ioe) {
+        } catch(IOException|InputMismatchException exception) {
             return 0;
         }
     }

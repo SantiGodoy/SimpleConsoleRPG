@@ -24,7 +24,6 @@ public class CombatMinizoneEvent extends MinizoneEvent {
 
     private static final double AGILITY_RUN = 1.5;
     private static final int NUM_STATS = 6;
-    private static final int NUM_OPTIONS_STATS = 3;
     private static final int NUM_OPTIONS_COMBAT = 3;
 
     public CombatMinizoneEvent(){}
@@ -37,7 +36,8 @@ public class CombatMinizoneEvent extends MinizoneEvent {
         OutputManager output = eventParameter.getOutput();
 
         MainCharacter player = eventParameter.getPlayer();
-        EnemyCharacter enemy = player.getMinizone().getEnemy();
+        EnemyCharacter enemy = eventParameter.getWorld().getZones()[player.getIdZone()].
+                                              getMinizones()[player.getIdMinizone()].getEnemy();
 
         output.showStartBattleMessage(enemy);
 

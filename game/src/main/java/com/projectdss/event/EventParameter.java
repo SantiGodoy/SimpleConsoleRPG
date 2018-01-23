@@ -8,6 +8,7 @@ import com.projectdss.input.InputManager;
 import com.projectdss.item.ConsumableItem;
 import com.projectdss.item.combatitem.EquipableCombatItem;
 import com.projectdss.item.combatitem.RuneCombatItem;
+import com.projectdss.map.World;
 import com.projectdss.output.OutputManager;
 
 /**
@@ -19,12 +20,14 @@ public class EventParameter {
     private OutputManager output;
     private InputManager input;
     private MainCharacter player;
+    private World world;
     
-    public EventParameter(OutputManager output, InputManager input, MainCharacter player) {
-            this.output = output;
-            this.input = input;
-            this.player = player;
-        }
+    public EventParameter(OutputManager output, InputManager input, MainCharacter player, World world) {
+        this.output = output;
+        this.input = input;
+        this.player = player;
+        this.world = world;
+    }
 
     public OutputManager getOutput() {
         return output;
@@ -48,6 +51,10 @@ public class EventParameter {
 
     public MainCharacter getPlayer() {
         return player;
+    }
+
+    public World getWorld() {
+        return world;
     }
 
 }

@@ -1,8 +1,10 @@
 package com.projectdss;
 
+import com.projectdss.Loader;
 import com.projectdss.character.MainCharacter;
 import com.projectdss.event.EventParameter;
 import com.projectdss.input.InputManager;
+import com.projectdss.map.World;
 import com.projectdss.output.ColoredConsoleOutput;
 import com.projectdss.output.OutputHandler;
 import com.projectdss.output.OutputManager;
@@ -20,7 +22,7 @@ public class DecisionEngine {
     private InputManager input;
     private Loader loader;
     private Saver saver;
-    private final String startFilePath = "../src/main/resources/newGame.xml";
+    private final String newGameFilePath = "../src/main/resources/newGame.xml";
     //private final String saveFilePath = "../src/main/resources/save.xml";
 
     public DecisionEngine(OutputManager output, InputManager input,
@@ -38,9 +40,10 @@ public class DecisionEngine {
             output.showGlobalMenu();
             option = input.getInput(0, 4);
             switch(option) {
-                case 1: run(loader.loadMainCharacter(startFilePath));
+                case 1: run(loader.loadMainCharacter(newGameFilePath),
+                            loader.loadWorld(newGameFilePath));
                     break;
-                case 2: //run(loader.loadMainCharacter(saveFilePath));
+                case 2: 
                     break;
                 case 3: output.showGlobalSettings();
                         int option3 = input.getInput(0, 2);
@@ -61,17 +64,17 @@ public class DecisionEngine {
         } while(option != 0);
     }
 
-    private void run(MainCharacter player) {
+    private void run(MainCharacter player, World world) {
         int numOptions, indexEvent;
         Event[] events;
 
         while(player.isAlive()) {
-            output.showWorldInformation(player);
+            output.showWorldInformation(player, world);
 
             if(player.isIn())
-                events = player.getMinizone().getEvents();
+                events = world.getZones()[player.getIdZone()].getMinizones()[player.getIdMinizone()].getEvents();
             else
-                events = player.getZone().getEvents();
+                events = world.getZones()[player.getIdZone()].getEvents();
 
             numOptions = output.showEvents(events);
             indexEvent = input.getInput(0, numOptions);
@@ -89,7 +92,7 @@ public class DecisionEngine {
                     default:
                 }
             } else
-                events[indexEvent - 1].run(new EventParameter(output, input, player));
+                events[indexEvent - 1].run(new EventParameter(output, input, player, world));
         }
     }
 

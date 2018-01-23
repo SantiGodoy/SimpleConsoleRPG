@@ -18,22 +18,20 @@ public class MainCharacter extends Character {
 
     private String gender;    
     private int xp;
-    private World world;
-    private Zone zone;
-    private Minizone minizone;
+    private int idZone;
+    private int idMinizone;
     private boolean isIn;
     private Inventory inventory;
 
     public MainCharacter(){}
 
     public MainCharacter(String name, CharacterStats characterStats, Set<Ability> abilities, 
-                         String gender, World world, Zone zone, Minizone minizone, Inventory inventory) {
+                         String gender, int idZone, int idMinizone, Inventory inventory) {
         super(name, 1, characterStats, abilities);
         this.gender = gender;
         this.xp = 0;
-        this.world = world;
-        this.zone = zone;
-        this.minizone = minizone;
+        this.idZone = idZone;
+        this.idMinizone = idMinizone;
         this.isIn = true;
         this.inventory = inventory;
     }
@@ -73,12 +71,12 @@ public class MainCharacter extends Character {
         return levelUp;
     }
 
-    public void setZone(Zone zone) {
-        this.zone = zone;
+    public void setIdZone(int idZone) {
+        this.idZone = idZone;
     }
 
-    public void setMinizone(Minizone minizone) {
-        this.minizone = minizone;
+    public void setIdMinizone(int idMinizone) {
+        this.idMinizone = idMinizone;
     }
 
     public void setIsIn(boolean isIn) {
@@ -102,20 +100,12 @@ public class MainCharacter extends Character {
         this.xp = xp;
     }
 
-    public World getWorld() {
-        return world;
+    public int getIdZone() {
+        return idZone;
     }
 
-    public void setWorld(World world) {
-        this.world = world;
-    }
-
-    public Zone getZone() {
-        return zone;
-    }
-
-    public Minizone getMinizone() {
-        return minizone;
+    public int getIdMinizone() {
+        return idMinizone;
     }
 
     public boolean isIn() {

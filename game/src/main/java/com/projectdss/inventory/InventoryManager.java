@@ -94,14 +94,6 @@ public class InventoryManager {
         return true;
     }
 
-    public boolean hasWeaponEquipped() {
-        return inventory.hasWeaponEquipped();
-    }
-
-    public boolean hasArmorEquipped() {
-        return inventory.hasArmorEquipped();
-    }
-
     public void getConsumables(List<ConsumableItem> consumables) {
         for(Item item : inventory)
             if(item instanceof ConsumableItem)

@@ -5,6 +5,7 @@ import com.projectdss.item.ConsumableItem;
 import com.projectdss.item.combatitem.EquipableCombatItem;
 import com.projectdss.item.combatitem.RuneCombatItem;
 import com.projectdss.map.Minizone;
+import com.projectdss.map.World;
 import com.projectdss.map.Zone;
 import com.projectdss.output.OutputHandler;
 import com.projectdss.Ability;
@@ -144,8 +145,8 @@ public class OutputManager {
         outputHandler.showMessage(message);
     }
 
-    public void showWorldInformation(MainCharacter player) {
-        outputHandler.showWorldInformation(player);
+    public void showWorldInformation(MainCharacter player, World world) {
+        outputHandler.showWorldInformation(player, world);
     }
 
     public void showSaveLoadExitOptions() {
