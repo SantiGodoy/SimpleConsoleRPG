@@ -17,16 +17,19 @@ public class StandardConsoleOutput extends ConsoleOutput {
     @Override
     public void showStartingMessage(String message) {
         System.out.println(message);
+        System.out.println();
     }
 
     @Override
     public void showGameOverMessage(String message) {
         System.out.println(message);
+        System.out.println();
     }
 
     @Override
     public void showWinMessage(String message) {
         System.out.println(message);
+        System.out.println();
     }
 
     @Override
@@ -38,6 +41,7 @@ public class StandardConsoleOutput extends ConsoleOutput {
         "\n\t3. Option" +
         "\n\t4. Credits" + 
         "\n\t0. Close game");
+        System.out.println();
     }
 
     @Override
@@ -45,6 +49,7 @@ public class StandardConsoleOutput extends ConsoleOutput {
         System.out.println("Developers:" + 
         "\n\tJosé Correro Barquín" +
         "\n\tSantiago Godoy Poce");
+        System.out.println();
     }
 
     @Override
@@ -56,6 +61,8 @@ public class StandardConsoleOutput extends ConsoleOutput {
         "\nMana: " + enemy.getCharacterStats().getCurrentMana() + "/" + enemy.getCharacterStats().getMaxMana() +
         "\nElement Type: " + enemy.getCharacterStats().getDefensiveType());
 
+        System.out.println();
+
         System.out.println("\n\tYOU" +
         "\nName: " + player.getName() +
         "\nLevel: " + player.getLevel() +
@@ -63,17 +70,21 @@ public class StandardConsoleOutput extends ConsoleOutput {
         "\nMana: " + player.getCharacterStats().getCurrentMana() + "/" + player.getCharacterStats().getMaxMana() +
         "\nElement Type (Offensive): " + player.getCharacterStats().getOffensiveType() + 
         "\nElement Type (Defensive): " + player.getCharacterStats().getDefensiveType());
+
+        System.out.println();
     }
 
     @Override
     public void showWinnerBattleMessage(EnemyCharacter enemy) {
         System.out.println("You won against " + enemy.getName() + "!!!\n" +
                             enemy.getEndMessage());
+        System.out.println();
     }
 
     @Override
     public void showLoserBattleMessage(EnemyCharacter enemy) {
         System.out.println("You lost against " + enemy.getName() + " :((");
+        System.out.println();
     }
 
     @Override
@@ -87,6 +98,7 @@ public class StandardConsoleOutput extends ConsoleOutput {
                 System.out.println(ability.getName() + " (Not enough mana)");
         }
         System.out.println("0. Return");
+        System.out.println();
         return counter;
     }
 }

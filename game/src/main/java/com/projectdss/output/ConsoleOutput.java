@@ -42,6 +42,7 @@ public abstract class ConsoleOutput implements OutputHandler {
             }
             ++counter;
         }
+        System.out.println();
     }
 
     @Override
@@ -51,6 +52,7 @@ public abstract class ConsoleOutput implements OutputHandler {
             System.out.println(counter++ + ". " + a.getName() + " (" + a.getDescription() + ")" + 
                 " [" + a.getNecessaryMana() + "]");
         }
+        System.out.println();
     }
 
     @Override
@@ -59,6 +61,7 @@ public abstract class ConsoleOutput implements OutputHandler {
         for(int i = 0; i < events.length; ++i) 
             System.out.println(++counter + ". " + events[i].getDescription());
         System.out.println("0. Options");
+        System.out.println();
         return counter;
     }
 
@@ -68,6 +71,7 @@ public abstract class ConsoleOutput implements OutputHandler {
         System.out.println("1. Use" +
         "\n2. Remove" +
         "\n0. Return");
+        System.out.println();
         return 3;
     }
 
@@ -80,6 +84,7 @@ public abstract class ConsoleOutput implements OutputHandler {
             System.out.println("1. Equip");
         System.out.println("2. Remove item" +
         "\n0. Return");
+        System.out.println();
         return 3;
     }
 
@@ -89,6 +94,7 @@ public abstract class ConsoleOutput implements OutputHandler {
         System.out.println("1. Merge\n" +
                            "2. Remove item\n" +
                            "0. Return");
+        System.out.println();
         return 3;
     }
 
@@ -98,6 +104,7 @@ public abstract class ConsoleOutput implements OutputHandler {
         "\n\t1. White/black screen" + 
         "\n\t2. Colored screen" + 
         "\n\t0. Return");
+        System.out.println();
     }
 
     @Override
@@ -108,6 +115,7 @@ public abstract class ConsoleOutput implements OutputHandler {
             System.out.println(++counter + ". " + mz.getName() + "\t\t" + mz.getDescription());
         }
         System.out.println("0. Return");
+        System.out.println();
         return counter;
     }
 
@@ -119,6 +127,7 @@ public abstract class ConsoleOutput implements OutputHandler {
             System.out.println(++counter + ". " + z.getName() + "\t\t" + z.getDescription());
         }
         System.out.println("0. Return");
+        System.out.println();
         return counter;
     }
 
@@ -126,6 +135,7 @@ public abstract class ConsoleOutput implements OutputHandler {
     public void showStartBattleMessage(EnemyCharacter enemy) {
         System.out.println("The battle against '" + enemy.getName() +  "' has begun!\n" +
                             enemy.getInitMessage());
+        System.out.println();
     }
 
     @Override
@@ -133,6 +143,7 @@ public abstract class ConsoleOutput implements OutputHandler {
         System.out.println("What do you want to do?" +
                          "\n1. Attack\t\t2. Ability" + 
                          "\n3. Run away");
+        System.out.println();
     }
 
     @Override
@@ -141,6 +152,7 @@ public abstract class ConsoleOutput implements OutputHandler {
                          "\n1. " + player.getName() +
                          "\n2. " + enemy.getName() +
                          "\n0. Return");
+        System.out.println();
     }
 
     @Override
@@ -164,11 +176,13 @@ public abstract class ConsoleOutput implements OutputHandler {
                 message += "but it had no effect!";
 
             System.out.println(message);
+            System.out.println();
         }
 
     @Override
     public void showRunAway() {
         System.out.println("Wow! You got out of that battle!");
+        System.out.println();
     }
 
     @Override
@@ -189,6 +203,7 @@ public abstract class ConsoleOutput implements OutputHandler {
             message += "dealing " + appliedDamage + " damage!";
 
         System.out.println(message);
+        System.out.println();
     }
     
     @Override
@@ -198,6 +213,7 @@ public abstract class ConsoleOutput implements OutputHandler {
             System.out.println("but you didn't reach the next level :(");
         else
             System.out.println("and you have got " + levelUp + " levels");
+        System.out.println();
     }
     
     @Override
@@ -209,16 +225,19 @@ public abstract class ConsoleOutput implements OutputHandler {
                            "\n4. Magical power\t(" + player.getCharacterStats().getMagicalPower() + ")" +
                            "\n5. Resistance\t\t(" + player.getCharacterStats().getResistance() + ")" +
                            "\n6. Agility\t\t(" + player.getCharacterStats().getAgility() + ")");
+        System.out.println();
     }
     
     @Override
     public void showItemGain(Item item) {
         System.out.println("You picked up a " + item.getName() + " (" + item.getRarity() + ")");
+        System.out.println();
     }
 
     @Override
     public void showMessage(String message) {
         System.out.println(message);
+        System.out.println();
     }
 
     @Override
@@ -227,6 +246,7 @@ public abstract class ConsoleOutput implements OutputHandler {
         if(player.isIn())
             System.out.println("Minizone : " + world.getZones()[player.getIdZone()].
                                                      getMinizones()[player.getIdMinizone()].getName());
+        System.out.println();
     }
 
     @Override
@@ -236,5 +256,6 @@ public abstract class ConsoleOutput implements OutputHandler {
                            "3. Save and exit\n" +
                            "4. Exit\n" +
                            "0. Return");
+        System.out.println();
     }
 }

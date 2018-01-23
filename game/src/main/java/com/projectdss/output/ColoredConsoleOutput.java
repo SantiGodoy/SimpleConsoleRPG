@@ -26,16 +26,19 @@ public class ColoredConsoleOutput extends ConsoleOutput {
     @Override
     public void showStartingMessage(String message) {
         System.out.println(ANSI_CYAN + message + ANSI_RESET);
+        System.out.println();
     }
 
     @Override
     public void showGameOverMessage(String message) {
         System.out.println(ANSI_RED + message + ANSI_RESET);
+        System.out.println();
     }
 
     @Override
     public void showWinMessage(String message) {
         System.out.println(ANSI_GREEN + message + ANSI_RESET);
+        System.out.println();
     }
 
     @Override
@@ -47,6 +50,7 @@ public class ColoredConsoleOutput extends ConsoleOutput {
                      "\n\t3. Option" +
                      "\n\t4. Credits" + 
                      "\n\t0. Close game" + ANSI_RESET);
+        System.out.println();
     }
 
     @Override
@@ -54,6 +58,7 @@ public class ColoredConsoleOutput extends ConsoleOutput {
         System.out.println(ANSI_PURPLE + "Developers:" + 
         "\n\tJosé Correro Barquín" +
         "\n\tSantiago Godoy Poce" + ANSI_RESET);
+        System.out.println();
     }
 
     private String showElementType(ElementType elementType) {
@@ -89,17 +94,20 @@ public class ColoredConsoleOutput extends ConsoleOutput {
             player.getCharacterStats().getMaxMana() + ANSI_RESET +
         "\nElement Type (Offensive): " + showElementType(player.getCharacterStats().getOffensiveType()) + 
         "\nElement Type (Defensive): " + showElementType(player.getCharacterStats().getDefensiveType()));
+        System.out.println();
     }
 
     @Override
     public void showWinnerBattleMessage(EnemyCharacter enemy) {
         System.out.println(ANSI_GREEN + "You won against " + enemy.getName() + "!!!\n" + 
                            enemy.getEndMessage() + ANSI_RESET);
+        System.out.println();
     }
 
     @Override
     public void showLoserBattleMessage(EnemyCharacter enemy) {
         System.out.println(ANSI_RED + "You lost against " + enemy.getName() + " :((" + ANSI_RESET);
+        System.out.println();
     }
     
     private String showAbilityType(ElementType elementType) {
@@ -126,6 +134,7 @@ public class ColoredConsoleOutput extends ConsoleOutput {
                 System.out.println(ability.getName() + " (Not enough mana)");
         }
         System.out.println("0. Return");
+        System.out.println();
         return counter;
     }
 }
