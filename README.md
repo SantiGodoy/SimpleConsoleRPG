@@ -8,3 +8,5 @@ Developers:
 Compile project: mvn compile assembly:single from 'game' folder
 
 Execute: java -jar game-1.0-SNAPSHOT-jar-with-dependencies.jar from 'target' folder
+
+See Wiki for more information...
